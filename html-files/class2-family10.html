@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class 2 - Family 10</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Source Sans Pro", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Base link styling */
+      a {
+        color: #68a11a;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      a:hover {
+        color: #4d8105;
+      }
+
+      a:active {
+        color: #e91e63;
+      }
+      a {
+        transition: color 0.3s ease, text-decoration 0.3s ease;
+      }
+
+      header {
+        background-color: #68a11a;
+        padding: 40px 20px;
+        text-align: center;
+        color: white;
+        position: relative; /* For positioning the home button */
+        display: flex;
+        align-items: center; /* Vertically center the content */
+        justify-content: center; /* Center the title by default */
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center; /* Center the title text */
+      }
+
+      /* Home Button Styles */
+      .home-button {
+        position: absolute;
+        left: 30px; /* Position the button on the left */
+        top: 50%; /* Vertically center the button */
+        transform: translateY(-50%); /* Adjust for exact vertical centering */
+        text-decoration: none;
+      }
+
+      .home-button img.home-icon {
+        width: auto; /* Let the image maintain its aspect ratio */
+        height: 80px; /* Set a fixed height (adjust as needed) */
+        border-radius: 5px; /* Optional: Add rounded corners to the image */
+      }
+
+      .home-button:hover img.home-icon {
+        opacity: 0.8; /* Optional: Add hover effect to the image */
+      }
+
+      @media (max-width: 700px) {
+        .home-button {
+          display: none; /* Hide the home button on smaller screens */
+        }
+      }
+
+      /* Menu Button Styles */
+      .menu-button {
+        position: fixed; /* Make the button stay in place when scrolling */
+        right: 25px; /* Position the button on the right */
+        top: 45px; /* Adjust the distance from the top */
+        background-color: #68a11adf; /* Blue background color (matches your theme) */
+        border: none;
+        color: white; /* Color of the three lines */
+        font-size: 40px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000; /* Ensure the button stays above other content */
+        padding: 3px 10px; /* Add padding to create a box around the lines */
+        border-radius: 4px; /* Rounded corners for the box */
+      }
+
+      .menu-button:hover {
+        opacity: 0.8; /* Slight fade on hover */
+      }
+
+      /* Dropdown Menu Styles */
+      .dropdown-menu {
+        display: none;
+        position: fixed; /* Make the dropdown menu fixed */
+        top: 117px; /* Position it below the menu button */
+        right: 25px; /* Align it with the right edge of the menu button */
+        background-color: #f0f0f0;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 999; /* Ensure it stays below the menu button */
+        border-radius: 6px;
+      }
+
+      .dropdown-menu a {
+        color: #68a11a;
+        padding: 10px 12px;
+        text-decoration: none;
+        display: block;
+        font-size: 18px;
+      }
+
+      .dropdown-menu a:hover {
+        background-color: rgb(249, 249, 249);
+        text-decoration: none;
+        border-radius: 6px;
+      }
+      .dropdown-menu a:active,
+      .dropdown-menu a:focus {
+        color: #68a11a; /* Ensure text color doesn't change when clicked */
+        text-decoration: none; /* Ensure no underline when clicked */
+      }
+
+      .dropdown-menu a:visited {
+        color: #68a11a; /* Ensure text color doesn't change for visited links */
+      }
+      .dropdown-menu a.active {
+        background-color: white; /* White background for active item */
+        color: #68a11a; /* Text color for active item (matches your theme) */
+        font-weight: bold; /* Optional: Make the active item bold */
+      }
+      .show {
+        display: block;
+      }
+
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        color: white;
+        background-color: #999; /* Gray circle background */
+        border-radius: 50%; /* Makes it a circle */
+        width: 16px; /* Size of the circle */
+        height: 16px;
+        text-align: center;
+        line-height: 16px; /* Vertically center the question mark */
+        font-size: 12px;
+        margin-left: 2px;
+        vertical-align: middle; /* Align with the text */
+      }
+
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px; /* Adjust width as needed */
+        background-color: white; /* White background */
+        color: #666; /* Gray text */
+        text-align: center;
+        border-radius: 4px;
+        padding: 8px;
+        position: absolute;
+        z-index: 1;
+        transform: translateX(-120%); /* Center the tooltip */
+        border: 1px solid #ccc; /* Light gray outline */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+        opacity: 0;
+        transition: opacity 0.3s;
+        margin-top: 35px;
+        font-size: 14px;
+      }
+
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .tooltip-right .tooltiptext {
+        left: 100%; /* Position to the right of the circle */
+        margin-top: 35px;
+        margin-left: 10px; /* Add some spacing */
+        transform: none; /* Remove the left alignment */
+      }
+
+      p {
+        font-size: 18px;
+        text-align: justify;
+        max-width: 1300px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 20px; /* Optional: add some padding on smaller screens */
+      }
+
+      .button-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #68a11a;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .button-link:hover {
+        background-color: #492597a7;
+      }
+
+      /* Ensure the text stays white even for visited links */
+      .button-link:visited {
+        color: white; /* Keep the text color white */
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .video-container {
+          flex-direction: column;
+        }
+
+        .left-side,
+        .right-side {
+          width: 100%;
+        }
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+
+      .grid-item {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .grid-item-image {
+        width: 100%;
+        border-radius: 5px;
+      }
+
+      .grid-item h3 {
+        color: #68a11a;
+        font-size: 25px;
+        margin-top: 10px;
+        margin-bottom: 0;
+      }
+
+      .grid-item p {
+        margin-top: 15px;
+        font-size: 20px;
+        text-align: center;
+        line-height: 1;
+      }
+      .grid-item a:hover {
+        text-decoration: none;
+      }
+
+      .container {
+        max-width: 1300px;
+        margin: 3px auto;
+        padding: 0 20px;
+        display: flex;
+        gap: 20px;
+      }
+
+      .image-container {
+        display: inline-block; /* Ensure the container fits the image */
+        padding: 10px; /* Add padding to create the margin effect */
+        border: 1px solid #ddd; /* Light border */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        background-color: white; /* Background color for the container */
+      }
+
+      .image-container img {
+        display: block; /* Ensure the image fits the container */
+        max-width: 100%; /* Ensure the image is responsive */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 8px; /* Slightly rounded corners for the image */
+      }
+
+      .motif-container {
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Stack children vertically */
+        align-items: center; /* Center children horizontally */
+        justify-content: flex-end; /* Align image to the bottom */
+        padding: 10px; /* Add padding for spacing */
+        border: 1px solid #ddd; /* Light border */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        background-color: white; /* Background color for the container */
+        width: 858px; /* Set width */
+        height: 395px; /* Set height */
+        box-sizing: border-box; /* Include padding in width/height calculations */
+      }
+
+      .motif-container h3 {
+        text-align: center; /* Center the header text */
+      }
+
+      .motif-container img {
+        display: block; /* Ensure the image behaves as a block element */
+        max-width: 93%; /* Ensure the image is responsive */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 8px; /* Slightly rounded corners for the image */
+        margin-bottom: 24px; /* Add automatic margin */
+      }
+
+      .left-side {
+        flex: 1; /* Takes up 1 part of the available space */
+        order: 1; /* Ensures this appears first (on the left) */
+      }
+
+      .right-side {
+        flex: 1; /* Takes up 1 part of the available space */
+        order: 2; /* Ensures this appears second (on the right) */
+      }
+
+      .table-container {
+        overflow: visible;
+        position: relative;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0px;
+      }
+
+      table {
+        border-collapse: separate;
+        border-spacing: 0;
+        width: 100%;
+        font-family: sans-serif;
+      }
+
+      thead tr {
+        background-color: #68a11a;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #68a11a; /* Blue header */
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 2; /* Ensures it stays above other content */
+      }
+
+      tr:nth-child(even) {
+        background-color: hsl(0, 0%, 95%); /* Gray for even rows */
+      }
+
+      td[rowspan] {
+        background-color: #f9f9f9; /* Ensure row-spanning cells stay white */
+      }
+      .centered-cell {
+        text-align: center; /* Centers horizontally */
+        vertical-align: middle; /* Centers vertically */
+        font-weight: bold;
+        background-color: transparent;
+      }
+
+      /* Swiss-Prot Table*/
+      .seq-table {
+        width: 1300px; /* Adjust the width as needed */
+        margin: auto; /* Center the table */
+        overflow-x: auto; /* Horizontal scrollbar if needed */
+        max-height: 550px; /* Set a maximum height */
+        overflow-y: auto; /* Vertical scrollbar */
+        position: relative;
+        will-change: transform;
+      }
+
+      .seq-table td {
+        border: 0px solid #ddd;
+      }
+
+      .seq-table th {
+        border: 0px solid #ddd;
+      }
+
+      .seq-table a:visited {
+        color: #6a1b9a;
+      }
+
+      .bottom-banner {
+        background-color: #626262;
+        color: white;
+        padding: 15px;
+        font-size: 18px;
+        display: flex; /* Enable flexbox */
+        align-items: center; /* Vertically align items */
+        justify-content: center; /* Center horizontally (optional) */
+        gap: 10px; /* Space between items */
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+      }
+
+      .elixir-image {
+        max-width: 100px; /* Or whatever size you prefer */
+        height: auto;
+        vertical-align: middle; /* Align image with text baseline (alternative to flexbox alignment) */
+      }
+
+      .bottom-banner a {
+        color: white;
+        text-decoration: none;
+        display: inline-flex; /* To ensure correct vertical alignment of the image */
+        align-items: center; /* Aligns the image and text within the link */
+        gap: 5px; /* Adds spacing between the image and text within the link */
+      }
+
+      .bottom-banner a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Home Button with Image -->
+      <a href="/index.html" class="home-button">
+        <img src="/images/logo1.png" alt="Home" class="home-icon" />
+      </a>
+      <h1 id="family10">Class 2 Family 10</h1>
+      <button class="menu-button" id="menuButton">&#9776;</button>
+      <!-- Inline style added here -->
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="/html-files/class2.html" style="color: #588c10"
+          >Class 2 Home</a
+        >
+        <a href="#family10">Family 10</a>
+        <a href="#proteins">Studied Proteins</a>
+        <a href="#sprot">Swiss-Prot Sequences</a>
+        <a href="#uniref">UniRef100 Sequences</a>
+        <a href="#alignment">Sequence Alignment</a>
+        <a href="#info">Additional Information</a>
+      </div>
+    </header>
+
+    <script>
+      // Toggle dropdown menu visibility
+      const menuButton = document.getElementById("menuButton");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+
+      menuButton.addEventListener("click", function () {
+        dropdownMenu.classList.toggle("show");
+      });
+
+      // Close the dropdown if the user clicks outside of it
+      window.addEventListener("click", function (event) {
+        if (
+          !event.target.matches(".menu-button") &&
+          !event.target.closest(".dropdown-menu")
+        ) {
+          dropdownMenu.classList.remove("show");
+        }
+      });
+
+      // Scroll-based highlighting
+      const sections = document.querySelectorAll("section");
+      const menuLinks = document.querySelectorAll(".dropdown-menu a");
+
+      function isSectionInView(section) {
+        const rect = section.getBoundingClientRect();
+        return rect.top <= 100 && rect.bottom >= 100;
+      }
+
+      function updateActiveMenu() {
+        sections.forEach((section, index) => {
+          if (isSectionInView(section)) {
+            menuLinks.forEach((link) => link.classList.remove("active"));
+            menuLinks[index].classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", updateActiveMenu);
+
+      // Smooth scroll to sections (only for internal links)
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const targetId = link.getAttribute("href");
+          if (targetId.startsWith("#")) {
+            // Only apply to internal links
+            e.preventDefault();
+            const targetSection = document.querySelector(targetId);
+            targetSection.scrollIntoView({ behavior: "smooth" });
+          }
+          // External links (like "/") will work as normal
+        });
+      });
+    </script>
+
+    <div class="grid-container">
+      <div class="grid-item">
+        <h3>Family 10 Overview</h3>
+        <p>x experimentally studied proteins</p>
+        <p>x sequences in Swiss-Prot</p>
+        <p>x unique sequences in UniRef100</p>
+        <p>bla bla</p>
+        <p>bla</p>
+        <p></p>
+        <p style="color: #68a11a; font-weight: bold; margin-top: 30px">
+          Clan x: <a href="/html-files/class2-familyx.html">Family x</a>
+        </p>
+      </div>
+      <div class="grid-item">
+        <a
+          style="
+            color: #68a11a;
+            font-size: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          "
+          href="https://alphafold.ebi.ac.uk/entry/x8q"
+          target="_blank"
+        >
+          <h3 style="margin-bottom: 5px">Reference Monomer</h3>
+          <img
+            src="/images/mono2-10.png"
+            class="grid-item-image"
+            alt="mono2-10.png"
+            style="display: block; margin-top: 20px"
+          />
+        </a>
+      </div>
+      <div class="grid-item">
+        <h3>Reference Structure</h3>
+        <img
+          src="/images/greenq.png"
+          class="grid-item-image"
+          alt="greenq.png"
+        />
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Right Side: Text -->
+      <div class="right-side">
+        <div class="motif-container" style="width: 858px; height: 395px">
+          <h3 style="color: #68a11a; font-size: 25px">
+            Family 10 Motifs <br />
+            (<a
+              href="https://www.uniprot.org/uniprotkb/x9q/entry"
+              target="_blank"
+              >x9q</a
+            >)
+          </h3>
+
+          <image
+            src="/images/motifs2-10.png"
+            alt="motifs2-10"
+            class="grid-item-image"
+          />
+        </div>
+      </div>
+
+      <!-- Left Side: Large Image -->
+
+      <div class="left-side">
+        <div class="image-container">
+          <svg
+            width="398"
+            height="365"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 1350 1350"
+          >
+            <style>
+              .image-mapper-shape {
+                fill: rgba(0, 0, 0, 0);
+                transition: fill 0.3s ease, stroke 0.3s ease;
+              }
+              g:hover .image-mapper-shape {
+                fill: rgba(255, 255, 255, 0.6);
+              }
+            </style>
+
+            <image
+              xlink:href="/images/class2.png"
+              style="width: 1350px"
+            ></image>
+            <circle
+              cx="1271"
+              cy="580"
+              r="40"
+              fill="transparent"
+              stroke="#FF0000"
+              stroke-width="6"
+            />
+
+            <a
+              xlink:href="/html-files/class2-family1.html"
+              target="_self"
+              xlink:title="Family 1"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="1"
+                  points="658.974 662.82 305.128 694.872 25.641 673.077 30.7692 562.82 364.103 598.718 647.436 646.154"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family2.html"
+              target="_self"
+              xlink:title="Family 2"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="2"
+                  points="35.8974 548.718 324.359 588.462 470.513 612.82 629.487 637.18 244.872 352.564 102.564 317.949 32.0513 434.615 20.5128 469.231 12.8205 507.692"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family3.html"
+              target="_self"
+              xlink:title="Family 3"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="3"
+                  points="160.256 271.795 230.769 157.692 332.051 153.846 625.641 548.718 638.462 634.615"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family4.html"
+              target="_self"
+              xlink:title="Family 4"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="4"
+                  points="346.154 167.949 373.077 55.1282 456.41 87.1795 534.615 288.462 614.103 534.615"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family5.html"
+              target="_self"
+              xlink:title="Family 5"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="5"
+                  points="470.513 69.2308 566.667 8.97436 705.128 12.8205 730.769 194.872 610.256 521.795"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family6.html"
+              target="_self"
+              xlink:title="Family 6"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="6"
+                  points="657.692 675.641 724.359 415.385 806.41 80.7692 926.923 21.7949 976.923 130.769 908.974 297.436 687.18 688.462 664.103 698.718"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family7.html"
+              target="_self"
+              xlink:title="Family 7"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="7"
+                  points="912.82 291.026 1005.13 105.128 1069.23 34.6154 1219.23 52.5641 1175.64 146.154 698.718 676.923 720.513 634.615"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family8.html"
+              target="_self"
+              xlink:title="Family 8"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="8"
+                  points="1285.9 261.538 1333.33 179.487 1256.41 88.4615 1223.08 88.4615 738.462 639.744"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family9.html"
+              target="_self"
+              xlink:title="Family 9"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="9"
+                  points="812.82 615.385 1143.59 517.949 1330.77 401.282 1329.49 289.744 1278.21 274.359 769.231 619.231 770.513 632.051"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family10.html"
+              target="_self"
+              xlink:title="Family 10"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="10"
+                  points="675.641 696.154 889.744 605.128 1215.38 538.462 1319.23 555.128 1346.15 667.949 1164.1 702.564 682.051 705.128"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family11.html"
+              target="_self"
+              xlink:title="Family 11"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="11"
+                  points="1196.15 870.513 1291.03 867.949 1337.18 735.897 1324.36 691.026 1156.41 707.692 688.462 706.41"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family12.html"
+              target="_self"
+              xlink:title="Family 12"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="12"
+                  points="1134.62 1048.72 1256.41 1148.72 1285.9 1114.1 1325.64 965.385 1180.77 875.641 711.538 716.667"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family13.html"
+              target="_self"
+              xlink:title="Family 13"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="13"
+                  points="657.692 746.154 998.718 1215.38 1174.36 1279.49 1332.05 1214.1 673.077 703.846"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family14.html"
+              target="_self"
+              xlink:title="Family 14"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="14"
+                  points="1019.23 1258.97 953.846 1316.67 762.82 1314.1 616.667 1291.03 660.256 965.385 655.128 748.718 680.769 773.077"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family15.html"
+              target="_self"
+              xlink:title="Family 15"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="15"
+                  points="626.923 1232.05 501.282 1293.59 406.41 1234.62 410.256 1065.38 655.128 746.154 660.256 964.103"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family16.html"
+              target="_self"
+              xlink:title="Family 16"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="16"
+                  points="360.256 1125.64 284.615 1173.08 205.128 1137.18 287.179 1038.46 624.359 766.667 643.59 761.538"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family17.html"
+              target="_self"
+              xlink:title="Family 17"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="17"
+                  points="428.205 921.795 144.872 1085.9 89.7436 969.231 392.308 862.82 553.846 800 629.487 765.385"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family18.html"
+              target="_self"
+              xlink:title="Family 18"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape selected"
+                  data-index="18"
+                  points="61.5385 932.051 35.8974 816.667 521.795 757.692 606.41 779.487 220.513 925.641"
+                ></polygon>
+              </g>
+            </a>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <h2
+      id="proteins"
+      style="color: #68a11a; font-size: 2em; text-align: center"
+    >
+      Experimentally Studied Proteins
+    </h2>
+
+    <h2 id="sprot" style="color: #68a11a; font-size: 2em; text-align: center">
+      Swiss-Prot Sequences
+    </h2>
+
+    <h2 id="uniref" style="color: #68a11a; font-size: 2em; text-align: center">
+      UniRef100 Sequences
+    </h2>
+
+    <h2
+      id="alignment"
+      style="color: #68a11a; font-size: 2em; text-align: center"
+    >
+      Representative Sequence Alignment
+    </h2>
+
+    <div
+      id="scrollContainer"
+      style="
+        width: 1300px;
+        height: 550px;
+        margin: 0 auto;
+        overflow-x: auto;
+        text-align: center;
+        will-change: transform;
+      "
+    >
+      <img
+        src="/images/alg2-10.png"
+        alt="Motifs Image"
+        style="max-width: none; height: auto; display: block"
+      />
+    </div>
+
+    <script>
+      window.onload = function () {
+        const container = document.getElementById("scrollContainer");
+
+        const scrollWidth = container.scrollWidth;
+        const scrollPercentage = 0.6;
+        container.scrollLeft = scrollWidth * scrollPercentage;
+
+        container.scrollTop = container.scrollHeight;
+      };
+    </script>
+
+    <h2 id="info" style="color: #68a11a; font-size: 2em; text-align: center">
+      Additional Information
+    </h2>
+
+    <div id="asparaginases" class="bottom-banner">
+      <div>The Asparaginase Database | Release 2025-01 | Contact:</div>
+      <a href="mailto:stetinam@vscht.cz">stetinam@vscht.cz</a>| Supported by:
+      <a href="https://www.elixir-czech.cz/" target="_blank">
+        <img
+          src="/images/elixir_logo.png"
+          alt="elixir_logo.png"
+          class="elixir-image"
+        />
+      </a>
+    </div>
+  </body>
+</html>

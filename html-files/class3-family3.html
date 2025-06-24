@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class 3 - Family 3</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Source Sans Pro", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Base link styling */
+      a {
+        color: #9c42ac;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      a:hover {
+        color: #931ce2;
+      }
+
+      a:active {
+        color: #e91e63;
+      }
+      a {
+        transition: color 0.3s ease, text-decoration 0.3s ease;
+      }
+
+      header {
+        background-color: #9c42ac;
+        padding: 40px 20px;
+        text-align: center;
+        color: white;
+        position: relative; /* For positioning the home button */
+        display: flex;
+        align-items: center; /* Vertically center the content */
+        justify-content: center; /* Center the title by default */
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center; /* Center the title text */
+      }
+
+      /* Home Button Styles */
+      .home-button {
+        position: absolute;
+        left: 30px; /* Position the button on the left */
+        top: 50%; /* Vertically center the button */
+        transform: translateY(-50%); /* Adjust for exact vertical centering */
+        text-decoration: none;
+      }
+
+      .home-button img.home-icon {
+        width: auto; /* Let the image maintain its aspect ratio */
+        height: 80px; /* Set a fixed height (adjust as needed) */
+        border-radius: 5px; /* Optional: Add rounded corners to the image */
+      }
+
+      .home-button:hover img.home-icon {
+        opacity: 0.8; /* Optional: Add hover effect to the image */
+      }
+
+      @media (max-width: 700px) {
+        .home-button {
+          display: none; /* Hide the home button on smaller screens */
+        }
+      }
+
+      /* Menu Button Styles */
+      .menu-button {
+        position: fixed; /* Make the button stay in place when scrolling */
+        right: 25px; /* Position the button on the right */
+        top: 45px; /* Adjust the distance from the top */
+        background-color: #9c42acdf; /* Blue background color (matches your theme) */
+        border: none;
+        color: white; /* Color of the three lines */
+        font-size: 40px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000; /* Ensure the button stays above other content */
+        padding: 3px 10px; /* Add padding to create a box around the lines */
+        border-radius: 4px; /* Rounded corners for the box */
+      }
+
+      .menu-button:hover {
+        opacity: 0.8; /* Slight fade on hover */
+      }
+
+      /* Dropdown Menu Styles */
+      .dropdown-menu {
+        display: none;
+        position: fixed; /* Make the dropdown menu fixed */
+        top: 117px; /* Position it below the menu button */
+        right: 25px; /* Align it with the right edge of the menu button */
+        background-color: #f0f0f0;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 999; /* Ensure it stays below the menu button */
+        border-radius: 6px;
+      }
+
+      .dropdown-menu a {
+        color: #9c42ac;
+        padding: 10px 12px;
+        text-decoration: none;
+        display: block;
+        font-size: 18px;
+      }
+
+      .dropdown-menu a:hover {
+        background-color: rgb(249, 249, 249);
+        text-decoration: none;
+        border-radius: 6px;
+      }
+      .dropdown-menu a:active,
+      .dropdown-menu a:focus {
+        color: #9c42ac; /* Ensure text color doesn't change when clicked */
+        text-decoration: none; /* Ensure no underline when clicked */
+      }
+
+      .dropdown-menu a:visited {
+        color: #9c42ac; /* Ensure text color doesn't change for visited links */
+      }
+      .dropdown-menu a.active {
+        background-color: white; /* White background for active item */
+        color: #9c42ac; /* Text color for active item (matches your theme) */
+        font-weight: bold; /* Optional: Make the active item bold */
+      }
+      .show {
+        display: block;
+      }
+
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        color: white;
+        background-color: #999; /* Gray circle background */
+        border-radius: 50%; /* Makes it a circle */
+        width: 16px; /* Size of the circle */
+        height: 16px;
+        text-align: center;
+        line-height: 16px; /* Vertically center the question mark */
+        font-size: 12px;
+        margin-left: 2px;
+        vertical-align: middle; /* Align with the text */
+      }
+
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px; /* Adjust width as needed */
+        background-color: white; /* White background */
+        color: #666; /* Gray text */
+        text-align: center;
+        border-radius: 4px;
+        padding: 8px;
+        position: absolute;
+        z-index: 1;
+        transform: translateX(-120%); /* Center the tooltip */
+        border: 1px solid #ccc; /* Light gray outline */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+        opacity: 0;
+        transition: opacity 0.3s;
+        margin-top: 35px;
+        font-size: 14px;
+      }
+
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .tooltip-right .tooltiptext {
+        left: 100%; /* Position to the right of the circle */
+        margin-top: 35px;
+        margin-left: 10px; /* Add some spacing */
+        transform: none; /* Remove the left alignment */
+      }
+
+      p {
+        font-size: 18px;
+        text-align: justify;
+        max-width: 1300px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 20px; /* Optional: add some padding on smaller screens */
+      }
+
+      .button-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #9c42ac;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .button-link:hover {
+        background-color: #492597a7;
+      }
+
+      /* Ensure the text stays white even for visited links */
+      .button-link:visited {
+        color: white; /* Keep the text color white */
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .video-container {
+          flex-direction: column;
+        }
+
+        .left-side,
+        .right-side {
+          width: 100%;
+        }
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+
+      .grid-item {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .grid-item-image {
+        width: 100%;
+        border-radius: 5px;
+      }
+
+      .grid-item h3 {
+        color: #9c42ac;
+        font-size: 25px;
+        margin-top: 10px;
+        margin-bottom: 0;
+      }
+
+      .grid-item p {
+        margin-top: 15px;
+        font-size: 20px;
+        text-align: center;
+        line-height: 1;
+      }
+      .grid-item a:hover {
+        text-decoration: none;
+      }
+
+      .container {
+        max-width: 1300px;
+        margin: 3px auto;
+        padding: 0 20px;
+        display: flex;
+        gap: 20px;
+      }
+
+      .image-container {
+        display: inline-block; /* Ensure the container fits the image */
+        padding: 10px; /* Add padding to create the margin effect */
+        border: 1px solid #ddd; /* Light border */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        background-color: white; /* Background color for the container */
+      }
+
+      .image-container img {
+        display: block; /* Ensure the image fits the container */
+        max-width: 100%; /* Ensure the image is responsive */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 8px; /* Slightly rounded corners for the image */
+      }
+
+      .motif-container {
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Stack children vertically */
+        align-items: center; /* Center children horizontally */
+        justify-content: flex-end; /* Align image to the bottom */
+        padding: 10px; /* Add padding for spacing */
+        border: 1px solid #ddd; /* Light border */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        background-color: white; /* Background color for the container */
+        width: 858px; /* Set width */
+        height: 395px; /* Set height */
+        box-sizing: border-box; /* Include padding in width/height calculations */
+      }
+
+      .motif-container h3 {
+        text-align: center; /* Center the header text */
+      }
+
+      .motif-container img {
+        display: block; /* Ensure the image behaves as a block element */
+        max-width: 93%; /* Ensure the image is responsive */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 8px; /* Slightly rounded corners for the image */
+        margin-bottom: 24px; /* Add automatic margin */
+      }
+
+      .left-side {
+        flex: 1; /* Takes up 1 part of the available space */
+        order: 1; /* Ensures this appears first (on the left) */
+      }
+
+      .right-side {
+        flex: 1; /* Takes up 1 part of the available space */
+        order: 2; /* Ensures this appears second (on the right) */
+      }
+
+      .table-container {
+        overflow: visible;
+        position: relative;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0px;
+      }
+
+      table {
+        border-collapse: separate;
+        border-spacing: 0;
+        width: 100%;
+        font-family: sans-serif;
+      }
+
+      thead tr {
+        background-color: #9c42ac;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #9c42ac; /* Blue header */
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 2; /* Ensures it stays above other content */
+      }
+
+      tr:nth-child(even) {
+        background-color: hsl(0, 0%, 95%); /* Gray for even rows */
+      }
+
+      td[rowspan] {
+        background-color: #f9f9f9; /* Ensure row-spanning cells stay white */
+      }
+      .centered-cell {
+        text-align: center; /* Centers horizontally */
+        vertical-align: middle; /* Centers vertically */
+        font-weight: bold;
+        background-color: transparent;
+      }
+
+      /* Swiss-Prot Table*/
+      .seq-table {
+        width: 1300px; /* Adjust the width as needed */
+        margin: auto; /* Center the table */
+        overflow-x: auto; /* Horizontal scrollbar if needed */
+        max-height: 550px; /* Set a maximum height */
+        overflow-y: auto; /* Vertical scrollbar */
+        position: relative;
+        will-change: transform;
+      }
+
+      .seq-table td {
+        border: 0px solid #ddd;
+      }
+
+      .seq-table th {
+        border: 0px solid #ddd;
+        border: 0px solid #ddd;
+      }
+
+      .selection-controls {
+        max-width: 1300px;
+        margin: 20px auto 10px;
+        padding: 10px 20px;
+        background-color: #f5f5f5;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .selection-controls .count {
+        margin-right: auto;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .selection-btn {
+        background-color: #9c42ac;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s;
+      }
+
+      .selection-btn:hover {
+        background-color: #7b3387;
+      }
+
+      .selection-btn:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+      }
+
+      .selection-dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .selection-menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 180px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        border-radius: 4px;
+        padding: 8px 0;
+        top: 100%;
+        left: 0;
+      }
+
+      .selection-menu a {
+        color: #333;
+        padding: 8px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 14px;
+      }
+
+      .selection-menu a:hover {
+        background-color: #f1f1f1;
+      }
+
+      /* Add checkbox column styling */
+      .checkbox-column {
+        width: 30px;
+        text-align: center;
+      }
+
+      .select-all-checkbox {
+        margin: 0;
+      }
+
+      .entry-checkbox {
+        margin: 0;
+        cursor: pointer;
+      }
+
+      /* Highlight selected rows */
+      tr.selected {
+        background-color: #f0e6f5 !important;
+      }
+
+      .selection-menu a.tooltip-option {
+        position: relative;
+      }
+
+      .selection-menu a.tooltip-option:hover::after {
+        content: attr(title);
+        position: absolute;
+        left: 100%;
+        top: 0;
+        white-space: nowrap;
+        background: white;
+        border: 1px solid #ddd;
+        padding: 6px 10px;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1001;
+        font-size: 13px;
+        color: #666;
+        margin-left: 10px;
+        width: 200px;
+      }
+      .bottom-banner {
+        background-color: #626262;
+        color: white;
+        padding: 15px;
+        font-size: 18px;
+        display: flex; /* Enable flexbox */
+        align-items: center; /* Vertically align items */
+        justify-content: center; /* Center horizontally (optional) */
+        gap: 10px; /* Space between items */
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+      }
+
+      .elixir-image {
+        max-width: 100px; /* Or whatever size you prefer */
+        height: auto;
+        vertical-align: middle; /* Align image with text baseline (alternative to flexbox alignment) */
+      }
+
+      .bottom-banner a {
+        color: white;
+        text-decoration: none;
+        display: inline-flex; /* To ensure correct vertical alignment of the image */
+        align-items: center; /* Aligns the image and text within the link */
+        gap: 5px; /* Adds spacing between the image and text within the link */
+      }
+
+      .bottom-banner a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Home Button with Image -->
+      <a href="/index.html" class="home-button">
+        <img src="/images/logo1.png" alt="Home" class="home-icon" />
+      </a>
+      <h1 id="family3">Class 3 Family 3</h1>
+      <button class="menu-button" id="menuButton">&#9776;</button>
+      <!-- Inline style added here -->
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="/html-files/class3.html" style="color: #6a1b9a"
+          >Class 3 Home</a
+        >
+        <a href="#family3">Family 3</a>
+        <a href="#proteins">Studied Proteins</a>
+        <a href="#sprot">Swiss-Prot Sequences</a>
+        <a href="#uniref">UniRef100 Sequences</a>
+        <a href="#alignment">Sequence Alignment</a>
+        <a href="#info">Additional Information</a>
+      </div>
+    </header>
+
+    <script>
+      // Toggle dropdown menu visibility
+      const menuButton = document.getElementById("menuButton");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+
+      menuButton.addEventListener("click", function () {
+        dropdownMenu.classList.toggle("show");
+      });
+
+      // Close the dropdown if the user clicks outside of it
+      window.addEventListener("click", function (event) {
+        if (
+          !event.target.matches(".menu-button") &&
+          !event.target.closest(".dropdown-menu")
+        ) {
+          dropdownMenu.classList.remove("show");
+        }
+      });
+
+      // Scroll-based highlighting
+      const sections = document.querySelectorAll("section");
+      const menuLinks = document.querySelectorAll(".dropdown-menu a");
+
+      function isSectionInView(section) {
+        const rect = section.getBoundingClientRect();
+        return rect.top <= 100 && rect.bottom >= 100;
+      }
+
+      function updateActiveMenu() {
+        sections.forEach((section, index) => {
+          if (isSectionInView(section)) {
+            menuLinks.forEach((link) => link.classList.remove("active"));
+            menuLinks[index].classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", updateActiveMenu);
+
+      // Smooth scroll to sections (only for internal links)
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const targetId = link.getAttribute("href");
+          if (targetId.startsWith("#")) {
+            // Only apply to internal links
+            e.preventDefault();
+            const targetSection = document.querySelector(targetId);
+            targetSection.scrollIntoView({ behavior: "smooth" });
+          }
+          // External links (like "/") will work as normal
+        });
+      });
+    </script>
+
+    <div class="grid-container">
+      <div class="grid-item">
+        <h3>Family 3 Overview</h3>
+        <p>1 experimentally studied proteins</p>
+        <p>0 sequences in Swiss-Prot</p>
+        <p>2,941 unique sequences in UniRef100</p>
+        <p>Bacterial and some fungal L-asparaginases</p>
+        <p>Homo dimeric structure</p>
+        <p>Containes the Rhizobium etli "type V" L-asparaginase isoenzyme</p>
+        <p></p>
+        <p style="color: #9c42ac; font-weight: bold; margin-top: 30px">
+          Clan 3: <a href="/html-files/class3-family3.html">Family 3</a>
+        </p>
+      </div>
+      <div class="grid-item">
+        <a
+          style="
+            color: #9c42ac;
+            font-size: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          "
+          href="https://alphafold.ebi.ac.uk/entry/Q2K0Z2"
+          target="_blank"
+        >
+          <h3 style="margin-bottom: 5px">Reference Monomer</h3>
+          <img
+            src="/images/mono3-3.png"
+            class="grid-item-image"
+            alt="mono3-3.png"
+            style="display: block; margin-top: 20px"
+          />
+        </a>
+      </div>
+      <div class="grid-item">
+        <a href="https://www.rcsb.org/structure/7OS6" target="_blank">
+          <h3>Reference Structure</h3>
+          <img
+            src="/images/str3-3.png"
+            class="grid-item-image"
+            alt="str3-3.png"
+            style="max-width: 80%"
+          />
+        </a>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Right Side: Text -->
+      <div class="right-side">
+        <div class="motif-container" style="width: 858px; height: 395px">
+          <h3 style="color: #9c42ac; font-size: 25px">
+            Family 3 Motifs <br />
+            (<a
+              href="https://www.uniprot.org/uniprotkb/Q2K0Z2/entry"
+              target="_blank"
+              >Q2K0Z2</a
+            >)
+          </h3>
+
+          <image
+            src="/images/motifs3-3.png"
+            alt="motifs3-3"
+            class="grid-item-image"
+          />
+        </div>
+      </div>
+
+      <!-- Left Side: Large Image -->
+
+      <div class="left-side">
+        <div class="image-container">
+          <svg
+            width="398"
+            height="365"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 1350 1350"
+          >
+            <style>
+              .image-mapper-shape {
+                fill: rgba(0, 0, 0, 0);
+                transition: fill 0.3s ease, stroke 0.3s ease;
+              }
+              g:hover .image-mapper-shape {
+                fill: rgba(255, 255, 255, 0.6);
+              }
+            </style>
+
+            <image
+              xlink:href="/images/class3.png"
+              style="width: 1350px"
+            ></image>
+            <circle
+              cx="1246"
+              cy="1078"
+              r="40"
+              fill="transparent"
+              stroke="#722ccc"
+              stroke-width="6"
+            />
+            <a
+              xlink:href="/html-files/class3-family1.html"
+              target="_self"
+              xlink:title="Family 1"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="1"
+                  points="687.18 680.769 657.692 692.308 47.4359 726.923 35.8974 464.103 39.7436 166.667 173.077 28.2051 433.333 97.4359 687.18 661.538 696.298 664.716 694.872 676.923"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class3-family2.html"
+              target="_self"
+              xlink:title="Family 2"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="2"
+                  points="693.59 651.282 512.82 252.564 616.667 103.846 1007.69 33.3333 1230.77 97.4359 1270.51 396.154 1148.72 561.538 1141.03 558.974 962.82 619.231"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class3-family3.html"
+              target="_self"
+              xlink:title="Family 3"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="3"
+                  points="879.487 1325.64 1191.03 1308.97 1292.31 1180.77 1317.95 830.769 1285.9 648.718 1010.26 664.103 956.41 675.641 716.667 682.051 696.154 689.744"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class3-family4.html"
+              target="_self"
+              xlink:title="Family 4"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="4"
+                  points="164.103 793.59 93.5897 1042.31 158.974 1271.79 339.744 1339.74 776.923 1260.26 785.897 1017.95 693.59 708.974 685.897 689.744"
+                ></polygon>
+              </g>
+            </a>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <h2
+      id="proteins"
+      style="color: #9c42ac; font-size: 2em; text-align: center"
+    >
+      Experimentally Studied Proteins
+    </h2>
+
+    <div class="seq-table">
+      <!-- Selection controls that appear when at least one checkbox is selected -->
+      <div
+        class="selection-controls"
+        id="selectionControls"
+        style="display: none"
+      >
+        <span class="count" id="selectedCount">0 entries selected</span>
+
+        <div class="selection-dropdown">
+          <button class="selection-btn" id="downloadBtn">Download</button>
+          <div class="selection-menu" id="downloadMenu">
+            <a href="#" data-format="fasta">FASTA</a>
+            <a href="#" data-format="tsv">Tab-separated</a>
+            <a href="#" data-format="ids">UniProt IDs</a>
+            <a href="#" data-format="idmapping">UniProt ID mapping</a>
+          </div>
+        </div>
+
+        <button class="selection-btn" id="clearSelectionBtn">
+          Clear selection
+        </button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <!-- Add checkbox column header -->
+            <th class="checkbox-column">
+              <input
+                type="checkbox"
+                id="selectAllCheckbox"
+                class="select-all-checkbox"
+              />
+            </th>
+            <th width="56">
+              Fam
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext">Class - Clan - Family</span>
+              </span>
+            </th>
+            <th width="64">
+              Alt
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext"
+                  >Alternative historical name / classification</span
+                >
+              </span>
+            </th>
+            <th>
+              AN
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext">UniProt accession number</span>
+              </span>
+            </th>
+            <th width="70">
+              Name
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext"
+                  >UniProt entry name, only given here for Swiss-Prot
+                  entries</span
+                >
+              </span>
+            </th>
+            <th>EC</th>
+            <th width="1">Organism</th>
+            <th>Cell-Loc</th>
+            <th>AAs</th>
+            <th>Structure</th>
+            <th>PDB</th>
+            <th width="50">
+              K<sub>m</sub>
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">for Asn [mM] </span>
+              </span>
+            </th>
+            <th width="60">
+              V<sub>max</sub>
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">for Asn [μmol/min/mg] </span>
+              </span>
+            </th>
+            <th width="60">
+              K<sub>cat</sub>
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">for Asn [s<sup>-1</sup>]</span>
+              </span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Add checkboxes to the rest of your rows similarly -->
+
+          <tr
+            data-an="Q2K0Z2"
+            data-organism="Rhizobium etli"
+            data-family="3-3-3"
+          >
+            <td class="checkbox-column">
+              <input type="checkbox" class="entry-checkbox" />
+            </td>
+            <td>
+              <a href="/html-files/class3-family3.html">3-3-3 </a>
+            </td>
+            <td>ReAV</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q2K0Z2/entry"
+                target="_blank"
+                >Q2K0Z2</a
+              >
+            </td>
+            <td></td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Rhizobium etli</td>
+            <td>-</td>
+            <td>367</td>
+            <td>Homo dimer</td>
+            <td>
+              <a href="https://www.rcsb.org/structure/7OS6" target="_blank"
+                >7OS6</a
+              >
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q2K0Z2/entry#structure"
+                target="_blank"
+                >PDBs</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://doi.org/10.1038/s41467-021-27105-x"
+                target="_blank"
+                >4.2</a
+              >
+            </td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1038/s41467-021-27105-x"
+                target="_blank"
+                >438</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="sprot" style="color: #9c42ac; font-size: 2em; text-align: center">
+      Swiss-Prot Sequences
+    </h2>
+
+    <h2 id="uniref" style="color: #9c42ac; font-size: 2em; text-align: center">
+      UniRef100 Sequences
+    </h2>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const pageTitle = document.title
+          .replace(/\s+/g, "")
+          .replace(/[^a-zA-Z0-9]/g, "");
+        const tables = document.querySelectorAll(".seq-table");
+
+        tables.forEach((tableContainer, tableIndex) => {
+          console.log(`Setting up table ${tableIndex}`);
+
+          const selectAllCheckbox = tableContainer.querySelector(
+            ".select-all-checkbox"
+          );
+          const entryCheckboxes =
+            tableContainer.querySelectorAll(".entry-checkbox");
+          const selectionControls = tableContainer.querySelector(
+            ".selection-controls"
+          );
+          const selectedCount = tableContainer.querySelector(".count");
+          const clearSelectionBtn = tableContainer.querySelector(
+            ".selection-btn[id*='clearSelectionBtn']"
+          );
+          const downloadBtn = tableContainer.querySelector(
+            ".selection-btn[id*='downloadBtn']"
+          );
+          const downloadMenu = tableContainer.querySelector(".selection-menu");
+
+          function cleanText(html) {
+            if (!html) return "";
+            const tempDiv = document.createElement("div");
+            tempDiv.innerHTML = html;
+
+            // Remove tooltips and spans
+            tempDiv
+              .querySelectorAll("span, .tooltip")
+              .forEach((tooltip) => tooltip.remove());
+
+            return tempDiv.textContent.replace(/\s+/g, " ").trim();
+          }
+
+          function updateSelectionUI() {
+            const checkedCount = tableContainer.querySelectorAll(
+              ".entry-checkbox:checked"
+            ).length;
+            selectedCount.textContent = `${checkedCount} ${
+              checkedCount === 1 ? "entry" : "entries"
+            } selected`;
+            selectionControls.style.display =
+              checkedCount > 0 ? "flex" : "none";
+            selectAllCheckbox.checked =
+              checkedCount > 0 && checkedCount === entryCheckboxes.length;
+            selectAllCheckbox.indeterminate =
+              checkedCount > 0 && checkedCount < entryCheckboxes.length;
+          }
+
+          function toggleRowHighlight(checkbox) {
+            const row = checkbox.closest("tr");
+            if (checkbox.checked) {
+              row.classList.add("selected");
+            } else {
+              row.classList.remove("selected");
+            }
+          }
+
+          if (selectAllCheckbox) {
+            selectAllCheckbox.addEventListener("change", function () {
+              entryCheckboxes.forEach((checkbox) => {
+                checkbox.checked = this.checked;
+                toggleRowHighlight(checkbox);
+              });
+              updateSelectionUI();
+            });
+          }
+
+          entryCheckboxes.forEach((checkbox) => {
+            checkbox.addEventListener("change", function () {
+              toggleRowHighlight(this);
+              updateSelectionUI();
+            });
+          });
+
+          if (clearSelectionBtn) {
+            clearSelectionBtn.addEventListener("click", function (e) {
+              e.preventDefault();
+              entryCheckboxes.forEach((checkbox) => {
+                checkbox.checked = false;
+                toggleRowHighlight(checkbox);
+              });
+              updateSelectionUI();
+            });
+          }
+
+          if (downloadBtn && downloadMenu) {
+            downloadBtn.addEventListener("click", function (e) {
+              e.preventDefault();
+              e.stopPropagation();
+              downloadMenu.style.display =
+                downloadMenu.style.display === "block" ? "none" : "block";
+            });
+
+            downloadMenu.querySelectorAll("a").forEach((option) => {
+              option.addEventListener("click", function (e) {
+                e.preventDefault();
+                const format = this.getAttribute("data-format");
+                downloadSelectedEntries(format);
+              });
+            });
+          }
+
+          document.addEventListener("click", function () {
+            if (downloadMenu) {
+              downloadMenu.style.display = "none";
+            }
+          });
+
+          if (downloadMenu) {
+            downloadMenu.addEventListener("click", function (e) {
+              e.stopPropagation();
+            });
+          }
+
+          function downloadSelectedEntries(format) {
+            const selectedEntries = [];
+
+            tableContainer
+              .querySelectorAll(".entry-checkbox:checked")
+              .forEach((checkbox) => {
+                const row = checkbox.closest("tr");
+
+                const an = row.getAttribute("data-an") || "";
+                let organism = cleanText(
+                  row.getAttribute("data-organism") || ""
+                )
+                  .split(/\s+/)
+                  .slice(0, 2)
+                  .join(" ");
+                const family = cleanText(row.getAttribute("data-family") || "");
+
+                selectedEntries.push({ an, organism, family });
+              });
+
+            if (selectedEntries.length === 0) {
+              alert("No entries selected for download.");
+              return;
+            }
+
+            let content = "";
+            let filename = `asparaginase-entries.${format}`;
+            let mime = "text/plain";
+
+            switch (format) {
+              case "fasta":
+                content = selectedEntries
+                  .map(
+                    (entry) =>
+                      `>${entry.an}|${entry.organism}|Asparaginase ${entry.family}\nMOCKSEQUENCEAAAAAGGGGTTTCCCAAAAGGGTTTCCCAAAAGGGTTTCCC`
+                  )
+                  .join("\n\n");
+                filename = `${pageTitle}-sequences.fasta`;
+                break;
+
+              case "tsv":
+                const headers = [
+                  "Family",
+                  "Alt",
+                  "AN",
+                  "Name",
+                  "EC",
+                  "Organism",
+                  "Cell-Loc",
+                  "AAs",
+                  "Structure",
+                  "PDB",
+                  "Km",
+                  "Vmax",
+                  "Kcat",
+                ];
+                let rows = [headers.join("\t")];
+
+                tableContainer
+                  .querySelectorAll(".entry-checkbox:checked")
+                  .forEach((checkbox) => {
+                    const row = checkbox.closest("tr");
+                    const cells = row.querySelectorAll(
+                      "td:not(.checkbox-column)"
+                    );
+                    const rowData = Array.from(cells).map((cell) =>
+                      cleanText(cell.innerHTML)
+                    );
+                    rows.push(rowData.join("\t"));
+                  });
+
+                content = rows.join("\n");
+                mime = "text/tab-separated-values";
+                filename = `${pageTitle}-entries.tsv`;
+                break;
+
+              case "ids":
+                content = selectedEntries.map((entry) => entry.an).join("\n");
+                filename = `${pageTitle}-uniprot-ids.txt`;
+                break;
+
+              case "idmapping":
+                const ids = selectedEntries.map((entry) => entry.an).join("\n");
+                const textarea = document.createElement("textarea");
+                textarea.value = ids;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textarea);
+
+                alert(
+                  "Accession numbers copied to clipboard! Opening UniProt ID Mapping tool..."
+                );
+                window.open("https://www.uniprot.org/id-mapping", "_blank");
+
+                downloadMenu.style.display = "none";
+                return;
+            }
+
+            const blob = new Blob([content], { type: mime });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(link.href);
+
+            downloadMenu.style.display = "none";
+          }
+        });
+      });
+    </script>
+
+    <h2
+      id="alignment"
+      style="color: #9c42ac; font-size: 2em; text-align: center"
+    >
+      Representative Sequence Alignment
+    </h2>
+
+    <div
+      id="scrollContainer"
+      style="
+        width: 1300px;
+        height: 550px;
+        margin: 0 auto;
+        overflow-x: auto;
+        text-align: center;
+        will-change: transform;
+      "
+    >
+      <img
+        src="/images/alg3-3.png"
+        alt="Motifs Image"
+        style="max-width: none; height: auto; display: block"
+      />
+    </div>
+
+    <script>
+      // Scroll the container 18% to the right and all the way down on page load
+      window.onload = function () {
+        const container = document.getElementById("scrollContainer");
+
+        // Scroll horizontally 18% to the right
+        const scrollWidth = container.scrollWidth; // Total scrollable width
+        const scrollPercentage = 0; // 18%
+        container.scrollLeft = scrollWidth * scrollPercentage;
+
+        // Scroll all the way down vertically
+        container.scrollTop = container.scrollHeight;
+      };
+    </script>
+
+    <h2 id="info" style="color: #9c42ac; font-size: 2em; text-align: center">
+      Additional Information
+    </h2>
+
+    <p>
+      Clan 3 and Family 3 have L-asparaginases of both bacterial and fungal
+      origin. The crystal structure of the inducible thermolabile allosteric
+      Rhizobium etli ReAV (Q2K0Z2) has been solved, a homo dimer with a
+      millimolar Km for L-asparagine.
+    </p>
+
+    <div id="asparaginases" class="bottom-banner">
+      <div>The Asparaginase Database | Release 2025-01 | Contact:</div>
+      <a href="mailto:stetinam@vscht.cz">stetinam@vscht.cz</a>| Supported by:
+      <a href="https://www.elixir-czech.cz/" target="_blank">
+        <img
+          src="/images/elixir_logo.png"
+          alt="elixir_logo.png"
+          class="elixir-image"
+        />
+      </a>
+    </div>
+  </body>
+</html>

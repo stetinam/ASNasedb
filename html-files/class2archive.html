@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class 2 Asparaginases</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Source Sans Pro", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: #68a11a;
+        padding: 40px 20px;
+        text-align: center;
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative; /* For positioning the home button */
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 50px;
+        font-weight: bold;
+      }
+
+      .home-button {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        background-color: white;
+        color: #68a11a;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .home-button:hover {
+        background-color: #f0f0f0;
+      }
+
+      .container {
+        max-width: 1300px;
+        margin: 20px auto;
+        padding: 0 20px;
+        display: flex;
+        gap: 20px;
+      }
+
+      .left-side {
+        flex: 1; /* Takes up 1 part of the available space */
+        order: 1; /* Ensures this appears first (on the left) */
+      }
+
+      .right-side {
+        flex: 1; /* Takes up 1 part of the available space */
+        order: 2; /* Ensures this appears second (on the right) */
+      }
+
+      .video-container {
+        display: flex;
+        gap: 8px;
+      }
+
+      .video-container .grid-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .class1tree {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      p {
+        font-size: 18px;
+        margin-bottom: 10px;
+        text-align: justify;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+
+      .grid-item {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .grid-item a:hover {
+        text-decoration: underline;
+        color: #68a11a;
+      }
+
+      .grid-item video {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .grid-item h3 {
+        color: #68a11a;
+        font-size: 23px;
+        margin-top: 10px;
+      }
+
+      .grid-item p {
+        font-size: 20px;
+        text-align: center;
+        line-height: 1.1;
+      }
+
+      .bottom-banner {
+        background-color: #333;
+        color: white;
+        padding: 15px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .bottom-banner a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .bottom-banner a:hover {
+        text-decoration: underline;
+        color: #68a11a;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .video-container {
+          flex-direction: column;
+        }
+
+        .left-side,
+        .right-side {
+          width: 100%;
+        }
+        .home-button {
+          display: none;
+        }
+      }
+
+      .content {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 20px;
+        text-align: left;
+      }
+
+      .content h2 {
+        font-size: 22px;
+        margin-top: 20px;
+      }
+
+      .content p {
+        font-size: 16px;
+        line-height: 1.6;
+        text-align: justify; /* Justify paragraph text */
+      }
+
+      body {
+        font-family: "Source Sans Pro", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        line-height: 1.6;
+      }
+
+      .table-container {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-family: sans-serif;
+      }
+
+      thead tr {
+        background-color: #68a11a;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        font-weight: bold;
+        color: white;
+      }
+
+      /* Base link styling */
+      a {
+        color: #68a11a;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      a:hover {
+        color: #68a11a;
+        text-decoration: underline;
+      }
+
+      a:visited {
+        color: #47700e;
+      }
+
+      a:active {
+        color: #e91e63;
+      }
+
+      /* Special styling for PDB links */
+      a.pdb-link {
+        color: #eba03e;
+        font-weight: 700;
+      }
+
+      a.pdb-link:hover {
+        color: #d35400;
+        text-decoration: underline dotted;
+      }
+
+      a.pdb-link:visited {
+        color: #f1532c;
+      }
+
+      a.pdb-link:active {
+        color: #c0392b;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Home Button -->
+      <a href="/index.html" class="home-button">Home</a>
+      <h1>Class 2 Asparaginases</h1>
+    </header>
+
+    <div class="grid-container">
+      <div class="grid-item">
+        <h3 style="color: #68a11a; font-size: 25px">Class Overview</h3>
+        <p>43,103 unique sequences in UniRef100</p>
+        <p>52 sequences in Swiss-Prot</p>
+        <p>18 families in 5 clans</p>
+        <p>Archaea, bacteria and eukaryotes</p>
+        <p>
+          Affinities to L-asparagine, aspartylglucosamine, peptides and other
+          substrates
+        </p>
+        <p>N-terminal α and C-terminal β subunit</p>
+        <p>Hetero tetramers</p>
+      </div>
+      <div class="grid-item">
+        <a href="https://www.rcsb.org/structure/1T3M" target="_blank">
+          <h3 style="color: #68a11a; font-size: 25px">Quaternary Structure</h3>
+          <video autoplay muted loop playsinline>
+            <source src="/images/1T3M.mp4" type="video/mp4" />
+            <source src="/images/1T3M.webm" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
+        </a>
+      </div>
+      <div class="grid-item">
+        <a href="https://alphafold.ebi.ac.uk/entry/P37595" target="_blank">
+          <h3 style="color: #68a11a; font-size: 25px">Monomeric Structure</h3>
+          <video autoplay muted loop playsinline>
+            <source src="/images/monoclass2.mp4" type="video/mp4" />
+            <source src="/images/monoclass2.webm" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
+        </a>
+      </div>
+    </div>
+
+    <h2 style="color: #68a11a; font-size: 2em; text-align: center">
+      Phylogenetic Tree and Families
+    </h2>
+
+    <div class="container">
+      <!-- Left Side: Text -->
+      <div class="right-side">
+        <div class="text-content">
+          <p>
+            Class 2 L-asparaginases, previously known as plant-type
+            L-asparaginases, are the second largest class. In the majority of
+            cases the L-asparaginase activity is secondary: these enzymes
+            preferably catalyse other reactions. However, Class 2 enzymes also
+            consistently display L-asparaginase activity. It should be noted
+            that this does not mean the L-asparaginase activity is biologically
+            unimportant or that there could not a Class 2 L-asparaginase with
+            L-asparagine as the primary substrate.
+          </p>
+          <p>
+            Class 2 L-asparaginases can be found in bacteria, archaea, and
+            eukaryotes, including humans. They have various names as they
+            catalyse different reactions: aspartylglucosaminidase, often
+            incorrectly glycosylasparaginase, threonine aspartase, isoaspartyl
+            peptidase and/or L-asparaginase, however, the Km for L-asparagine is
+            generally high throughout the class.
+          </p>
+          <p>
+            This class of L-asparaginases is similarly well conserved
+            structurally, even though the shared sequence identity can be low.
+            In most cases they are first transcribed as ~35 kDa precursors which
+            create inactive dimers that are autocatalytically cleaved into an
+            N-terminal α (~20 kDa) and a C-terminal β subunit (~15 kDa), which
+            assemble to create the mature protein. One could view the structure
+            as a dimer of two αβ hetero dimers or as a hetero tetramer.
+          </p>
+          <a
+            href="https://itol.embl.de/tree/10981161192441331711292055"
+            target="_blank"
+          >
+            <p>Phylogenetic tree</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Side: Large Image -->
+      <div class="left-side">
+        <img src="/images/class2.png" alt="Class 2 Image" class="class1tree" />
+      </div>
+    </div>
+
+    <h2 style="color: #68a11a; font-size: 2em; text-align: center">
+      Sequence Alignment
+    </h2>
+
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 425px;
+        margin-bottom: 40px;
+      "
+    >
+      <iframe src="/images/class1_aln.svg" width="1196px" height="425"></iframe>
+    </div>
+
+    <h2 style="color: #68a11a; font-size: 2em; text-align: center">
+      Families Overview
+    </h2>
+
+    <div class="bottom-banner">
+      2025 Asparaginase Sequence Database |
+      <a href="mailto:stetinam@vscht.cz">Contact: stetinam@vscht.cz</a>
+    </div>
+  </body>
+</html>

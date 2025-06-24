@@ -1,0 +1,2021 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class 1 - Family 16</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Source Sans Pro", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Base link styling */
+      a {
+        color: #615ab3;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      a:hover {
+        color: #1b5ccb;
+      }
+
+      a:active {
+        color: #e91e63;
+      }
+
+      a {
+        transition: color 0.3s ease, text-decoration 0.3s ease;
+      }
+
+      header {
+        background-color: #615ab3;
+        padding: 40px 20px;
+        text-align: center;
+        color: white;
+        position: relative; /* For positioning the home button */
+        display: flex;
+        align-items: center; /* Vertically center the content */
+        justify-content: center; /* Center the title by default */
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center; /* Center the title text */
+      }
+
+      /* Home Button Styles */
+      .home-button {
+        position: absolute;
+        left: 30px; /* Position the button on the left */
+        top: 50%; /* Vertically center the button */
+        transform: translateY(-50%); /* Adjust for exact vertical centering */
+        text-decoration: none;
+      }
+
+      .home-button img.home-icon {
+        width: auto; /* Let the image maintain its aspect ratio */
+        height: 80px; /* Set a fixed height (adjust as needed) */
+        border-radius: 5px; /* Optional: Add rounded corners to the image */
+      }
+
+      .home-button:hover img.home-icon {
+        opacity: 0.8; /* Optional: Add hover effect to the image */
+      }
+
+      @media (max-width: 700px) {
+        .home-button {
+          display: none; /* Hide the home button on smaller screens */
+        }
+      }
+
+      /* Menu Button Styles */
+      .menu-button {
+        position: fixed; /* Make the button stay in place when scrolling */
+        right: 25px; /* Position the button on the right */
+        top: 45px; /* Adjust the distance from the top */
+        background-color: #615ab3df; /* Blue background color (matches your theme) */
+        border: none;
+        color: white; /* Color of the three lines */
+        font-size: 40px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000; /* Ensure the button stays above other content */
+        padding: 3px 10px; /* Add padding to create a box around the lines */
+        border-radius: 4px; /* Rounded corners for the box */
+      }
+
+      .menu-button:hover {
+        opacity: 0.8; /* Slight fade on hover */
+      }
+
+      /* Dropdown Menu Styles */
+      .dropdown-menu {
+        display: none;
+        position: fixed; /* Make the dropdown menu fixed */
+        top: 117px; /* Position it below the menu button */
+        right: 25px; /* Align it with the right edge of the menu button */
+        background-color: #f0f0f0;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 999; /* Ensure it stays below the menu button */
+        border-radius: 6px;
+      }
+
+      .dropdown-menu a {
+        color: #615ab3;
+        padding: 10px 12px;
+        text-decoration: none;
+        display: block;
+        font-size: 18px;
+      }
+
+      .dropdown-menu a:hover {
+        background-color: rgb(249, 249, 249);
+        text-decoration: none;
+        border-radius: 6px;
+      }
+      .dropdown-menu a:active,
+      .dropdown-menu a:focus {
+        color: #615ab3; /* Ensure text color doesn't change when clicked */
+        text-decoration: none; /* Ensure no underline when clicked */
+      }
+
+      .dropdown-menu a:visited {
+        color: #615ab3; /* Ensure text color doesn't change for visited links */
+      }
+      .dropdown-menu a.active {
+        background-color: white; /* White background for active item */
+        color: #615ab3; /* Text color for active item (matches your theme) */
+        font-weight: bold; /* Optional: Make the active item bold */
+      }
+      .show {
+        display: block;
+      }
+
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        color: white;
+        background-color: #999; /* Gray circle background */
+        border-radius: 50%; /* Makes it a circle */
+        width: 16px; /* Size of the circle */
+        height: 16px;
+        text-align: center;
+        line-height: 16px; /* Vertically center the question mark */
+        font-size: 12px;
+        margin-left: 2px;
+        vertical-align: middle; /* Align with the text */
+      }
+
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px; /* Adjust width as needed */
+        background-color: white; /* White background */
+        color: #666; /* Gray text */
+        text-align: center;
+        border-radius: 4px;
+        padding: 8px;
+        position: absolute;
+        z-index: 1;
+        transform: translateX(-120%); /* Center the tooltip */
+        border: 1px solid #ccc; /* Light gray outline */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+        opacity: 0;
+        transition: opacity 0.3s;
+        margin-top: 35px;
+        font-size: 14px;
+      }
+
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .tooltip-right .tooltiptext {
+        left: 100%; /* Position to the right of the circle */
+        margin-top: 35px;
+        margin-left: 10px; /* Add some spacing */
+        transform: none; /* Remove the left alignment */
+      }
+
+      p {
+        font-size: 18px;
+        text-align: justify;
+        max-width: 1300px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 20px; /* Optional: add some padding on smaller screens */
+      }
+
+      .button-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #615ab3;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .button-link:hover {
+        background-color: #492597a7;
+      }
+
+      /* Ensure the text stays white even for visited links */
+      .button-link:visited {
+        color: white; /* Keep the text color white */
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .video-container {
+          flex-direction: column;
+        }
+
+        .left-side,
+        .right-side {
+          width: 100%;
+        }
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+
+      .grid-item {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .grid-item-image {
+        width: 100%;
+        border-radius: 5px;
+      }
+
+      .grid-item h3 {
+        color: #615ab3;
+        font-size: 25px;
+        margin-top: 10px;
+        margin-bottom: 0;
+      }
+
+      .grid-item p {
+        margin-top: 15px;
+        font-size: 20px;
+        text-align: center;
+        line-height: 1;
+      }
+      .grid-item a:hover {
+        text-decoration: none;
+      }
+
+      .container {
+        max-width: 1300px;
+        margin: 3px auto;
+        padding: 0 20px;
+        display: flex;
+        gap: 20px;
+      }
+
+      .image-container {
+        display: inline-block; /* Ensure the container fits the image */
+        padding: 10px; /* Add padding to create the margin effect */
+        border: 1px solid #ddd; /* Light border */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        background-color: white; /* Background color for the container */
+      }
+
+      .image-container img {
+        display: block; /* Ensure the image fits the container */
+        max-width: 100%; /* Ensure the image is responsive */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 8px; /* Slightly rounded corners for the image */
+      }
+
+      .motif-container {
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Stack children vertically */
+        align-items: center; /* Center children horizontally */
+        justify-content: flex-end; /* Align image to the bottom */
+        padding: 10px; /* Add padding for spacing */
+        border: 1px solid #ddd; /* Light border */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        background-color: white; /* Background color for the container */
+        width: 858px; /* Set width */
+        height: 395px; /* Set height */
+        box-sizing: border-box; /* Include padding in width/height calculations */
+      }
+
+      .motif-container h3 {
+        text-align: center; /* Center the header text */
+      }
+
+      .motif-container img {
+        display: block; /* Ensure the image behaves as a block element */
+        max-width: 93%; /* Ensure the image is responsive */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 8px; /* Slightly rounded corners for the image */
+        margin-bottom: 24px; /* Add automatic margin */
+      }
+
+      .left-side {
+        flex: 1; /* Takes up 1 part of the available space */
+        order: 1; /* Ensures this appears first (on the left) */
+      }
+
+      .right-side {
+        flex: 1; /* Takes up 1 part of the available space */
+        order: 2; /* Ensures this appears second (on the right) */
+      }
+
+      .table-container {
+        overflow: visible;
+        position: relative;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0px;
+      }
+
+      table {
+        border-collapse: separate;
+        border-spacing: 0;
+        width: 100%;
+        font-family: sans-serif;
+      }
+
+      thead tr {
+        background-color: #615ab3;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #615ab3; /* Blue header */
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 2; /* Ensures it stays above other content */
+      }
+
+      tr:nth-child(even) {
+        background-color: hsl(0, 0%, 95%); /* Gray for even rows */
+      }
+
+      td[rowspan] {
+        background-color: #f9f9f9; /* Ensure row-spanning cells stay white */
+      }
+      .centered-cell {
+        text-align: center; /* Centers horizontally */
+        vertical-align: middle; /* Centers vertically */
+        font-weight: bold;
+        background-color: transparent;
+      }
+
+      /* Swiss-Prot Table*/
+      .seq-table {
+        width: 1300px; /* Adjust the width as needed */
+        margin: auto; /* Center the table */
+        overflow-x: auto; /* Horizontal scrollbar if needed */
+        max-height: 550px; /* Set a maximum height */
+        overflow-y: auto; /* Vertical scrollbar */
+        position: relative;
+        will-change: transform;
+      }
+
+      .seq-table td {
+        border: 0px solid #ddd;
+      }
+
+      .seq-table th {
+        border: 0px solid #ddd;
+      }
+
+      /* Add checkbox column styling */
+      .checkbox-column {
+        width: 30px;
+        text-align: center;
+      }
+
+      .select-all-checkbox {
+        margin: 0;
+      }
+
+      .entry-checkbox {
+        margin: 0;
+        cursor: pointer;
+      }
+
+      /* Highlight selected rows */
+      tr.selected {
+        background-color: #e5e4ee !important;
+      }
+
+      .selection-controls {
+        max-width: 1300px;
+        margin: 20px auto 10px;
+        padding: 10px 20px;
+        background-color: #f5f5f5;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .selection-controls .count {
+        margin-right: auto;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .selection-btn {
+        background-color: #615ab3;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s;
+      }
+
+      .selection-btn:hover {
+        background-color: #3c3491;
+      }
+
+      .selection-btn:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+      }
+
+      .selection-dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .selection-menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 180px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        border-radius: 4px;
+        padding: 8px 0;
+        top: 100%;
+        left: 0;
+      }
+
+      .selection-menu a {
+        color: #333;
+        padding: 8px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 14px;
+      }
+
+      .selection-menu a:hover {
+        background-color: #f1f1f1;
+      }
+
+      .bottom-banner {
+        background-color: #626262;
+        color: white;
+        padding: 15px;
+        font-size: 18px;
+        display: flex; /* Enable flexbox */
+        align-items: center; /* Vertically align items */
+        justify-content: center; /* Center horizontally (optional) */
+        gap: 10px; /* Space between items */
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+      }
+
+      .elixir-image {
+        max-width: 100px; /* Or whatever size you prefer */
+        height: auto;
+        vertical-align: middle; /* Align image with text baseline (alternative to flexbox alignment) */
+      }
+
+      .bottom-banner a {
+        color: white;
+        text-decoration: none;
+        display: inline-flex; /* To ensure correct vertical alignment of the image */
+        align-items: center; /* Aligns the image and text within the link */
+        gap: 5px; /* Adds spacing between the image and text within the link */
+      }
+
+      .bottom-banner a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Home Button with Image -->
+      <a href="/index.html" class="home-button">
+        <img src="/images/logo1.png" alt="Home" class="home-icon" />
+      </a>
+      <h1 id="family16">Class 1 Family 16</h1>
+      <button class="menu-button" id="menuButton">&#9776;</button>
+      <!-- Inline style added here -->
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="/html-files/class1.html" style="color: #4c62dd"
+          >Class 1 Home</a
+        >
+        <a href="#family16">Family 16</a>
+        <a href="#proteins">Studied Proteins</a>
+        <a href="#sprot">Swiss-Prot Sequences</a>
+        <a href="#uniref">UniRef100 Sequences</a>
+        <a href="#alignment">Sequence Alignment</a>
+        <a href="#info">Additional Information</a>
+      </div>
+    </header>
+
+    <script>
+      // Toggle dropdown menu visibility
+      const menuButton = document.getElementById("menuButton");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+
+      menuButton.addEventListener("click", function () {
+        dropdownMenu.classList.toggle("show");
+      });
+
+      // Close the dropdown if the user clicks outside of it
+      window.addEventListener("click", function (event) {
+        if (
+          !event.target.matches(".menu-button") &&
+          !event.target.closest(".dropdown-menu")
+        ) {
+          dropdownMenu.classList.remove("show");
+        }
+      });
+
+      // Scroll-based highlighting
+      const sections = document.querySelectorAll("section");
+      const menuLinks = document.querySelectorAll(".dropdown-menu a");
+
+      function isSectionInView(section) {
+        const rect = section.getBoundingClientRect();
+        return rect.top <= 100 && rect.bottom >= 100;
+      }
+
+      function updateActiveMenu() {
+        sections.forEach((section, index) => {
+          if (isSectionInView(section)) {
+            menuLinks.forEach((link) => link.classList.remove("active"));
+            menuLinks[index].classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", updateActiveMenu);
+
+      // Smooth scroll to sections (only for internal links)
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const targetId = link.getAttribute("href");
+          if (targetId.startsWith("#")) {
+            // Only apply to internal links
+            e.preventDefault();
+            const targetSection = document.querySelector(targetId);
+            targetSection.scrollIntoView({ behavior: "smooth" });
+          }
+          // External links (like "/") will work as normal
+        });
+      });
+    </script>
+
+    <div class="grid-container">
+      <div class="grid-item">
+        <h3>Family 16 Overview</h3>
+        <p>9 experimentally studied proteins</p>
+        <p>2 sequences in Swiss-Prot</p>
+        <p>9,649 unique sequences in UniRef100</p>
+        <p>
+          L-Asparaginases mostly from Pseudomonadota, most notably the
+          tetrameric "type I" Escherichia coli and Yersinia pestis enzymes
+        </p>
+        <p>Lower millimolar Km for L-asparagine</p>
+        <p style="color: #615ab3; font-weight: bold; margin-top: 30px">
+          Clan 5: <a href="/html-files/class1-family14.html">Family 14</a>,
+          <a href="/html-files/class1-family15.html">Family 15</a>,
+          <a href="/html-files/class1-family16.html">Family 16</a>,
+          <a href="/html-files/class1-family17.html">Family 17</a>,
+          <a href="/html-files/class1-family18.html">Family 18</a>
+        </p>
+      </div>
+      <div class="grid-item">
+        <a
+          style="
+            color: #615ab3;
+            font-size: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          "
+          href="https://alphafold.ebi.ac.uk/entry/P0A962"
+          target="_blank"
+        >
+          <h3 style="margin-bottom: 5px">Reference Monomer</h3>
+          <img
+            src="/images/mono1-16.png"
+            class="grid-item-image"
+            alt="mono1-16.png"
+            style="display: block; margin-top: 30px"
+          />
+        </a>
+      </div>
+      <div class="grid-item">
+        <a href="https://www.rcsb.org/structure/2HIM" target="_blank">
+          <h3>Reference Structure</h3>
+          <img
+            src="/images/str1-16.png"
+            class="grid-item-image"
+            alt="str1-16.png"
+            style="max-width: 100%"
+          />
+        </a>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Right Side: Text -->
+      <div class="right-side">
+        <div class="motif-container" style="width: 858px; height: 395px">
+          <h3 style="color: #615ab3; font-size: 25px">
+            Family 16 Motifs <br />
+            (<a
+              href="https://www.uniprot.org/uniprotkb/P0A962/entry"
+              target="_blank"
+              >P0A962</a
+            >)
+          </h3>
+
+          <image
+            src="/images/motifs1-16.png"
+            alt="motifs1-16"
+            class="grid-item-image"
+          />
+        </div>
+      </div>
+
+      <!-- Left Side: Large Image -->
+
+      <div class="left-side">
+        <div class="image-container">
+          <svg
+            width="398"
+            height="365"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 1350 1350"
+          >
+            <style>
+              .image-mapper-shape {
+                fill: rgba(0, 0, 0, 0);
+                transition: fill 0.3s ease, stroke 0.3s ease;
+              }
+
+              g:hover .image-mapper-shape {
+                fill: rgba(255, 255, 255, 0.6);
+              }
+            </style>
+
+            <image
+              xlink:href="/images/class1.png"
+              width="1350"
+              height="1350"
+            ></image>
+            <circle
+              cx="1134"
+              cy="193"
+              r="40"
+              fill="transparent"
+              stroke="#cc2879"
+              stroke-width="6"
+            />
+            <a
+              xlink:href="/html-files/class1-family18.html"
+              target="_self"
+              xlink:title="Family 18"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="4"
+                  points="848.718 538.462 1071.79 444.872 1267.95 383.333 1321.79 416.667 1321.79 555.128 1271.79 612.82"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class1-family17.html"
+              target="_self"
+              xlink:title="Family 17"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="5"
+                  points="815.385 538.462 988.462 414.103 1269.23 233.333 1334.62 237.179 1342.31 351.282 1167.95 407.692 971.795 482.051 853.846 525.641 835.897 533.333"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class1-family16.html"
+              target="_self"
+              xlink:title="Family 16"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="6"
+                  points="1088.46 78.2051 910.256 315.385 806.41 510.256 788.462 552.564 805.128 548.718 846.154 506.41 1264.1 206.41 1239.74 114.103 1167.95 58.9744"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class1-family15.html"
+              target="_self"
+              xlink:title="Family 15"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="7"
+                  points="933.333 66.6667 994.872 25.641 1069.23 52.5641 1051.28 115.385 916.667 296.154 880.769 358.974 817.949 479.487 780.769 560.256 796.154 497.436 879.487 223.077 902.564 158.974"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class1-family14.html"
+              target="_self"
+              xlink:title="Family 14"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="8"
+                  points="742.308 48.7179 805.128 14.1026 917.949 25.641 912.82 110.256 847.436 310.256 794.872 478.205 769.231 573.077 743.59 587.18 729.487 294.872 720.513 84.6154"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class1-family13.html"
+              target="_self"
+              xlink:title="Family 13"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="9"
+                  points="684.615 628.205 660.256 569.231 606.41 276.923 561.538 61.5385 592.308 21.7949 664.103 21.7949 711.538 65.3846 728.205 426.923 733.333 569.231 737.18 597.436"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class1-family12.html"
+              target="_self"
+              xlink:title="Family 12"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="10"
+                  points="332.051 246.154 312.821 112.821 442.308 43.5897 537.18 106.41 638.462 530.769 648.718 582.051 674.359 620.513 529.487 483.333 384.615 350"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class1-family11.html"
+              target="_self"
+              xlink:title="Family 11"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="11"
+                  points="296.154 475.641 161.538 344.872 162.821 221.795 250 174.359 332.051 292.308 379.487 364.103 458.974 429.487 660.256 617.949 602.564 602.564 453.846 547.436"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class1-family10.html"
+              target="_self"
+              xlink:title="Family 10"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="12"
+                  points="183.333 571.795 69.2308 547.436 42.3077 438.462 102.564 339.744 207.692 408.974 296.154 492.308 438.462 555.128 588.462 606.41 673.077 633.333 455.128 611.538"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class1-family9.html"
+              target="_self"
+              xlink:title="Family 9"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="13"
+                  points="69.2308 675.641 15.3846 651.282 20.5128 565.385 53.8462 550 106.41 564.103 252.564 591.026 657.692 638.462 687.18 644.872 341.026 665.385"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class1-family8.html"
+              target="_self"
+              xlink:title="Family 8"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="14"
+                  points="679.487 720.513 328.205 779.487 38.4615 825.641 16.6667 757.692 19.2308 683.333 298.718 670.513 671.795 648.718 682.051 652.564"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class1-family7.html"
+              target="_self"
+              xlink:title="Family 7"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="15"
+                  points="96.1538 896.154 88.4615 970.513 135.897 1033.33 298.718 985.897 466.667 898.718 621.795 791.026 332.051 814.103 151.282 855.128"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class1-family6.html"
+              target="_self"
+              xlink:title="Family 6"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="16"
+                  points="288.462 1020.51 215.385 1112.82 225.641 1208.97 325.641 1258.97 423.077 1157.69 547.436 955.128 615.385 842.308 632.051 796.154 607.692 808.974"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class1-family5.html"
+              target="_self"
+              xlink:title="Family 5"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="17"
+                  points="688.462 788.462 666.667 757.692 578.205 911.538 437.179 1167.95 478.205 1284.62 588.462 1329.49 715.385 1210.26 732.051 976.923"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class1-family4.html"
+              target="_self"
+              xlink:title="Family 4"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="18"
+                  points="708.974 800 719.231 878.205 744.872 958.974 751.282 1065.38 765.385 1241.03 846.154 1321.79 929.487 1288.46 833.333 1002.56 728.205 811.538"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class1-family3.html"
+              target="_self"
+              xlink:title="Family 3"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="19"
+                  points="1038.46 1228.21 941.026 1196.15 843.59 998.718 743.59 820.513 721.795 787.18 844.872 873.077 1087.18 1028.21 1161.54 1142.31"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class1-family2.html"
+              target="_self"
+              xlink:title="Family 2"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="20"
+                  points="705.128 771.795 824.359 850 914.103 914.103 1175.64 1069.23 1253.85 1060.26 1275.64 992.308 896.154 835.897"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class1-family1.html"
+              target="_self"
+              xlink:title="Family 1"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="21"
+                  points="794.872 765.385 1230.77 816.667 1329.49 828.205 1314.1 896.154 1247.44 952.564 1089.74 905.128 812.82 797.436 692.308 757.692"
+                ></polygon>
+              </g>
+            </a>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <h2
+      id="proteins"
+      style="color: #615ab3; font-size: 2em; text-align: center"
+    >
+      Experimentally Studied Proteins
+    </h2>
+
+    <div class="seq-table">
+      <div
+        class="selection-controls"
+        id="selectionControls-0"
+        style="display: none"
+      >
+        <span class="count selectedCount" id="selectedCount-0"
+          >0 entries selected</span
+        >
+        <div class="selection-dropdown">
+          <button class="selection-btn downloadBtn" id="downloadBtn-0">
+            Download
+          </button>
+          <div class="selection-menu downloadMenu" id="downloadMenu-0">
+            <a data-format="fasta" href="#">FASTA</a>
+            <a data-format="tsv" href="#">Tab-separated</a>
+            <a data-format="ids" href="#">UniProt IDs</a>
+            <a data-format="idmapping" href="#">UniProt ID mapping</a>
+          </div>
+        </div>
+        <button class="selection-btn" id="clearSelectionBtn-0">
+          Clear selection
+        </button>
+      </div>
+      <table>
+        <tbody>
+          <tr>
+            <th class="checkbox-column">
+              <input
+                class="select-all-checkbox"
+                id="selectAllCheckbox-0"
+                type="checkbox"
+              />
+            </th>
+            <th width="64">
+              Fam
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext">Class - Clan - Family</span>
+              </span>
+            </th>
+            <th width="66">
+              Alt
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext"
+                  >Alternative historical name / classification</span
+                >
+              </span>
+            </th>
+            <th width="120">
+              AN
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext">UniProt accession number</span>
+              </span>
+            </th>
+            <th width="80">
+              Name
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext"
+                  >UniProt entry name, only given here for Swiss-Prot
+                  entries</span
+                >
+              </span>
+            </th>
+            <th>EC</th>
+            <th>Organism</th>
+            <th>Cell-Loc</th>
+            <th>AAs</th>
+            <th>Structure</th>
+            <th>PDB</th>
+            <th>
+              K<sub>m</sub>
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">for Asn [mM] </span>
+              </span>
+            </th>
+            <th width="64px">
+              V<sub>max</sub>
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">for Asn [μmol/min/mg] </span>
+              </span>
+            </th>
+            <th width="60px">
+              K<sub>cat</sub>
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">for Asn [s<sup>-1</sup>]</span>
+              </span>
+            </th>
+          </tr>
+          <tr
+            data-an="P0A962"
+            data-family="1-5-16"
+            data-organism="Escherichia colii(strain K12)"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td>
+              <a href="/html-files/class1-family16.html">1-5-16 </a>
+            </td>
+            <td>
+              EcAI
+              <span class="tooltip tooltip-right"
+                >i
+                <span class="tooltiptext"
+                  >Identical sequences: P0A963, P0A962</span
+                >
+              </span>
+            </td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/P0A962/entry"
+                target="_blank"
+                >P0A962</a
+              >
+            </td>
+            <td>ASPG1_ECOLI</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>
+              Escherichia coli
+              <span class="tooltip tooltip-right"
+                >i
+                <span class="tooltiptext">(strain K12)</span>
+              </span>
+            </td>
+            <td>Cytoplasm</td>
+            <td>338</td>
+            <td>
+              Homo tetramer
+              <span class="tooltip tooltip-right"
+                >i
+                <span class="tooltiptext">dimer of two intimate dimers</span>
+              </span>
+            </td>
+            <td>
+              <a href="https://www.rcsb.org/structure/2HIM" target="_blank"
+                >2HIM</a
+              >
+              <a
+                href="https://www.uniprot.org/uniprotkb/P0A962/entry#structure"
+                target="_blank"
+                >PDBs</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://doi.org/10.1016/j.jmb.2007.03.061"
+                target="_blank"
+                >1.2</a
+              >
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext"
+                  >S<sub>0.5</sub>, allosteric enzyme
+                </span>
+              </span>
+              <br />
+              <a
+                href="https://doi.org/10.1128/jb.118.1.231-241.1974"
+                target="_blank"
+                >3.5</a
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="A0A221KKE2"
+            data-family="1-5-16"
+            data-organism="Halomonas elongata"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class1-family16.html">1-5-16 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/A0A221KKE2/entry"
+                target="_blank"
+                >A0A221KKE2</a
+              >
+            </td>
+            <td></td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Halomonas elongata</td>
+            <td>-</td>
+            <td>355</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1007/s00253-017-8456-5"
+                target="_blank"
+                >5.6</a
+              >
+            </td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1007/s00253-017-8456-5"
+                target="_blank"
+                >1960</a
+              >
+            </td>
+          </tr>
+          <tr
+            data-an="X0NLX5"
+            data-family="1-5-16"
+            data-organism="Photobacterium leiognathiiFish gut microbiome. Organism not certain."
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class1-family16.html">1-5-16 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/X0NLX5/entry"
+                target="_blank"
+                >X0NLX5</a
+              >
+            </td>
+            <td></td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>
+              Photobacterium leiognathi
+              <span class="tooltip tooltip-right">
+                i
+                <span class="tooltiptext"
+                  >Fish gut microbiome. Organism not certain.</span
+                >
+              </span>
+            </td>
+            <td>-</td>
+            <td>337</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1007/s00253-022-11954-7"
+                target="_blank"
+                >3.008</a
+              >
+              <span class="tooltip tooltip-right">
+                i
+                <span class="tooltiptext">Sequence may not be exact match</span>
+              </span>
+            </td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="A0A7D7L7P6"
+            data-family="1-5-16"
+            data-organism="Pseudomonas aeruginosa"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class1-family16.html">1-5-16 </a></td>
+            <td>
+              <span class="tooltip tooltip-right">
+                i
+                <span class="tooltiptext"
+                  >As presented, lacks the critical conserved Motif 1</span
+                >
+              </span>
+            </td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/A0A7D7L7P6/entry"
+                target="_blank"
+                >A0A7D7L7P6</a
+              >
+            </td>
+            <td></td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Pseudomonas aeruginosa</td>
+            <td>-</td>
+            <td>306</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1007/s10126-022-10129-9"
+                target="_blank"
+                >10.904</a
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="A0A2D5S0K3"
+            data-family="1-5-16"
+            data-organism="Rheinheimera sp"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class1-family16.html">1-5-16 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/A0A2D5S0K3/entry"
+                target="_blank"
+                >A0A2D5S0K3</a
+              >
+            </td>
+            <td></td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Rheinheimera sp</td>
+            <td>-</td>
+            <td>341</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1016/j.bej.2023.108806"
+                target="_blank"
+                >0.98</a
+              >
+            </td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1016/j.bej.2023.108806"
+                target="_blank"
+                >16.17</a
+              >
+            </td>
+          </tr>
+          <tr
+            data-an="Q9KQK3"
+            data-family="1-5-16"
+            data-organism="Vibrio cholerae"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td>
+              <a href="/html-files/class1-family16.html">1-5-16 </a>
+            </td>
+            <td>VcA, type I</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q9KQK3/entry"
+                target="_blank"
+                >Q9KQK3</a
+              >
+            </td>
+            <td></td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Vibrio cholerae</td>
+            <td>Cytoplasm</td>
+            <td>337</td>
+            <td>Homo tetramer</td>
+            <td>
+              <a href="https://www.rcsb.org/structure/2OCD" target="_blank"
+                >2OCD</a
+              >
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">Paper to be published</span>
+              </span>
+            </td>
+            <td>
+              <a
+                href="https://doi.org/10.1016/j.ijbiomac.2017.12.165"
+                target="_blank"
+                >1.1</a
+              >
+              <span class="tooltip tooltip-left">
+                i
+                <span class="tooltiptext">Sequence may not be exact match</span>
+              </span>
+            </td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1016/j.ijbiomac.2017.12.165"
+                target="_blank"
+                >4424</a
+              >
+              <span class="tooltip tooltip-left">
+                i
+                <span class="tooltiptext">Sequence may not be exact match</span>
+              </span>
+            </td>
+          </tr>
+          <tr
+            data-an="A0A191W2U6"
+            data-family="1-5-16"
+            data-organism="Vibrio sp."
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class1-family16.html">1-5-16 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/A0A191W2U6/entry"
+                target="_blank"
+                >A0A191W2U6</a
+              >
+            </td>
+            <td></td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Vibrio sp.</td>
+            <td>-</td>
+            <td>337</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1016/j.biochi.2025.03.003"
+                target="_blank"
+                >4.517</a
+              >
+            </td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1016/j.biochi.2025.03.003"
+                target="_blank"
+                >2.88</a
+              >
+            </td>
+          </tr>
+          <tr
+            data-an="A0A3N4B0Q2"
+            data-family="1-5-16"
+            data-organism="Yersinia pestis"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td>
+              <a href="/html-files/class1-family16.html">1-5-16 </a>
+            </td>
+            <td>YpAI</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/A0A3N4B0Q2/entry"
+                target="_blank"
+                >A0A3N4B0Q2</a
+              >
+            </td>
+            <td></td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Yersinia pestis</td>
+            <td>Cytoplasm</td>
+            <td>338</td>
+            <td>Homo dimer / tetramer</td>
+            <td>
+              <a href="https://www.rcsb.org/structure/7R69" target="_blank"
+                >7R69</a
+              >
+              <a
+                href="https://www.uniprot.org/uniprotkb/A0A3N4B0Q2/entry#structure"
+                target="_blank"
+                >PDBs</a
+              >
+            </td>
+            <td>
+              <a href="https://doi.org/10.1111/febs.16635" target="_blank"
+                >6.0</a
+              >
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">K<sub>0.5</sub> </span>
+              </span>
+            </td>
+            <td>-</td>
+            <td>
+              <a href="https://doi.org/10.1111/febs.16635" target="_blank"
+                >42.0</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="sprot" style="color: #615ab3; font-size: 2em; text-align: center">
+      Swiss-Prot Sequences
+    </h2>
+
+    <div class="seq-table">
+      <div
+        class="selection-controls"
+        id="selectionControls-0"
+        style="display: none"
+      >
+        <span class="count selectedCount" id="selectedCount-0"
+          >0 entries selected</span
+        >
+        <div class="selection-dropdown">
+          <button class="selection-btn downloadBtn" id="downloadBtn-0">
+            Download
+          </button>
+          <div class="selection-menu downloadMenu" id="downloadMenu-0">
+            <a data-format="fasta" href="#">FASTA</a>
+            <a data-format="tsv" href="#">Tab-separated</a>
+            <a data-format="ids" href="#">UniProt IDs</a>
+            <a data-format="idmapping" href="#">UniProt ID mapping</a>
+          </div>
+        </div>
+        <button class="selection-btn" id="clearSelectionBtn-0">
+          Clear selection
+        </button>
+      </div>
+      <table>
+        <tbody>
+          <tr>
+            <th class="checkbox-column">
+              <input
+                class="select-all-checkbox"
+                id="selectAllCheckbox-0"
+                type="checkbox"
+              />
+            </th>
+            <th width="64">
+              Fam
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext">Class - Clan - Family</span>
+              </span>
+            </th>
+            <th width="66">
+              Alt
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext"
+                  >Alternative historical name / classification</span
+                >
+              </span>
+            </th>
+            <th width="120">
+              AN
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext">UniProt accession number</span>
+              </span>
+            </th>
+            <th width="80">
+              Name
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext"
+                  >UniProt entry name, only given here for Swiss-Prot
+                  entries</span
+                >
+              </span>
+            </th>
+            <th>EC</th>
+            <th>Organism</th>
+            <th>Cell-Loc</th>
+            <th>AAs</th>
+            <th>Structure</th>
+            <th>PDB</th>
+            <th width="64px">
+              K<sub>m</sub>
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">for Asn [mM] </span>
+              </span>
+            </th>
+            <th width="64px">
+              V<sub>max</sub>
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">for Asn [μmol/min/mg] </span>
+              </span>
+            </th>
+            <th width="60px">
+              K<sub>cat</sub>
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">for Asn [s<sup>-1</sup>]</span>
+              </span>
+            </th>
+          </tr>
+          <tr
+            data-an="P0A963"
+            data-family="1-5-16"
+            data-organism="Escherichia colii(O157:H7)"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td>
+              <a href="/html-files/class1-family16.html">1-5-16 </a>
+            </td>
+            <td>
+              EcAI
+              <span class="tooltip tooltip-right"
+                >i
+                <span class="tooltiptext"
+                  >Identical sequences: P0A963, P0A962</span
+                >
+              </span>
+            </td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/P0A963/entry"
+                target="_blank"
+                >P0A963</a
+              >
+            </td>
+            <td>ASPG1_ECO57</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>
+              Escherichia coli
+              <span class="tooltip tooltip-right"
+                >i
+                <span class="tooltiptext">(O157:H7)</span>
+              </span>
+            </td>
+            <td>Cytoplasm</td>
+            <td>338</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="P0A962"
+            data-family="1-5-16"
+            data-organism="Escherichia colii(strain K12)"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td>
+              <a href="/html-files/class1-family16.html">1-5-16 </a>
+            </td>
+            <td>
+              EcAI
+              <span class="tooltip tooltip-right"
+                >i
+                <span class="tooltiptext"
+                  >Identical sequences: P0A963, P0A962</span
+                >
+              </span>
+            </td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/P0A962/entry"
+                target="_blank"
+                >P0A962</a
+              >
+            </td>
+            <td>ASPG1_ECOLI</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>
+              Escherichia coli
+              <span class="tooltip tooltip-right"
+                >i
+                <span class="tooltiptext">(strain K12)</span>
+              </span>
+            </td>
+            <td>Cytoplasm</td>
+            <td>338</td>
+            <td>
+              Homo tetramer
+              <span class="tooltip tooltip-right"
+                >i
+                <span class="tooltiptext">dimer of two intimate dimers</span>
+              </span>
+            </td>
+            <td>
+              <a href="https://www.rcsb.org/structure/2HIM" target="_blank"
+                >2HIM</a
+              >
+              <a
+                href="https://www.uniprot.org/uniprotkb/P0A962/entry#structure"
+                target="_blank"
+                >PDBs</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://doi.org/10.1016/j.jmb.2007.03.061"
+                target="_blank"
+                >1.2</a
+              >
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext"
+                  >S<sub>0.5</sub>, allosteric enzyme
+                </span>
+              </span>
+              <br />
+              <a
+                href="https://doi.org/10.1128/jb.118.1.231-241.1974"
+                target="_blank"
+                >3.5</a
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="uniref" style="color: #615ab3; font-size: 2em; text-align: center">
+      UniRef100 Sequences
+    </h2>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const pageTitle = document.title
+          .replace(/\s+/g, "")
+          .replace(/[^a-zA-Z0-9]/g, "");
+        const tables = document.querySelectorAll(".seq-table");
+
+        tables.forEach((tableContainer, tableIndex) => {
+          console.log(`Setting up table ${tableIndex}`);
+
+          const selectAllCheckbox = tableContainer.querySelector(
+            ".select-all-checkbox"
+          );
+          const entryCheckboxes =
+            tableContainer.querySelectorAll(".entry-checkbox");
+          const selectionControls = tableContainer.querySelector(
+            ".selection-controls"
+          );
+          const selectedCount = tableContainer.querySelector(".count");
+          const clearSelectionBtn = tableContainer.querySelector(
+            ".selection-btn[id*='clearSelectionBtn']"
+          );
+          const downloadBtn = tableContainer.querySelector(
+            ".selection-btn[id*='downloadBtn']"
+          );
+          const downloadMenu = tableContainer.querySelector(".selection-menu");
+
+          function cleanText(html) {
+            if (!html) return "";
+            const tempDiv = document.createElement("div");
+            tempDiv.innerHTML = html;
+
+            // Remove tooltips and spans
+            tempDiv
+              .querySelectorAll("span, .tooltip")
+              .forEach((tooltip) => tooltip.remove());
+
+            return tempDiv.textContent.replace(/\s+/g, " ").trim();
+          }
+
+          function updateSelectionUI() {
+            const checkedCount = tableContainer.querySelectorAll(
+              ".entry-checkbox:checked"
+            ).length;
+            selectedCount.textContent = `${checkedCount} ${
+              checkedCount === 1 ? "entry" : "entries"
+            } selected`;
+            selectionControls.style.display =
+              checkedCount > 0 ? "flex" : "none";
+            selectAllCheckbox.checked =
+              checkedCount > 0 && checkedCount === entryCheckboxes.length;
+            selectAllCheckbox.indeterminate =
+              checkedCount > 0 && checkedCount < entryCheckboxes.length;
+          }
+
+          function toggleRowHighlight(checkbox) {
+            const row = checkbox.closest("tr");
+            if (checkbox.checked) {
+              row.classList.add("selected");
+            } else {
+              row.classList.remove("selected");
+            }
+          }
+
+          if (selectAllCheckbox) {
+            selectAllCheckbox.addEventListener("change", function () {
+              entryCheckboxes.forEach((checkbox) => {
+                checkbox.checked = this.checked;
+                toggleRowHighlight(checkbox);
+              });
+              updateSelectionUI();
+            });
+          }
+
+          entryCheckboxes.forEach((checkbox) => {
+            checkbox.addEventListener("change", function () {
+              toggleRowHighlight(this);
+              updateSelectionUI();
+            });
+          });
+
+          if (clearSelectionBtn) {
+            clearSelectionBtn.addEventListener("click", function (e) {
+              e.preventDefault();
+              entryCheckboxes.forEach((checkbox) => {
+                checkbox.checked = false;
+                toggleRowHighlight(checkbox);
+              });
+              updateSelectionUI();
+            });
+          }
+
+          if (downloadBtn && downloadMenu) {
+            downloadBtn.addEventListener("click", function (e) {
+              e.preventDefault();
+              e.stopPropagation();
+              downloadMenu.style.display =
+                downloadMenu.style.display === "block" ? "none" : "block";
+            });
+
+            downloadMenu.querySelectorAll("a").forEach((option) => {
+              option.addEventListener("click", function (e) {
+                e.preventDefault();
+                const format = this.getAttribute("data-format");
+                downloadSelectedEntries(format);
+              });
+            });
+          }
+
+          document.addEventListener("click", function () {
+            if (downloadMenu) {
+              downloadMenu.style.display = "none";
+            }
+          });
+
+          if (downloadMenu) {
+            downloadMenu.addEventListener("click", function (e) {
+              e.stopPropagation();
+            });
+          }
+
+          function downloadSelectedEntries(format) {
+            const selectedEntries = [];
+
+            tableContainer
+              .querySelectorAll(".entry-checkbox:checked")
+              .forEach((checkbox) => {
+                const row = checkbox.closest("tr");
+
+                const an = row.getAttribute("data-an") || "";
+                let organism = cleanText(
+                  row.getAttribute("data-organism") || ""
+                )
+                  .split(/\s+/)
+                  .slice(0, 2)
+                  .join(" ");
+                const family = cleanText(row.getAttribute("data-family") || "");
+
+                selectedEntries.push({ an, organism, family });
+              });
+
+            if (selectedEntries.length === 0) {
+              alert("No entries selected for download.");
+              return;
+            }
+
+            let content = "";
+            let filename = `asparaginase-entries.${format}`;
+            let mime = "text/plain";
+
+            switch (format) {
+              case "fasta":
+                content = selectedEntries
+                  .map(
+                    (entry) =>
+                      `>${entry.an}|${entry.organism}|Asparaginase ${entry.family}\nMOCKSEQUENCEAAAAAGGGGTTTCCCAAAAGGGTTTCCCAAAAGGGTTTCCC`
+                  )
+                  .join("\n\n");
+                filename = `${pageTitle}-sequences.fasta`;
+                break;
+
+              case "tsv":
+                const headers = [
+                  "Family",
+                  "Alt",
+                  "AN",
+                  "Name",
+                  "EC",
+                  "Organism",
+                  "Cell-Loc",
+                  "AAs",
+                  "Structure",
+                  "PDB",
+                  "Km",
+                  "Vmax",
+                  "Kcat",
+                ];
+                let rows = [headers.join("\t")];
+
+                tableContainer
+                  .querySelectorAll(".entry-checkbox:checked")
+                  .forEach((checkbox) => {
+                    const row = checkbox.closest("tr");
+                    const cells = row.querySelectorAll(
+                      "td:not(.checkbox-column)"
+                    );
+                    const rowData = Array.from(cells).map((cell) =>
+                      cleanText(cell.innerHTML)
+                    );
+                    rows.push(rowData.join("\t"));
+                  });
+
+                content = rows.join("\n");
+                mime = "text/tab-separated-values";
+                filename = `${pageTitle}-entries.tsv`;
+                break;
+
+              case "ids":
+                content = selectedEntries.map((entry) => entry.an).join("\n");
+                filename = `${pageTitle}-uniprot-ids.txt`;
+                break;
+
+              case "idmapping":
+                const ids = selectedEntries.map((entry) => entry.an).join("\n");
+                const textarea = document.createElement("textarea");
+                textarea.value = ids;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textarea);
+
+                alert(
+                  "Accession numbers copied to clipboard! Opening UniProt ID Mapping tool..."
+                );
+                window.open("https://www.uniprot.org/id-mapping", "_blank");
+
+                downloadMenu.style.display = "none";
+                return;
+            }
+
+            const blob = new Blob([content], { type: mime });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(link.href);
+
+            downloadMenu.style.display = "none";
+          }
+        });
+      });
+    </script>
+
+    <h2
+      id="alignment"
+      style="color: #615ab3; font-size: 2em; text-align: center"
+    >
+      Representative Sequence Alignment
+    </h2>
+
+    <div
+      id="scrollContainer"
+      style="
+        width: 1300px;
+        height: 550px;
+        margin: 0 auto;
+        overflow-x: auto;
+        text-align: center;
+        will-change: transform;
+      "
+    >
+      <img
+        src="/images/alg1-16.png"
+        alt="Motifs Image"
+        style="max-width: none; height: auto; display: block"
+      />
+    </div>
+
+    <script>
+      // Scroll the container to the bottom on page load
+      window.onload = function () {
+        const container = document.getElementById("scrollContainer");
+        container.scrollTop = container.scrollHeight;
+      };
+    </script>
+
+    <h2 id="info" style="color: #615ab3; font-size: 2em; text-align: center">
+      Additional Information
+    </h2>
+
+    <p>
+      Clan 5 is the clan that holds many of the historical bacterial "type I"
+      L-asparaginases as well as L-asparaginases from fungi and metazoans,
+      including humans.
+    </p>
+    <p>
+      Family 16 is a family of L-asparaginases originating mostly from bacteria
+      belonging to the Pseudomonadota phylum. That includes the original type I
+      Escherichia coli EcAI (P0A962), an allosteric cytoplasmic enzyme with low
+      affinity to L-asparagine that presents as a tetramer, specifically as a
+      dimer of two intimate dimers . The Yersinia pestis YpAI (A0A3N4B0Q2)
+      structure has also been solved, and the authors find that this
+      L-asparaginase is active in a dimeric form, although it also forms
+      tetramers in crystal.
+    </p>
+    <br />
+
+    <div id="asparaginases" class="bottom-banner">
+      <div>The Asparaginase Database | Release 2025-01 | Contact:</div>
+      <a href="mailto:stetinam@vscht.cz">stetinam@vscht.cz</a>| Supported by:
+      <a href="https://www.elixir-czech.cz/" target="_blank">
+        <img
+          src="/images/elixir_logo.png"
+          alt="elixir_logo.png"
+          class="elixir-image"
+        />
+      </a>
+    </div>
+  </body>
+</html>

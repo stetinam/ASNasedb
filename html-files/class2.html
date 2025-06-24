@@ -1,0 +1,5321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class 2 Asparaginases</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Source Sans Pro", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Base link styling */
+      a {
+        color: #68a11a;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      a:hover {
+        color: #4d8105;
+      }
+
+      a:active {
+        color: #e91e63;
+      }
+
+      a {
+        transition: color 0.3s ease, text-decoration 0.3s ease;
+      }
+
+      header {
+        background-color: #68a11a;
+        padding: 40px 20px;
+        text-align: center;
+        color: white;
+        position: relative; /* For positioning the home button */
+        display: flex;
+        align-items: center; /* Vertically center the content */
+        justify-content: center; /* Center the title by default */
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center; /* Center the title text */
+      }
+
+      /* Home Button Styles */
+      .home-button {
+        position: absolute;
+        left: 30px; /* Position the button on the left */
+        top: 50%; /* Vertically center the button */
+        transform: translateY(-50%); /* Adjust for exact vertical centering */
+        text-decoration: none;
+      }
+
+      .home-button img.home-icon {
+        width: auto; /* Let the image maintain its aspect ratio */
+        height: 80px; /* Set a fixed height (adjust as needed) */
+        border-radius: 5px; /* Optional: Add rounded corners to the image */
+      }
+
+      .home-button:hover img.home-icon {
+        opacity: 0.8; /* Optional: Add hover effect to the image */
+      }
+
+      @media (max-width: 700px) {
+        .home-button {
+          display: none; /* Hide the home button on smaller screens */
+        }
+      }
+
+      /* Menu Button Styles */
+      .menu-button {
+        position: fixed; /* Make the button stay in place when scrolling */
+        right: 25px; /* Position the button on the right */
+        top: 45px; /* Adjust the distance from the top */
+        background-color: #68a11adf; /* Blue background color (matches your theme) */
+        border: none;
+        color: white; /* Color of the three lines */
+        font-size: 40px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000; /* Ensure the button stays above other content */
+        padding: 3px 10px; /* Add padding to create a box around the lines */
+        border-radius: 4px; /* Rounded corners for the box */
+      }
+
+      .menu-button:hover {
+        opacity: 0.8; /* Slight fade on hover */
+      }
+
+      /* Dropdown Menu Styles */
+      .dropdown-menu {
+        display: none;
+        position: fixed; /* Make the dropdown menu fixed */
+        top: 117px; /* Position it below the menu button */
+        right: 25px; /* Align it with the right edge of the menu button */
+        background-color: #f0f0f0;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 999; /* Ensure it stays below the menu button */
+        border-radius: 6px;
+      }
+
+      .dropdown-menu a {
+        color: #68a11a;
+        padding: 10px 12px;
+        text-decoration: none;
+        display: block;
+        font-size: 18px;
+      }
+
+      .dropdown-menu a:hover {
+        background-color: rgb(249, 249, 249);
+        text-decoration: none;
+        border-radius: 6px;
+      }
+      .dropdown-menu a:active,
+      .dropdown-menu a:focus {
+        color: #68a11a; /* Ensure text color doesn't change when clicked */
+        text-decoration: none; /* Ensure no underline when clicked */
+      }
+
+      .dropdown-menu a:visited {
+        color: #68a11a; /* Ensure text color doesn't change for visited links */
+      }
+      .dropdown-menu a.active {
+        background-color: white; /* White background for active item */
+        color: #68a11a; /* Text color for active item (matches your theme) */
+        font-weight: bold; /* Optional: Make the active item bold */
+      }
+      .show {
+        display: block;
+      }
+
+      .container {
+        max-width: 1300px;
+        margin: 20px auto;
+        padding: 0 20px;
+        display: flex;
+        gap: 20px;
+      }
+
+      .left-side {
+        flex: 1; /* Takes up 1 part of the available space */
+        order: 1; /* Ensures this appears first (on the left) */
+      }
+
+      .right-side {
+        flex: 1; /* Takes up 1 part of the available space */
+        order: 2; /* Ensures this appears second (on the right) */
+      }
+
+      .video-container {
+        display: flex;
+        gap: 8px;
+      }
+
+      .video-container .grid-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .families-table {
+        width: 100%;
+        border-collapse: separate; /* Required for rounded corners */
+        border-spacing: 0; /* Remove spacing between cells */
+        font-family: sans-serif;
+        margin: 0 auto;
+        border-radius: 15px; /* Rounded corners for the outer edges */
+        overflow: hidden; /* Ensures the inner cells don't overflow the rounded corners */
+      }
+      .families-table th,
+      .families-table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center; /* Center-align text */
+        font-size: 18px;
+      }
+
+      /* Tooltip styling */
+      .link-tooltip {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        text-decoration: none; /* Remove underline from links */
+        color: #68a11a; /* Match link color */
+        font-weight: 600; /* Match link font weight */
+      }
+
+      .link-tooltip .link-tooltiptext {
+        visibility: hidden;
+        width: 200px; /* Larger width for the tooltip */
+        background-color: white; /* White background */
+        color: #333; /* Darker text for better readability */
+        text-align: center;
+        border-radius: 8px; /* Rounded corners */
+        padding: 10px; /* More padding for a larger box */
+        position: absolute;
+        z-index: 1000; /* Ensure it appears above everything */ /* Position above the link */
+        left: 150%; /* Center horizontally */
+        border: 2px solid #68a11a; /* Blue outline */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        opacity: 0;
+        transition: opacity 0.3s, visibility 0.3s;
+        font-size: 14px;
+      }
+
+      .link-tooltip:hover .link-tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      p {
+        font-size: 18px;
+        margin-bottom: 10px;
+        text-align: justify;
+      }
+      .image-container {
+        display: inline-block; /* Ensure the container fits the image */
+        padding: 10px; /* Add padding to create the margin effect */
+        border: 1px solid #ddd; /* Light border */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        background-color: white; /* Background color for the container */
+      }
+
+      .image-container img {
+        display: block; /* Ensure the image fits the container */
+        max-width: 100%; /* Ensure the image is responsive */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 8px; /* Slightly rounded corners for the image */
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+
+      .grid-item {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .grid-item video {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .grid-item h3 {
+        color: #68a11a;
+        font-size: 23px;
+        margin-top: 10px;
+      }
+
+      .grid-item p {
+        font-size: 20px;
+        text-align: center;
+        line-height: 1.1;
+      }
+
+      .grid-item a:hover {
+        text-decoration: none;
+      }
+
+      .bottom-banner {
+        background-color: #626262;
+        color: white;
+        padding: 15px;
+        font-size: 18px;
+        display: flex; /* Enable flexbox */
+        align-items: center; /* Vertically align items */
+        justify-content: center; /* Center horizontally (optional) */
+        gap: 10px; /* Space between items */
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+      }
+
+      .elixir-image {
+        max-width: 100px; /* Or whatever size you prefer */
+        height: auto;
+        vertical-align: middle; /* Align image with text baseline (alternative to flexbox alignment) */
+      }
+
+      .bottom-banner a {
+        color: white;
+        text-decoration: none;
+        display: inline-flex; /* To ensure correct vertical alignment of the image */
+        align-items: center; /* Aligns the image and text within the link */
+        gap: 5px; /* Adds spacing between the image and text within the link */
+      }
+
+      .bottom-banner a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .video-container {
+          flex-direction: column;
+        }
+
+        .left-side,
+        .right-side {
+          width: 100%;
+        }
+      }
+
+      .content {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 20px;
+        text-align: left;
+      }
+
+      .content h2 {
+        font-size: 22px;
+        margin-top: 20px;
+        color: #68a11a;
+        font-size: 2em;
+        text-align: center;
+      }
+
+      .content p {
+        font-size: 16px;
+        line-height: 1.6;
+        text-align: justify; /* Justify paragraph text */
+      }
+
+      .table-container {
+        overflow: visible;
+        position: relative;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0px;
+      }
+
+      table {
+        border-collapse: separate;
+        border-spacing: 0;
+        width: 100%;
+        font-family: sans-serif;
+      }
+
+      thead tr {
+        background-color: #68a11a;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #68a11a; /* Blue header */
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 2; /* Ensures it stays above other content */
+      }
+
+      tr:nth-child(even) {
+        background-color: hsl(0, 0%, 95%); /* Gray for even rows */
+      }
+
+      td[rowspan] {
+        background-color: #f9f9f9; /* Ensure row-spanning cells stay white */
+      }
+      .centered-cell {
+        text-align: center; /* Centers horizontally */
+        vertical-align: middle; /* Centers vertically */
+        font-weight: bold;
+        background-color: transparent;
+      }
+
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        color: white;
+        background-color: #999; /* Gray circle background */
+        border-radius: 50%; /* Makes it a circle */
+        width: 16px; /* Size of the circle */
+        height: 16px;
+        text-align: center;
+        line-height: 16px; /* Vertically center the question mark */
+        font-size: 12px;
+        margin-left: 2px;
+        vertical-align: middle; /* Align with the text */
+      }
+
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px; /* Adjust width as needed */
+        background-color: white; /* White background */
+        color: #666; /* Gray text */
+        text-align: center;
+        border-radius: 4px;
+        padding: 8px;
+        position: absolute;
+        z-index: 1;
+        transform: translateX(-120%); /* Center the tooltip */
+        border: 1px solid #ccc; /* Light gray outline */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+        opacity: 0;
+        transition: opacity 0.3s;
+        margin-top: 35px;
+        font-size: 14px;
+      }
+
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .tooltip-right .tooltiptext {
+        left: 100%; /* Position to the right of the circle */
+        margin-top: 35px;
+        margin-left: 10px; /* Add some spacing */
+        transform: none; /* Remove the left alignment */
+      }
+
+      .button-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #68a11a;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .button-link:hover {
+        background-color: #492597a7;
+      }
+
+      /* Ensure the text stays white even for visited links */
+      .button-link:visited {
+        color: white; /* Keep the text color white */
+      }
+
+      /* Special styling for PDB links */
+      a.pdb-link {
+        color: #eba03e;
+        font-weight: 700;
+      }
+
+      a.pdb-link:hover {
+        color: #d35400;
+        text-decoration: underline dotted;
+      }
+
+      a.pdb-link:active {
+        color: #c0392b;
+      }
+
+      /* Swiss-Prot Table*/
+      .seq-table {
+        width: 1300px; /* Adjust the width as needed */
+        margin: auto; /* Center the table */
+        overflow-x: auto; /* Horizontal scrollbar if needed */
+        max-height: 550px; /* Set a maximum height */
+        overflow-y: auto; /* Vertical scrollbar */
+        position: relative;
+        will-change: transform;
+      }
+
+      .seq-table td {
+        border: 0px solid #ddd;
+      }
+
+      .seq-table th {
+        border: 0px solid #ddd;
+      }
+      /* Add checkbox column styling */
+      .checkbox-column {
+        width: 30px;
+        text-align: center;
+      }
+
+      .select-all-checkbox {
+        margin: 0;
+      }
+
+      .entry-checkbox {
+        margin: 0;
+        cursor: pointer;
+      }
+
+      /* Highlight selected rows */
+      tr.selected {
+        background-color: #f0f2e6 !important; /* Adjusted to match Class 2 green theme */
+      }
+
+      .selection-controls {
+        max-width: 1300px;
+        margin: 20px auto 10px;
+        padding: 10px 20px;
+        background-color: #f5f5f5;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .selection-controls .count {
+        margin-right: auto;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .selection-btn {
+        background-color: #68a11a; /* Changed to match Class 2 theme */
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s;
+      }
+
+      .selection-btn:hover {
+        background-color: #4d8105; /* Darker green */
+      }
+
+      .selection-btn:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+      }
+
+      .selection-dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .selection-menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 180px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        border-radius: 4px;
+        padding: 8px 0;
+        top: 100%;
+        left: 0;
+      }
+
+      .selection-menu a {
+        color: #333;
+        padding: 8px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 14px;
+      }
+
+      .selection-menu a:hover {
+        background-color: #f1f1f1;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Home Button with Image -->
+      <a href="/index.html" class="home-button">
+        <img src="/images/logo1.png" alt="Home" class="home-icon" />
+      </a>
+      <h1 id="class2">
+        Class 2 Asparaginases <br />
+        Work in progress...
+      </h1>
+      <button class="menu-button" id="menuButton">&#9776;</button>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="#class2">Class 2</a>
+        <a href="#proteins">Studied Proteins</a>
+        <a href="#sprot">Swiss-Prot Sequences</a>
+        <a href="#uniref">UniRef100 Sequences</a>
+        <a href="#tree">Tree and Introduction</a>
+        <a href="#alignment">Sequence Alignment</a>
+        <a href="#motifs">Conserved Motifs</a>
+        <a href="#overview">Families Overview</a>
+      </div>
+    </header>
+
+    <script>
+      // Toggle dropdown menu visibility
+      const menuButton = document.getElementById("menuButton");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+
+      menuButton.addEventListener("click", function () {
+        dropdownMenu.classList.toggle("show");
+      });
+
+      // Close the dropdown if the user clicks outside of it
+      window.addEventListener("click", function (event) {
+        if (
+          !event.target.matches(".menu-button") &&
+          !event.target.closest(".dropdown-menu")
+        ) {
+          dropdownMenu.classList.remove("show");
+        }
+      });
+
+      // Scroll-based highlighting
+      const sections = document.querySelectorAll("section");
+      const menuLinks = document.querySelectorAll(".dropdown-menu a");
+
+      function isSectionInView(section) {
+        const rect = section.getBoundingClientRect();
+        return rect.top <= 100 && rect.bottom >= 100;
+      }
+
+      function updateActiveMenu() {
+        sections.forEach((section, index) => {
+          if (isSectionInView(section)) {
+            menuLinks.forEach((link) => link.classList.remove("active"));
+            menuLinks[index].classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", updateActiveMenu);
+
+      // Smooth scroll to sections
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute("href");
+          const targetSection = document.querySelector(targetId);
+          targetSection.scrollIntoView({ behavior: "smooth" });
+          // Removed the line that closes the dropdown menu
+        });
+      });
+    </script>
+
+    <div class="grid-container">
+      <div class="grid-item">
+        <h3 style="color: #68a11a; font-size: 25px">Class Overview</h3>
+        <p>23 experimentally studied proteins</p>
+        <p>53 sequences in Swiss-Prot</p>
+        <p>42,997 unique sequences in UniRef100</p>
+        <p>Bacteria, eukaryotes (animals, plants, fungi) and archaea</p>
+        <p>L-Asparaginase activity generally secondary</p>
+        <p>N-terminal α and C-terminal β subunit</p>
+        <p>Homo dimers / hetero tetramers</p>
+      </div>
+      <div class="grid-item">
+        <a href="https://alphafold.ebi.ac.uk/entry/P0A962" target="_blank">
+          <h3 style="color: #68a11a; font-size: 25px">Reference Monomer</h3>
+          <video autoplay muted loop playsinline>
+            <source src="/images/monoclass2.mp4" type="video/mp4" />
+            <source src="/images/monoclass2.webm" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
+        </a>
+      </div>
+      <div class="grid-item">
+        <a href="https://www.rcsb.org/structure/1T3M" target="_blank">
+          <h3 style="color: #68a11a; font-size: 25px">Reference Structure</h3>
+          <video autoplay muted loop playsinline>
+            <source src="/images/1T3M.mp4" type="video/mp4" />
+            <source src="/images/1T3M.webm" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
+        </a>
+      </div>
+    </div>
+
+    <div class="table-container">
+      <table class="families-table">
+        <thead>
+          <tr>
+            <th>Clan 1</th>
+            <th>Clan 2</th>
+            <th>Clan 3</th>
+            <th>Clan 4</th>
+            <th>Clan 5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a href="/html-files/class2-family1.html" class="link-tooltip"
+                >Family 1
+                <span class="link-tooltiptext"
+                  >Mostly fungal asparaginases, contains the Saccharomyces
+                  cerevisiae isoenzymes.</span
+                >
+              </a>
+            </td>
+            <td>
+              <a href="/html-files/class2-family6.html" class="link-tooltip"
+                >Family 6
+                <span class="link-tooltiptext"
+                  >Contains the Mycobacterium tuberculosis asparaginase, a
+                  dimeric secretory enzyme.
+                </span>
+              </a>
+            </td>
+            <td>
+              <a href="/html-files/class2-family7.html" class="link-tooltip"
+                >Family 7
+                <span class="link-tooltiptext"
+                  >Putative bacterial asparaginases.</span
+                >
+              </a>
+            </td>
+            <td>
+              <a href="/html-files/class2-family10.html" class="link-tooltip"
+                >Family 10
+                <span class="link-tooltiptext"
+                  >A diverse family with poorly conserved motifs.</span
+                >
+              </a>
+            </td>
+            <td>
+              <a href="/html-files/class2-family13.html" class="link-tooltip">
+                Family 13
+                <span
+                  class="link-tooltiptext"
+                  style="
+                    left: auto;
+                    right: 100%;
+                    margin-right: 10px;
+                    bottom: 50%;
+                  "
+                >
+                  A diverse family of putative asparaginases from bacteria and
+                  eukaryotes, which often contain an additional unidentified
+                  domain.
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/html-files/class2-family2.html" class="link-tooltip"
+                >Family 2
+                <span class="link-tooltiptext"
+                  >Putative bacterial asparaginases.</span
+                >
+              </a>
+            </td>
+            <td></td>
+            <td>
+              <a href="/html-files/class2-family8.html" class="link-tooltip"
+                >Family 8
+                <span class="link-tooltiptext"
+                  >Although a family of mostly bacterial asparaginases, it also
+                  contains the dimeric archaeal asparagianses from Pyrococcus
+                  furiosus and Thermococcus kodakarensis.
+                </span>
+              </a>
+            </td>
+            <td>
+              <a href="/html-files/class2-family11.html" class="link-tooltip"
+                >Family 11
+                <span
+                  class="link-tooltiptext"
+                  style="left: auto; right: 100%; margin-right: 10px"
+                  >Mostly fungal asparaginases with additional ankyrin repeats.
+                  Contains the Rhizomucor miehei asparaginase with a Km in the
+                  micromolar range.
+                </span>
+              </a>
+            </td>
+            <td>
+              <a href="/html-files/class2-family14.html" class="link-tooltip">
+                Family 14
+                <span
+                  class="link-tooltiptext"
+                  style="
+                    left: auto;
+                    right: 100%;
+                    margin-right: 10px;
+                    bottom: 50%;
+                  "
+                >
+                  A diverse family of putative asparaginases from bacteria and
+                  eukaryotes, which often contain an additional unidentified
+                  domain.
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/html-files/class2-family3.html" class="link-tooltip"
+                >Family 3
+                <span class="link-tooltiptext"
+                  >Contains the classic "type II" asparaginases, like the
+                  Escherichia coli and Dickeya chrysanthemi asparaginases in
+                  pharmaceutical use.</span
+                >
+              </a>
+            </td>
+            <td></td>
+            <td>
+              <a href="/html-files/class2-family9.html" class="link-tooltip"
+                >Family 9
+                <span class="link-tooltiptext"
+                  >The Glutamyl-tRNA amido-transferase subunit D family, a group
+                  of achaeal enzymes that also contain the Class 1 asparaginase
+                  domain.</span
+                >
+              </a>
+            </td>
+            <td>
+              <a href="/html-files/class2-family12.html" class="link-tooltip"
+                >Family 12
+                <span
+                  class="link-tooltiptext"
+                  style="left: auto; right: 100%; margin-right: 10px"
+                >
+                  Asparaginases mostly from Pseudomonadota, most notably the
+                  "type I" Escherichia coli and Yersinia pestis enzymes.
+                </span>
+              </a>
+            </td>
+            <td>
+              <a href="/html-files/class2-family15.html" class="link-tooltip">
+                Family 15
+                <span
+                  class="link-tooltiptext"
+                  style="
+                    left: auto;
+                    right: 100%;
+                    margin-right: 10px;
+                    bottom: 50%;
+                  "
+                >
+                  A diverse family of putative asparaginases from bacteria and
+                  eukaryotes, which often contain an additional unidentified
+                  domain.
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/html-files/class2-family4.html" class="link-tooltip"
+                >Family 4
+                <span class="link-tooltiptext"
+                  >Putative bacterial asparaginases.</span
+                >
+              </a>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+              <a href="/html-files/class2-family16.html" class="link-tooltip">
+                Family 16
+                <span
+                  class="link-tooltiptext"
+                  style="
+                    left: auto;
+                    right: 100%;
+                    margin-right: 10px;
+                    bottom: 50%;
+                  "
+                >
+                  A diverse family of putative asparaginases from bacteria and
+                  eukaryotes, which often contain an additional unidentified
+                  domain.
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/html-files/class2-family5.html" class="link-tooltip"
+                >Family 5
+                <span class="link-tooltiptext"
+                  >Contains the Bacillus lichenformis asparaginase, a dimeric
+                  enzyme with a K<sub>m</sub> in the lower millimolar
+                  range.</span
+                >
+              </a>
+            </td>
+            <td></td>
+            <td></td>
+
+            <td></td>
+            <td>
+              <a href="/html-files/class2-family17.html" class="link-tooltip">
+                Family 17
+                <span
+                  class="link-tooltiptext"
+                  style="
+                    left: auto;
+                    right: 100%;
+                    margin-right: 10px;
+                    bottom: 50%;
+                  "
+                >
+                  Almost exclusively putative asparaginases of bacteria
+                  belonging to the Bacteroidota phylum.
+                </span>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+
+            <td></td>
+            <td></td>
+
+            <td>
+              <a href="/html-files/class2-family18.html" class="link-tooltip">
+                Family 18
+                <span
+                  class="link-tooltiptext"
+                  style="
+                    left: auto;
+                    right: 100%;
+                    margin-right: 10px;
+                    bottom: 50%;
+                  "
+                >
+                  Almost exclusively putative asparaginases of bacteria
+                  belonging to the Bacteroidota phylum.
+                </span>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2
+      id="proteins"
+      style="color: #68a11a; font-size: 2em; text-align: center"
+    >
+      Experimentally Studied Proteins
+    </h2>
+
+    <div class="seq-table">
+      <div
+        class="selection-controls"
+        id="selectionControls-0"
+        style="display: none"
+      >
+        <span class="count selectedCount" id="selectedCount-0"
+          >0 entries selected</span
+        >
+        <div class="selection-dropdown">
+          <button class="selection-btn downloadBtn" id="downloadBtn-0">
+            Download
+          </button>
+          <div class="selection-menu downloadMenu" id="downloadMenu-0">
+            <a href="#" data-format="fasta">FASTA</a>
+            <a href="#" data-format="tsv">Tab-separated</a>
+            <a href="#" data-format="ids">UniProt IDs</a>
+            <a href="#" data-format="idmapping">UniProt ID mapping</a>
+          </div>
+        </div>
+
+        <button class="selection-btn" id="clearSelectionBtn-0">
+          Clear selection
+        </button>
+      </div>
+      <table>
+        <tbody>
+          <tr>
+            <th class="checkbox-column">
+              <input
+                class="select-all-checkbox"
+                id="selectAllCheckbox-0"
+                type="checkbox"
+              />
+            </th>
+            <th width="56">
+              Fam
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext">Class - Clan - Family</span>
+              </span>
+            </th>
+            <th width="64">
+              Alt
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext"
+                  >Alternative historical name / classification</span
+                >
+              </span>
+            </th>
+            <th>
+              AN
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext">UniProt accession number</span>
+              </span>
+            </th>
+            <th>
+              Name
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext"
+                  >UniProt entry name, only given here for Swiss-Prot
+                  entries</span
+                >
+              </span>
+            </th>
+            <th>EC</th>
+            <th width="1">Organism</th>
+            <th>Cell-Loc</th>
+            <th>AAs</th>
+            <th width="105px">Structure</th>
+            <th>PDB</th>
+            <th width="50">
+              K<sub>m</sub>
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">for Asn [mM] </span>
+              </span>
+            </th>
+            <th width="60px">
+              V<sub>max</sub>
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">for Asn [μmol/min/mg] </span>
+              </span>
+            </th>
+            <th width="60px">
+              K<sub>cat</sub>
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">for Asn [s<sup>-1</sup>]</span>
+              </span>
+            </th>
+          </tr>
+          <tr
+            data-an="D0V0N4"
+            data-family="2-1-2"
+            data-organism="Asobara tabida"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/D0V0N4/entry"
+                target="_blank"
+                >D0V0N4</a
+              >
+            </td>
+            <td></td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Asobara tabida</td>
+            <td>Venom</td>
+            <td>362</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1371/journal.pone.0181940"
+                target="_blank"
+                >4.051</a
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr data-an="P20933" data-family="2-1-2" data-organism="Homo sapiens">
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/P20933/entry"
+                target="_blank"
+                >P20933</a
+              >
+            </td>
+            <td>ASPG_HUMAN</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Homo sapiens</td>
+            <td>Lysosome</td>
+            <td>346</td>
+            <td>Hetero tetramer / homo dimer</td>
+            <td>
+              <a href="https://www.rcsb.org/structure/1APY" target="_blank"
+                >1APY</a
+              >
+              <a
+                href="https://www.uniprot.org/uniprotkb/P20933/entry#structure"
+                target="_blank"
+                >PDBs</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://doi.org/10.1016/S0014-5793(97)00761-8"
+                target="_blank"
+                >0.656</a
+              >
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext"
+                  >Sequence may not be exact match
+                </span>
+              </span>
+            </td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="A0A141NXG8"
+            data-family="2-1-2"
+            data-organism="Leptopilina heterotoma"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/A0A141NXG8/entry"
+                target="_blank"
+                >A0A141NXG8</a
+              >
+            </td>
+            <td></td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Leptopilina heterotoma</td>
+            <td>Venom</td>
+            <td>367</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1371/journal.pone.0181940"
+                target="_blank"
+                >1.188</a
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="O02467"
+            data-family="2-1-2"
+            data-organism="Spodoptera frugiperda"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/O02467/entry"
+                target="_blank"
+                >O02467</a
+              >
+            </td>
+            <td>ASPG_SPOFR</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Spodoptera frugiperda</td>
+            <td>Lysosome</td>
+            <td>320</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a href="https://doi.org/10.1093/glycob/6.5.527" target="_blank"
+                >3.0</a
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="A0A1V3U2Z4"
+            data-family="2-1-5"
+            data-organism="Elizabethkingia meningoseptica"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family5.html">2-1-5 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/A0A1V3U2Z4/entry"
+                target="_blank"
+              >
+                A0A1V3U2Z4
+              </a>
+            </td>
+            <td></td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Elizabethkingia meningoseptica</td>
+            <td>-</td>
+            <td>331</td>
+            <td>Hetero tetramer / homo dimer</td>
+            <td>
+              <a href="https://www.rcsb.org/structure/6DEY" target="_blank"
+                >6DEY</a
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="Q47898"
+            data-family="2-1-5"
+            data-organism="Elizabethkingia miricola"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family5.html">2-1-5 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q47898/entry"
+                target="_blank"
+                >Q47898</a
+              >
+            </td>
+            <td>ASPG_ELIMR</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Elizabethkingia miricola</td>
+            <td>Periplasm</td>
+            <td>340</td>
+            <td>Hetero tetramer / homo dimer</td>
+            <td>
+              <a href="https://www.rcsb.org/structure/1AYY" target="_blank"
+                >1AYY</a
+              >
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q47898/entry#structure"
+                target="_blank"
+                >PDBs</a
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr data-an="Q8YQB1" data-family="2-2-6" data-organism="Nostoc sp.">
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family6.html">2-2-6 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q8YQB1/entry"
+                target="_blank"
+                >Q8YQB1</a
+              >
+            </td>
+            <td>ASGX_NOSS1</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+            </td>
+            <td>Nostoc sp.</td>
+            <td>-</td>
+            <td>318</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a href="https://doi.org/10.1042/bj3640129" target="_blank"
+                >2.0</a
+              >
+            </td>
+            <td>
+              <a href="https://doi.org/10.1042/bj3640129" target="_blank"
+                >2.2</a
+              >
+            </td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="P74383"
+            data-family="2-2-6"
+            data-organism="Synechocystis sp."
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family6.html">2-2-6 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/P74383/entry"
+                target="_blank"
+                >P74383</a
+              >
+            </td>
+            <td>ASGX_SYNY3</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+            </td>
+            <td>Synechocystis sp.</td>
+            <td>-</td>
+            <td>329</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a href="https://doi.org/10.1042/bj3640129" target="_blank"
+                >0.66</a
+              >
+            </td>
+            <td>
+              <a href="https://doi.org/10.1042/bj3640129" target="_blank"
+                >1.6</a
+              >
+            </td>
+            <td>-</td>
+          </tr>
+          <tr data-an="Q9H6P5" data-family="2-3-9" data-organism="Homo sapiens">
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family9.html">2-3-9 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q9H6P5/entry"
+                target="_blank"
+                >Q9H6P5</a
+              >
+            </td>
+            <td>TASP1_HUMAN</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.25.-" target="_blank"
+                >3.4.25.-</a
+              >
+            </td>
+            <td>Homo sapiens</td>
+            <td>
+              <a
+                href="https://doi.org/10.1016/j.str.2021.03.008"
+                target="_blank"
+              >
+                <span class="tooltip">
+                  <span style="color: green">i</span>
+                  <span class="tooltiptext"
+                    >Overexpressed in primary human cancers.</span
+                  >
+                </span>
+              </a>
+            </td>
+            <td>420</td>
+            <td>
+              Hetero tetramer / homo dimer / hexamer
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">Concentration dependent. </span>
+              </span>
+            </td>
+            <td>
+              <a href="https://www.rcsb.org/structure/6VIN" target="_blank"
+                >6VIN</a
+              >
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q9H6P5/entry#structure"
+                target="_blank"
+                >PDBs</a
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="A0A0N7IWY2"
+            data-family="2-4-10"
+            data-organism="Aquabacterium sp."
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family10.html">2-4-10 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/A0A0N7IWY2/entry"
+                target="_blank"
+                >A0A0N7IWY2</a
+              >
+            </td>
+            <td></td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Aquabacterium sp.</td>
+            <td></td>
+            <td>306</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1007/s10482-015-0614-0"
+                target="_blank"
+                >33.7</a
+              >
+            </td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1007/s10482-015-0614-0"
+                target="_blank"
+                >0.0087</a
+              >
+            </td>
+          </tr>
+          <tr
+            data-an="Q6L1Z2"
+            data-family="2-4-10"
+            data-organism="Picrophilus torridus"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family10.html">2-4-10 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q6L1Z2/entry"
+                target="_blank"
+                >Q6L1Z2</a
+              >
+            </td>
+            <td></td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Picrophilus torridus</td>
+            <td>-</td>
+            <td>297</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a href="https://doi.org/10.1021/acsomega.2c01127" target="_blank"
+                >11.69</a
+              >
+            </td>
+            <td>-</td>
+            <td>
+              <a href="https://doi.org/10.1021/acsomega.2c01127" target="_blank"
+                >0.056</a
+              >
+            </td>
+          </tr>
+          <tr
+            data-an="A3MUS8"
+            data-family="2-4-10"
+            data-organism="Pyrobaculum calidifontis"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family10.html">2-4-10 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/A3MUS8/entry"
+                target="_blank"
+                >A3MUS8</a
+              >
+            </td>
+            <td>ASPGP_PYRCJ</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Pyrobaculum calidifontis</td>
+            <td>-</td>
+            <td>299</td>
+            <td>
+              Dimer
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">Determined from gel filtration </span>
+              </span>
+            </td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1007/s12223-018-0656-6"
+                target="_blank"
+                >4.5</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://doi.org/10.1007/s12223-018-0656-6"
+                target="_blank"
+                >355</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://doi.org/10.1007/s12223-018-0656-6"
+                target="_blank"
+                >374.0</a
+              >
+            </td>
+          </tr>
+          <tr
+            data-an="Q9V262"
+            data-family="2-4-10"
+            data-organism="Pyrococcus abyssi"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family10.html">2-4-10 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q9V262/entry"
+                target="_blank"
+                >Q9V262</a
+              >
+            </td>
+            <td>ASPGP_PYRAB</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Pyrococcus abyssi</td>
+            <td>-</td>
+            <td>305</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a href="https://doi.org/10.1590/1519-6984.244735" target="_blank"
+                >2.051</a
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="Q5JHT1"
+            data-family="2-4-10"
+            data-organism="Thermococcus kodakarensis"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family10.html">2-4-10 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q5JHT1/entry"
+                target="_blank"
+                >Q5JHT1</a
+              >
+            </td>
+            <td>ASPGP_THEKO</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Thermococcus kodakarensis</td>
+            <td>-</td>
+            <td>306</td>
+            <td>
+              Dimer
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">Determined from gel filtration </span>
+              </span>
+            </td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1016/j.ijbiomac.2020.01.012"
+                target="_blank"
+                >3.1</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://doi.org/10.1016/j.ijbiomac.2020.01.012"
+                target="_blank"
+                >833</a
+              >
+            </td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="UPI000184D93B"
+            data-family="2-4-12"
+            data-organism="Cavia porcellus"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family12.html">2-4-12 </a></td>
+            <td>CpAIII</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniparc/UPI000184D93B/entry"
+                target="_blank"
+                >H0VQC8</a
+              >
+            </td>
+            <td></td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Cavia porcellus</td>
+            <td></td>
+            <td>332</td>
+            <td>Hetero tetramer / homo dimer</td>
+            <td>
+              <a href="https://www.rcsb.org/structure/4O47" target="_blank"
+                >4O47</a
+              >
+            </td>
+            <td>
+              <a href="https://doi.org/10.1021/bi401692v" target="_blank"
+                >2.24</a
+              >
+            </td>
+            <td>-</td>
+            <td>
+              <a href="https://doi.org/10.1021/bi401692v" target="_blank"
+                >3.95</a
+              >
+            </td>
+          </tr>
+          <tr
+            data-an="Q7L266"
+            data-family="2-4-12"
+            data-organism="Homo sapiens"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family12.html">2-4-12 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q7L266/entry"
+                target="_blank"
+                >Q7L266</a
+              >
+            </td>
+            <td>ASGL1_HUMAN</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Homo sapiens</td>
+            <td>Cytoplasm</td>
+            <td>308</td>
+            <td>Hetero tetramer / homo dimer</td>
+            <td>
+              <a href="https://www.rcsb.org/structure/4ZM9" target="_blank"
+                >4ZM9</a
+              >
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q7L266/entry#structure"
+                target="_blank"
+                >PDBs</a
+              >
+            </td>
+            <td>
+              <a href=" https://doi.org/10.1002/mrd.10092" target="_blank"
+                >3.4</a
+              >
+            </td>
+            <td>-</td>
+            <td>
+              <a href=" https://doi.org/10.1002/mrd.10092" target="_blank"
+                >6.9</a
+              >
+            </td>
+          </tr>
+          <tr
+            data-an="Q8VI04"
+            data-family="2-4-12"
+            data-organism="Rattus norvegicus"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family12.html">2-4-12 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q8VI04/entry"
+                target="_blank"
+                >Q8VI04</a
+              >
+            </td>
+            <td>ASGL1_RAT</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Rattus norvegicus</td>
+            <td>Cytoplasm</td>
+            <td>333</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1046/j.1471-4159.2003.01766.x"
+                target="_blank"
+              >
+                2.4</a
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="P50287"
+            data-family="2-5-14"
+            data-organism="Arabidopsis thaliana"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family14.html">2-5-14 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/P50287/entry"
+                target="_blank"
+                >P50287</a
+              >
+            </td>
+            <td>ASPGA_ARATH</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+            </td>
+            <td>Arabidopsis thaliana</td>
+            <td>-</td>
+            <td>315</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a href="https://doi.org/10.1042/bj3640129" target="_blank"
+                >&gt; 4</a
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="P37595"
+            data-family="2-5-14"
+            data-organism="Escherichia coli"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family14.html">2-5-14 </a></td>
+            <td>EcAIII</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/P37595/entry"
+                target="_blank"
+                >P37595</a
+              >
+            </td>
+            <td>IAAA_ECOLI</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+            </td>
+            <td>Escherichia coli</td>
+            <td>-</td>
+            <td>321</td>
+            <td>Hetero tetramer / homo dimer</td>
+            <td>
+              <a href="https://www.rcsb.org/structure/1T3M" target="_blank"
+                >1T3M</a
+              >
+              <a
+                href="https://www.uniprot.org/uniprotkb/P37595/entry#structure"
+                target="_blank"
+                >PDBs</a
+              >
+              <a
+                href="https://www.uniprot.org/uniprotkb?query=uniref_cluster_90%3AUniRef90_P37595&amp;facets=proteins_with%3A1"
+                target="_blank"
+                >90%</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://doi.org/10.1111/j.1432-1033.2004.04254.x"
+                target="_blank"
+                >3.9</a
+              >
+            </td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1111/j.1432-1033.2004.04254.x"
+                target="_blank"
+                >0.28</a
+              >
+            </td>
+          </tr>
+          <tr
+            data-an="Q9ZSD6"
+            data-family="2-5-14"
+            data-organism="Lupinus luteus"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family14.html">2-5-14 </a></td>
+            <td>LlAIII</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q9ZSD6/entry"
+                target="_blank"
+                >Q9ZSD6</a
+              >
+            </td>
+            <td>ASPG_LUPLU</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+            </td>
+            <td>Lupinus luteus</td>
+            <td>-</td>
+            <td>325</td>
+            <td>Hetero tetramer / homo dimer</td>
+            <td>
+              <a href="https://www.rcsb.org/structure/2GEZ" target="_blank"
+                >2GEZ</a
+              >
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q9ZSD6/entry#structure"
+                target="_blank"
+                >PDBs</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://doi.org/10.1111/j.1432-1033.2004.04254.x"
+                target="_blank"
+                >4.8</a
+              >
+            </td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1111/j.1432-1033.2004.04254.x"
+                target="_blank"
+                >0.32</a
+              >
+            </td>
+          </tr>
+          <tr
+            data-an="V7CU13"
+            data-family="2-5-14"
+            data-organism="Phaseolus vulgaris"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family14.html">2-5-14 </a></td>
+            <td>PvAIII</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/V7CU13/entry"
+                target="_blank"
+                >V7CU13</a
+              >
+            </td>
+            <td></td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+            </td>
+            <td>Phaseolus vulgaris</td>
+            <td>-</td>
+            <td>326</td>
+            <td>Hetero tetramer / homo dimer</td>
+            <td>
+              <a href="https://www.rcsb.org/structure/4PU6" target="_blank"
+                >4PU6</a
+              >
+              <a
+                href="https://www.uniprot.org/uniprotkb/V7CU13/entry#structure"
+                target="_blank"
+                >PDBs</a
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="UPI002B2CA93D"
+            data-family="2-5-14"
+            data-organism="Solanum lycopersicum"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family14.html">2-5-14 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniparc/UPI002B2CA93D/entry"
+                target="_blank"
+                >UPI002B2CA93D</a
+              >
+            </td>
+            <td></td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+            </td>
+            <td>Solanum lycopersicum</td>
+            <td>-</td>
+            <td>329</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a href="https://doi.org/10.1021/acsomega.3c07633" target="_blank"
+                >0.66</a
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="X7EBZ8"
+            data-family="2-5-17"
+            data-organism="Roseivivax halodurans"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family17.html">2-5-17 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/X7EBZ8/entry"
+                target="_blank"
+                >X7EBZ8</a
+              >
+            </td>
+            <td></td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+            </td>
+            <td>Roseivivax halodurans</td>
+            <td>-</td>
+            <td>310</td>
+            <td>Hetero tetramer / homo dimer</td>
+            <td>
+              <a href="https://www.rcsb.org/structure/8DQM" target="_blank"
+                >8DQM</a
+              >
+              <a
+                href="https://www.uniprot.org/uniprotkb/X7EBZ8/entry#structure"
+                target="_blank"
+                >PDBs</a
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="sprot" style="color: #68a11a; font-size: 2em; text-align: center">
+      Swiss-Prot Sequences
+    </h2>
+
+    <div class="seq-table">
+      <div
+        class="selection-controls"
+        id="selectionControls-1"
+        style="display: none"
+      >
+        <span class="count selectedCount" id="selectedCount-1"
+          >0 entries selected</span
+        >
+        <div class="selection-dropdown">
+          <button class="selection-btn downloadBtn" id="downloadBtn-1">
+            Download
+          </button>
+          <div class="selection-menu downloadMenu" id="downloadMenu-1">
+            <a href="#" data-format="fasta">FASTA</a>
+            <a href="#" data-format="tsv">Tab-separated</a>
+            <a href="#" data-format="ids">UniProt IDs</a>
+            <a href="#" data-format="idmapping">UniProt ID mapping</a>
+          </div>
+        </div>
+
+        <button class="selection-btn" id="clearSelectionBtn-1">
+          Clear selection
+        </button>
+      </div>
+      <table>
+        <tbody>
+          <tr>
+            <th class="checkbox-column">
+              <input
+                class="select-all-checkbox"
+                id="selectAllCheckbox-1"
+                type="checkbox"
+              />
+            </th>
+            <th width="56">
+              Fam
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext">Class - Clan - Family</span>
+              </span>
+            </th>
+            <th width="64">
+              Alt
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext"
+                  >Alternative historical name / classification</span
+                >
+              </span>
+            </th>
+            <th>
+              AN
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext">UniProt accession number</span>
+              </span>
+            </th>
+            <th>
+              Name
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext"
+                  >UniProt entry name, only given here for Swiss-Prot
+                  entries</span
+                >
+              </span>
+            </th>
+            <th>EC</th>
+            <th width="1">Organism</th>
+            <th>Cell-Loc</th>
+            <th>AAs</th>
+            <th width="105px">Structure</th>
+            <th>PDB</th>
+            <th width="50">
+              K<sub>m</sub>
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">for Asn [mM] </span>
+              </span>
+            </th>
+            <th width="60px">
+              V<sub>max</sub>
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">for Asn [μmol/min/mg] </span>
+              </span>
+            </th>
+            <th width="60px">
+              K<sub>cat</sub>
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">for Asn [s<sup>-1</sup>]</span>
+              </span>
+            </th>
+          </tr>
+          <tr
+            data-an="Q56W64"
+            data-family="2-1-2"
+            data-organism="Arabidopsis thaliana"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q56W64/entry"
+                target="_blank"
+                >Q56W64</a
+              >
+            </td>
+            <td>ASPG3_ARATH</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+            </td>
+            <td>Arabidopsis thaliana</td>
+            <td>-</td>
+            <td>359</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="Q21697"
+            data-family="2-1-2"
+            data-organism="Caenorhabditis elegans"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q21697/entry"
+                target="_blank"
+                >Q21697</a
+              >
+            </td>
+            <td>ASPG_CAEEL</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Caenorhabditis elegans</td>
+            <td>Lysosome</td>
+            <td>363</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="B3MJ16"
+            data-family="2-1-2"
+            data-organism="Drosophila ananassae"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/B3MJ16/entry"
+                target="_blank"
+                >B3MJ16</a
+              >
+            </td>
+            <td>ASPG2_DROAN</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Drosophila ananassae</td>
+            <td>-</td>
+            <td>378</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="B3N6Y7"
+            data-family="2-1-2"
+            data-organism="Drosophila erecta"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/B3N6Y7/entry"
+                target="_blank"
+                >B3N6Y7</a
+              >
+            </td>
+            <td>ASPG1_DROER</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Drosophila erecta</td>
+            <td>-</td>
+            <td>396</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="B3NN96"
+            data-family="2-1-2"
+            data-organism="Drosophila erecta"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/B3NN96/entry"
+                target="_blank"
+                >B3NN96</a
+              >
+            </td>
+            <td>ASPG2_DROER</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Drosophila erecta</td>
+            <td>-</td>
+            <td>399</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="B4JVW6"
+            data-family="2-1-2"
+            data-organism="Drosophila grimshawi"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/B4JVW6/entry"
+                target="_blank"
+                >B4JVW6</a
+              >
+            </td>
+            <td>ASPG1_DROGR</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Drosophila grimshawi</td>
+            <td>-</td>
+            <td>393</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="Q8MR45"
+            data-family="2-1-2"
+            data-organism="Drosophila melanogaster"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q8MR45/entry"
+                target="_blank"
+                >Q8MR45</a
+              >
+            </td>
+            <td>ASPG1_DROME</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Drosophila melanogaster</td>
+            <td>-</td>
+            <td>393</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="Q9W2C3"
+            data-family="2-1-2"
+            data-organism="Drosophila melanogaster"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q9W2C3/entry"
+                target="_blank"
+                >Q9W2C3</a
+              >
+            </td>
+            <td>ASPG2_DROME</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Drosophila melanogaster</td>
+            <td>-</td>
+            <td>397</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="B4GGF2"
+            data-family="2-1-2"
+            data-organism="Drosophila persimilis"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/B4GGF2/entry"
+                target="_blank"
+                >B4GGF2</a
+              >
+            </td>
+            <td>ASPG1_DROPE</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Drosophila persimilis</td>
+            <td>-</td>
+            <td>388</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="B4GHE3"
+            data-family="2-1-2"
+            data-organism="Drosophila persimilis"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/B4GHE3/entry"
+                target="_blank"
+                >B4GHE3</a
+              >
+            </td>
+            <td>ASPG2_DROPE</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Drosophila persimilis</td>
+            <td>-</td>
+            <td>457</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="Q28Y14"
+            data-family="2-1-2"
+            data-organism="Drosophila pseudoobscura"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q28Y14/entry"
+                target="_blank"
+                >Q28Y14</a
+              >
+            </td>
+            <td>ASPG1_DROPS</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Drosophila pseudoobscura</td>
+            <td>-</td>
+            <td>388</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="Q28XQ5"
+            data-family="2-1-2"
+            data-organism="Drosophila pseudoobscura"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q28XQ5/entry"
+                target="_blank"
+                >Q28XQ5</a
+              >
+            </td>
+            <td>ASPG2_DROPS</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Drosophila pseudoobscura</td>
+            <td>-</td>
+            <td>457</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="B4HT15"
+            data-family="2-1-2"
+            data-organism="Drosophila sechellia"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/B4HT15/entry"
+                target="_blank"
+                >B4HT15</a
+              >
+            </td>
+            <td>ASPG1_DROSE</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Drosophila sechellia</td>
+            <td>-</td>
+            <td>393</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="B4I7X1"
+            data-family="2-1-2"
+            data-organism="Drosophila sechellia"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/B4I7X1/entry"
+                target="_blank"
+                >B4I7X1</a
+              >
+            </td>
+            <td>ASPG2_DROSE</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Drosophila sechellia</td>
+            <td>-</td>
+            <td>397</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="B4QHB1"
+            data-family="2-1-2"
+            data-organism="Drosophila simulans"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/B4QHB1/entry"
+                target="_blank"
+                >B4QHB1</a
+              >
+            </td>
+            <td>ASPG1_DROSI</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Drosophila simulans</td>
+            <td>-</td>
+            <td>393</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="B4QGM0"
+            data-family="2-1-2"
+            data-organism="Drosophila simulans"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/B4QGM0/entry"
+                target="_blank"
+                >B4QGM0</a
+              >
+            </td>
+            <td>ASPG2_DROSI</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Drosophila simulans</td>
+            <td>-</td>
+            <td>397</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="B4NWI1"
+            data-family="2-1-2"
+            data-organism="Drosophila yakuba"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/B4NWI1/entry"
+                target="_blank"
+                >B4NWI1</a
+              >
+            </td>
+            <td>ASPG1_DROYA</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Drosophila yakuba</td>
+            <td>-</td>
+            <td>396</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="B4P8E0"
+            data-family="2-1-2"
+            data-organism="Drosophila yakuba"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/B4P8E0/entry"
+                target="_blank"
+                >B4P8E0</a
+              >
+            </td>
+            <td>ASPG2_DROYA</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Drosophila yakuba</td>
+            <td>-</td>
+            <td>399</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr data-an="P20933" data-family="2-1-2" data-organism="Homo sapiens">
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/P20933/entry"
+                target="_blank"
+                >P20933</a
+              >
+            </td>
+            <td>ASPG_HUMAN</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Homo sapiens</td>
+            <td>Lysosome</td>
+            <td>346</td>
+            <td>Hetero tetramer / homo dimer</td>
+            <td>
+              <a href="https://www.rcsb.org/structure/1APY" target="_blank"
+                >1APY</a
+              >
+              <a
+                href="https://www.uniprot.org/uniprotkb/P20933/entry#structure"
+                target="_blank"
+                >PDBs</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://doi.org/10.1016/S0014-5793(97)00761-8"
+                target="_blank"
+                >0.656</a
+              >
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext"
+                  >Sequence may not be exact match
+                </span>
+              </span>
+            </td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="Q4R6C4"
+            data-family="2-1-2"
+            data-organism="Macaca fascicularis"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q4R6C4/entry"
+                target="_blank"
+                >Q4R6C4</a
+              >
+            </td>
+            <td>ASPG_MACFA</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Macaca fascicularis</td>
+            <td>Lysosome</td>
+            <td>346</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr data-an="Q64191" data-family="2-1-2" data-organism="Mus musculus">
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q64191/entry"
+                target="_blank"
+                >Q64191</a
+              >
+            </td>
+            <td>ASPG_MOUSE</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Mus musculus</td>
+            <td>Lysosome</td>
+            <td>346</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="P30919"
+            data-family="2-1-2"
+            data-organism="Rattus norvegicus"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/P30919/entry"
+                target="_blank"
+                >P30919</a
+              >
+            </td>
+            <td>ASPG_RAT</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Rattus norvegicus</td>
+            <td>Lysosome</td>
+            <td>345</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="O02467"
+            data-family="2-1-2"
+            data-organism="Spodoptera frugiperda"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family2.html">2-1-2 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/O02467/entry"
+                target="_blank"
+                >O02467</a
+              >
+            </td>
+            <td>ASPG_SPOFR</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Spodoptera frugiperda</td>
+            <td>Lysosome</td>
+            <td>320</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a href="https://doi.org/10.1093/glycob/6.5.527" target="_blank"
+                >3.0</a
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="Q47898"
+            data-family="2-1-5"
+            data-organism="Elizabethkingia miricola"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family5.html">2-1-5 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q47898/entry"
+                target="_blank"
+                >Q47898</a
+              >
+            </td>
+            <td>ASPG_ELIMR</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.26" target="_blank"
+                >3.5.1.26</a
+              >
+            </td>
+            <td>Elizabethkingia miricola</td>
+            <td>Periplasm</td>
+            <td>340</td>
+            <td>Hetero tetramer / homo dimer</td>
+            <td>
+              <a href="https://www.rcsb.org/structure/1AYY" target="_blank"
+                >1AYY</a
+              >
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q47898/entry#structure"
+                target="_blank"
+                >PDBs</a
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr data-an="Q8YQB1" data-family="2-2-6" data-organism="Nostoc sp.">
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family6.html">2-2-6 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q8YQB1/entry"
+                target="_blank"
+                >Q8YQB1</a
+              >
+            </td>
+            <td>ASGX_NOSS1</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+            </td>
+            <td>Nostoc sp.</td>
+            <td>-</td>
+            <td>318</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a href="https://doi.org/10.1042/bj3640129" target="_blank"
+                >2.0</a
+              >
+            </td>
+            <td>
+              <a href="https://doi.org/10.1042/bj3640129" target="_blank"
+                >2.2</a
+              >
+            </td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="P74383"
+            data-family="2-2-6"
+            data-organism="Synechocystis sp."
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family6.html">2-2-6 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/P74383/entry"
+                target="_blank"
+                >P74383</a
+              >
+            </td>
+            <td>ASGX_SYNY3</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+            </td>
+            <td>Synechocystis sp.</td>
+            <td>-</td>
+            <td>329</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a href="https://doi.org/10.1042/bj3640129" target="_blank"
+                >0.66</a
+              >
+            </td>
+            <td>
+              <a href="https://doi.org/10.1042/bj3640129" target="_blank"
+                >1.6</a
+              >
+            </td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="Q9P6N7"
+            data-family="2-3-7"
+            data-organism="Schizosaccharomyces pombe"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family7.html">2-3-7 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q9P6N7/entry"
+                target="_blank"
+                >Q9P6N7</a
+              >
+            </td>
+            <td>TASP1_SCHPO</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.25.-" target="_blank"
+                >3.4.25.-</a
+              >
+            </td>
+            <td>Schizosaccharomyces pombe</td>
+            <td>Cytoplasm</td>
+            <td>345</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="O65268"
+            data-family="2-3-8"
+            data-organism="Arabidopsis thaliana"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family8.html">2-3-8 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/O65268/entry"
+                target="_blank"
+                >O65268</a
+              >
+            </td>
+            <td>TASP1_ARATH</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.25.-" target="_blank"
+                >3.4.25.-</a
+              >
+            </td>
+            <td>Arabidopsis thaliana</td>
+            <td>-</td>
+            <td>408</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr data-an="Q9H6P5" data-family="2-3-9" data-organism="Homo sapiens">
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family9.html">2-3-9 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q9H6P5/entry"
+                target="_blank"
+                >Q9H6P5</a
+              >
+            </td>
+            <td>TASP1_HUMAN</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.25.-" target="_blank"
+                >3.4.25.-</a
+              >
+            </td>
+            <td>Homo sapiens</td>
+            <td>
+              <a
+                href="https://doi.org/10.1016/j.str.2021.03.008"
+                target="_blank"
+              >
+                <span class="tooltip">
+                  <span style="color: green">i</span>
+                  <span class="tooltiptext"
+                    >Overexpressed in primary human cancers.</span
+                  >
+                </span>
+              </a>
+            </td>
+            <td>420</td>
+            <td>
+              Hetero tetramer / homo dimer / hexamer
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">Concentration dependent. </span>
+              </span>
+            </td>
+            <td>
+              <a href="https://www.rcsb.org/structure/6VIN" target="_blank"
+                >6VIN</a
+              >
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q9H6P5/entry#structure"
+                target="_blank"
+                >PDBs</a
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr data-an="Q8R1G1" data-family="2-3-9" data-organism="Mus musculus">
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family9.html">2-3-9 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q8R1G1/entry"
+                target="_blank"
+                >Q8R1G1</a
+              >
+            </td>
+            <td>TASP1_MOUSE</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.25.-" target="_blank"
+                >3.4.25.-</a
+              >
+            </td>
+            <td>Mus musculus</td>
+            <td>-</td>
+            <td>420</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="A3MUS8"
+            data-family="2-4-10"
+            data-organism="Pyrobaculum calidifontis"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family10.html">2-4-10 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/A3MUS8/entry"
+                target="_blank"
+                >A3MUS8</a
+              >
+            </td>
+            <td>ASPGP_PYRCJ</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Pyrobaculum calidifontis</td>
+            <td>-</td>
+            <td>299</td>
+            <td>
+              Dimer
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">Determined from gel filtration </span>
+              </span>
+            </td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1007/s12223-018-0656-6"
+                target="_blank"
+                >4.5</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://doi.org/10.1007/s12223-018-0656-6"
+                target="_blank"
+                >355</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://doi.org/10.1007/s12223-018-0656-6"
+                target="_blank"
+                >374.0</a
+              >
+            </td>
+          </tr>
+          <tr
+            data-an="Q9V262"
+            data-family="2-4-10"
+            data-organism="Pyrococcus abyssi"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family10.html">2-4-10 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q9V262/entry"
+                target="_blank"
+                >Q9V262</a
+              >
+            </td>
+            <td>ASPGP_PYRAB</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Pyrococcus abyssi</td>
+            <td>-</td>
+            <td>305</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a href="https://doi.org/10.1590/1519-6984.244735" target="_blank"
+                >2.051</a
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="Q8U4E6"
+            data-family="2-4-10"
+            data-organism="Pyrococcus furiosus"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family10.html">2-4-10 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q8U4E6/entry"
+                target="_blank"
+                >Q8U4E6</a
+              >
+            </td>
+            <td>ASPGP_PYRFU</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Pyrococcus furiosus</td>
+            <td>-</td>
+            <td>306</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="O57971"
+            data-family="2-4-10"
+            data-organism="Pyrococcus horikoshii"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family10.html">2-4-10 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/O57971/entry"
+                target="_blank"
+                >O57971</a
+              >
+            </td>
+            <td>ASPGP_PYRHO</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Pyrococcus horikoshii</td>
+            <td>-</td>
+            <td>305</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="Q5JHT1"
+            data-family="2-4-10"
+            data-organism="Thermococcus kodakarensis"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family10.html">2-4-10 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q5JHT1/entry"
+                target="_blank"
+                >Q5JHT1</a
+              >
+            </td>
+            <td>ASPGP_THEKO</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Thermococcus kodakarensis</td>
+            <td>-</td>
+            <td>306</td>
+            <td>
+              Dimer
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">Determined from gel filtration </span>
+              </span>
+            </td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1016/j.ijbiomac.2020.01.012"
+                target="_blank"
+                >3.1</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://doi.org/10.1016/j.ijbiomac.2020.01.012"
+                target="_blank"
+                >833</a
+              >
+            </td>
+            <td>-</td>
+          </tr>
+          <tr data-an="Q32LE5" data-family="2-4-12" data-organism="Bos taurus">
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family12.html">2-4-12 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q32LE5/entry"
+                target="_blank"
+                >Q32LE5</a
+              >
+            </td>
+            <td>ASGL1_BOVIN</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Bos taurus</td>
+            <td>Cytoplasm</td>
+            <td>308</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr data-an="Q5BKW9" data-family="2-4-12" data-organism="Danio rerio">
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family12.html">2-4-12 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q5BKW9/entry"
+                target="_blank"
+                >Q5BKW9</a
+              >
+            </td>
+            <td>ASGL1_DANRE</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Danio rerio</td>
+            <td>Cytoplasm</td>
+            <td>310</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="Q9VXT7"
+            data-family="2-4-12"
+            data-organism="Drosophila melanogaster"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family12.html">2-4-12 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q9VXT7/entry"
+                target="_blank"
+                >Q9VXT7</a
+              >
+            </td>
+            <td>ASGL1_DROME</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Drosophila melanogaster</td>
+            <td>-</td>
+            <td>332</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="Q29I93"
+            data-family="2-4-12"
+            data-organism="Drosophila pseudoobscura"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family12.html">2-4-12 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q29I93/entry"
+                target="_blank"
+                >Q29I93</a
+              >
+            </td>
+            <td>ASGL1_DROPS</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Drosophila pseudoobscura</td>
+            <td>-</td>
+            <td>325</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="Q7L266"
+            data-family="2-4-12"
+            data-organism="Homo sapiens"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family12.html">2-4-12 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q7L266/entry"
+                target="_blank"
+                >Q7L266</a
+              >
+            </td>
+            <td>ASGL1_HUMAN</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Homo sapiens</td>
+            <td>Cytoplasm</td>
+            <td>308</td>
+            <td>Hetero tetramer / homo dimer</td>
+            <td>
+              <a href="https://www.rcsb.org/structure/4ZM9" target="_blank"
+                >4ZM9</a
+              >
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q7L266/entry#structure"
+                target="_blank"
+                >PDBs</a
+              >
+            </td>
+            <td>
+              <a href=" https://doi.org/10.1002/mrd.10092" target="_blank"
+                >3.4</a
+              >
+            </td>
+            <td>-</td>
+            <td>
+              <a href=" https://doi.org/10.1002/mrd.10092" target="_blank"
+                >6.9</a
+              >
+            </td>
+          </tr>
+          <tr
+            data-an="Q4R7U8"
+            data-family="2-4-12"
+            data-organism="Macaca fascicularis"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family12.html">2-4-12 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q4R7U8/entry"
+                target="_blank"
+                >Q4R7U8</a
+              >
+            </td>
+            <td>ASGL1_MACFA</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Macaca fascicularis</td>
+            <td>Cytoplasm</td>
+            <td>308</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="Q8C0M9"
+            data-family="2-4-12"
+            data-organism="Mus musculus"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family12.html">2-4-12 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q8C0M9/entry"
+                target="_blank"
+                >Q8C0M9</a
+              >
+            </td>
+            <td>ASGL1_MOUSE</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Mus musculus</td>
+            <td>Cytoplasm</td>
+            <td>326</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="Q8VI04"
+            data-family="2-4-12"
+            data-organism="Rattus norvegicus"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family12.html">2-4-12 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q8VI04/entry"
+                target="_blank"
+                >Q8VI04</a
+              >
+            </td>
+            <td>ASGL1_RAT</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Rattus norvegicus</td>
+            <td>Cytoplasm</td>
+            <td>333</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1046/j.1471-4159.2003.01766.x"
+                target="_blank"
+              >
+                2.4</a
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="Q6GM78"
+            data-family="2-4-12"
+            data-organism="Xenopus laevis"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family12.html">2-4-12 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q6GM78/entry"
+                target="_blank"
+                >Q6GM78</a
+              >
+            </td>
+            <td>ASGL1_XENLA</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Xenopus laevis</td>
+            <td>Cytoplasm</td>
+            <td>309</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="P50287"
+            data-family="2-5-14"
+            data-organism="Arabidopsis thaliana"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family14.html">2-5-14 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/P50287/entry"
+                target="_blank"
+                >P50287</a
+              >
+            </td>
+            <td>ASPGA_ARATH</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+            </td>
+            <td>Arabidopsis thaliana</td>
+            <td>-</td>
+            <td>315</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <a href="https://doi.org/10.1042/bj3640129" target="_blank"
+                >&gt; 4</a
+              >
+            </td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="Q8GXG1"
+            data-family="2-5-14"
+            data-organism="Arabidopsis thaliana"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family14.html">2-5-14 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q8GXG1/entry"
+                target="_blank"
+                >Q8GXG1</a
+              >
+            </td>
+            <td>ASPGB_ARATH</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+            </td>
+            <td>Arabidopsis thaliana</td>
+            <td>-</td>
+            <td>325</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="Q54WW4"
+            data-family="2-5-14"
+            data-organism="Dictyostelium discoideum"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family14.html">2-5-14 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q54WW4/entry"
+                target="_blank"
+                >Q54WW4</a
+              >
+            </td>
+            <td>ASGX_DICDI</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+              <a href="https://enzyme.expasy.org/EC/3.5.1.1" target="_blank"
+                >3.5.1.1</a
+              >
+            </td>
+            <td>Dictyostelium discoideum</td>
+            <td>-</td>
+            <td>346</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="P37595"
+            data-family="2-5-14"
+            data-organism="Escherichia coli"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family14.html">2-5-14 </a></td>
+            <td>EcAIII</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/P37595/entry"
+                target="_blank"
+                >P37595</a
+              >
+            </td>
+            <td>IAAA_ECOLI</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+            </td>
+            <td>Escherichia coli</td>
+            <td>-</td>
+            <td>321</td>
+            <td>Hetero tetramer / homo dimer</td>
+            <td>
+              <a href="https://www.rcsb.org/structure/1T3M" target="_blank"
+                >1T3M</a
+              >
+              <a
+                href="https://www.uniprot.org/uniprotkb/P37595/entry#structure"
+                target="_blank"
+                >PDBs</a
+              >
+              <a
+                href="https://www.uniprot.org/uniprotkb?query=uniref_cluster_90%3AUniRef90_P37595&amp;facets=proteins_with%3A1"
+                target="_blank"
+                >90%</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://doi.org/10.1111/j.1432-1033.2004.04254.x"
+                target="_blank"
+                >3.9</a
+              >
+            </td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1111/j.1432-1033.2004.04254.x"
+                target="_blank"
+                >0.28</a
+              >
+            </td>
+          </tr>
+          <tr
+            data-an="P50288"
+            data-family="2-5-14"
+            data-organism="Lupinus albus"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family14.html">2-5-14 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/P50288/entry"
+                target="_blank"
+                >P50288</a
+              >
+            </td>
+            <td>ASPG_LUPAL</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+            </td>
+            <td>Lupinus albus</td>
+            <td>-</td>
+            <td>325</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="P30364"
+            data-family="2-5-14"
+            data-organism="Lupinus angustifolius"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family14.html">2-5-14 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/P30364/entry"
+                target="_blank"
+                >P30364</a
+              >
+            </td>
+            <td>ASPG_LUPAN</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+            </td>
+            <td>Lupinus angustifolius</td>
+            <td>-</td>
+            <td>325</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="P30362"
+            data-family="2-5-14"
+            data-organism="Lupinus arboreus"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family14.html">2-5-14 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/P30362/entry"
+                target="_blank"
+                >P30362</a
+              >
+            </td>
+            <td>ASPG_LUPAR</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+            </td>
+            <td>Lupinus arboreus</td>
+            <td>-</td>
+            <td>306</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr
+            data-an="Q9ZSD6"
+            data-family="2-5-14"
+            data-organism="Lupinus luteus"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family14.html">2-5-14 </a></td>
+            <td>LlAIII</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q9ZSD6/entry"
+                target="_blank"
+                >Q9ZSD6</a
+              >
+            </td>
+            <td>ASPG_LUPLU</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+            </td>
+            <td>Lupinus luteus</td>
+            <td>-</td>
+            <td>325</td>
+            <td>Hetero tetramer / homo dimer</td>
+            <td>
+              <a href="https://www.rcsb.org/structure/2GEZ" target="_blank"
+                >2GEZ</a
+              >
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q9ZSD6/entry#structure"
+                target="_blank"
+                >PDBs</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://doi.org/10.1111/j.1432-1033.2004.04254.x"
+                target="_blank"
+                >4.8</a
+              >
+            </td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://doi.org/10.1111/j.1432-1033.2004.04254.x"
+                target="_blank"
+                >0.32</a
+              >
+            </td>
+          </tr>
+          <tr
+            data-an="Q7CQV5"
+            data-family="2-5-14"
+            data-organism="Salmonella typhimurium"
+          >
+            <td class="checkbox-column">
+              <input class="entry-checkbox" type="checkbox" />
+            </td>
+            <td><a href="/html-files/class2-family14.html">2-5-14 </a></td>
+            <td>-</td>
+            <td>
+              <a
+                href="https://www.uniprot.org/uniprotkb/Q7CQV5/entry"
+                target="_blank"
+                >Q7CQV5</a
+              >
+            </td>
+            <td>IAAA_SALTY</td>
+            <td>
+              <a href="https://enzyme.expasy.org/EC/3.4.19.5" target="_blank"
+                >3.4.19.5</a
+              >
+            </td>
+            <td>Salmonella typhimurium</td>
+            <td>-</td>
+            <td>313</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="uniref" style="color: #68a11a; font-size: 2em; text-align: center">
+      UniRef100 Sequences
+    </h2>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const pageTitle = document.title
+          .replace(/\s+/g, "")
+          .replace(/[^a-zA-Z0-9]/g, "");
+        const tables = document.querySelectorAll(".seq-table");
+
+        tables.forEach((tableContainer, tableIndex) => {
+          console.log(`Setting up table ${tableIndex}`);
+
+          const selectAllCheckbox = tableContainer.querySelector(
+            ".select-all-checkbox"
+          );
+          const entryCheckboxes =
+            tableContainer.querySelectorAll(".entry-checkbox");
+          const selectionControls = tableContainer.querySelector(
+            ".selection-controls"
+          );
+          const selectedCount = tableContainer.querySelector(".count");
+          const clearSelectionBtn = tableContainer.querySelector(
+            ".selection-btn[id*='clearSelectionBtn']"
+          );
+          const downloadBtn = tableContainer.querySelector(
+            ".selection-btn[id*='downloadBtn']"
+          );
+          const downloadMenu = tableContainer.querySelector(".selection-menu");
+
+          function cleanText(html) {
+            if (!html) return "";
+            const tempDiv = document.createElement("div");
+            tempDiv.innerHTML = html;
+
+            // Remove tooltips and spans
+            tempDiv
+              .querySelectorAll("span, .tooltip")
+              .forEach((tooltip) => tooltip.remove());
+
+            return tempDiv.textContent.replace(/\s+/g, " ").trim();
+          }
+
+          function updateSelectionUI() {
+            const checkedCount = tableContainer.querySelectorAll(
+              ".entry-checkbox:checked"
+            ).length;
+            selectedCount.textContent = `${checkedCount} ${
+              checkedCount === 1 ? "entry" : "entries"
+            } selected`;
+            selectionControls.style.display =
+              checkedCount > 0 ? "flex" : "none";
+            selectAllCheckbox.checked =
+              checkedCount > 0 && checkedCount === entryCheckboxes.length;
+            selectAllCheckbox.indeterminate =
+              checkedCount > 0 && checkedCount < entryCheckboxes.length;
+          }
+
+          function toggleRowHighlight(checkbox) {
+            const row = checkbox.closest("tr");
+            if (checkbox.checked) {
+              row.classList.add("selected");
+            } else {
+              row.classList.remove("selected");
+            }
+          }
+
+          if (selectAllCheckbox) {
+            selectAllCheckbox.addEventListener("change", function () {
+              entryCheckboxes.forEach((checkbox) => {
+                checkbox.checked = this.checked;
+                toggleRowHighlight(checkbox);
+              });
+              updateSelectionUI();
+            });
+          }
+
+          entryCheckboxes.forEach((checkbox) => {
+            checkbox.addEventListener("change", function () {
+              toggleRowHighlight(this);
+              updateSelectionUI();
+            });
+          });
+
+          if (clearSelectionBtn) {
+            clearSelectionBtn.addEventListener("click", function (e) {
+              e.preventDefault();
+              entryCheckboxes.forEach((checkbox) => {
+                checkbox.checked = false;
+                toggleRowHighlight(checkbox);
+              });
+              updateSelectionUI();
+            });
+          }
+
+          if (downloadBtn && downloadMenu) {
+            downloadBtn.addEventListener("click", function (e) {
+              e.preventDefault();
+              e.stopPropagation();
+              downloadMenu.style.display =
+                downloadMenu.style.display === "block" ? "none" : "block";
+            });
+
+            downloadMenu.querySelectorAll("a").forEach((option) => {
+              option.addEventListener("click", function (e) {
+                e.preventDefault();
+                const format = this.getAttribute("data-format");
+                downloadSelectedEntries(format);
+              });
+            });
+          }
+
+          document.addEventListener("click", function () {
+            if (downloadMenu) {
+              downloadMenu.style.display = "none";
+            }
+          });
+
+          if (downloadMenu) {
+            downloadMenu.addEventListener("click", function (e) {
+              e.stopPropagation();
+            });
+          }
+
+          function downloadSelectedEntries(format) {
+            const selectedEntries = [];
+
+            tableContainer
+              .querySelectorAll(".entry-checkbox:checked")
+              .forEach((checkbox) => {
+                const row = checkbox.closest("tr");
+
+                const an = row.getAttribute("data-an") || "";
+                let organism = cleanText(
+                  row.getAttribute("data-organism") || ""
+                )
+                  .split(/\s+/)
+                  .slice(0, 2)
+                  .join(" ");
+                const family = cleanText(row.getAttribute("data-family") || "");
+
+                selectedEntries.push({ an, organism, family });
+              });
+
+            if (selectedEntries.length === 0) {
+              alert("No entries selected for download.");
+              return;
+            }
+
+            let content = "";
+            let filename = `asparaginase-entries.${format}`;
+            let mime = "text/plain";
+
+            switch (format) {
+              case "fasta":
+                content = selectedEntries
+                  .map(
+                    (entry) =>
+                      `>${entry.an}|${entry.organism}|Asparaginase ${entry.family}\nMOCKSEQUENCEAAAAAGGGGTTTCCCAAAAGGGTTTCCCAAAAGGGTTTCCC`
+                  )
+                  .join("\n\n");
+                filename = `${pageTitle}-sequences.fasta`;
+                break;
+
+              case "tsv":
+                const headers = [
+                  "Family",
+                  "Alt",
+                  "AN",
+                  "Name",
+                  "EC",
+                  "Organism",
+                  "Cell-Loc",
+                  "AAs",
+                  "Structure",
+                  "PDB",
+                  "Km",
+                  "Vmax",
+                  "Kcat",
+                ];
+                let rows = [headers.join("\t")];
+
+                tableContainer
+                  .querySelectorAll(".entry-checkbox:checked")
+                  .forEach((checkbox) => {
+                    const row = checkbox.closest("tr");
+                    const cells = row.querySelectorAll(
+                      "td:not(.checkbox-column)"
+                    );
+                    const rowData = Array.from(cells).map((cell) =>
+                      cleanText(cell.innerHTML)
+                    );
+                    rows.push(rowData.join("\t"));
+                  });
+
+                content = rows.join("\n");
+                mime = "text/tab-separated-values";
+                filename = `${pageTitle}-entries.tsv`;
+                break;
+
+              case "ids":
+                content = selectedEntries.map((entry) => entry.an).join("\n");
+                filename = `${pageTitle}-uniprot-ids.txt`;
+                break;
+
+              case "idmapping":
+                const ids = selectedEntries.map((entry) => entry.an).join("\n");
+                const textarea = document.createElement("textarea");
+                textarea.value = ids;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textarea);
+
+                alert(
+                  "Accession numbers copied to clipboard! Opening UniProt ID Mapping tool..."
+                );
+                window.open("https://www.uniprot.org/id-mapping", "_blank");
+
+                downloadMenu.style.display = "none";
+                return;
+            }
+
+            const blob = new Blob([content], { type: mime });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(link.href);
+
+            downloadMenu.style.display = "none";
+          }
+        });
+      });
+    </script>
+
+    <h2 id="tree" style="color: #68a11a; font-size: 2em; text-align: center">
+      Phylogenetic Tree and Introduction
+    </h2>
+
+    <div class="container">
+      <!-- Right Side: Text -->
+      <div class="right-side">
+        <div class="text-content">
+          <p>
+            Class 2 L-asparaginases, previously known as plant-type
+            L-asparaginases, are the second largest class. In the majority of
+            cases the L-asparaginase activity is secondary: these enzymes
+            preferably catalyse other reactions. However, Class 2 enzymes also
+            consistently display L-asparaginase activity. It should be noted
+            that this does not mean the L-asparaginase activity is biologically
+            unimportant or that there could not a Class 2 L-asparaginase with
+            L-asparagine as the primary substrate.
+          </p>
+          <p>
+            Class 2 L-asparaginases can be found in bacteria, archaea, and
+            eukaryotes, including humans. They have various names as they
+            catalyse different reactions: aspartylglucosaminidase, often
+            incorrectly glycosylasparaginase, threonine aspartase, isoaspartyl
+            peptidase and/or L-asparaginase, however, the Km for L-asparagine is
+            generally high throughout the class.
+          </p>
+          <p>
+            This class of L-asparaginases is similarly well conserved
+            structurally, even though the shared sequence identity can be low.
+            In most cases they are first transcribed as ~35 kDa precursors which
+            create inactive dimers that are autocatalytically cleaved into an
+            N-terminal α (~20 kDa) and a C-terminal β subunit (~15 kDa), which
+            assemble to create the mature protein. One could view the structure
+            as a dimer of two αβ hetero dimers or as a hetero tetramer.
+          </p>
+          <p>
+            <a
+              href="https://itol.embl.de/tree/10981161192441331711292055"
+              target="_blank"
+            >
+              Phylogenetic tree
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Left Side: Large Image -->
+
+      <div class="left-side">
+        <div class="image-container">
+          <svg
+            width="575"
+            height="575"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 1350 1350"
+          >
+            <style>
+              .image-mapper-shape {
+                fill: rgba(0, 0, 0, 0);
+                transition: fill 0.3s ease, stroke 0.3s ease;
+              }
+              g:hover .image-mapper-shape {
+                fill: rgba(255, 255, 255, 0.6);
+              }
+            </style>
+
+            <image
+              xlink:href="/images/class2.png"
+              width="1350"
+              height="1350"
+            ></image>
+            <a
+              xlink:href="/html-files/class2-family1.html"
+              target="_self"
+              xlink:title="Family 1"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="1"
+                  points="638.462 644.872 262.821 585.897 20.5128 569.231 21.7949 700 392.308 683.333 650 658.974"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family2.html"
+              target="_self"
+              xlink:title="Family 2"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="2"
+                  points="191.026 319.231 71.7949 324.359 14.1026 402.564 20.5128 532.051 228.205 573.077 325.641 588.462 637.18 639.744 353.846 429.487"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family3.html"
+              target="_self"
+              xlink:title="Family 3"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="3"
+                  points="212.821 310.256 180.769 220.513 248.718 147.436 324.359 179.487 450 324.359 616.667 542.308 637.18 634.615"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family4.html"
+              target="_self"
+              xlink:title="Family 4"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="4"
+                  points="334.615 162.821 352.564 94.8718 447.436 57.6923 517.949 202.564 610.256 530.769"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family5.html"
+              target="_self"
+              xlink:title="Family 5"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="5"
+                  points="523.077 125.641 561.538 19.2308 697.436 24.359 703.846 219.231 611.538 516.667 571.795 375.641"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family6.html"
+              target="_self"
+              xlink:title="Family 6"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="6"
+                  points="660.256 673.077 743.59 317.949 843.59 60.2564 952.564 34.6154 950 142.308 846.154 369.231 680.769 692.308"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family7.html"
+              target="_self"
+              xlink:title="Family 7"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="7"
+                  points="948.718 161.538 1042.31 62.8205 1139.74 71.7949 1221.79 96.1538 929.487 416.667 735.897 642.308 702.564 664.103"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family8.html"
+              target="_self"
+              xlink:title="Family 8"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="8"
+                  points="755.128 624.359 967.949 378.205 1238.46 84.6154 1300 110.256 1330.77 203.846 1057.69 411.538"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family9.html"
+              target="_self"
+              xlink:title="Family 9"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="9"
+                  points="1246.15 283.333 1314.1 289.744 1319.23 400 1062.82 529.487 767.949 628.205"
+                ></polygon>
+              </g>
+            </a>
+            <a xlink:href="#" target="---" xlink:title="">
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="10"
+                  points="779.487 617.949"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family10.html"
+              target="_self"
+              xlink:title="Family 10"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="11"
+                  points="1292.31 497.436 944.872 587.18 716.667 674.359 673.077 702.564 691.026 710.256 770.513 701.282 1184.62 701.282 1300 676.923 1320.51 565.385"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family11.html"
+              target="_self"
+              xlink:title="Family 11"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="12"
+                  points="1324.36 705.128 1125.64 710.256 808.974 707.692 701.282 712.82 753.846 728.205 1033.33 816.667 1248.72 896.154 1316.67 879.487 1330.77 787.18"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family12.html"
+              target="_self"
+              xlink:title="Family 12"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="13"
+                  points="1275.64 1151.28 901.282 870.513 716.667 725.641 764.103 734.615 1062.82 833.333 1276.92 921.795 1337.18 994.872"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family13.html"
+              target="_self"
+              xlink:title="Family 13"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="14"
+                  points="1000 1184.62 817.949 962.82 655.128 744.872 669.231 705.128 1321.79 1196.15 1279.49 1252.56"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family14.html"
+              target="_self"
+              xlink:title="Family 14"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="15"
+                  points="1028.21 1248.72 883.333 1324.36 662.82 1317.95 634.615 1197.44 657.692 752.564"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family15.html"
+              target="_self"
+              xlink:title="Family 15"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="16"
+                  points="588.462 1278.21 493.59 1298.72 407.692 1241.03 469.231 997.436 655.128 748.718 642.308 982.051"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family16.html"
+              target="_self"
+              xlink:title="Family 16"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="17"
+                  points="646.154 757.692 371.795 1134.62 257.692 1202.56 215.385 1098.72 447.436 903.846 620.513 774.359 633.333 764.103"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family17.html"
+              target="_self"
+              xlink:title="Family 17"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="18"
+                  points="139.744 1078.21 83.3333 989.744 346.154 876.923 619.231 771.795 460.256 891.026"
+                ></polygon>
+              </g>
+            </a>
+            <a
+              xlink:href="/html-files/class2-family18.html"
+              target="_self"
+              xlink:title="Family 18"
+            >
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="19"
+                  points="37.1795 800 29.4872 892.308 76.9231 953.846 383.333 861.538 603.846 778.205 270.513 758.974 138.462 766.667"
+                ></polygon>
+              </g>
+            </a>
+            <a xlink:href="#" target="---" xlink:title="">
+              <g>
+                <polygon
+                  class="image-mapper-shape"
+                  data-index="20"
+                  points="294.872 891.026"
+                ></polygon>
+              </g>
+            </a>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <h2
+      id="alignment"
+      style="color: #68a11a; font-size: 2em; text-align: center"
+    >
+      Representative Sequence Alignment
+    </h2>
+
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 490px;
+        margin-bottom: 60px;
+        margin-top: 50px;
+      "
+    >
+      <iframe
+        src="/images/class2_aln.svg"
+        width="1300px"
+        height="545"
+        style="will-change: transform"
+      ></iframe>
+    </div>
+
+    <h2 id="motifs" style="color: #68a11a; font-size: 2em; text-align: center">
+      Conserved Motifs of Families
+    </h2>
+
+    <div
+      style="
+        width: 1300px;
+        margin: 0 auto;
+        overflow-x: auto;
+        text-align: center;
+        will-change: transform;
+      "
+    >
+      <img
+        src="/images/motifs2.png"
+        alt="Motifs Image"
+        style="max-width: none; height: auto; display: block"
+      />
+    </div>
+
+    <h2
+      id="overview"
+      style="color: #68a11a; font-size: 2em; text-align: center"
+    >
+      Families Overview
+    </h2>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Clan</th>
+            <th>Family</th>
+            <th style="width: 135px">UniProt ID: (name, PDB)</th>
+            <th style="width: 60px">Activity</th>
+            <th style="width: 160px">Extra domains</th>
+            <th>Protein structure</th>
+            <th>Molecular weight</th>
+            <th>Taxonomy</th>
+            <th>Cell location</th>
+            <th>K<sub>m</sub> (Asn)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="centered-cell" rowspan="5">1</td>
+            <td class="centered-cell">
+              <a href="/html-files/class2-family1.html" class="button-link"
+                >1</a
+              >
+            </td>
+            <td>
+              U:
+              <a
+                href="https://www.uniprot.org/uniprot/A0A2T1HYN3"
+                target="_blank"
+                >A0A2T1HYN3</a
+              >
+              U:
+              <a
+                href="https://www.uniprot.org/uniprot/A0A8T6SG61"
+                target="_blank"
+                >A0A8T6SG61</a
+              >
+            </td>
+            <td>
+              aspartylglucosaminidase (putative) <br />
+              ASNase (putative)
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>bacteria<br />archaea (some)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="centered-cell">
+              <a href="/html-files/class2-family2.html" class="button-link"
+                >2</a
+              >
+            </td>
+            <td>
+              S*:
+              <a href="https://www.uniprot.org/uniprotkb/P20933" target="_blank"
+                >P20933</a
+              >
+              <br />
+              (<a
+                href="https://www.rcsb.org/structure/1APY"
+                class="pdb-link"
+                target="_blank"
+                >1APY</a
+              >)
+              <br />
+              S:
+              <a href="https://www.uniprot.org/uniprot/Q64191" target="_blank"
+                >Q64191</a
+              >
+            </td>
+            <td>
+              aspartylglucosaminidase <br />
+              ASNase
+            </td>
+            <td>signal seq. (most)</td>
+            <td>hetero tetramer</td>
+            <td>~36 kDa</td>
+            <td>eukaryotes (fungi, metazoans, plants)</td>
+            <td>lysosome</td>
+            <td>mM μM</td>
+          </tr>
+          <tr>
+            <td class="centered-cell">
+              <a href="/html-files/class2-family3.html" class="button-link"
+                >3</a
+              >
+            </td>
+            <td>
+              U:
+              <a
+                href="https://www.uniprot.org/uniprot/A0A7X8W6G5"
+                target="_blank"
+                >A0A7X8W6G5</a
+              >
+
+              U:
+              <a href="https://www.uniprot.org/uniprot/R7TCD6" target="_blank"
+                >R7TCD6</a
+              >
+            </td>
+            <td>
+              aspartylglucosaminidase (putative) <br />
+              ASNase (putative)
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>bacteria eukaryotes (mostly metazoans)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="centered-cell">
+              <a href="/html-files/class2-family4.html" class="button-link"
+                >4</a
+              >
+            </td>
+            <td>
+              U:
+              <a
+                href="https://www.uniprot.org/uniprot/A0A1F2U716"
+                target="_blank"
+                >A0A1F2U716</a
+              ><br />
+              U:
+              <a
+                href="https://www.uniprot.org/uniprot/A0A9E5NV21"
+                target="_blank"
+                >A0A9E5NV21</a
+              >
+            </td>
+            <td>
+              aspartylglucosaminidase (putative) <br />
+              ASNase (putative)
+            </td>
+            <td>signal seq. (some)</td>
+            <td>-</td>
+            <td>-</td>
+            <td>bacteria</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="centered-cell">
+              <a href="/html-files/class2-family5.html" class="button-link"
+                >5</a
+              >
+            </td>
+            <td>
+              S*:
+              <a
+                href="https://www.uniprot.org/uniprot/Q47898/entry"
+                target="_blank"
+                >Q47898</a
+              >
+              (<a
+                href="https://www.rcsb.org/structure/1AYY"
+                class="pdb-link"
+                target="_blank"
+                >1AYY</a
+              >)<br />
+
+              U:
+              <a href="https://www.uniprot.org/uniprot/V4PFD2" target="_blank"
+                >V4PFD2</a
+              >
+            </td>
+            <td>
+              aspartylglucosaminidase <br />
+              ASNase (putative)
+            </td>
+            <td>signal seq. (some)</td>
+            <td>hetero tetramer</td>
+            <td>~38 kDa</td>
+            <td>bacteria (mostly bacteroidota)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="centered-cell" rowspan="1">2</td>
+            <td class="centered-cell">
+              <a href="/html-files/class2-family6.html" class="button-link"
+                >6</a
+              >
+            </td>
+            <td>
+              S*:
+              <a href="https://www.uniprot.org/uniprot/P74383" target="_blank"
+                >P74383</a
+              >
+              <br />
+              S*:
+              <a href="https://www.uniprot.org/uniprot/Q8YQB1" target="_blank"
+                >Q8YQB1</a
+              >
+            </td>
+            <td>isoaspartyl peptidase ASNase</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>bacteria</td>
+            <td>-</td>
+            <td>mM μM</td>
+          </tr>
+          <tr>
+            <td class="centered-cell" rowspan="3">3</td>
+            <td class="centered-cell">
+              <a href="/html-files/class2-family7.html" class="button-link"
+                >7</a
+              >
+            </td>
+            <td>
+              S:
+              <a href="https://www.uniprot.org/uniprot/Q9P6N7" target="_blank"
+                >Q9P6N7</a
+              ><br />
+              U:
+              <a href="https://www.uniprot.org/uniprot/G1XIA0" target="_blank"
+                >G1XIA0</a
+              >
+            </td>
+            <td>
+              threonine aspartase (putative) <br />
+              ASNase (putative)
+            </td>
+            <td>additional amino acid chain (most)</td>
+            <td>-</td>
+            <td>-</td>
+            <td>eukaryotes (mostly fungi)</td>
+            <td>cytoplasm</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="centered-cell">
+              <a href="/html-files/class2-family8.html" class="button-link"
+                >8</a
+              >
+            </td>
+            <td>
+              S:
+              <a href="https://www.uniprot.org/uniprot/O65268" target="_blank"
+                >O65268</a
+              ><br />
+              U:
+              <a
+                href="https://www.uniprot.org/uniprot/A0A1D1ZVX0"
+                target="_blank"
+                >A0A1D1ZVX0</a
+              ><br />
+            </td>
+            <td>
+              threonine aspartase (putative) <br />
+              ASNase (putative)
+            </td>
+            <td>additional amino acid chain (most) structures (most)</td>
+            <td>-</td>
+            <td>-</td>
+            <td>eukaryotes (fungi, plants, metazoans)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="centered-cell">
+              <a href="/html-files/class2-family9.html" class="button-link"
+                >9</a
+              >
+            </td>
+            <td>
+              S*:
+              <a href="https://www.uniprot.org/uniprot/Q9H6P5" target="_blank"
+                >Q9H6P5</a
+              >
+              (Taspase1,
+              <a
+                href="https://www.rcsb.org/structure/6VIN"
+                class="pdb-link"
+                target="_blank"
+                >6VIN</a
+              >)<br />
+              S:
+              <a href="https://www.uniprot.org/uniprot/Q8R1G1" target="_blank"
+                >Q8R1G1</a
+              ><br />
+            </td>
+            <td>
+              threonine aspartase <br />
+              ASNase (putative)
+            </td>
+            <td>additional amino acid chain (some) structures (some)</td>
+            <td>hetero tetramer or homo hexamer</td>
+            <td>~50 kDa</td>
+            <td>eukaryotes (metazoans and fungi)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="centered-cell" rowspan="3">4</td>
+            <td class="centered-cell">
+              <a href="/html-files/class2-family10.html" class="button-link"
+                >10</a
+              >
+            </td>
+            <td>
+              S*:
+              <a href="https://www.uniprot.org/uniprot/Q5JHT1" target="_blank"
+                >Q5JHT1</a
+              >
+              <br />
+
+              S:
+              <a href="https://www.uniprot.org/uniprot/Q8U4E6" target="_blank"
+                >Q8U4E6</a
+              >
+            </td>
+            <td>
+              isoaspartyl peptidase (putative) <br />
+              ASNase
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>archaea <br />bacteria</td>
+            <td>-</td>
+            <td>mM</td>
+          </tr>
+          <tr>
+            <td class="centered-cell">
+              <a href="/html-files/class2-family11.html" class="button-link"
+                >11</a
+              >
+            </td>
+            <td>
+              U:
+              <a
+                href="https://www.uniprot.org/uniprot/A0A0K1Q9C8"
+                target="_blank"
+                >A0A0K1Q9C8</a
+              >
+              U:
+              <a
+                href="https://www.uniprot.org/uniprot/A0A4U1J185"
+                target="_blank"
+                >A0A4U1J185</a
+              >
+            </td>
+            <td>
+              isoaspartyl peptidase (putative) <br />
+              ASNase (putative)
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>mostly bacteria, some archaea</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="centered-cell">
+              <a href="/html-files/class2-family12.html" class="button-link"
+                >12</a
+              >
+            </td>
+            <td>
+              S*:
+              <a href="https://www.uniprot.org/uniprot/Q7L266" target="_blank"
+                >Q7L266</a
+              >
+              (hASRGL1,
+              <a
+                href="https://www.rcsb.org/structure/4ZM9"
+                class="pdb-link"
+                target="_blank"
+                >4ZM9</a
+              >)<br />
+              P*:
+              <a
+                href="https://www.uniprot.org/uniparc/UPI000184D93B/entry"
+                target="_blank"
+                >H0VQC8</a
+              >
+              (CpAIII,
+              <a
+                href="https://www.rcsb.org/structure/4O47"
+                class="pdb-link"
+                target="_blank"
+                >4O47</a
+              >)
+            </td>
+            <td>isoaspartyl peptidase ASNase</td>
+            <td>signal seq. (few)</td>
+            <td>hetero tetramer</td>
+            <td>~33 kDa</td>
+            <td>eukaryotes (mostly metazoans)</td>
+            <td>cytoplasm</td>
+            <td>mM</td>
+          </tr>
+          <tr>
+            <td class="centered-cell" rowspan="6">5</td>
+            <td class="centered-cell">
+              <a href="/html-files/class2-family13.html" class="button-link"
+                >13</a
+              >
+            </td>
+            <td>
+              U:
+              <a
+                href="https://www.uniprot.org/uniprot/A0A5M8Q4I0"
+                target="_blank"
+                >A0A5M8Q4I0</a
+              ><br />
+              U:
+              <a
+                href="https://www.uniprot.org/uniprot/A0A232LUK4"
+                target="_blank"
+                >A0A232LUK4</a
+              >
+            </td>
+            <td>
+              isoaspartyl peptidase (putative) <br />
+              ASNase (putative)
+            </td>
+            <td>part of larger protein (some)</td>
+            <td>-</td>
+            <td>-</td>
+            <td>bacteria<br />eukaryotes (some)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="centered-cell">
+              <a href="/html-files/class2-family14.html" class="button-link"
+                >14</a
+              >
+            </td>
+            <td>
+              S*:
+              <a href="https://www.uniprot.org/uniprot/P37595" target="_blank"
+                >P37595</a
+              ><br />
+              (EcAIII,
+              <a
+                href="https://www.rcsb.org/structure/1T3M"
+                class="pdb-link"
+                target="_blank"
+                >1T3M</a
+              >) <br />
+              U*:
+              <a href="https://www.uniprot.org/uniprot/V7CU13" target="_blank"
+                >V7CU13</a
+              ><br />
+              (PvAIII,
+              <a
+                href="https://www.rcsb.org/structure/4PU6"
+                class="pdb-link"
+                target="_blank"
+                >4PU6</a
+              >)
+            </td>
+            <td>isoaspartyl peptidase ASNase</td>
+            <td>
+              additional amino acid chain (often) <br />
+              structures (often) <br />signal seq. (some)
+            </td>
+            <td>hetero tetramer</td>
+            <td>-</td>
+            <td>
+              bacteria <br />
+              eukaryotes (mostly fungi and plants)
+            </td>
+            <td>cytoplasm</td>
+            <td>μM <br />mM</td>
+          </tr>
+          <tr>
+            <td class="centered-cell">
+              <a href="/html-files/class2-family15.html" class="button-link"
+                >15</a
+              >
+            </td>
+            <td>
+              U:
+              <a
+                href="https://www.uniprot.org/uniprot/A0A651I3T8"
+                target="_blank"
+                >A0A651I3T8</a
+              >
+              <br />
+              U:
+              <a
+                href="https://www.uniprot.org/uniprot/A0A7W1IF40"
+                target="_blank"
+                >A0A7W1IF40</a
+              >
+            </td>
+            <td>
+              isoaspartyl peptidase (putative) <br />
+              ASNase (putative)
+            </td>
+            <td>signal seq. (some)</td>
+            <td>-</td>
+            <td>-</td>
+            <td>bacteria (mostly bacter-oidota)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="centered-cell">
+              <a href="/html-files/class2-family16.html" class="button-link"
+                >16</a
+              >
+            </td>
+            <td>
+              U:
+              <a
+                href="https://www.uniprot.org/uniprot/A0A2N1VIW8"
+                target="_blank"
+                >A0A2N1VIW8</a
+              ><br />
+              U:
+              <a
+                href="https://www.uniprot.org/uniprot/A0A358KH85"
+                target="_blank"
+                >A0A358KH85</a
+              ><br />
+            </td>
+            <td>
+              isoaspartyl peptidase (putative) <br />
+              ASNase (putative)
+            </td>
+            <td>signal seq. (most)</td>
+            <td>-</td>
+            <td>-</td>
+            <td>bacteria</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td class="centered-cell">
+              <a href="/html-files/class2-family17.html" class="button-link"
+                >17</a
+              >
+            </td>
+            <td>
+              U*:
+              <a href="https://www.uniprot.org/uniprot/X7EBZ8" target="_blank"
+                >X7EBZ8</a
+              ><br />
+              (<a
+                href="https://www.rcsb.org/structure/8DQM"
+                class="pdb-link"
+                target="_blank"
+                >8DQM</a
+              >) <br />
+              U:
+              <a
+                href="https://www.uniprot.org/uniprot/A0A7W1IF40"
+                target="_blank"
+                >A0A7W1IF40</a
+              >
+            </td>
+            <td>isoaspartyl peptidase ASNase (putative)</td>
+            <td>signal seq. (some)</td>
+            <td>hetero tetramer</td>
+            <td>-</td>
+            <td>bacteria</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+
+          <tr>
+            <td class="centered-cell">
+              <a href="/html-files/class2-family18.html" class="button-link"
+                >18</a
+              >
+            </td>
+            <td>
+              U:
+              <a
+                href="https://www.uniprot.org/uniprot/A0A521V5L8"
+                target="_blank"
+                >A0A521V5L8</a
+              ><br />
+              U:
+              <a
+                href="https://www.uniprot.org/uniprot/A0A1G0I6T6"
+                target="_blank"
+                >A0A1G0I6T6</a
+              ><br />
+            </td>
+            <td>
+              isoaspartyl peptidase (putative) <br />
+              ASNase (putative)
+            </td>
+            <td>
+              signal seq. (most) <br />type 1 glutamine amido-transferase (some)
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>bacteria (mostly pseudo-monadota)</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="content">
+      <p>
+        Entry: S = Swiss-Prot, U = UniProtKB, P = UniParc, * = experimentally
+        studied protein, UniProt accession number (short protein name, PDB id).
+        Activity: ASNase = L-asparaginase, GLNase = L-glutaminase. Molecular
+        weight is for a monomeric unit. Km is for L-asparagine: μM = Km < 1 mM,
+        mM = Km ≥ 1 mM.
+      </p>
+    </div>
+
+    <div id="asparaginases" class="bottom-banner">
+      <div>The Asparaginase Database | Release 2025-01 | Contact:</div>
+      <a href="mailto:stetinam@vscht.cz">stetinam@vscht.cz</a>| Supported by:
+      <a href="https://www.elixir-czech.cz/" target="_blank">
+        <img
+          src="/images/elixir_logo.png"
+          alt="elixir_logo.png"
+          class="elixir-image"
+        />
+      </a>
+    </div>
+  </body>
+</html>
