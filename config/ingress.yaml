@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nginx
-  namespace: aspdb-ns
+  namespace: krenek-ns
   annotations:
     kubernetes.io/ingress.class: "nginx"
     kubernetes.io/tls-acme: "true"
@@ -12,43 +12,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - "asparaginasedb.cz"
-        - "www.asparaginasedb.cz"
-        - "asparaginasedb.com"
-        - "www.asparaginasedb.com"
-      secretName: asparaginasedb-tls
+        - "aspdb-ljocha.dyn.cloud.e-infra.cz"
+      secretName: aspdb-ljocha-dyn-cloud-e-infra-cz-tls
   rules:
-    - host: "asparaginasedb.cz"
-      http:
-        paths:
-          - backend:
-              service:
-                name: nginx
-                port:
-                  number: 8080
-            pathType: Prefix
-            path: "/"
-    - host: "www.asparaginasedb.cz"
-      http:
-        paths:
-          - backend:
-              service:
-                name: nginx
-                port:
-                  number: 8080
-            pathType: Prefix
-            path: "/"
-    - host: "asparaginasedb.com"
-      http:
-        paths:
-          - backend:
-              service:
-                name: nginx
-                port:
-                  number: 8080
-            pathType: Prefix
-            path: "/"
-    - host: "www.asparaginasedb.com"
+    - host: "aspdb-ljocha.dyn.cloud.e-infra.cz"
       http:
         paths:
           - backend:
