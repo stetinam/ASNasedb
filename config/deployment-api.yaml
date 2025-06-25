@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aspdb-api
+  namespace: krenek-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aspdb-api
+  template:
+    metadata:
+      labels:
+        app: aspdb-api
+    spec:
+      securityContext:
+        fsGroupChangePolicy: OnRootMismatch
+        fsGroup: 101
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: api
+          image: cerit.io/ljocha/aspdb-blast:latest
+          imagePullPolicy: Always
+          securityContext:
+            runAsUser: 101
+            runAsGroup: 101
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+          resources:
+            requests:
+              cpu: 500m
+              memory: 2Gi
+            limits:
+              cpu: 2
+              memory: 8Gi
+          volumeMounts:
+            - name: blast-volume
+              mountPath: /blast
+      volumes:
+        - name: blast-volume
+          persistentVolumeClaim:
+            claimName: asparaginase-blast-database
