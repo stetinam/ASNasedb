@@ -21,12 +21,12 @@ kubectl get pods
 nginx=nginx-85745bd4cd-n9wzs # example, fill the value returned by kubectl
 for f in index.html search.html blast.html; do kubectl cp $f $nginx:/usr/share/nginx/html/; done
 ```
-1. copy database files to the api container
+5. copy database files to the api container
 ```
 api=aspdb-api-fb8469d64-hnh5v  # example only
 for f in esp.fasta  swissprot.fasta  uniref100_fam_all.fasta; do kubectl cp $f $api:/blast; done
 ```
-1. initialize blast databases
+6. initialize blast databases
 ```
 kubectl exec -ti $api -- bash
 cd /blast
