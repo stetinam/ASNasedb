@@ -1,15 +1,58 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+import subprocess
+import logging
+import uuid
 
-# Create an instance of FastAPI
 app = FastAPI()
 
-# Define a route for the GET request
 @app.get("/api/blast")
-async def blast(query, targetDB = 'xx', eThreshold = 10, matrix = 'Auto - BLOSUM62', hits = 250):
+async def blast(query, targetDB, eThreshold = "0.001", hits = "250"):
+    reqid = uuid.uuid4()
+    with open(f"/tmp/{reqid}.fasta","w") as f:
+        f.write(query)
+        
+    try:
+        result = subprocess.run(
+            ["blastp", 
+                "-query", f"/tmp/{reqid}.fasta",
+                "-db", f"/blast/{targetDB}",
+                "-evalue", eThreshold,
+                "-max_target_seqs", hits,
+                "-out", f"/tmp/{reqid}.out"
+            ],
+            cwd = '/blast',
+            capture_output=True,
+            text=True,
+            check=True
+        )
 
-    response = {
-        "message": "Request successfully processed.",
-	"bla": eThreshold * hits
-    }
-    return response
+        with open(f"/tmp/{reqid}.out") as f:
+            out = f.read()
+
+        response = {
+            "stdout": result.stdout,
+            "stderr": result.stderr,
+            "output": out,
+            "returncode": result.returncode
+        }
+
+        return response
+
+    except subprocess.CalledProcessError as e:
+        logging.error(f"Command '{e.cmd}' returned non-zero exit status {e.returncode}")
+        logging.error(f"stdout: {e.stdout}")
+        logging.error(f"stderr: {e.stderr}")
+
+        raise HTTPException(status_code=500, detail="Blast execution failed.")
+
+    except Exception as e:
+        logging.error(f"An unexpected error occurred: {e}")
+        raise HTTPException(status_code=500, detail="An unexpected error occurred.")
+
+    finally: 
+        try:
+            os.unlink(f"/tmp/{reqid}.fasta")
+            os.unlink(f"/tmp/{reqid}.out")
+        except:
+            pass
 

@@ -1,6 +1,6 @@
 FROM python:3.13  
 
-RUN apt update && apt install -y ncbi-blast+ && apt clean && rm -rf /var/lib/apt/lists/*
+RUN apt update && apt install -y ncbi-blast+ vim && apt clean && rm -rf /var/lib/apt/lists/*
  
 # Create the app directory
 RUN mkdir /app
