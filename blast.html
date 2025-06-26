@@ -587,6 +587,12 @@
       </div>
     </div>
 
+    <div>
+       <textarea id="blastResult" class="results-info">
+       BLAST output will turn up here
+       </textarea>
+    </div>
+
     <h2
       id="proteins"
       style="color: #17b470; font-size: 2em; text-align: center"
@@ -11078,13 +11084,15 @@
 
 
         const encodedBlast = encodeURIComponent(searchBlast);
-        fetch(`/api/blast?query=${encodedBlast}`).then(response => {
+        fetch(`/api/blast?query=${encodedBlast}&targetDB=swissprot`).then(response => {
            if (!response.ok) {
              throw new Error('/api/blast:' + response.statusText);
            }
           return response.json();
         }).then(data => {
            console.log('BLAST result:', data);
+//           document.getElementById("blastResult").value = JSON.stringify(data,null,2);
+           document.getElementById("blastResult").value = data.output;
         }).catch(error => {
            console.error('Calling /api/blast:', error);
         });
