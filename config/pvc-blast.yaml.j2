@@ -2,7 +2,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: asparaginase-blast-database
-  namespace: krenek-ns
+  namespace: {{ namespace }}
 spec:
   accessModes:
     - ReadWriteMany

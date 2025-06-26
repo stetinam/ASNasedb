@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
-  namespace: krenek-ns
+  name: aspdb-api
+  namespace: {{ namespace }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: aspdb-api
   template:
     metadata:
       labels:
-        app: nginx
+        app: aspdb-api
     spec:
       securityContext:
         fsGroupChangePolicy: OnRootMismatch
@@ -20,9 +20,9 @@ spec:
         seccompProfile:
           type: RuntimeDefault
       containers:
-        - name: nginx
-          image: nginxinc/nginx-unprivileged
-          imagePullPolicy: IfNotPresent
+        - name: api
+          image: {{ apiImage }}
+          imagePullPolicy: Always
           securityContext:
             runAsUser: 101
             runAsGroup: 101
@@ -38,14 +38,9 @@ spec:
               cpu: 2
               memory: 8Gi
           volumeMounts:
-            - name: html-volume
-              mountPath: /usr/share/nginx/html
-            - name: image-volume
-              mountPath: /usr/share/nginx/html/images
+            - name: blast-volume
+              mountPath: /blast
       volumes:
-        - name: html-volume
+        - name: blast-volume
           persistentVolumeClaim:
-            claimName: html-content
-        - name: image-volume
-          persistentVolumeClaim:
-            claimName: asparaginase-seq-database
+            claimName: asparaginase-blast-database

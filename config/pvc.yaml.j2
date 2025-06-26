@@ -2,7 +2,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: asparaginase-seq-database
-  namespace: krenek-ns
+  namespace: {{ namespace }}
 spec:
   accessModes:
     - ReadWriteMany
@@ -15,7 +15,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: html-content
-  namespace: krenek-ns
+  namespace: {{ namespace }}
 spec:
   accessModes:
     - ReadWriteMany

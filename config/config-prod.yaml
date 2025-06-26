@@ -1,0 +1,7 @@
+namespace: aspdb-ns
+
+hosts:
+- asparaginasedb.cz
+- asparaginasedb.com
+
+apiImage: "cerit.io/ljocha/aspdb-blast:latest"

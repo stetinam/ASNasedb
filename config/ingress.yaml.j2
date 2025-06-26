@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nginx
-  namespace: krenek-ns
+  namespace: {{ namespace }}
   annotations:
     kubernetes.io/ingress.class: "nginx"
     kubernetes.io/tls-acme: "true"
@@ -12,11 +12,11 @@ metadata:
 spec:
   ingressClassName: nginx
   tls:
-    - hosts:
-        - "aspdb-ljocha.dyn.cloud.e-infra.cz"
-      secretName: aspdb-ljocha-dyn-cloud-e-infra-cz-tls
-  rules:
-    - host: "aspdb-ljocha.dyn.cloud.e-infra.cz"
+    - hosts: {% for host in hosts %}
+        - "{{ host }}" {% endfor %}
+      secretName: {{ hosts.0 | replace('.', '-') }}-tls
+  rules: {% for host in hosts %}
+    - host: "{{ host }}"
       http:
         paths:
           - backend:
@@ -32,4 +32,4 @@ spec:
                 port:
                   number: 8080
             pathType: Prefix
-            path: "/api"
+            path: "/api" {% endfor %}
