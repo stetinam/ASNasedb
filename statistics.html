@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asparaginase Statistics</title>
+    <link rel="icon" type="image/png" href="/images/logo5.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-blue: #2563eb;
+        --secondary-blue: #3b82f6;
+        --light-blue: #dbeafe;
+        --dark-gray: #1f2937;
+        --medium-gray: #6b7280;
+        --light-gray: #f3f4f6;
+        --white: #ffffff;
+        --accent: #10b981;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Source Sans Pro", sans-serif;
+        background-color: #f9f9f9;
+        color: var(--dark-gray);
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Base link styling */
+      a {
+        color: #17b470;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      a:hover {
+        color: #1b915e;
+      }
+
+      a:active {
+        color: #e91e63;
+      }
+
+      a {
+        transition: color 0.3s ease, text-decoration 0.3s ease;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 2rem;
+      }
+
+      header {
+        background-color: #17b470;
+        padding: 40px 20px;
+        text-align: center;
+        color: white;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0rem;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      /* Home Button Styles */
+      .home-button {
+        position: absolute;
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        text-decoration: none;
+      }
+
+      .home-button img.home-icon {
+        width: auto;
+        height: 80px;
+        border-radius: 5px;
+      }
+
+      .home-button:hover img.home-icon {
+        opacity: 0.8;
+      }
+
+      @media (max-width: 700px) {
+        .home-button {
+          display: none;
+        }
+      }
+
+      /* Combined stats and pie chart layout */
+      .stats-overview {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+        align-items: stretch;
+      }
+
+      .stats-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1.5rem;
+      }
+
+      .stat-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+      }
+
+      .stat-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent), rgb(57, 151, 206));
+      }
+
+      .stat-number {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #17b470;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+        animation: countUp 1s ease-out;
+      }
+
+      .release-text {
+        font-size: 1.9rem;
+        font-weight: 600;
+        color: #17b470;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+
+      @keyframes countUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .stat-label {
+        font-size: 1rem;
+        color: var(--medium-gray);
+        font-weight: 500;
+      }
+
+      .pie-chart-container {
+        background: white;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .pie-chart-wrapper {
+        position: relative;
+        height: 300px;
+        margin: 0 auto;
+        flex: 1;
+        display: flex;
+        align-items: center;
+      }
+
+      .chart-container {
+        background: white;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        margin-bottom: 2rem;
+        position: relative;
+        max-width: 100%;
+      }
+
+      .chart-title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: #17b470;
+      }
+
+      .chart-wrapper {
+        position: relative;
+        height: 350px;
+        margin: 0 auto;
+      }
+
+      .legend-custom {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.95rem;
+        color: var(--medium-gray);
+      }
+
+      .legend-color {
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+      }
+
+      .insights {
+        background: linear-gradient(135deg, #4fc8963e, var(--white));
+        padding: 2rem;
+        border-radius: 16px;
+        margin-top: 3rem;
+        border: 1px solid rgba(37, 99, 235, 0.1);
+        max-width: 100%;
+        font-size: 1.15rem;
+      }
+
+      .insights h3 {
+        color: #17b470;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      .insights ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .insights li {
+        padding: 0.5rem 0;
+        padding-left: 1.5rem;
+        position: relative;
+      }
+
+      .insights li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: #17b470;
+        font-weight: bold;
+      }
+
+      .bottom-banner {
+        background-color: #626262;
+        color: white;
+        padding: 15px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .elixir-image {
+        max-width: 100px;
+        height: auto;
+        vertical-align: middle;
+      }
+
+      .bottom-banner a {
+        color: white;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .bottom-banner a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 1rem;
+          margin: 10px auto;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        .stats-overview {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .stat-number {
+          font-size: 1.8rem;
+        }
+
+        .chart-wrapper {
+          height: 250px;
+        }
+
+        .pie-chart-wrapper {
+          height: 250px;
+        }
+      }
+
+      .data-table {
+        background: white;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        margin-top: 2rem;
+        overflow-x: auto;
+        max-width: 100%;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+      }
+
+      th,
+      td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid var(--light-gray);
+      }
+
+      th {
+        background: var(--light-blue);
+        font-weight: 600;
+        color: var(--dark-gray);
+        position: sticky;
+        top: 0;
+      }
+
+      tr:hover {
+        background: var(--light-gray);
+      }
+
+      .percentage {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: var(--light-blue);
+        border-radius: 12px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--primary-blue);
+      }
+      .small-caps {
+        font-variant-caps: small-caps;
+      }
+
+      .download-section {
+        margin: 10px auto;
+        padding: 12px 20px;
+        background-color: #615ab3; /* Default purple - will be overridden by JavaScript */
+        border: 1px solid #dee2e6;
+        border-radius: 4px;
+        max-width: 1250px;
+        text-align: center;
+      }
+
+      .download-btn {
+        display: inline-block;
+        padding: 6px 16px;
+        background-color: white;
+        color: #615ab3; /* Default purple - will be overridden by JavaScript */
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 15px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        margin: 0;
+        border: 2px solid transparent;
+      }
+
+      .download-btn:hover {
+        background-color: rgba(255, 255, 255, 0.9);
+        transform: translateY(-1px);
+      }
+
+      .download-btn:visited {
+        color: #615ab3; /* Default purple - will be overridden by JavaScript */
+      }
+
+      .download-info {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.8);
+        margin: 4px 0 0 0;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Home Button with Image -->
+      <a href="/index.html" class="home-button">
+        <img src="/images/logo1.png" alt="Home" class="home-icon" />
+      </a>
+      <h1>The Asparaginase Database Statistics</h1>
+    </header>
+
+    <div class="container">
+      <div class="stats-overview">
+        <div class="stats-column">
+          <div class="stat-card">
+            <div class="release-text">Early Access 2025-0</div>
+            <div class="stat-label">Release</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="totalSeq">126,085</div>
+            <div class="stat-label">Total Unique Sequences</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="studiedProteins">101</div>
+            <div class="stat-label">Experimentally Studied Proteins</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="studiedFamilies">40</div>
+            <div class="stat-label">Asparaginase Families</div>
+          </div>
+        </div>
+        <div class="pie-chart-container">
+          <h2 class="chart-title">Sequence Distribution by Class</h2>
+          <div class="pie-chart-wrapper">
+            <canvas id="pieChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <h2 class="chart-title">
+          Sequence and Experimentally Studied Protein Distribution by Family
+        </h2>
+        <div class="chart-wrapper" style="height: 500px">
+          <canvas id="allFamiliesChart"></canvas>
+        </div>
+        <div class="legend-custom">
+          <div class="legend-item">
+            <div
+              class="legend-color"
+              style="background: rgba(124, 111, 214, 0.8)"
+            ></div>
+            <span>Class 1 Sequences</span>
+          </div>
+          <div class="legend-item">
+            <div
+              class="legend-color"
+              style="background: rgba(123, 179, 86, 0.8)"
+            ></div>
+            <span>Class 2 Sequences</span>
+          </div>
+          <div class="legend-item">
+            <div
+              class="legend-color"
+              style="background: rgba(184, 93, 184, 0.8)"
+            ></div>
+            <span>Class 3 Sequences</span>
+          </div>
+          <div class="legend-item">
+            <div
+              class="legend-color"
+              style="background: rgba(239, 68, 68, 0.9)"
+            ></div>
+            <span>Studied Proteins (right axis)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <h2 class="chart-title">Sequence Distribution by Clan</h2>
+        <div class="chart-wrapper">
+          <canvas id="stackedChart"></canvas>
+        </div>
+      </div>
+
+      <div class="insights">
+        <h3>Insights</h3>
+        <ul>
+          <li>
+            Class 1 dominates with 51% of all sequences (64,284) and 72 studied
+            proteins
+          </li>
+          <li>
+            Class 2 comprises 34% of sequences (43,103) and 23 studied proteins
+          </li>
+          <li>
+            Class 3 represents 15% of sequences (18,698) and 6 studied proteins
+          </li>
+          <li>
+            101 proteins have been experimentally studied across 22 families
+          </li>
+          <li>
+            Family 1-1-3 has both the most sequences (11,814) and studied
+            proteins (24) as well as both asparaginases in pharmaceutical use
+          </li>
+          <li>
+            18 families likely remain unstudied experimentally, representing
+            potential research opportunities
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="asparaginases" class="bottom-banner">
+      <div>
+        <a href="https://www.asparaginasedb.com">The Asparaginase Database</a> ©
+        2025 is licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a
+        ><img
+          src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
+          style="max-width: 1em; max-height: 1em; margin-left: 0.2em"
+        /><img
+          src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
+          style="max-width: 1em; max-height: 1em; margin-left: 0.2em"
+        />| Early Access | Contact:
+      </div>
+      <a href="mailto:stetinam@vscht.cz">stetinam@vscht.cz</a>| Supported by:
+      <a href="https://www.elixir-czech.cz/" target="_blank">
+        <img
+          src="/images/elixir_logo.png"
+          alt="elixir_logo.png"
+          class="elixir-image"
+        />
+      </a>
+    </div>
+
+    <script>
+      // Data
+      const sequenceData = {
+        "1-1-1": 1267,
+        "1-1-2": 1694,
+        "1-1-3": 11814,
+        "1-1-4": 3820,
+        "1-2-5": 7894,
+        "1-2-6": 4079,
+        "1-2-7": 2800,
+        "1-3-8": 308,
+        "1-3-9": 1649,
+        "1-4-10": 989,
+        "1-4-11": 3153,
+        "1-4-12": 3837,
+        "1-4-13": 449,
+        "1-5-14": 3612,
+        "1-5-15": 1153,
+        "1-5-16": 9651,
+        "1-5-17": 1012,
+        "1-5-18": 5103,
+        "2-1-1": 856,
+        "2-1-2": 3107,
+        "2-1-3": 2563,
+        "2-1-4": 1150,
+        "2-1-5": 4578,
+        "2-2-6": 1905,
+        "2-3-7": 974,
+        "2-3-8": 993,
+        "2-3-9": 2702,
+        "2-4-10": 1570,
+        "2-4-11": 1168,
+        "2-4-12": 2384,
+        "2-5-13": 1224,
+        "2-5-14": 8892,
+        "2-5-15": 2764,
+        "2-5-16": 1983,
+        "2-5-17": 1834,
+        "2-5-18": 2456,
+        "3-1-1": 3284,
+        "3-2-2": 7794,
+        "3-3-3": 2941,
+        "3-4-4": 4679,
+      };
+
+      const studiedProteins = {
+        "1-1-1": 5,
+        "1-1-3": 24,
+        "1-2-5": 13,
+        "1-2-6": 3,
+        "1-4-10": 1,
+        "1-4-11": 13,
+        "1-4-12": 2,
+        "1-5-14": 2,
+        "1-5-15": 1,
+        "1-5-16": 8,
+        "2-1-2": 4,
+        "2-1-5": 2,
+        "2-2-6": 2,
+        "2-3-9": 1,
+        "2-4-10": 5,
+        "2-4-12": 3,
+        "2-5-14": 5,
+        "2-5-17": 1,
+        "3-1-1": 2,
+        "3-2-2": 2,
+        "3-3-3": 1,
+        "3-4-4": 1,
+      };
+
+      const classTotals = {
+        "Class 1": 64284,
+        "Class 2": 43103,
+        "Class 3": 18698,
+      };
+
+      // Chart colors
+      const colors = {
+        class1: "#7c6fd6", // Medium purple-blue
+        class2: "#7bb356", // Medium vibrant green
+        class3: "#b85db8", // Medium magenta
+        gradient1: "rgba(124, 111, 214, 0.8)",
+        gradient2: "rgba(123, 179, 86, 0.8)",
+        gradient3: "rgba(184, 93, 184, 0.8)",
+      };
+
+      // Initialize charts
+      Chart.defaults.font.family = '"Source Sans Pro", sans-serif';
+
+      // Pie Chart
+      const pieCtx = document.getElementById("pieChart").getContext("2d");
+      const pieChart = new Chart(pieCtx, {
+        type: "doughnut",
+        data: {
+          labels: Object.keys(classTotals),
+          datasets: [
+            {
+              data: Object.values(classTotals),
+              backgroundColor: [colors.class1, colors.class2, colors.class3],
+              borderWidth: 3,
+              borderColor: "#fff",
+              hoverOffset: 10,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          rotation: 180, // Start from top and go counter-clockwise (largest slice goes left)
+          circumference: 360,
+          plugins: {
+            legend: {
+              display: true,
+              position: "bottom",
+              align: "center",
+              onClick: function (e, legendItem, legend) {
+                // Handle legend click
+                const classNumber = legendItem.index + 1; // Class 1, 2, 3
+                const url = `/html-files/class${classNumber}.html`;
+                window.open(url, "_self");
+              },
+              onHover: function (e, legendItem, legend) {
+                // Change cursor to pointer on hover
+                e.native.target.style.cursor = "pointer";
+              },
+              onLeave: function (e, legendItem, legend) {
+                // Reset cursor when leaving
+                e.native.target.style.cursor = "default";
+              },
+              labels: {
+                usePointStyle: true, // Makes the legend icons circular
+                pointStyle: "circle", // Ensures circular shape
+                padding: 20, // Space between legend items
+                font: {
+                  size: 15,
+                  weight: "1",
+                },
+                color: "#4a5568", // Nice gray color for text
+                generateLabels: function (chart) {
+                  const data = chart.data;
+                  return data.labels.map((label, i) => {
+                    return {
+                      text: label, // Just "Class 1", "Class 2", "Class 3"
+                      fillStyle: data.datasets[0].backgroundColor[i],
+                      strokeStyle: data.datasets[0].backgroundColor[i],
+                      lineWidth: 0,
+                      pointStyle: "circle",
+                      hidden: false,
+                      index: i,
+                    };
+                  });
+                },
+              },
+            },
+            tooltip: {
+              titleFont: {
+                size: 16, // Makes tooltip title larger
+              },
+              bodyFont: {
+                size: 14, // Makes tooltip body text larger
+              },
+              callbacks: {
+                label: function (context) {
+                  const value = context.parsed;
+                  const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                  const percentage = ((value / total) * 100).toFixed(1);
+                  return `${
+                    context.label
+                  }: ${value.toLocaleString()} sequences (${percentage}%)`;
+                },
+              },
+            },
+          },
+          onHover: (event, activeElements) => {
+            // Change cursor for pie slices
+            event.native.target.style.cursor =
+              activeElements.length > 0 ? "pointer" : "default";
+          },
+          onClick: (event, activeElements) => {
+            // Handle pie slice click
+            if (activeElements.length > 0) {
+              const dataIndex = activeElements[0].index;
+              const classNumber = dataIndex + 1; // Class 1, 2, 3
+              const url = `/html-files/class${classNumber}.html`;
+              window.open(url, "_self");
+            }
+          },
+        },
+      });
+
+      // All Families Chart
+      const allFamiliesCtx = document
+        .getElementById("allFamiliesChart")
+        .getContext("2d");
+
+      // Prepare data for all families chart
+      const allFamiliesData = Object.entries(sequenceData).map(
+        ([key, value]) => {
+          const [classNum, clanNum, familyNum] = key.split("-");
+          return {
+            label: `${key}`,
+            value: value,
+            studiedCount: studiedProteins[key] || 0,
+            classNum: parseInt(classNum),
+            clanNum: parseInt(clanNum),
+            familyNum: parseInt(familyNum),
+            displayLabel: `Family ${familyNum}`,
+          };
+        }
+      );
+
+      // Sort by class, then by clan, then by family number
+      allFamiliesData.sort((a, b) => {
+        if (a.classNum !== b.classNum) return a.classNum - b.classNum;
+        if (a.clanNum !== b.clanNum) return a.clanNum - b.clanNum;
+        return a.familyNum - b.familyNum;
+      });
+
+      // Create color array based on class
+      const backgroundColors = allFamiliesData.map((item) => {
+        if (item.classNum === 1) return colors.gradient1;
+        if (item.classNum === 2) return colors.gradient2;
+        return colors.gradient3;
+      });
+
+      const borderColors = allFamiliesData.map((item) => {
+        if (item.classNum === 1) return colors.class1;
+        if (item.classNum === 2) return colors.class2;
+        return colors.class3;
+      });
+
+      const allFamiliesChart = new Chart(allFamiliesCtx, {
+        type: "bar",
+        data: {
+          labels: allFamiliesData.map((item) => item.label),
+          datasets: [
+            {
+              label: "Number of Sequences",
+              data: allFamiliesData.map((item) => item.value),
+              backgroundColor: backgroundColors,
+              borderColor: borderColors,
+              borderWidth: 2,
+              borderRadius: 6,
+              yAxisID: "y",
+              order: 2,
+            },
+            {
+              label: "Studied Proteins",
+              data: allFamiliesData.map((item) => item.studiedCount),
+              type: "line",
+              showLine: false, // <-- disables connecting lines
+              borderColor: "rgba(239, 68, 68, 0.9)",
+              backgroundColor: "rgba(239, 68, 68, 0.1)",
+              borderWidth: 3,
+              pointBackgroundColor: "rgba(239, 68, 68, 1)",
+              pointBorderColor: "#fff",
+              pointBorderWidth: 2,
+              pointRadius: 6,
+              pointHoverRadius: 8,
+              yAxisID: "y1",
+              order: 1,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: {
+            mode: "index",
+            intersect: false,
+          },
+          scales: {
+            y: {
+              type: "linear",
+              display: true,
+              position: "left",
+              beginAtZero: true,
+              ticks: {
+                callback: function (value) {
+                  return value.toLocaleString();
+                },
+              },
+              grid: {
+                drawBorder: false,
+                color: "rgba(0, 0, 0, 0.05)",
+              },
+              title: {
+                display: true,
+                text: "Number of Sequences",
+                color: "#666",
+                font: {
+                  size: 15,
+                },
+              },
+            },
+            y1: {
+              type: "linear",
+              display: true,
+              position: "right",
+              beginAtZero: true,
+              max: 30,
+              grid: {
+                drawOnChartArea: false,
+              },
+              title: {
+                display: true,
+                text: "Experimentally Studied Proteins",
+                color: "#666",
+                font: {
+                  size: 15,
+                },
+              },
+            },
+            x: {
+              ticks: {
+                font: {
+                  size: 14,
+                },
+                autoSkip: false,
+                maxRotation: 45,
+                minRotation: 45,
+              },
+              grid: {
+                display: false,
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              display: false,
+            },
+            tooltip: {
+              filter: function (tooltipItem) {
+                return tooltipItem.datasetIndex === 0; // Only show tooltip for bar chart, not line chart
+              },
+              titleFont: {
+                size: 16, // Makes tooltip title larger
+              },
+              bodyFont: {
+                size: 14, // Makes tooltip body text larger
+              },
+              callbacks: {
+                label: function (context) {
+                  const item = allFamiliesData[context.dataIndex];
+                  return [
+                    `Sequences: ${context.parsed.y.toLocaleString()}`,
+                    item.studiedCount > 0
+                      ? `Studied Proteins: ${item.studiedCount}`
+                      : "No studied proteins",
+                  ];
+                },
+              },
+            },
+            datalabels: {
+              display: function (context) {
+                return context.datasetIndex === 0;
+              },
+              anchor: "end",
+              align: "top",
+              formatter: function (value, context) {
+                const item = allFamiliesData[context.dataIndex];
+                if (item.studiedCount > 0) {
+                  return `${value.toLocaleString()}\n(${item.studiedCount})`;
+                }
+                return value.toLocaleString();
+              },
+              font: {
+                size: 10,
+                weight: "bold",
+              },
+              color: function (context) {
+                const item = allFamiliesData[context.dataIndex];
+                if (item.classNum === 1) return colors.class1;
+                if (item.classNum === 2) return colors.class2;
+                return colors.class3;
+              },
+              offset: 4,
+            },
+          },
+          onHover: (event, activeElements) => {
+            event.native.target.style.cursor =
+              activeElements.length > 0 ? "pointer" : "default";
+          },
+          onClick: (event, activeElements) => {
+            if (activeElements.length > 0) {
+              const dataIndex = activeElements[0].index;
+              const familyData = allFamiliesData[dataIndex];
+              const [classNum, clanNum, familyNum] =
+                familyData.label.split("-");
+
+              // Create the URL based on the family pattern
+              const url = `/html-files/class${classNum}-family${familyNum}.html`;
+
+              // Open the link
+              window.open(url, "_self");
+            }
+          },
+        },
+      });
+
+      // Get unique clans per class
+      const class1Clans = {},
+        class2Clans = {},
+        class3Clans = {};
+      for (const [key, value] of Object.entries(sequenceData)) {
+        const [classNum, clanNum] = key.split("-");
+        const clanLabel = `Clan ${clanNum}`;
+        if (classNum === "1") {
+          if (!class1Clans[clanLabel]) class1Clans[clanLabel] = 0;
+          class1Clans[clanLabel] += value;
+        } else if (classNum === "2") {
+          if (!class2Clans[clanLabel]) class2Clans[clanLabel] = 0;
+          class2Clans[clanLabel] += value;
+        } else if (classNum === "3") {
+          if (!class3Clans[clanLabel]) class3Clans[clanLabel] = 0;
+          class3Clans[clanLabel] += value;
+        }
+      }
+
+      // Stacked Bar Chart
+      const stackedCtx = document
+        .getElementById("stackedChart")
+        .getContext("2d");
+      const stackedChart = new Chart(stackedCtx, {
+        type: "bar",
+        data: {
+          labels: ["Class 1", "Class 2", "Class 3"],
+          datasets: [
+            {
+              label: "Clan 1",
+              data: [
+                class1Clans["Clan 1"] || 0,
+                class2Clans["Clan 1"] || 0,
+                class3Clans["Clan 1"] || 0,
+              ],
+              backgroundColor: "rgba(37, 99, 235, 0.8)",
+              borderRadius: 6, // Rounded corners
+            },
+            {
+              label: "Clan 2",
+              data: [
+                class1Clans["Clan 2"] || 0,
+                class2Clans["Clan 2"] || 0,
+                class3Clans["Clan 2"] || 0,
+              ],
+              backgroundColor: "rgba(16, 185, 129, 0.8)",
+              borderRadius: 6, // Rounded corners
+            },
+            {
+              label: "Clan 3",
+              data: [
+                class1Clans["Clan 3"] || 0,
+                class2Clans["Clan 3"] || 0,
+                class3Clans["Clan 3"] || 0,
+              ],
+              backgroundColor: "rgba(245, 158, 11, 0.8)",
+              borderRadius: 6, // Rounded corners
+            },
+            {
+              label: "Clan 4",
+              data: [
+                class1Clans["Clan 4"] || 0,
+                class2Clans["Clan 4"] || 0,
+                class3Clans["Clan 4"] || 0,
+              ],
+              backgroundColor: "rgba(239, 68, 68, 0.8)",
+              borderRadius: 6, // Rounded corners
+            },
+            {
+              label: "Clan 5",
+              data: [class1Clans["Clan 5"] || 0, class2Clans["Clan 5"] || 0, 0],
+              backgroundColor: "rgba(139, 92, 246, 0.8)",
+              borderRadius: 6, // Rounded corners
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              stacked: true,
+              ticks: {
+                font: {
+                  size: 14, // Increased x-axis text size
+                },
+              },
+              grid: {
+                display: false,
+              },
+            },
+            y: {
+              stacked: true,
+              ticks: {
+                font: {
+                  size: 13, // Increased y-axis text size
+                },
+                callback: function (value) {
+                  return value.toLocaleString();
+                },
+              },
+              grid: {
+                drawBorder: false,
+                color: "rgba(0, 0, 0, 0.05)",
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              display: true,
+              position: "bottom", // Legend below the chart
+              labels: {
+                usePointStyle: true, // Makes legend icons circular
+                pointStyle: "circle", // Ensures circular shape
+                padding: 15, // Space between legend items
+                font: {
+                  size: 14, // Increased legend text size
+                  weight: "500",
+                },
+                color: "#4a5568",
+              },
+            },
+            tooltip: {
+              titleFont: {
+                size: 16, // Increased tooltip title size
+              },
+              bodyFont: {
+                size: 14, // Increased tooltip body size
+              },
+              callbacks: {
+                label: function (context) {
+                  return `${
+                    context.dataset.label
+                  }: ${context.parsed.y.toLocaleString()} sequences`;
+                },
+              },
+            },
+          },
+        },
+      });
+
+      // Populate top families table
+      const sortedFamilies = Object.entries(sequenceData)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10);
+
+      const totalSequences = Object.values(sequenceData).reduce(
+        (a, b) => a + b,
+        0
+      );
+
+      // Animate numbers on load
+      function animateValue(id, start, end, duration) {
+        const obj = document.getElementById(id);
+        const range = end - start;
+        const minTimer = 50;
+        let stepTime = Math.abs(Math.floor(duration / range));
+        stepTime = Math.max(stepTime, minTimer);
+        const startTime = new Date().getTime();
+        const endTime = startTime + duration;
+
+        function run() {
+          const now = new Date().getTime();
+          const remaining = Math.max((endTime - now) / duration, 0);
+          const value = Math.round(end - remaining * range);
+          obj.textContent = value.toLocaleString();
+          if (value < end) {
+            setTimeout(run, stepTime);
+          }
+        }
+
+        run();
+      }
+
+      // Start animations when page loads
+      window.addEventListener("load", () => {
+        animateValue("totalSeq", 0, 126085, 1500);
+        animateValue("studiedProteins", 0, 101, 1500);
+        animateValue("studiedFamilies", 0, 40, 1500);
+      });
+    </script>
+    <script>
+      // Auto-detect file type and set download link
+      const currentFile = window.location.pathname.split("/").pop();
+
+      // Check for family files (class1-family2.html format)
+      const familyMatch = currentFile.match(/class(\d+)-family(\d+)\.html/);
+
+      // Check for class files (class1.html format)
+      const classMatch = currentFile.match(/class(\d+)\.html/);
+
+      // Check for index file
+      const isIndex = currentFile === "index.html" || currentFile === "";
+
+      // Color themes for each class
+      const classThemes = {
+        1: {
+          primary: "#615ab3", // Purple theme for class 1
+          hover: "#4a4691", // Darker shade for hover
+        },
+        2: {
+          primary: "#68a11a", // Green theme for class 2
+          hover: "#528015", // Darker shade for hover
+        },
+        3: {
+          primary: "#9c42ac", // Purple/magenta theme for class 3
+          hover: "#7d3489", // Darker shade for hover
+        },
+        master: {
+          primary: "#2c3e50", // Dark blue/gray theme for master file
+          hover: "#1a252f", // Darker shade for hover
+        },
+      };
+
+      function applyTheme(classNum, isIndexPage = false) {
+        const themeKey = isIndexPage ? "master" : classNum;
+        const theme = classThemes[themeKey];
+
+        if (theme) {
+          const downloadSection = document.querySelector(".download-section");
+          const downloadBtn = document.getElementById("downloadLink");
+
+          if (downloadSection && downloadBtn) {
+            // Set container background to theme color
+            downloadSection.style.backgroundColor = theme.primary;
+
+            // Set button text to theme color
+            downloadBtn.style.color = theme.primary;
+
+            // Update visited state color
+            downloadBtn.addEventListener("click", function () {
+              this.style.color = theme.primary;
+            });
+
+            // Add hover effect for button
+            downloadBtn.addEventListener("mouseenter", function () {
+              this.style.backgroundColor = "rgba(255, 255, 255, 0.9)";
+              this.style.transform = "translateY(-1px)";
+            });
+
+            downloadBtn.addEventListener("mouseleave", function () {
+              this.style.backgroundColor = "white";
+              this.style.transform = "translateY(0)";
+            });
+          }
+        }
+      }
+
+      // Handle family files (existing functionality)
+      if (familyMatch) {
+        const classNum = parseInt(familyMatch[1]);
+        const familyNum = parseInt(familyMatch[2]);
+
+        // Apply theme colors
+        applyTheme(classNum);
+
+        // Mapping of Class-Family to Clan numbers based on your structure
+        const familyToClan = {
+          // Class 1
+          "1-1": 1, // 1-1-1
+          "1-2": 1, // 1-1-2
+          "1-3": 1, // 1-1-3
+          "1-4": 1, // 1-1-4
+          "1-5": 2, // 1-2-5
+          "1-6": 2, // 1-2-6
+          "1-7": 2, // 1-2-7
+          "1-8": 3, // 1-3-8
+          "1-9": 3, // 1-3-9
+          "1-10": 4, // 1-4-10
+          "1-11": 4, // 1-4-11
+          "1-12": 4, // 1-4-12
+          "1-13": 4, // 1-4-13
+          "1-14": 5, // 1-5-14
+          "1-15": 5, // 1-5-15
+          "1-16": 5, // 1-5-16
+          "1-17": 5, // 1-5-17
+          "1-18": 5, // 1-5-18
+
+          // Class 2
+          "2-1": 1, // 2-1-1
+          "2-2": 1, // 2-1-2
+          "2-3": 1, // 2-1-3
+          "2-4": 1, // 2-1-4
+          "2-5": 1, // 2-1-5
+          "2-6": 2, // 2-2-6
+          "2-7": 3, // 2-3-7
+          "2-8": 3, // 2-3-8
+          "2-9": 3, // 2-3-9
+          "2-10": 4, // 2-4-10
+          "2-11": 4, // 2-4-11
+          "2-12": 4, // 2-4-12
+          "2-13": 5, // 2-5-13
+          "2-14": 5, // 2-5-14
+          "2-15": 5, // 2-5-15
+          "2-16": 5, // 2-5-16
+          "2-17": 5, // 2-5-17
+          "2-18": 5, // 2-5-18
+
+          // Class 3
+          "3-1": 1, // 3-1-1
+          "3-2": 2, // 3-2-2
+          "3-3": 3, // 3-3-3
+          "3-4": 4, // 3-4-4
+        };
+
+        const familyKey = `${classNum}-${familyNum}`;
+        const clanNum = familyToClan[familyKey];
+
+        if (clanNum) {
+          const fileName = `asparaginasedb_${classNum}-${clanNum}-${familyNum}.fasta`;
+
+          // Set download link
+          const downloadLink = document.getElementById("downloadLink");
+          const downloadInfo = document.getElementById("downloadInfo");
+
+          downloadLink.href = `../downloads/${fileName}`;
+          downloadLink.download = fileName;
+
+          // Update info text
+          downloadInfo.textContent = `File: ${fileName}`;
+
+          console.log(
+            `Family: Class ${classNum}, Clan ${clanNum}, Family ${familyNum}`
+          );
+          console.log(`Download file: ${fileName}`);
+        } else {
+          const downloadInfo = document.getElementById("downloadInfo");
+          downloadInfo.textContent = `No file available for Class ${classNum}, Family ${familyNum}`;
+          downloadInfo.style.color = "#dc3545";
+          console.error(
+            `No clan mapping found for Class ${classNum}, Family ${familyNum}`
+          );
+        }
+      }
+      // Handle class files (class1.html, class2.html, class3.html)
+      else if (classMatch) {
+        const classNum = parseInt(classMatch[1]);
+
+        // Apply theme colors
+        applyTheme(classNum);
+
+        const fileName = `asparaginasedb_class${classNum}.fasta`;
+
+        // Set download link
+        const downloadLink = document.getElementById("downloadLink");
+        const downloadInfo = document.getElementById("downloadInfo");
+
+        if (downloadLink && downloadInfo) {
+          downloadLink.href = `../downloads/${fileName}`;
+          downloadLink.download = fileName;
+
+          // Update info text
+          downloadInfo.textContent = `File: ${fileName}`;
+
+          console.log(`Class file: Class ${classNum}`);
+          console.log(`Download file: ${fileName}`);
+        }
+      }
+      // Handle index file (master sequence file)
+      else if (isIndex) {
+        // Apply master theme
+        applyTheme(null, true);
+
+        const fileName = `asparaginasedb.fasta`;
+
+        // Set download link
+        const downloadLink = document.getElementById("downloadLink");
+        const downloadInfo = document.getElementById("downloadInfo");
+
+        if (downloadLink && downloadInfo) {
+          downloadLink.href = `downloads/${fileName}`;
+          downloadLink.download = fileName;
+
+          // Update info text
+          downloadInfo.textContent = `File: ${fileName} (Master Database)`;
+
+          console.log(`Index page: Master database file`);
+          console.log(`Download file: ${fileName}`);
+        }
+      }
+      // Error handling
+      else {
+        console.error("Could not parse filename to determine file type");
+        const downloadInfo = document.getElementById("downloadInfo");
+        if (downloadInfo) {
+          downloadInfo.textContent = "Unable to determine download file";
+          downloadInfo.style.color = "#dc3545";
+        }
+      }
+    </script>
+    <script
+      data-collect-dnt="true"
+      async
+      src="https://scripts.simpleanalyticscdn.com/latest.js"
+    ></script>
+  </body>
+</html>

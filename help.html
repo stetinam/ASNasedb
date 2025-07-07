@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asparaginase Help</title>
+    <link rel="icon" type="image/png" href="/images/logo5.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Source Sans Pro", sans-serif;
+        background-color: #f9f9f9;
+        color: var(--dark-gray);
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+
+      .content {
+        max-width: 1300px;
+        margin: 20px auto;
+        padding: 0 20px;
+        text-align: left;
+      }
+
+      .content h2 {
+        font-size: 22px;
+        margin-top: 20px;
+      }
+
+      h2 {
+        color: #01ad62;
+        font-size: 23px;
+        text-align: left;
+      }
+
+      .content p {
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: justify;
+      }
+
+      /* Base link styling */
+      a {
+        color: #17b470;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      a:hover {
+        color: #1b915e;
+      }
+
+      a:active {
+        color: #e91e63;
+      }
+
+      a {
+        transition: color 0.3s ease, text-decoration 0.3s ease;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 2rem;
+      }
+
+      header {
+        background-color: #17b470;
+        padding: 40px 20px;
+        text-align: center;
+        color: white;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0rem;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      /* Home Button Styles */
+      .home-button {
+        position: absolute;
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        text-decoration: none;
+      }
+
+      .home-button img.home-icon {
+        width: auto;
+        height: 80px;
+        border-radius: 5px;
+      }
+
+      .home-button:hover img.home-icon {
+        opacity: 0.8;
+      }
+
+      @media (max-width: 700px) {
+        .home-button {
+          display: none;
+        }
+      }
+
+      /* Table styling for the example table */
+      .example-table {
+        background: white;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        margin: 2rem 0;
+        overflow-x: auto;
+      }
+
+      .example-table table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+
+      .example-table th,
+      .example-table td {
+        padding: 0.8rem;
+        text-align: left;
+        border-bottom: 1px solid #dee2e6;
+      }
+
+      .example-table th {
+        background: #f8f9fa;
+        font-weight: 600;
+        color: #495057;
+      }
+
+      .example-table tr:hover {
+        background: #f8f9fa;
+      }
+
+      /* Column description styling */
+      .column-descriptions {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .column-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        border-left: 4px solid #17b470;
+      }
+
+      .column-title {
+        font-weight: 600;
+        color: #17b470;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .column-description {
+        color: #6c757d;
+        font-size: 0.95rem;
+      }
+
+      /* Info box styling */
+      .info-box {
+        background: linear-gradient(135deg, #4fc8963e, white);
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin: 2rem 0;
+        border: 1px solid rgba(23, 180, 112, 0.2);
+      }
+
+      .info-box h3 {
+        color: #17b470;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+      }
+
+      .info-box ul {
+        margin: 0;
+        padding-left: 1.5rem;
+      }
+
+      .info-box li {
+        margin-bottom: 0.5rem;
+      }
+
+      .bottom-banner {
+        background-color: #626262;
+        color: white;
+        padding: 15px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .elixir-image {
+        max-width: 100px;
+        height: auto;
+        vertical-align: middle;
+      }
+
+      .bottom-banner a {
+        color: white;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .bottom-banner a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .column-descriptions {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+      }
+
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        color: white;
+        background-color: #999; /* Gray circle background */
+        border-radius: 50%; /* Makes it a circle */
+        width: 16px; /* Size of the circle */
+        height: 16px;
+        text-align: center;
+        line-height: 16px; /* Vertically center the question mark */
+        font-size: 12px;
+        margin-left: 2px;
+        vertical-align: middle; /* Align with the text */
+      }
+
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px; /* Adjust width as needed */
+        background-color: white; /* White background */
+        color: #666; /* Gray text */
+        text-align: center;
+        border-radius: 4px;
+        padding: 8px;
+        position: absolute;
+        z-index: 1;
+        transform: translateX(-120%); /* Center the tooltip */
+        border: 1px solid #ccc; /* Light gray outline */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+        opacity: 0;
+        transition: opacity 0.3s;
+        margin-top: 35px;
+        font-size: 14px;
+      }
+
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .tooltip-right .tooltiptext {
+        left: 100%; /* Position to the right of the circle */
+        margin-top: 35px;
+        margin-left: 10px; /* Add some spacing */
+        transform: none; /* Remove the left alignment */
+      }
+
+      /* Compact classification section styles */
+      .classification-container {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        padding: 2rem;
+        margin: 2rem 0;
+      }
+
+      .classification-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .classification-header h3 {
+        color: #17b470;
+        font-size: 1.3rem;
+        margin-bottom: 0.3rem;
+      }
+
+      .classification-header p {
+        color: #6c757d;
+        font-size: 1rem;
+        margin: 0;
+      }
+
+      /* Compact hierarchy visualization */
+      .hierarchy-visual {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        position: relative;
+        padding: 1rem 0;
+      }
+
+      .hierarchy-level {
+        flex: 1;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hierarchy-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #17b470, #01ad62);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 0.5rem;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        box-shadow: 0 3px 10px rgba(23, 180, 112, 0.3);
+      }
+
+      .hierarchy-level:nth-child(2) .hierarchy-icon {
+        background: linear-gradient(135deg, #4fc896, #17b470);
+      }
+
+      .hierarchy-level:nth-child(3) .hierarchy-icon {
+        background: linear-gradient(135deg, #7dd9aa, #4fc896);
+      }
+
+      .hierarchy-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 0.3rem;
+      }
+
+      .hierarchy-description {
+        font-size: 0.85rem;
+        color: #6c757d;
+        max-width: 200px;
+        margin: 0 auto;
+        line-height: 1.4;
+      }
+
+      /* Arrow indicators */
+      .arrow-right {
+        position: absolute;
+        top: 25px;
+        right: -20px;
+        width: 0;
+        height: 0;
+        border-left: 12px solid #4fc896;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        z-index: 3;
+      }
+
+      /* Compact code example */
+      .code-example {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+        border: 2px dashed #17b470;
+      }
+
+      .code-example h4 {
+        color: #17b470;
+        margin-bottom: 0.8rem;
+        font-size: 1.1rem;
+        text-align: center;
+      }
+
+      .code-display {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+        margin: 1rem 0;
+      }
+
+      .code-part {
+        background: white;
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #17b470;
+      }
+
+      .code-part span {
+        display: block;
+        font-size: 0.7rem;
+        color: #6c757d;
+        font-weight: normal;
+        margin-top: 0.2rem;
+      }
+
+      .code-separator {
+        font-size: 1.5rem;
+        color: #ccc;
+      }
+
+      .code-explanation {
+        text-align: center;
+        color: #6c757d;
+        font-style: italic;
+        font-size: 0.9rem;
+      }
+
+      /* Compact feature cards */
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .feature-card {
+        background: #f8f9fa;
+        padding: 1rem;
+        border-radius: 8px;
+        border-left: 3px solid #17b470;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-card h5 {
+        color: #17b470;
+        margin-bottom: 0.3rem;
+        font-size: 1rem;
+      }
+
+      .feature-card p {
+        color: #6c757d;
+        font-size: 0.85rem;
+        margin: 0;
+        line-height: 1.4;
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .hierarchy-visual {
+          flex-direction: column;
+          gap: 1.5rem;
+          padding: 0.5rem 0;
+        }
+
+        .hierarchy-visual::before {
+          display: none;
+        }
+
+        .arrow-right {
+          display: none;
+        }
+
+        .code-display {
+          flex-direction: column;
+          gap: 0.3rem;
+        }
+
+        .code-separator {
+          transform: rotate(90deg);
+        }
+
+        .hierarchy-icon {
+          width: 50px;
+          height: 50px;
+          font-size: 1.2rem;
+        }
+      }
+
+      .small-caps {
+        font-variant-caps: small-caps;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Home Button with Image -->
+      <a href="/index.html" class="home-button">
+        <img src="/images/logo1.png" alt="Home" class="home-icon" />
+      </a>
+      <h1>The Asparaginase Database Help</h1>
+    </header>
+
+    <div class="content">
+      <h2
+        style="
+          color: #01ad62;
+          font-size: 23px;
+          text-align: left;
+          margin-top: 45px;
+        "
+      >
+        The Asparaginase Classification
+      </h2>
+
+      <div class="classification-container">
+        <div class="classification-header">
+          <h3>Hierarchical Classification System</h3>
+        </div>
+
+        <div class="hierarchy-visual">
+          <div class="hierarchy-level">
+            <div class="hierarchy-icon">1</div>
+            <div class="hierarchy-title">Class</div>
+            <div class="hierarchy-description">
+              Three distinct classes with unique sequences and structures
+            </div>
+            <div class="arrow-right"></div>
+          </div>
+
+          <div class="hierarchy-level">
+            <div class="hierarchy-icon">1</div>
+            <div class="hierarchy-title">Clan</div>
+            <div class="hierarchy-description">
+              Larger phylogenetic groups within each class
+            </div>
+            <div class="arrow-right"></div>
+          </div>
+
+          <div class="hierarchy-level">
+            <div class="hierarchy-icon">1</div>
+            <div class="hierarchy-title">Family</div>
+            <div class="hierarchy-description">
+              Most specific grouping with shared sequence and/or structure
+              features
+            </div>
+          </div>
+        </div>
+
+        <div class="code-example">
+          <h4>Classification Code Format</h4>
+          <div class="code-display">
+            <div class="code-part">
+              1
+              <span>Class</span>
+            </div>
+            <div class="code-separator">-</div>
+            <div class="code-part">
+              1
+              <span>Clan</span>
+            </div>
+            <div class="code-separator">-</div>
+            <div class="code-part">
+              1
+              <span>Family</span>
+            </div>
+          </div>
+          <p class="code-explanation">
+            Example:
+            <a href="/html-files/class1-family1.html">1-1-1 </a> represents
+            Class 1, Clan 1, Family 1<br />
+            <strong>Note:</strong> Class must always be specified as clan and
+            family numbers repeat across classes
+          </p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h5>Home page structures</h5>
+            <p>
+              Click on the turning protein structures on the home page to travel
+              to the class overviews
+            </p>
+          </div>
+          <div class="feature-card">
+            <h5>Phylogenetic tree</h5>
+            <p>
+              Click on the branches of phylogenetic trees to travel to detailed
+              family pages
+            </p>
+          </div>
+          <div class="feature-card">
+            <h5>Family links</h5>
+            <p>
+              Click on coloured links and buttons to also travel to detailed
+              family pages.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h5>Home button</h5>
+            <p>
+              Click on The Asparaginase Database logo in the top left corner to
+              go back to the home page
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <h2
+        id="motifs"
+        style="
+          color: #01ad62;
+          font-size: 23px;
+          text-align: left;
+          margin-top: 45px;
+        "
+      >
+        Experimentally Studied Proteins and Swiss-Prot Sequences Tables
+      </h2>
+
+      <div class="info-box">
+        <h3>Table Features</h3>
+        <ul>
+          <li>
+            <strong>Information Overview:</strong> Provides data and references
+            for <span class="small-caps">l</span>&#8209;asparginases - classification,
+            sequence, structure, source organism, cellular location and enzyme
+            kinetics
+          </li>
+          <li>
+            <strong>Interactive Links:</strong> Click on family codes, accession
+            numbers, or enzyme kinetics data for relevant publications
+          </li>
+          <li>
+            <strong>Selection Tools:</strong> Use checkboxes to select
+            individual entries or all entries at once
+          </li>
+          <li>
+            <strong>Download Options:</strong> Export selected data
+            (Tab-separated, UniProt IDs, or copy the sequence IDs to clipboard
+            for easy UniProt ID mapping)
+          </li>
+        </ul>
+      </div>
+
+      <h3 style="color: #17b470; margin-top: 2rem">Table Descriptions</h3>
+
+      <div class="column-descriptions">
+        <div class="column-card">
+          <div class="column-title">Fam (Family)</div>
+          <div class="column-description">
+            Classification code in the format Class-Clan-Family (e.g., 1-1-1).
+            Links to detailed family pages.
+          </div>
+        </div>
+
+        <div class="column-card">
+          <div class="column-title">Alt (Alternative)</div>
+          <div class="column-description">
+            Historical or alternative names, classifications or abbreviations
+            used in the literature.
+          </div>
+        </div>
+
+        <div class="column-card">
+          <div class="column-title">AN (Accession Number)</div>
+          <div class="column-description">
+            UniProt accession number linking to the protein entry.
+          </div>
+        </div>
+
+        <div class="column-card">
+          <div class="column-title">Name</div>
+          <div class="column-description">
+            UniProt entry name, provided only for Swiss-Prot entries.
+          </div>
+        </div>
+
+        <div class="column-card">
+          <div class="column-title">EC</div>
+          <div class="column-description">
+            Enzyme Commission numbers. Inferred from homology where necessary.
+            May not reflect all subsidiary activities.
+          </div>
+        </div>
+
+        <div class="column-card">
+          <div class="column-title">Organism</div>
+          <div class="column-description">
+            Source organism name as reported in the original studies or UniProt.
+          </div>
+        </div>
+
+        <div class="column-card">
+          <div class="column-title">Cell-Loc (Cellular Location)</div>
+          <div class="column-description">
+            Subcellular localization as reported in the original studies or
+            UniProt.
+          </div>
+        </div>
+
+        <div class="column-card">
+          <div class="column-title">AAs (Amino Acids)</div>
+          <div class="column-description">
+            Number of amino acid residues of the unprocessed proteins.
+          </div>
+        </div>
+
+        <div class="column-card">
+          <div class="column-title">Structure</div>
+          <div class="column-description">
+            Quaternary organization as reported in the Protein Data Bank or
+            alternative structural information provided in original studies.
+          </div>
+        </div>
+
+        <div class="column-card">
+          <div class="column-title">PDB</div>
+          <div class="column-description">
+            Protein Data Bank IDs when 3D structure is available. Links directly
+            to selected PDB entry or to the UniProt structure section for all
+            structures.
+          </div>
+        </div>
+
+        <div class="column-card">
+          <div class="column-title">K<sub>m</sub></div>
+          <div class="column-description">
+            Michaelis constant for <span class="small-caps">l</span>&#8209;asparagine
+            substrate in millimolar (mM). Indicates enzyme-substrate affinity.
+          </div>
+        </div>
+
+        <div class="column-card">
+          <div class="column-title">V<sub>max</sub></div>
+          <div class="column-description">
+            Maximum reaction velocity for
+            <span class="small-caps">l</span>&#8209;asparagine in μmol/min/mg protein.
+            Indicates maximum catalytic capacity under saturating conditions.
+          </div>
+        </div>
+
+        <div class="column-card">
+          <div class="column-title">K<sub>cat</sub></div>
+          <div class="column-description">
+            Turnover number for <span class="small-caps">l</span>&#8209;asparagine in
+            s<sup>-1</sup>. Represents the number of substrate molecules
+            converted per enzyme molecule per second.
+          </div>
+        </div>
+
+        <div class="column-card">
+          <div class="column-title">Links</div>
+          <div class="column-description">
+            Any coloured text is a link to a detailed
+            <span class="small-caps">l</span>&#8209;asparaginase family page, database
+            or the original publication.
+          </div>
+        </div>
+
+        <div class="column-card">
+          <div><span class="tooltip">i </span></div>
+          <div class="column-description">
+            Tooltip with additional or specifying information.
+          </div>
+        </div>
+      </div>
+
+      <div class="example-table">
+        <h3 style="color: #17b470; margin-bottom: 1rem">Example Entry</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Fam</th>
+              <th>Alt</th>
+              <th>AN</th>
+              <th>Name</th>
+              <th>EC</th>
+              <th>Organism</th>
+              <th>Cell-Loc</th>
+              <th>AAs</th>
+              <th>Structure</th>
+              <th>PDB</th>
+              <th>K<sub>m</sub></th>
+              <th>V<sub>max</sub></th>
+              <th>K<sub>cat</sub></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <a href="/html-files/class1-family3.html" style="color: #17b470"
+                  >1-1-3</a
+                >
+              </td>
+              <td>EcAII</td>
+              <td>
+                <a
+                  href="https://www.uniprot.org/uniprotkb/P00805/entry"
+                  target="_blank"
+                  style="color: #17b470"
+                  >P00805</a
+                >
+              </td>
+              <td>ASPG2_ECOLI</td>
+              <td>
+                <a
+                  href="https://enzyme.expasy.org/EC/3.5.1.1"
+                  target="_blank"
+                  style="color: #17b470"
+                  >3.5.1.1</a
+                >
+              </td>
+              <td>Escherichia coli</td>
+              <td>Periplasm</td>
+              <td>348</td>
+              <td>Homo tetramer</td>
+              <td>
+                <a
+                  href="https://www.rcsb.org/structure/3eca"
+                  target="_blank"
+                  style="color: #17b470"
+                  >3ECA</a
+                >
+                <a
+                  href="https://www.uniprot.org/uniprotkb/P00805/entry#structure"
+                  target="_blank"
+                  style="color: #17b470"
+                  >PDBs</a
+                >
+              </td>
+              <td>
+                <a
+                  href="https://onlinelibrary.wiley.com/doi/10.1110/ps.9.10.2009"
+                  target="_blank"
+                  style="color: #17b470"
+                  >0.015</a
+                >
+              </td>
+              <td>-</td>
+              <td>
+                <a
+                  href="https://onlinelibrary.wiley.com/doi/10.1110/ps.9.10.2009"
+                  target="_blank"
+                  style="color: #17b470"
+                  >24</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 style="color: #01ad62; font-size: 23px; text-align: left">
+        How to Download Sequences from Tables?
+      </h2>
+
+      <div class="info-box">
+        <ul>
+          <p>
+            You can easily download data from the tables and UniRef100
+            <span class="small-caps">l</span>&#8209;asparaginases directly from The
+            Asparaginase Database. To specifically download sequences of
+            Experimentally Studied Proteins or Swiss-Prot
+            <span class="small-caps">l</span>&#8209;asparaginases, use the ID mapping
+            option, which copies the sequence IDs to your clipboard and opens
+            UniProt ID Mapping. Simply paste the sequences, map them, and then
+            download or align them directly on UniProt. Please note that e.g.
+            UniParc sequences cannot be mapped using the default mapping
+            settings.
+          </p>
+        </ul>
+      </div>
+
+      <h2 style="color: #01ad62; font-size: 23px; text-align: left">
+        Conserved Motifs
+      </h2>
+
+      <div class="info-box">
+        <ul>
+          <p>
+            Selected conserved sequence motifs are presented for classes and
+            families. They were determined from an alignment of representative
+            sequences that generally have relatively low mutual sequence
+            identity. The random selection was refined by removing significant
+            outliers and adding a selected reference sequence. The resulting
+            motifs are presented with amino acid frequencies in the
+            representative sequences and are mapped to the positions in the
+            reference sequence. These percentages can indicate strong trends in
+            the families, but do not reflect every single sequence, as each
+            family has a large number of sequences.
+          </p>
+        </ul>
+      </div>
+
+      <h2 style="color: #01ad62; font-size: 23px; text-align: left">
+        More Help
+      </h2>
+
+      <div class="info-box">
+        <ul>
+          <p>
+            Please contact us if you need additional assistance, have feedback
+            to share, or would like to submit your data for inclusion.
+          </p>
+        </ul>
+      </div>
+    </div>
+
+    <br />
+
+    <div id="asparaginases" class="bottom-banner">
+      <div>
+        <a href="https://www.asparaginasedb.com">The Asparaginase Database</a> ©
+        2025 is licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a
+        ><img
+          src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
+          style="max-width: 1em; max-height: 1em; margin-left: 0.2em"
+        /><img
+          src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
+          style="max-width: 1em; max-height: 1em; margin-left: 0.2em"
+        />| Early Access | Contact:
+      </div>
+      <a href="mailto:stetinam@vscht.cz">stetinam@vscht.cz</a>| Supported by:
+      <a href="https://www.elixir-czech.cz/" target="_blank">
+        <img
+          src="/images/elixir_logo.png"
+          alt="elixir_logo.png"
+          class="elixir-image"
+        />
+      </a>
+    </div>
+    <script
+      data-collect-dnt="true"
+      async
+      src="https://scripts.simpleanalyticscdn.com/latest.js"
+    ></script>
+  </body>
+</html>
