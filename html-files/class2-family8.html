@@ -714,7 +714,7 @@
       <div class="grid-item">
         <h3>Family 8 Overview</h3>
         <p>0 experimentally studied proteins</p>
-        <p>1 sequence in Swiss-Prot</p>
+        <p>1 sequences in Swiss-Prot</p>
         <p>993 unique sequences in UniRef100</p>
         <p>Putative eukaryotic threonine aspartases</p>
         <p></p>
@@ -1057,6 +1057,105 @@
       Experimentally Studied Proteins
     </h2>
 
+    <div class="seq-table">
+      <div
+        class="selection-controls"
+        id="selectionControls-0"
+        style="display: none"
+      >
+        <span class="count selectedCount" id="selectedCount-0"
+          >0 entries selected</span
+        >
+        <div class="selection-dropdown">
+          <button class="selection-btn downloadBtn" id="downloadBtn-0">
+            Download
+          </button>
+          <div class="selection-menu downloadMenu" id="downloadMenu-0">
+            <a data-format="tsv" href="#">Tab-separated</a>
+            <a data-format="ids" href="#">UniProt IDs</a>
+            <a data-format="idmapping" href="#">UniProt ID mapping</a>
+          </div>
+        </div>
+        <button class="selection-btn" id="clearSelectionBtn-0">
+          Clear selection
+        </button>
+      </div>
+      <table>
+        <tbody data-table-type="ESP" data-class="2" data-family-suffix="8">
+          <tr>
+            <th class="checkbox-column">
+              <input
+                class="select-all-checkbox"
+                id="selectAllCheckbox-0"
+                type="checkbox"
+              />
+            </th>
+            <th style="width: 56px">
+              Fam
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext">Class - Clan - Family</span>
+              </span>
+            </th>
+            <th style="width: 64px">
+              Alt
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext"
+                  >Alternative historical name / classification</span
+                >
+              </span>
+            </th>
+            <th>
+              AN
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext">UniProt accession number</span>
+              </span>
+            </th>
+            <th>
+              Name
+              <span class="tooltip tooltip-right">
+                ?
+                <span class="tooltiptext"
+                  >UniProt entry name, only given here for Swiss-Prot
+                  entries</span
+                >
+              </span>
+            </th>
+            <th>EC</th>
+            <th style="width: 1px">Organism</th>
+            <th>Cell-Loc</th>
+            <th>AAs</th>
+            <th style="width: 105px">Structure</th>
+            <th>PDB</th>
+            <th style="width: 50px">
+              K<sub>m</sub>
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">for Asn [mM] </span>
+              </span>
+            </th>
+            <th style="width: 60px">
+              V<sub>max</sub>
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">for Asn [μmol/min/mg] </span>
+              </span>
+            </th>
+            <th style="width: 60px">
+              K<sub>cat</sub>
+              <span class="tooltip"
+                >i
+                <span class="tooltiptext">for Asn [s<sup>-1</sup>]</span>
+              </span>
+            </th>
+          </tr>
+          <!-- Data rows dynamically loaded -->
+        </tbody>
+      </table>
+    </div>
+
     <h2 id="sprot" style="color: #68a11a; font-size: 2em; text-align: center">
       Swiss-Prot Sequences
     </h2>
@@ -1086,23 +1185,23 @@
         </button>
       </div>
       <table>
-        <tbody>
+        <tbody data-table-type="Swiss-Prot" data-class="2" data-family-suffix="8">
           <tr>
             <th class="checkbox-column">
               <input
                 class="select-all-checkbox"
-                id="selectAllCheckbox-0"
+                id="selectAllCheckbox-1"
                 type="checkbox"
               />
             </th>
-            <th width="60">
+            <th style="width: 60px">
               Fam
               <span class="tooltip tooltip-right">
                 ?
                 <span class="tooltiptext">Class - Clan - Family</span>
               </span>
             </th>
-            <th width="66">
+            <th style="width: 66px">
               Alt
               <span class="tooltip tooltip-right">
                 ?
@@ -1111,14 +1210,14 @@
                 >
               </span>
             </th>
-            <th width="120">
+            <th style="width: 120px">
               AN
               <span class="tooltip tooltip-right">
                 ?
                 <span class="tooltiptext">UniProt accession number</span>
               </span>
             </th>
-            <th width="80">
+            <th style="width: 80px">
               Name
               <span class="tooltip tooltip-right">
                 ?
@@ -1141,14 +1240,14 @@
                 <span class="tooltiptext">for Asn [mM] </span>
               </span>
             </th>
-            <th width="64px">
+            <th style="width: 64px">
               V<sub>max</sub>
               <span class="tooltip"
                 >i
                 <span class="tooltiptext">for Asn [μmol/min/mg] </span>
               </span>
             </th>
-            <th width="60px">
+            <th style="width: 60px">
               K<sub>cat</sub>
               <span class="tooltip"
                 >i
@@ -1156,38 +1255,7 @@
               </span>
             </th>
           </tr>
-          <tr
-            data-an="O65268"
-            data-family="2-3-8"
-            data-organism="Arabidopsis thaliana"
-          >
-            <td class="checkbox-column">
-              <input class="entry-checkbox" type="checkbox" />
-            </td>
-            <td><a href="/html-files/class2-family8.html">2-3-8 </a></td>
-            <td>-</td>
-            <td>
-              <a
-                href="https://www.uniprot.org/uniprotkb/O65268/entry"
-                target="_blank"
-                >O65268</a
-              >
-            </td>
-            <td>TASP1_ARATH</td>
-            <td>
-              <a href="https://enzyme.expasy.org/EC/3.4.25.-" target="_blank"
-                >3.4.25.-</a
-              >
-            </td>
-            <td>Arabidopsis thaliana</td>
-            <td>-</td>
-            <td>408</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-          </tr>
+          <!-- Data rows dynamically loaded -->
         </tbody>
       </table>
     </div>
@@ -1203,7 +1271,11 @@
       <div class="download-info" id="downloadInfo">
         Preparing download link...
       </div>
-    </div>
+    </div>    <!-- Dynamic table data and renderer -->
+    <script src="/scripts/general-data.js"></script>
+    <script src="/scripts/table-renderer.js"></script>
+
+
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -1356,16 +1428,6 @@
             let mime = "text/plain";
 
             switch (format) {
-              case "fasta":
-                content = selectedEntries
-                  .map(
-                    (entry) =>
-                      `>${entry.an}|${entry.organism}|Asparaginase ${entry.family}\nMOCKSEQUENCEAAAAAGGGGTTTCCCAAAAGGGTTTCCCAAAAGGGTTTCCC`
-                  )
-                  .join("\n\n");
-                filename = `${pageTitle}-sequences.fasta`;
-                break;
-
               case "tsv":
                 const headers = [
                   "Family",
@@ -1409,17 +1471,16 @@
 
               case "idmapping":
                 const ids = selectedEntries.map((entry) => entry.an).join("\n");
-                const textarea = document.createElement("textarea");
-                textarea.value = ids;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand("copy");
-                document.body.removeChild(textarea);
 
-                alert(
-                  "Accession numbers copied to clipboard! Opening UniProt ID Mapping tool..."
-                );
-                window.open("https://www.uniprot.org/id-mapping", "_blank");
+                navigator.clipboard.writeText(ids).then(() => {
+                  alert(
+                    "Accession numbers copied to clipboard! Opening UniProt ID Mapping tool..."
+                  );
+                  window.open("https://www.uniprot.org/id-mapping", "_blank");
+                }).catch(err => {
+                  console.error('Failed to copy: ', err);
+                  alert("Failed to copy to clipboard. Please try again.");
+                });
 
                 downloadMenu.style.display = "none";
                 return;
@@ -1522,7 +1583,9 @@
     </p>        <br />
 
     <div id="asparaginases" class="bottom-banner">
-      <div><a href="https://www.asparaginasedb.com">The Asparaginase Database</a> © 2025 is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;">| Early Access | Contact:</div>
+      <div><a href="https://www.asparaginasedb.com">The Asparaginase Database</a> © 2025 is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC"
+          style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY"
+          style="max-width: 1em;max-height:1em;margin-left: .2em;">| Early Access | Contact:</div>
       <a href="mailto:stetinam@vscht.cz">stetinam@vscht.cz</a>| Supported by:
       <a href="https://www.elixir-czech.cz/" target="_blank">
         <img
