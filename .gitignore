@@ -1,0 +1,32 @@
+
+### Specify which files to share with Git, works by ignoring everythin except what is explicitly allowed ###
+
+
+# Ignore everything
+*
+
+# But add these files
+!.gitignore
+!index.html
+!disclaimer.html
+!help.html
+!share.html
+!styles.css
+!statistics.html
+
+# And these directories
+!html-files/
+!html-files/**
+
+!images/
+!images/**
+
+!downloads/
+!downloads/**
+
+!scripts/
+!scripts/**
+
+!data/
+!data/**
+
