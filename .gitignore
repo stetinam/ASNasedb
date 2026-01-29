@@ -5,6 +5,9 @@
 # Ignore everything
 *
 
+# Explicitly ignore backup folder
+bck_asnasedb/
+
 # But add these files
 !.gitignore
 !README.md
