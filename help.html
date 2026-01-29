@@ -863,6 +863,47 @@
       </div>
 
       <h2 style="color: #01ad62; font-size: 23px; text-align: left">
+        How to Use BLAST Search
+      </h2>
+
+      <div class="info-box">
+        <ul>
+          <p>
+            The <a href="/blast.html">BLAST page</a> allows you to search your protein sequence against
+            The Asparaginase Database to find similar asparaginases, identify experimentally studied
+            asparaginases related to your query, and classify your asparaginase into a class, clan and family.
+            Enter your sequence in <strong>FASTA format</strong> (e.g., <code>>my_sequence</code> followed
+            by the amino acid sequence) or simply paste a <strong>plain amino acid sequence</strong>,
+            then click <strong>Run BLAST</strong>. The search is automatically performed against all three
+            asparaginase subdatabases in parallel: UniRef100 Sequences, Experimentally Studied Proteins, and Swiss-Prot Sequences.
+          </p>
+          <p>
+            <strong>Search Parameters:</strong>
+          </p>
+          <ul>
+            <li><strong>E-value:</strong> Maximum expect value threshold (default: 0.001). Lower values return more stringent matches.</li>
+            <li><strong>Hits:</strong> Maximum number of hits to return (default: 250).</li>
+            <li><strong>Matrix:</strong> Scoring matrix for alignment (default: BLOSUM62).</li>
+            <li><strong>Output:</strong> Result format. Keep at <strong>0 - Pairwise</strong> for full functionality.</li>
+          </ul>
+          <p>
+            <strong>Understanding Results:</strong>
+          </p>
+          <ul>
+            <li><strong>Classification Summary:</strong> Shows how many of the top 100 hits belong to each asparaginase class and family. This distribution is used to predict the classification of your query sequence.</li>
+            <li><strong>Classification Prediction:</strong> Based on the classification summary, the most likely class and family for your query sequence is predicted from the majority of top hits.</li>
+            <li><strong>Top 3 Hits:</strong> Displays the best matches from UniRef100, Experimentally Studied Proteins, and SwissProt databases.</li>
+            <li><strong>Identity:</strong> Percentage of identical amino acids in the alignment.</li>
+            <li><strong>Score (bits):</strong> Bit score representing alignment quality. Higher scores indicate better matches.</li>
+          </ul>
+          <p>
+            The raw BLAST output for each database can be copied using the copy button. The corresponding
+            sequence tables below each output are automatically filtered to show only the matching entries.
+          </p>
+        </ul>
+      </div>
+
+      <h2 style="color: #01ad62; font-size: 23px; text-align: left">
         How to Download Sequences from Tables?
       </h2>
 
@@ -927,9 +968,11 @@
         <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a
         ><img
           src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
+          alt="CC"
           style="max-width: 1em; max-height: 1em; margin-left: 0.2em"
         /><img
           src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
+          alt="BY"
           style="max-width: 1em; max-height: 1em; margin-left: 0.2em"
         />| Early Access | Contact:
       </div>

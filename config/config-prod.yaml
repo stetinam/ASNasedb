@@ -4,4 +4,4 @@ hosts:
 - asparaginasedb.cz
 - asparaginasedb.com
 
-apiImage: "cerit.io/ljocha/aspdb-blast:latest"
+apiImage: "cerit.io/maxstetina/aspdb-blast:latest"

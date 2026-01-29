@@ -1,4 +1,4 @@
-img?=cerit.io/ljocha/aspdb-blast
+img?=cerit.io/maxstetina/aspdb-blast
 
 
 build:

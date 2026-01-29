@@ -3,4 +3,4 @@ namespace: krenek-ns
 hosts:
 - aspdb-ljocha.dyn.cloud.e-infra.cz
 
-apiImage: "cerit.io/ljocha/aspdb-blast:latest"
+apiImage: "cerit.io/maxstetina/aspdb-blast:latest"

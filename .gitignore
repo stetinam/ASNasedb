@@ -7,12 +7,21 @@
 
 # But add these files
 !.gitignore
+!README.md
 !index.html
+!blast.html
+!search.html
 !disclaimer.html
 !help.html
 !share.html
 !styles.css
 !statistics.html
+
+# API and config directories
+!api/
+!api/**
+!config/
+!config/**
 
 # And these directories
 !html-files/
