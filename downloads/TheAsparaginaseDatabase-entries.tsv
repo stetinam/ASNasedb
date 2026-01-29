@@ -1,0 +1,102 @@
+Family	Alt	AN	Name	EC	Organism	Cell-Loc	AAs	Structure	PDB	Km	Vmax	Kcat
+1-1-1	-			3.5.1.1	Cladosporium sp.	-	370	-	-	100	-	-
+1-1-1	-	A0A4D6C6W0		3.5.1.1	Cobetia amphilecti	-	316	-	-	2.05	11641	-
+1-1-1	-	C5E3N2		3.5.1.1	Lachancea thermotolerans	-	375	-	-	11.67	-	312.45
+1-1-1	ScAII	P0CZ17	ASP21_YEAST	3.5.1.1	Saccharomyces cerevisiae	Secreted	362	-	-	0.27	42	-
+1-1-1	ScAI	P38986	ASPG1_YEAST	3.5.1.1	Saccharomyces cerevisiae	Cytoplasm	381	-	-	0.075	-	-
+1-1-3	-	P10172	ASPQ_ACIGL	3.5.1.38	Acinetobacter glutaminasificans	Periplasm	331	Homo tetramer	1AGX	-	-	-
+1-1-3	-	Q5E4M4		3.5.1.1	Aliivibrio fischeri	-	353	-	-	1.2275	-	-
+1-1-3	-	UPI0002D9BB57		3.5.1.1	Bacillus altitudinis	-	382	-	-	0.0147	-	-
+1-1-3	-	A0A0P7GBY8		3.5.1.1	Bacillus australimaris	-	382	-	-	0.0456	-	74.6
+1-1-3	-	A0A2P8QZG9		3.5.1.1	Campylobacter blaseri	-	347	-	-	1.91	-	13.94
+1-1-3	-	Q0PC96		3.5.1.1	Campylobacter jejuni	-	331	Homo tetramer	3NXK	-	-	-
+1-1-3	ErA, type II	P06608	ASPG_DICCH	3.5.1.1	Dickeya chrysanthemi	-	348	Homo tetramer	5F52 PDBs	0.058	-	565
+1-1-3	EcAII	P00805	ASPG2_ECOLI	3.5.1.1	Escherichia coli	Periplasm	348	Homo tetramer	3ECA PDBs	0.015	-	24
+1-1-3	-	A0A4Q0YCX3		3.5.1.1	Halarcobacter ebronensis	-	349	-	-	4.27	-	16.55
+1-1-3	HpA, type II	Q9ZLB9	ASPG_HELPJ	3.5.1.1	Helicobacter pylori	Cytoplasm	332	Homo tetramer	2WLT PDBs	0.29	31.22	19.26
+1-1-3	-	UPI0010229EFA		3.5.1.1	Iodobacter sp.	-	355	-	-	1.2	-	82
+1-1-3	-	I3DG54		3.5.1.1	Pasteurella bettyae	-	349	-	-	3.98	-	69.12
+1-1-3	-	Q7WWK9		3.5.1.1	Pectobacterium atrosepticum	-	349	Homo tetramer	2HLN 90%	0.098	732	1600
+1-1-3	-	P10182	ASPQ_PSES7	3.5.1.38	Pseudomonas sp.	Periplasm	337	Homo tetramer	3PGA PDBs	-	-	-
+1-1-3	-			3.5.1.38	Pseudomonas sp.	-	366	-	-	0.56	-	18.06
+1-1-3	-	A0A3R9P3J0		3.5.1.1	Salibacterium salarium	-	359	-	-	5.59	-	8.87
+1-1-3	-	A0A0H2WSV5		3.5.1.1	Salmonella paratyphi	-	348	-	-	28	-	39.6
+1-1-3	-	A0A240C149		3.5.1.1	Serratia ficaria	-	349	-	-	1.42	-	-
+1-1-3	-	A0A1D8KVW6		3.5.1.1	Serratia marcescens	-	348	-	-	2.0	-	15.5
+1-1-3	-	A0A2D3WDS0		3.5.1.1	Sulfurospirillum cavolei	-	348	-	-	0.63	-	10.14
+1-1-3	-	D1B4K0		3.5.1.1	Sulfurospirillum deleyianum	-	348	-	-	1.80	-	20.16
+1-1-3	WsA, type II	P50286	ASPG_WOLSU	3.5.1.1	Wolinella succinogenes	Cytoplasm	330	Homo tetramer	1WSA PDBs	0.0217	-	97.8
+1-1-3	-	D3VBI4		3.5.1.1	Xenorhabdus nematophila	-	347	-	-	4.27	-	6.43
+1-1-3	-	Q66CJ2		3.5.1.1	Yersinia pseudotuberculosis	-	345	-	-	0.017	-	-
+1-2-5	-	A0A3Q8UES2		3.5.1.1	Bacillus cereus	-	325	Homo dimer	-	9.38	-	63.6
+1-2-5		A0A6I7U6Y2		3.5.1.1	Bacillus licheniformis	-	322	Homo dimer	7CB4 PDBs	2.96	-	-
+1-2-5		A0A3G1GZN5		3.5.1.1	Bacillus licheniformis	-	322	-	-	0.0106	-	23.96
+1-2-5	-	Q5KXR8		3.5.1.1	Geobacillus kaustophilus	-	323	-	-	0.487	243.9	-
+1-2-5	-	A0A7U9P5Z0		3.5.1.1	Geobacillus thermopakistaniensis	-	323		-	0.35	2735	1595
+1-2-5	-	F0TGT0		3.5.1.1	Lactobacillus acidophilus	-	331	-	-	6.23	-	0.51
+1-2-5	-	A0AAD1ETD3		3.5.1.1	Lactobacillus casei	-	324	-	-	0.0123	-	-
+1-2-5	-	F9URL2		3.5.1.1	Lactobacillus plantarum	-	324	-	-	7.85	-	2.33
+1-2-5	-	Q38YS9		3.5.1.1	Latilactobacillus sakei	-	324	Homo dimer	-	7.64	-	4.09
+1-2-5	-	I6ZQC6		3.5.1.1	Melioribacter roseus	-	326	-	-	2.7	163	96
+1-2-5		A0A9X4QZ02		3.5.1.1	Staphylococcus sp.	-	324	Homo dimer	-	2.2	-	4.65
+1-2-5	-	A0A062WR39		3.5.1.1	Streptococcus pneumoniae	-	320	Monomer	9D91	-	-	-
+1-2-5	-	Q5M2S9		3.5.1.1	Streptococcus thermophilus	-	322	-	-	2.34	-	101
+1-2-6	-	A0A1X1VDM8		3.5.1.1	Mycobacterium gordonae	-	312	-	-	6.025	-	194.8
+1-2-6	-	A0QX50		3.5.1.1	Mycobacterium smegmatis	-	320	-	-	1.403	-	708.1
+1-2-6	-	P9WPX5	ASPG_MYCTU	3.5.1.1	Mycobacterium tuberculosis	Secreted	315	Dimer	-	0.38 8.3 19.57	74.08 797.7 1587.7	80.7 869.4 1732.5
+1-4-10	-	Q2RMX1		3.5.1.1	Rhodospirillum rubrum	-	172	Homo tetramer	8UOO PDBs	2.9 3.6 0.280	-	57.1 58.2
+1-4-11	-	R4L284		3.5.1.1	Bacillus licheniformis	-	272	-	-	0.671	-	36.8
+1-4-11	-	A0A6G7ABJ6		3.5.1.1	Bacillus sonorensis	-	329	-	-	2.004	-	-
+1-4-11	-	P26900	ASPG1_BACSU	3.5.1.1	Bacillus subtilis	Cytoplasm	329	-	-	1.579	-	-
+1-4-11	-	A0A291B5A4		3.5.1.1	Bacillus tequilensis	-	329	-	-	0.070	-	-
+1-4-11	-	A5VMR3		3.5.1.1	Lactobacillus reuteri	-	329	-	-	0.3332	-	-
+1-4-11	-	A0A0R2I8I9		3.5.1.1	Limosilactobacillus secaliphilus	-	333	-	-	4.78	-	887
+1-4-11	-	Q8TZE8	ASPG_PYRFU	3.5.1.1	Pyrococcus furiosus	-	326	Homo dimer / tetramer	5CBP PDBs	12	-	870
+1-4-11	PhA	O57797		3.5.1.1	Pyrococcus horikoshii	-	328	Homo dimer	1WLS PDBs	-	-	-
+1-4-11	-	F8AHM4		3.5.1.1	Pyrococcus yayanosii	-	328	-	-	6.5	-	-
+1-4-11	-	C5A6T2		3.5.1.1	Thermococcus gammatolerans	-	328	-	-	5.3	-	-
+1-4-11	-	Q5JIW4	ASPG_THEKO	3.5.1.1	Thermococcus kodakarensis	-	328	Homo dimer	5OT0	2.6 5.5	1121 3300	694
+1-4-11	-	C6A532		3.5.1.1	Thermococcus sibiricus	-	331	-	-	4.7	640	400
+1-4-11	-	UPI00029ABCE1		3.5.1.1	Thermococcus zilligii	-	330	-	-	6.08	-	3267
+1-4-12	-	O26802	GATD_METTH	6.3.5.-	Methanothermobacter thermautotrophicus	-	435	Hetero tetramer	2D6F	-	-	-
+1-4-12	-	Q9V0T9	GATD_PYRAB	6.3.5.-	Pyrococcus abyssi	-	438	Hetero tetramer	1ZQ1	-	-	-
+1-5-14	CpAI	H0W0T5		3.5.1.1	Cavia porcellus	-	565	Homo tetramer	4R8L PDBs	0.057	-	38.6
+1-5-14	hAI	Q86U10	LPP60_HUMAN	3.1.1.5 3.5.1.1 3.1.1.47	Homo sapiens	-	573	Monomer	-	11.5	-	6.7
+1-5-15	RmAI	W0G253		3.5.1.1	Rhizomucor miehei	-	682	Homo dimer	-	0.133	3380.0	676
+1-5-16	EcAI	P0A962	ASPG1_ECOLI	3.5.1.1	Escherichia coli	Cytoplasm	338	Homo tetramer	2HIM PDBs	1.2 3.5	-	-
+1-5-16	-	A0A221KKE2		3.5.1.1	Halomonas elongata	-	355	-	-	5.6	-	1960
+1-5-16	-	X0NLX5		3.5.1.1	Photobacterium leiognathi	-	337	-	-	3.008	-	-
+1-5-16		A0A7D7L7P6		3.5.1.1	Pseudomonas aeruginosa	-	306	-	-	10.904	-	-
+1-5-16	-	A0A2D5S0K3		3.5.1.1	Rheinheimera sp	-	341	-	-	0.98	-	16.17
+1-5-16	VcA, type I	Q9KQK3		3.5.1.1	Vibrio cholerae	Cytoplasm	337	Homo tetramer	2OCD	1.1	-	4424
+1-5-16	-	A0A191W2U6		3.5.1.1	Vibrio sp.	-	337	-	-	4.517	-	2.88
+1-5-16	YpAI	A0A3N4B0Q2		3.5.1.1	Yersinia pestis	Cytoplasm	338	Homo dimer / tetramer	7R69 PDBs	6.0	-	42.0
+2-1-2	-	D0V0N4		3.5.1.26	Asobara tabida	Venom	362	-	-	4.051	-	-
+2-1-2	-	P20933	ASPG_HUMAN	3.5.1.26	Homo sapiens	Lysosome	346	Hetero tetramer / homo dimer	1APY PDBs	0.656	-	-
+2-1-2	-	A0A141NXG8		3.5.1.26	Leptopilina heterotoma	Venom	367	-	-	1.188	-	-
+2-1-2	-	O02467	ASPG_SPOFR	3.5.1.26	Spodoptera frugiperda	Lysosome	320	-	-	3.0	-	-
+2-1-5	-	A0A1V3U2Z4		3.5.1.26	Elizabethkingia meningoseptica	-	331	Hetero tetramer / homo dimer	6DEY	-	-	-
+2-1-5	-	Q47898	ASPG_ELIMR	3.5.1.26	Elizabethkingia miricola	Periplasm	340	Hetero tetramer / homo dimer	1AYY PDBs	-	-	-
+2-2-6	-	Q8YQB1	ASGX_NOSS1	3.4.19.5	Nostoc sp.	-	318	-	-	2.0	2.2	-
+2-2-6	-	P74383	ASGX_SYNY3	3.4.19.5	Synechocystis sp.	-	329	-	-	0.66	1.6	-
+2-3-9	-	Q9H6P5	TASP1_HUMAN	3.4.25.-	Homo sapiens		420	Hetero tetramer / homo dimer / hexamer	6VIN PDBs	-	-	-
+2-4-10	-	A0A0N7IWY2		3.5.1.1	Aquabacterium sp.		306	-	-	33.7	-	0.0087
+2-4-10	-	Q6L1Z2		3.5.1.1	Picrophilus torridus	-	297	-	-	11.69	-	0.056
+2-4-10	-	A3MUS8	ASPGP_PYRCJ	3.5.1.1	Pyrobaculum calidifontis	-	299	Dimer	-	4.5	355	374.0
+2-4-10	-	Q9V262	ASPGP_PYRAB	3.5.1.1	Pyrococcus abyssi	-	305	-	-	2.051	-	-
+2-4-10	-	Q5JHT1	ASPGP_THEKO	3.5.1.1	Thermococcus kodakarensis	-	306	Dimer	-	3.1	833	-
+2-4-12	CpAIII	H0VQC8		3.4.19.5 3.5.1.1	Cavia porcellus		332	Hetero tetramer / homo dimer	4O47	2.24	-	3.95
+2-4-12	-	Q7L266	ASGL1_HUMAN	3.4.19.5 3.5.1.1	Homo sapiens	Cytoplasm	308	Hetero tetramer / homo dimer	4ZM9 PDBs	3.4	-	6.9
+2-4-12	-	Q8VI04	ASGL1_RAT	3.4.19.5 3.5.1.1	Rattus norvegicus	Cytoplasm	333	-	-	2.4	-	-
+2-5-14	-	P50287	ASPGA_ARATH	3.4.19.5	Arabidopsis thaliana	-	315	-	-	> 4	-	-
+2-5-14	EcAIII	P37595	IAAA_ECOLI	3.4.19.5	Escherichia coli	-	321	Hetero tetramer / homo dimer	1T3M PDBs 90%	3.9	-	0.28
+2-5-14	LlAIII	Q9ZSD6	ASPG_LUPLU	3.4.19.5	Lupinus luteus	-	325	Hetero tetramer / homo dimer	2GEZ PDBs	4.8	-	0.32
+2-5-14	PvAIII	V7CU13		3.4.19.5	Phaseolus vulgaris	-	326	Hetero tetramer / homo dimer	4PU6 PDBs	-	-	-
+2-5-14	-	UPI002B2CA93D		3.4.19.5	Solanum lycopersicum	-	329	-	-	0.66	-	-
+2-5-17	-	X7EBZ8		3.4.19.5	Roseivivax halodurans	-	310	Hetero tetramer / homo dimer	8DQM PDBs	-	-	-
+3-1-1	-	A0A0C5GVW3		3.5.1.1	Paenibacillus barengoltzii	-	336	Monomer	-	3.6	162.2	-
+3-1-1	-	A0A068N0Z8		3.5.1.1	Synechocystis sp.	-	317	-	-	29	25.7	-
+3-2-2	-	W0KM71		3.5.1.1	Nocardiopsis alba	Extracellular	320	-	-	0.127	5.5	-
+3-2-2	-	Q54237		3.5.1.1	Streptomyces griseus	Extracellular (putative)	328	-	-	-	-	-
+3-3-3	ReAV	Q2K0Z2		3.5.1.1	Rhizobium etli	-	367	Homo dimer	7OS6 PDBs	4.2	-	438
+3-4-4	ReAIV	Q2KB35		3.5.1.1	Rhizobium etli	-	335	Homo dimer	8CLZ PDBs	1.34	-	411
