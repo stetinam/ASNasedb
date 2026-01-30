@@ -11,6 +11,7 @@ bck_asnasedb/
 # But add these files
 !.gitignore
 !README.md
+!LICENSE
 !index.html
 !blast.html
 !search.html
