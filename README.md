@@ -1,8 +1,12 @@
 
 
-# Asparaginase Database
+# The Asparaginase Database
 
-## Install instructions
+The Asparaginase Database is a resource for asparaginase sequences, structures, and biochemical annotations organized by a phylogenetically driven classification.
+Available at www.asparaginasedb.com
+
+
+## BLAST Install instructions
 
 ### Prepare API image
 1. Go to `api/`
