@@ -1,0 +1,25 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: asparaginase-seq-database
+  namespace: aspdb-ns
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 2Gi
+  storageClassName: nfs-csi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: html-content
+  namespace: aspdb-ns
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 2Gi
+  storageClassName: nfs-csi
