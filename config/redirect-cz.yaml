@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-vhost-redirect
+  namespace: aspdb-ns
+data:
+  # Canonical-host redirect: asparaginasedb.cz -> asparaginasedb.com
+  #
+  # This lives in the nginx pod rather than in the Ingress because the shared
+  # CERIT-SC ingress-nginx controller rejects snippet annotations
+  # ("Snippet directives are disabled by the Ingress administrator"), and the
+  # supported `permanent-redirect` annotation drops the request path, which
+  # would turn every deep link into a home-page redirect.
+  #
+  # ingress-nginx forwards the original Host header, so matching on
+  # server_name inside the pod works. It is mounted with subPath so the
+  # image's own default.conf stays in place and keeps serving the site;
+  # an exact server_name match wins over the default server.
+  #
+  # Note: /api on .cz is routed by the Ingress to the aspdb-api Service and
+  # never reaches this pod, so BLAST API clients on the .cz host keep working.
+  redirect-cz.conf: |
+    server {
+        listen 8080;
+        server_name asparaginasedb.cz www.asparaginasedb.cz;
+        return 301 https://asparaginasedb.com$request_uri;
+    }

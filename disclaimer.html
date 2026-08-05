@@ -3,13 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Asparaginase Database Help</title>
+    <title>Disclaimer and License (CC BY 4.0) | ASNasedb</title>
+    <!-- SEO_BEGIN -->
+    <meta name="description" content="Licensing, citation and disclaimer information for the Asparaginase Database, released under CC BY 4.0." />
+    <meta name="keywords" content="asparaginase, l-asparaginase, asparaginase database, asparaginase classification, asparaginase families, asparaginase sequences, asparaginase structures, EC 3.5.1.1, asparagine hydrolase, asparaginase nomenclature, asparaginase database license, CC BY 4.0, asparaginase citation, ASNasedb, ASNaseDB, asnasedb, dbASNase, ASNase DB, ASNase database" />
+    <link rel="canonical" href="https://asparaginasedb.com/disclaimer.html" />
+    <meta property="og:description" content="Licensing, citation and disclaimer information for the Asparaginase Database, released under CC BY 4.0." />
+    <!-- SEO_END -->
+
+    <!-- Preview image for search engines and social cards (flattened, no alpha) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="The Asparaginase Database" />
+    <meta property="og:title" content="Disclaimer and License (CC BY 4.0) | ASNasedb" />
+    <meta property="og:url" content="https://asparaginasedb.com/disclaimer.html" />
+    <meta property="og:image" content="https://asparaginasedb.com/images/logo-social.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    <meta property="og:image:alt" content="The Asparaginase Database logo" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://asparaginasedb.com/images/logo-social.png" />
     <link rel="icon" type="image/png" href="/images/logo5.png" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="/fonts/fonts.css" />
     <style>
       body {
         font-family: "Source Sans Pro", sans-serif;
@@ -289,31 +305,85 @@
       .bottom-banner {
         background-color: #626262;
         color: white;
-        padding: 15px;
-        font-size: 18px;
+        padding: 12px 16px;
+        font-size: 17px;
+        line-height: 1.35;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
+        column-gap: 12px;
+        row-gap: 6px;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+
+      .footer-license,
+      .footer-contact {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
         flex-wrap: wrap;
       }
 
+      .footer-separator {
+        opacity: 0.6;
+      }
+
+      .footer-group-separator {
+        margin: 0 -0.35rem;
+      }
+
+      .footer-license-icons {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.2em;
+      }
+
+      .footer-license-icon {
+        width: 1em;
+        height: 1em;
+      }
+
       .elixir-image {
-        max-width: 100px;
+        display: block;
+        max-width: 86px;
         height: auto;
-        vertical-align: middle;
       }
 
       .bottom-banner a {
         color: white;
         text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
       }
 
       .bottom-banner a:hover {
+        color: white;
         text-decoration: underline;
+      }
+
+      .footer-logo-link {
+        margin-left: 0.25rem;
+      }
+
+      .footer-logo-link:hover {
+        text-decoration: none;
+      }
+
+      @media (max-width: 600px) {
+        .bottom-banner {
+          padding: 12px;
+          font-size: 16px;
+          row-gap: 8px;
+        }
+
+        .footer-license,
+        .footer-contact {
+          width: 100%;
+        }
+
+        .footer-group-separator {
+          display: none;
+        }
       }
 
       @media (max-width: 768px) {
@@ -392,6 +462,17 @@
         font-variant-caps: small-caps;
       }
 
+      .content ul {
+        font-size: 18px;
+        line-height: 1.6;
+        padding-left: 1.2em;
+      }
+
+      .content ul li {
+        margin-bottom: 12px;
+        text-align: justify;
+      }
+
       .download-section {
         margin: 10px auto;
         padding: 12px 20px;
@@ -436,7 +517,7 @@
   <body>
     <header>
       <!-- Home Button with Image -->
-      <a href="/index.html" class="home-button">
+      <a href="/" class="home-button">
         <img src="/images/logo1.png" alt="Home" class="home-icon" />
       </a>
       <h1>The Asparaginase Database</h1>
@@ -454,7 +535,7 @@
       >
         Disclaimer
       </h2>
-      <p style="margin-bottom: 50px">
+      <p>
         While we strive for accuracy, the data is compiled from various
         published sources and we cannot guarantee its completeness or accuracy.
         Users should verify all information against original publications before
@@ -463,32 +544,106 @@
         families and classes of <span class="small-caps">l</span>&#8209;asparaginases
         is general and might not apply to every sequence or protein.
       </p>
+
+      <ul style="margin-bottom: 50px">
+        <li>
+          <strong>Scope.</strong> Alongside
+          <span class="small-caps">l</span>&#8209;asparaginases, the database
+          includes evolutionarily related enzymes such as
+          <span class="small-caps">l</span>&#8209;glutaminases, mixed
+          <span class="small-caps">l</span>&#8209;asparaginases/<span
+            class="small-caps"
+            >l</span
+          >&#8209;glutaminases, &beta;&#8209;aspartyl&#8209;peptidases,
+          Glu&#8209;tRNA<sup>Gln</sup> amidotransferases and
+          aspartylglucosaminidases. Inclusion of an entry does not imply
+          confirmed <span class="small-caps">l</span>&#8209;asparaginase
+          activity.
+        </li>
+        <li>
+          <strong>Automatically classified sequences.</strong> Unlike the
+          manually curated entries, sequences from UniRef100 were not filtered
+          before inclusion and may contain sequencing errors or represent
+          non&#8209;functional proteins. We recommend comparing them with the
+          alignments and conserved motifs of the relevant family before further
+          use.
+        </li>
+        <li>
+          <strong>Flagged entries.</strong> Where a sequence reported in a
+          publication raises doubts &mdash; for example, if the protein as
+          presented lacks a critical conserved motif &mdash; the entry is
+          retained in the database but marked with a tooltip indicator in the
+          tables explaining the concern. Such entries should be interpreted with
+          caution and checked against the original publication.
+        </li>
+        <li>
+          <strong>Classification confidence.</strong> Most families are defined
+          by evolutionary distance and local support values, but a few remain
+          weakly supported, and some sequence placements within these should be
+          considered tentative.
+        </li>
+        <li>
+          <strong>BLAST classification.</strong> BLAST classifications are
+          computational predictions based on sequence similarity, not
+          experimentally verified annotations. They should be treated as
+          suggestions and may be unreliable for divergent, short, partial or
+          low-quality sequences.
+        </li>
+        <li>
+          <strong>Predicted structures.</strong> Reference monomer structures
+          shown on class and family pages are AlphaFold computational
+          predictions, not experimentally determined structures.
+        </li>
+        <li>
+          <strong>Intended use.</strong> The Asparaginase Database is a research
+          resource. It is not intended to inform clinical, diagnostic or
+          treatment decisions, nor food safety or regulatory compliance
+          decisions.
+        </li>
+      </ul>
     </div>
 
-    <div id="asparaginases" class="bottom-banner">
-      <div>
-        <a href="https://www.asparaginasedb.com">The Asparaginase Database</a> ©
-        2025 is licensed under
-        <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a
-        ><img
-          src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
-          alt="CC"
-          style="max-width: 1em; max-height: 1em; margin-left: 0.2em"
-        /><img
-          src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
-          alt="BY"
-          style="max-width: 1em; max-height: 1em; margin-left: 0.2em"
-        />| Early Access | Contact:
+    <footer id="contact" class="bottom-banner">
+      <div class="footer-license">
+        <a href="/">The Asparaginase Database</a>
+        <span>© 2025 is licensed under</span>
+        <a
+          href="https://creativecommons.org/licenses/by/4.0/"
+          target="_blank"
+          rel="license noopener"
+        >
+          CC BY 4.0
+        </a>
+        <span class="footer-license-icons" aria-hidden="true">
+          <img src="/images/cc.svg" alt="" class="footer-license-icon" />
+          <img src="/images/by.svg" alt="" class="footer-license-icon" />
+        </span>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <span>Release 2026-08</span>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="/#publication">How to cite</a>
       </div>
-      <a href="mailto:info@asparaginasedb.com">info@asparaginasedb.com</a>| Supported by:
-      <a href="https://www.elixir-czech.cz/" target="_blank">
-        <img
-          src="/images/elixir_logo.png"
-          alt="elixir_logo.png"
-          class="elixir-image"
-        />
-      </a>
-    </div>
+      <span class="footer-group-separator footer-separator" aria-hidden="true">|</span>
+      <div class="footer-contact">
+        <a href="mailto:info@asparaginasedb.com">info@asparaginasedb.com</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="/privacy.html">Privacy</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <span>Supported by:</span>
+        <a
+          href="https://www.elixir-czech.cz/"
+          target="_blank"
+          rel="noopener"
+          class="footer-logo-link"
+        >
+          <img
+            src="/images/elixir_logo.png"
+            alt="ELIXIR Czech Republic"
+            class="elixir-image"
+          />
+        </a>
+      </div>
+    </footer>
     <script>
       // Auto-detect file type and set download link
       const currentFile = window.location.pathname.split("/").pop();
@@ -699,7 +854,6 @@
       }
     </script>
     <script
-      data-collect-dnt="true"
       async
       src="https://scripts.simpleanalyticscdn.com/latest.js"
     ></script>

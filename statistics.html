@@ -1,16 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Asparaginase Statistics</title>
-    <link rel="icon" type="image/png" href="/images/logo5.png" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
-      rel="stylesheet"
+    <title>Asparaginase Database Statistics | ASNasedb</title>
+    <!-- SEO_BEGIN -->
+    <meta name="description" content="Summary statistics for the Asparaginase Database: counts of experimentally studied l-asparaginases, Swiss-Prot entries and UniRef100 sequences per class and family." />
+    <meta name="keywords" content="asparaginase, l-asparaginase, asparaginase database, asparaginase classification, asparaginase families, asparaginase sequences, asparaginase structures, EC 3.5.1.1, asparagine hydrolase, asparaginase nomenclature, asparaginase statistics, asparaginase counts, asparaginase distribution, ASNasedb, ASNaseDB, asnasedb, dbASNase, ASNase DB, ASNase database" />
+    <link rel="canonical" href="https://asparaginasedb.com/statistics.html" />
+    <meta property="og:description" content="Summary statistics for the Asparaginase Database: counts of experimentally studied l-asparaginases, Swiss-Prot entries and UniRef100 sequences per class and family." />
+    <!-- SEO_END -->
+
+    <!-- Preview image for search engines and social cards (flattened, no alpha) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="The Asparaginase Database" />
+    <meta property="og:title" content="Asparaginase Database Statistics | ASNasedb" />
+    <meta
+      property="og:url"
+      content="https://asparaginasedb.com/statistics.html"
     />
+    <meta
+      property="og:image"
+      content="https://asparaginasedb.com/images/logo-social.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    <meta property="og:image:alt" content="The Asparaginase Database logo" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:image"
+      content="https://asparaginasedb.com/images/logo-social.png"
+    />
+    <link rel="icon" type="image/png" href="/images/logo5.png" />
+    <script src="/scripts/vendor/chart.umd.js"></script>
+    <script src="/scripts/vendor/chartjs-plugin-datalabels.min.js"></script>
+    <link rel="stylesheet" href="/fonts/fonts.css" />
     <style>
       :root {
         --primary-blue: #2563eb;
@@ -54,7 +79,9 @@
       }
 
       a {
-        transition: color 0.3s ease, text-decoration 0.3s ease;
+        transition:
+          color 0.3s ease,
+          text-decoration 0.3s ease;
       }
 
       .container {
@@ -284,31 +311,85 @@
       .bottom-banner {
         background-color: #626262;
         color: white;
-        padding: 15px;
-        font-size: 18px;
+        padding: 12px 16px;
+        font-size: 17px;
+        line-height: 1.35;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
+        column-gap: 12px;
+        row-gap: 6px;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+
+      .footer-license,
+      .footer-contact {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
         flex-wrap: wrap;
       }
 
+      .footer-separator {
+        opacity: 0.6;
+      }
+
+      .footer-group-separator {
+        margin: 0 -0.35rem;
+      }
+
+      .footer-license-icons {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.2em;
+      }
+
+      .footer-license-icon {
+        width: 1em;
+        height: 1em;
+      }
+
       .elixir-image {
-        max-width: 100px;
+        display: block;
+        max-width: 86px;
         height: auto;
-        vertical-align: middle;
       }
 
       .bottom-banner a {
         color: white;
         text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
       }
 
       .bottom-banner a:hover {
+        color: white;
         text-decoration: underline;
+      }
+
+      .footer-logo-link {
+        margin-left: 0.25rem;
+      }
+
+      .footer-logo-link:hover {
+        text-decoration: none;
+      }
+
+      @media (max-width: 600px) {
+        .bottom-banner {
+          padding: 12px;
+          font-size: 16px;
+          row-gap: 8px;
+        }
+
+        .footer-license,
+        .footer-contact {
+          width: 100%;
+        }
+
+        .footer-group-separator {
+          display: none;
+        }
       }
 
       @media (max-width: 768px) {
@@ -426,12 +507,112 @@
         margin: 4px 0 0 0;
         font-style: italic;
       }
+      /* --- Publication / citation box --- */
+      .citation-section {
+        /* mirrors .container, so the card lines up with the cards inside it */
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 0 2rem;
+        text-align: left;
+      }
+
+      .citation-section h2 {
+        color: #01ad62;
+        font-size: 22px;
+        text-align: left;
+        margin-top: 20px;
+      }
+
+      .citation-box {
+        position: relative;
+        background-color: white;
+        border: 1px solid #eee;
+        border-radius: 16px;
+        padding: 24px 28px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        text-align: left;
+        transition:
+          border-color 0.3s ease,
+          box-shadow 0.3s ease,
+          background-color 0.3s ease;
+      }
+
+      .citation-box .citation-intro {
+        font-size: 16px;
+        color: #666;
+        margin: 0 0 12px 0;
+        padding-right: 120px;
+        text-align: left;
+      }
+
+      .citation-box .citation-text {
+        font-size: 17px;
+        line-height: 1.6;
+        margin: 0;
+        padding-right: 120px;
+        text-align: left;
+        color: #333;
+      }
+
+      .citation-copy-btn {
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        transform: translateY(-50%);
+        background-color: transparent;
+        color: #17b470;
+        border: 2px solid #17b470;
+        padding: 6px 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 600;
+        white-space: nowrap;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
+      }
+
+      .citation-copy-btn:hover {
+        background-color: #17b470;
+        color: white;
+      }
+
+      .citation-copy-btn.copied {
+        background-color: #17b470;
+        border-color: #17b470;
+        color: white;
+      }
+
+      .citation-flash {
+        border-color: #17b470;
+        background-color: #eefaf4;
+        box-shadow:
+          0 0 0 5px rgba(23, 180, 112, 0.45),
+          0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      @media (max-width: 768px) {
+        .citation-copy-btn {
+          position: static;
+          transform: none;
+          display: block;
+          width: 100%;
+          margin-top: 14px;
+        }
+
+        .citation-box .citation-intro,
+        .citation-box .citation-text {
+          padding-right: 0;
+        }
+      }
     </style>
   </head>
   <body>
     <header>
       <!-- Home Button with Image -->
-      <a href="/index.html" class="home-button">
+      <a href="/" class="home-button">
         <img src="/images/logo1.png" alt="Home" class="home-icon" />
       </a>
       <h1>The Asparaginase Database Statistics</h1>
@@ -441,8 +622,8 @@
       <div class="stats-overview">
         <div class="stats-column">
           <div class="stat-card">
-            <div class="release-text">Early Access 2025-0</div>
-            <div class="stat-label">Release</div>
+            <div class="release-text">2026-08</div>
+            <div class="stat-label">Release (first after early access)</div>
           </div>
           <div class="stat-card">
             <div class="stat-number" id="totalSeq">126,085</div>
@@ -539,30 +720,174 @@
       </div>
     </div>
 
-    <div id="asparaginases" class="bottom-banner">
-      <div>
-        <a href="https://www.asparaginasedb.com">The Asparaginase Database</a> ©
-        2025 is licensed under
-        <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a
-        ><img
-          src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
-          alt="CC"
-          style="max-width: 1em; max-height: 1em; margin-left: 0.2em"
-        /><img
-          src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
-          alt="BY"
-          style="max-width: 1em; max-height: 1em; margin-left: 0.2em"
-        />| Early Access | Contact:
+    <div class="citation-section" id="publication">
+      <h2>Publication</h2>
+      <div class="citation-box">
+        <button
+          type="button"
+          class="citation-copy-btn"
+          id="copyCitationBtn"
+          aria-label="Copy the citation to the clipboard"
+        >
+          Copy
+        </button>
+        <p class="citation-intro">
+          If you use The Asparaginase Database or the classification in your
+          research, please cite:
+        </p>
+        <p class="citation-text">
+          Max Štětina, Aleš Křenek, Guglielmo Tedeschi, Filip Krása, Vojtěch
+          Spiwok, Eva Benešová, The Asparaginase Database: a comprehensive
+          resource and&nbsp;classification of
+          <span class="small-caps">l</span>&#8209;asparaginases,
+          <em>Database</em>, Volume 2026, 2026, baag045,
+          <a
+            href="https://doi.org/10.1093/database/baag045"
+            target="_blank"
+            rel="noopener"
+            >https://doi.org/10.1093/database/baag045</a
+          >.
+        </p>
       </div>
-      <a href="mailto:info@asparaginasedb.com">info@asparaginasedb.com</a>| Supported by:
-      <a href="https://www.elixir-czech.cz/" target="_blank">
-        <img
-          src="/images/elixir_logo.png"
-          alt="elixir_logo.png"
-          class="elixir-image"
-        />
-      </a>
     </div>
+    <script>
+      // Publication section: smooth scroll from the top banner + copy citation
+      function initPublicationSection() {
+        const CITATION =
+          "Max \u0160t\u011btina, Ale\u0161 K\u0159enek, Guglielmo Tedeschi, " +
+          "Filip Kr\u00e1sa, Vojt\u011bch Spiwok, Eva Bene\u0161ov\u00e1, " +
+          "The Asparaginase Database: a comprehensive resource and classification " +
+          "of l-asparaginases, Database, Volume 2026, 2026, baag045, " +
+          "https://doi.org/10.1093/database/baag045";
+
+        // Smooth scroll + brief highlight, mirroring the Contact link behaviour
+        const pubLinks = document.querySelectorAll(
+          '.top-banner-nav a[href="#publication"], ' +
+            '.dropdown-menu a[href="#publication"], ' +
+            '.bottom-banner a[href="#publication"]',
+        );
+        const pubSection = document.querySelector("#publication");
+
+        function highlightPublication() {
+          const box = pubSection.querySelector(".citation-box") || pubSection;
+          box.classList.add("citation-flash");
+          setTimeout(() => box.classList.remove("citation-flash"), 1900);
+        }
+
+        if (pubSection) {
+          pubLinks.forEach((link) => {
+            link.addEventListener("click", (e) => {
+              e.preventDefault();
+              pubSection.scrollIntoView({ behavior: "smooth" });
+              setTimeout(highlightPublication, 800);
+            });
+          });
+
+          // Same treatment when arriving from another page's footer link,
+          // i.e. /index.html#publication
+          if (window.location.hash === "#publication") {
+            window.addEventListener("load", () => {
+              pubSection.scrollIntoView({ behavior: "smooth" });
+              setTimeout(highlightPublication, 800);
+            });
+          }
+        }
+
+        // Clipboard helpers (with a fallback for older / non-secure contexts)
+        function legacyCopy(text) {
+          const area = document.createElement("textarea");
+          area.value = text;
+          area.setAttribute("readonly", "");
+          area.style.position = "fixed";
+          area.style.top = "-1000px";
+          document.body.appendChild(area);
+          area.select();
+          let ok = false;
+          try {
+            ok = document.execCommand("copy");
+          } catch (err) {
+            ok = false;
+          }
+          document.body.removeChild(area);
+          return ok;
+        }
+
+        const copyBtn = document.getElementById("copyCitationBtn");
+
+        if (copyBtn) {
+          copyBtn.addEventListener("click", () => {
+            const original = copyBtn.innerHTML;
+
+            const finish = (ok) => {
+              copyBtn.innerHTML = ok ? "&#10003; Copied" : "Copy failed";
+              copyBtn.classList.toggle("copied", ok);
+              setTimeout(() => {
+                copyBtn.innerHTML = original;
+                copyBtn.classList.remove("copied");
+              }, 2000);
+            };
+
+            if (navigator.clipboard && window.isSecureContext) {
+              navigator.clipboard.writeText(CITATION).then(
+                () => finish(true),
+                () => finish(legacyCopy(CITATION)),
+              );
+            } else {
+              finish(legacyCopy(CITATION));
+            }
+          });
+        }
+      }
+
+      // The footer link is parsed after this script, so bind once
+      // the whole document is available.
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initPublicationSection);
+      } else {
+        initPublicationSection();
+      }
+    </script>
+    <footer id="contact" class="bottom-banner">
+      <div class="footer-license">
+        <a href="/">The Asparaginase Database</a>
+        <span>© 2025 is licensed under</span>
+        <a
+          href="https://creativecommons.org/licenses/by/4.0/"
+          target="_blank"
+          rel="license noopener"
+        >
+          CC BY 4.0
+        </a>
+        <span class="footer-license-icons" aria-hidden="true">
+          <img src="/images/cc.svg" alt="" class="footer-license-icon" />
+          <img src="/images/by.svg" alt="" class="footer-license-icon" />
+        </span>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <span>Release 2026-08</span>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="#publication">How to cite</a>
+      </div>
+      <span class="footer-group-separator footer-separator" aria-hidden="true">|</span>
+      <div class="footer-contact">
+        <a href="mailto:info@asparaginasedb.com">info@asparaginasedb.com</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="/privacy.html">Privacy</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <span>Supported by:</span>
+        <a
+          href="https://www.elixir-czech.cz/"
+          target="_blank"
+          rel="noopener"
+          class="footer-logo-link"
+        >
+          <img
+            src="/images/elixir_logo.png"
+            alt="ELIXIR Czech Republic"
+            class="elixir-image"
+          />
+        </a>
+      </div>
+    </footer>
 
     <script>
       // Data
@@ -772,7 +1097,7 @@
             familyNum: parseInt(familyNum),
             displayLabel: `Family ${familyNum}`,
           };
-        }
+        },
       );
 
       // Sort by class, then by clan, then by family number
@@ -1112,7 +1437,7 @@
 
       const totalSequences = Object.values(sequenceData).reduce(
         (a, b) => a + b,
-        0
+        0,
       );
 
       // Animate numbers on load
@@ -1286,7 +1611,7 @@
           downloadInfo.textContent = `File: ${fileName}`;
 
           console.log(
-            `Family: Class ${classNum}, Clan ${clanNum}, Family ${familyNum}`
+            `Family: Class ${classNum}, Clan ${clanNum}, Family ${familyNum}`,
           );
           console.log(`Download file: ${fileName}`);
         } else {
@@ -1294,7 +1619,7 @@
           downloadInfo.textContent = `No file available for Class ${classNum}, Family ${familyNum}`;
           downloadInfo.style.color = "#dc3545";
           console.error(
-            `No clan mapping found for Class ${classNum}, Family ${familyNum}`
+            `No clan mapping found for Class ${classNum}, Family ${familyNum}`,
           );
         }
       }
@@ -1355,7 +1680,6 @@
       }
     </script>
     <script
-      data-collect-dnt="true"
       async
       src="https://scripts.simpleanalyticscdn.com/latest.js"
     ></script>

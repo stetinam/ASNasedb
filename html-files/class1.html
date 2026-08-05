@@ -3,12 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Class 1 Asparaginases</title>
+    <title>Class 1: Bacterial-Type Asparaginases (Type I, II) | ASNasedb</title>
+    <!-- SEO_BEGIN -->
+    <meta name="description" content="Class 1 l-asparaginases, previously known as bacterial-type l-asparaginases, subdivided into type I (cytoplasmic, EcAI) and type II (periplasmic, EcAII). Contains both l-asparaginases in pharmaceutical use: the Escherichia coli EcAII and the Dickeya dadantii ErA (or ErAII), from the bacterium formerly named Erwinia chrysanthemi. 72 experimentally studied proteins; 74 sequences in Swiss-Prot; 64,284 unique sequences in UniRef100." />
+    <meta name="keywords" content="asparaginase, l-asparaginase, asparaginase database, asparaginase classification, asparaginase families, asparaginase sequences, asparaginase structures, EC 3.5.1.1, asparagine hydrolase, asparaginase nomenclature, bacterial-type asparaginase, type I asparaginase, type II asparaginase, EcAI, EcAII, ansA, ansB, acute lymphoblastic leukemia, Erwinia chrysanthemi asparaginase, Dickeya dadantii asparaginase, Dickeya chrysanthemi, ErA, ErAII, crisantaspase, Erwinaze, asparaginase Erwinia, Erwinia asparaginase, ASNasedb, ASNaseDB, asnasedb, dbASNase, ASNase DB, ASNase database" />
+    <link rel="canonical" href="https://asparaginasedb.com/html-files/class1.html" />
+    <meta property="og:description" content="Class 1 l-asparaginases, previously known as bacterial-type l-asparaginases, subdivided into type I (cytoplasmic, EcAI) and type II (periplasmic, EcAII). Contains both l-asparaginases in pharmaceutical use: the Escherichia coli EcAII and the Dickeya dadantii ErA (or ErAII), from the bacterium formerly named Erwinia chrysanthemi. 72 experimentally studied proteins; 74 sequences in Swiss-Prot; 64,284 unique sequences in UniRef100." />
+    <!-- SEO_END -->
+
+    <!-- Preview image for search engines and social cards (flattened, no alpha) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="The Asparaginase Database" />
+    <meta property="og:title" content="Class 1: Bacterial-Type Asparaginases (Type I, II) | ASNasedb" />
+    <meta property="og:url" content="https://asparaginasedb.com/html-files/class1.html" />
+    <meta property="og:image" content="https://asparaginasedb.com/images/logo-social.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    <meta property="og:image:alt" content="The Asparaginase Database logo" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://asparaginasedb.com/images/logo-social.png" />
     <link rel="icon" type="image/png" href="/images/logo5.png" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="/fonts/fonts.css" />
     <style>
       body {
         font-family: "Source Sans Pro", sans-serif;
@@ -289,31 +305,85 @@
       .bottom-banner {
         background-color: #626262;
         color: white;
-        padding: 15px;
-        font-size: 18px;
-        display: flex; /* Enable flexbox */
-        align-items: center; /* Vertically align items */
-        justify-content: center; /* Center horizontally (optional) */
-        gap: 10px; /* Space between items */
-        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        padding: 12px 16px;
+        font-size: 17px;
+        line-height: 1.35;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 12px;
+        row-gap: 6px;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+
+      .footer-license,
+      .footer-contact {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+        flex-wrap: wrap;
+      }
+
+      .footer-separator {
+        opacity: 0.6;
+      }
+
+      .footer-group-separator {
+        margin: 0 -0.35rem;
+      }
+
+      .footer-license-icons {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.2em;
+      }
+
+      .footer-license-icon {
+        width: 1em;
+        height: 1em;
       }
 
       .elixir-image {
-        max-width: 100px; /* Or whatever size you prefer */
+        display: block;
+        max-width: 86px;
         height: auto;
-        vertical-align: middle; /* Align image with text baseline (alternative to flexbox alignment) */
       }
 
       .bottom-banner a {
         color: white;
         text-decoration: none;
-        display: inline-flex; /* To ensure correct vertical alignment of the image */
-        align-items: center; /* Aligns the image and text within the link */
-        gap: 5px; /* Adds spacing between the image and text within the link */
       }
 
       .bottom-banner a:hover {
+        color: white;
         text-decoration: underline;
+      }
+
+      .footer-logo-link {
+        margin-left: 0.25rem;
+      }
+
+      .footer-logo-link:hover {
+        text-decoration: none;
+      }
+
+      @media (max-width: 600px) {
+        .bottom-banner {
+          padding: 12px;
+          font-size: 16px;
+          row-gap: 8px;
+        }
+
+        .footer-license,
+        .footer-contact {
+          width: 100%;
+        }
+
+        .footer-group-separator {
+          display: none;
+        }
       }
 
       @media (max-width: 768px) {
@@ -358,6 +428,49 @@
         max-width: 1300px;
         margin: 0 auto;
         padding: 0px;
+      }
+
+      /* Historical context strip: spans the full width of the overview boxes,
+         sits between them and the clan/family table. */
+      .history-container {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 20px 20px;
+      }
+
+      .history-box {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 22px 28px;
+        display: flex;
+        align-items: center;
+        gap: 26px;
+        text-align: left;
+      }
+
+      .history-title {
+        color: #615ab3;
+        font-size: 21px;
+        line-height: 1.2;
+        margin: 0;
+        flex-shrink: 0;
+      }
+
+      .history-text {
+        margin: 0;
+        font-size: 18px;
+        line-height: 1.5;
+        text-align: left;
+      }
+
+      @media (max-width: 760px) {
+        .history-box {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
+        }
       }
 
       table {
@@ -488,7 +601,8 @@
         width: 1300px; /* Adjust the width as needed */
         margin: auto; /* Center the table */
         overflow-x: auto; /* Horizontal scrollbar if needed */
-        max-height: 550px; /* Set a maximum height */
+        max-height: 550px; /* Fallback: browsers without CSS min() */
+        max-height: min(70vh, 550px); /* Shrink on short viewports; never exceed 550px on big screens */
         overflow-y: auto; /* Vertical scrollbar */
         position: relative;
         will-change: transform;
@@ -631,12 +745,18 @@
         margin: 4px 0 0 0;
         font-style: italic;
       }
+
+      .dropdown-menu hr {
+        border: none;
+        border-top: 1px solid #ddd;
+        margin: 6px 8px;
+      }
     </style>
   </head>
   <body>
     <header>
       <!-- Home Button with Image -->
-      <a href="/index.html" class="home-button">
+      <a href="/" class="home-button">
         <img src="/images/logo1.png" alt="Home" class="home-icon" />
       </a>
       <h1 id="class1">Class 1 Asparaginases</h1>
@@ -650,6 +770,8 @@
         <a href="#alignment">Sequence Alignment</a>
         <a href="#motifs">Conserved Motifs</a>
         <a href="#overview">Families Overview</a>
+        <hr />
+        <a href="/#publication">How to cite</a>
       </div>
     </header>
 
@@ -700,14 +822,17 @@
 
       window.addEventListener("scroll", updateActiveMenu);
 
-      // Smooth scroll to sections
+      // Smooth scroll to sections (only for internal links)
       menuLinks.forEach((link) => {
         link.addEventListener("click", (e) => {
-          e.preventDefault();
           const targetId = link.getAttribute("href");
-          const targetSection = document.querySelector(targetId);
-          targetSection.scrollIntoView({ behavior: "smooth" });
-          // Removed the line that closes the dropdown menu
+          if (targetId.startsWith("#")) {
+            // Only apply to internal links
+            e.preventDefault();
+            const targetSection = document.querySelector(targetId);
+            targetSection.scrollIntoView({ behavior: "smooth" });
+          }
+          // External links (like "/index.html#publication") navigate normally
         });
       });
     </script>
@@ -719,7 +844,7 @@
         <p>74 sequences in Swiss-Prot</p>
         <p>64,284 unique sequences in UniRef100</p>
         <p>
-          Bacteria, archaea and eukaryotes (animals, fungi, protozoans, algea)
+          Bacteria, archaea and eukaryotes (animals, fungi, protozoans, algae)
         </p>
         <p>
           Affinities to <span class="small-caps">l</span>&#8209;asparagine and
@@ -753,6 +878,19 @@
       </div>
     </div>
 
+    <div class="history-container">
+      <div class="history-box">
+        <h3 class="history-title">Historical<br />Context</h3>
+        <p class="history-text">
+          Class 1 <span class="small-caps">l</span>&#8209;asparaginases were previously known as bacterial-type
+          <span class="small-caps">l</span>&#8209;asparaginases. The historical subdivision into type I (cytoplasmic,
+          EcAI) and type II (periplasmic, EcAII) stems from the Escherichia coli
+          isoenzymes. This class contains both <span class="small-caps">l</span>&#8209;asparaginases in pharmaceutical
+          use: the Escherichia coli EcAII (Elspar, Oncaspar, Asparlas) and the Dickeya dadantii ErA (or
+          ErAII) (Erwinase, Rylaze), from the bacterium formerly named Erwinia chrysanthemi.
+        </p>
+      </div>
+    </div>
     <div class="table-container">
       <table class="families-table">
         <thead>
@@ -847,7 +985,7 @@
                 >Family 11
                 <span class="link-tooltiptext"
                   >Although a family of mostly bacterial asparaginases, it also
-                  contains the dimeric archaeal asparagianses from Pyrococcus
+                  contains the dimeric archaeal asparaginases from Pyrococcus
                   furiosus and Thermococcus kodakarensis.
                 </span>
               </a>
@@ -1953,7 +2091,7 @@
               <span class="tooltip"
                 >i
                 <span class="tooltiptext"
-                  >Sequence may be not be exact match
+                  >Sequence may not be exact match
                 </span> </span
               >)<br />
               U:
@@ -2413,30 +2551,47 @@
     </div>
     <br />
 
-    <div id="asparaginases" class="bottom-banner">
-      <div>
-        <a href="https://www.asparaginasedb.com">The Asparaginase Database</a> ©
-        2025 is licensed under
-        <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a
-        ><img
-          src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
-          alt="CC"
-          style="max-width: 1em; max-height: 1em; margin-left: 0.2em"
-        /><img
-          src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
-          alt="BY"
-          style="max-width: 1em; max-height: 1em; margin-left: 0.2em"
-        />| Early Access | Contact:
+    <footer id="contact" class="bottom-banner">
+      <div class="footer-license">
+        <a href="/">The Asparaginase Database</a>
+        <span>© 2025 is licensed under</span>
+        <a
+          href="https://creativecommons.org/licenses/by/4.0/"
+          target="_blank"
+          rel="license noopener"
+        >
+          CC BY 4.0
+        </a>
+        <span class="footer-license-icons" aria-hidden="true">
+          <img src="/images/cc.svg" alt="" class="footer-license-icon" />
+          <img src="/images/by.svg" alt="" class="footer-license-icon" />
+        </span>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <span>Release 2026-08</span>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="/#publication">How to cite</a>
       </div>
-      <a href="mailto:info@asparaginasedb.com">info@asparaginasedb.com</a>| Supported by:
-      <a href="https://www.elixir-czech.cz/" target="_blank">
-        <img
-          src="/images/elixir_logo.png"
-          alt="elixir_logo.png"
-          class="elixir-image"
-        />
-      </a>
-    </div>
+      <span class="footer-group-separator footer-separator" aria-hidden="true">|</span>
+      <div class="footer-contact">
+        <a href="mailto:info@asparaginasedb.com">info@asparaginasedb.com</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="/privacy.html">Privacy</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <span>Supported by:</span>
+        <a
+          href="https://www.elixir-czech.cz/"
+          target="_blank"
+          rel="noopener"
+          class="footer-logo-link"
+        >
+          <img
+            src="/images/elixir_logo.png"
+            alt="ELIXIR Czech Republic"
+            class="elixir-image"
+          />
+        </a>
+      </div>
+    </footer>
     <script>
       // Auto-detect file type and set download link
       const currentFile = window.location.pathname.split("/").pop();
@@ -2647,7 +2802,6 @@
       }
     </script>
     <script
-      data-collect-dnt="true"
       async
       src="https://scripts.simpleanalyticscdn.com/latest.js"
     ></script>

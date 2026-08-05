@@ -1,5 +1,5 @@
-// Auto-generated from protein-entries.tsv
-// DO NOT EDIT DIRECTLY - regenerate using update_database.py
+// Auto-generated data file - DO NOT EDIT DIRECTLY.
+// Regenerate from the master TSV rather than editing this file by hand.
 
 const PROTEIN_DATA = [
   {
@@ -699,7 +699,7 @@ const PROTEIN_DATA = [
     "PDB_Indicator": "",
     "Km": "0.058",
     "Km_DOIs": "https://doi.org/10.1111/j.1742-4658.2009.06910.x",
-    "Km_Note": "Sequence may be not be exact match",
+    "Km_Note": "Sequence may not be exact match",
     "Km_Indicator": "i",
     "Vmax": "",
     "Vmax_DOIs": "",
@@ -707,7 +707,7 @@ const PROTEIN_DATA = [
     "Vmax_Indicator": "",
     "Kcat": "565",
     "Kcat_DOIs": "https://doi.org/10.1007/s12033-014-9766-9",
-    "Kcat_Note": "Sequence may be not be exact match. K_cat may not correspond to K_m.",
+    "Kcat_Note": "Sequence may not be exact match. K_cat may not correspond to K_m.",
     "Kcat_Indicator": "i"
   },
   {
@@ -876,15 +876,15 @@ const PROTEIN_DATA = [
     "PDB_Indicator": "",
     "Km": "0.29",
     "Km_DOIs": "https://doi.org/10.1371/journal.pone.0117025",
-    "Km_Note": "S_0.5, Sequence may be not be exact match",
+    "Km_Note": "S_0.5, Sequence may not be exact match",
     "Km_Indicator": "i",
     "Vmax": "31.22",
     "Vmax_DOIs": "https://doi.org/10.1371/journal.pone.0117025",
-    "Vmax_Note": "Sequence may be not be exact match",
+    "Vmax_Note": "Sequence may not be exact match",
     "Vmax_Indicator": "i",
     "Kcat": "19.26",
     "Kcat_DOIs": "https://doi.org/10.1371/journal.pone.0117025",
-    "Kcat_Note": "Sequence may be not be exact match",
+    "Kcat_Note": "Sequence may not be exact match",
     "Kcat_Indicator": "i"
   },
   {
@@ -3639,7 +3639,7 @@ const PROTEIN_DATA = [
     "AAs_Note_Link": "",
     "AAs_Indicator": "",
     "Structure": "Homo tetramer",
-    "Structure_Note": "Additional ankrytin repeats.",
+    "Structure_Note": "Additional ankyrin repeats.",
     "Structure_Note_Link": "",
     "Structure_Indicator": "i",
     "PDB_IDs": "4R8L",
@@ -3708,7 +3708,7 @@ const PROTEIN_DATA = [
     "PDB_Indicator": "",
     "Km": "11.5",
     "Km_DOIs": "https://www.jbc.org/article/S0021-9258(20)38784-6/fulltext",
-    "Km_Note": "S_0.5, alloseric enzyme",
+    "Km_Note": "S_0.5, allosteric enzyme",
     "Km_Indicator": "i",
     "Vmax": "",
     "Vmax_DOIs": "",
@@ -6717,7 +6717,7 @@ const PROTEIN_DATA = [
     "PDB_Indicator": "",
     "Km": "0.058",
     "Km_DOIs": "https://doi.org/10.1111/j.1742-4658.2009.06910.x",
-    "Km_Note": "Sequence may be not be exact match.",
+    "Km_Note": "Sequence may not be exact match.",
     "Km_Indicator": "i",
     "Vmax": "",
     "Vmax_DOIs": "",
@@ -6725,7 +6725,7 @@ const PROTEIN_DATA = [
     "Vmax_Indicator": "",
     "Kcat": "565",
     "Kcat_DOIs": "https://doi.org/10.1007/s12033-014-9766-9",
-    "Kcat_Note": "Sequence may be not be exact match. K_cat may not correspond to K_m.",
+    "Kcat_Note": "Sequence may not be exact match. K_cat may not correspond to K_m.",
     "Kcat_Indicator": "i"
   },
   {
@@ -6776,15 +6776,15 @@ const PROTEIN_DATA = [
     "PDB_Indicator": "",
     "Km": "0.29",
     "Km_DOIs": "https://doi.org/10.1371/journal.pone.0117025",
-    "Km_Note": "S_0.5, Sequence may be not be exact match",
+    "Km_Note": "S_0.5, Sequence may not be exact match",
     "Km_Indicator": "i",
     "Vmax": "31.22",
     "Vmax_DOIs": "https://doi.org/10.1371/journal.pone.0117025",
-    "Vmax_Note": "Sequence may be not be exact match",
+    "Vmax_Note": "Sequence may not be exact match",
     "Vmax_Indicator": "i",
     "Kcat": "19.26",
     "Kcat_DOIs": "https://doi.org/10.1371/journal.pone.0117025",
-    "Kcat_Note": "Sequence may be not be exact match",
+    "Kcat_Note": "Sequence may not be exact match",
     "Kcat_Indicator": "i"
   },
   {
@@ -10080,7 +10080,7 @@ const PROTEIN_DATA = [
     "PDB_Indicator": "",
     "Km": "11.5",
     "Km_DOIs": "https://www.jbc.org/article/S0021-9258(20)38784-6/fulltext",
-    "Km_Note": "S_0.5, alloseric enzyme",
+    "Km_Note": "S_0.5, allosteric enzyme",
     "Km_Indicator": "i",
     "Vmax": "",
     "Vmax_DOIs": "",

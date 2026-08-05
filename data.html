@@ -1,0 +1,1179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download Asparaginase Data (FASTA, TSV) | ASNasedb</title>
+    <!-- SEO_BEGIN -->
+    <meta name="description" content="Download the full Asparaginase Database: l-asparaginase sequences in FASTA, entry annotations in TSV, and per-class datasets for bulk and offline analysis." />
+    <meta name="keywords" content="asparaginase, l-asparaginase, asparaginase database, asparaginase classification, asparaginase families, asparaginase sequences, asparaginase structures, EC 3.5.1.1, asparagine hydrolase, asparaginase nomenclature, asparaginase FASTA download, asparaginase dataset, asparaginase TSV, ASNasedb, ASNaseDB, asnasedb, dbASNase, ASNase DB, ASNase database" />
+    <link rel="canonical" href="https://asparaginasedb.com/data.html" />
+    <meta property="og:description" content="Download the full Asparaginase Database: l-asparaginase sequences in FASTA, entry annotations in TSV, and per-class datasets for bulk and offline analysis." />
+    <!-- SEO_END -->
+
+    <!-- Preview image for search engines and social cards (flattened, no alpha) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="The Asparaginase Database" />
+    <meta property="og:title" content="Download Asparaginase Data (FASTA, TSV) | ASNasedb" />
+    <meta property="og:url" content="https://asparaginasedb.com/data.html" />
+    <meta
+      property="og:image"
+      content="https://asparaginasedb.com/images/logo-social.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    <meta property="og:image:alt" content="The Asparaginase Database logo" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:image"
+      content="https://asparaginasedb.com/images/logo-social.png"
+    />
+    <link rel="icon" type="image/png" href="/images/logo5.png" />
+
+    <link rel="stylesheet" href="/fonts/fonts.css" />
+    <style>
+      body {
+        font-family: "Source Sans Pro", sans-serif;
+        background-color: #f9f9f9;
+        color: var(--dark-gray);
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Base link styling */
+      a {
+        color: #17b470;
+        text-decoration: none;
+        font-weight: 600;
+        transition:
+          color 0.3s ease,
+          text-decoration 0.3s ease;
+      }
+
+      a:hover {
+        color: #1b915e;
+      }
+
+      a:active {
+        color: #e91e63;
+      }
+
+      header {
+        background-color: #17b470;
+        padding: 40px 20px;
+        text-align: center;
+        color: white;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0rem;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      /* Home Button Styles */
+      .home-button {
+        position: absolute;
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        text-decoration: none;
+      }
+
+      .home-button img.home-icon {
+        width: auto;
+        height: 80px;
+        border-radius: 5px;
+      }
+
+      .home-button:hover img.home-icon {
+        opacity: 0.8;
+      }
+
+      @media (max-width: 700px) {
+        .home-button {
+          display: none;
+        }
+      }
+
+      /* Width matches .citation-section so the content edge lines up with the
+         Publication box below. */
+      .data-content {
+        max-width: 1300px;
+        margin: 26px auto 34px;
+        padding: 0 20px;
+      }
+
+      .data-content h2 {
+        font-size: 20px;
+        color: #01ad62;
+        text-align: left;
+        margin: 30px 0 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #e6e9e6;
+      }
+
+      .data-content h2:first-of-type {
+        margin-top: 18px;
+      }
+
+      .lede {
+        font-size: 17px;
+        color: #555;
+        margin: 0;
+        max-width: 900px;
+      }
+
+      /* --- Download cards --- */
+      .download-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      @media (max-width: 820px) {
+        .download-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .dl-card {
+        background: white;
+        border: 1px solid #e3e6e3;
+        border-top: 3px solid #17b470;
+        border-radius: 8px;
+        padding: 16px 18px 18px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .dl-card h3 {
+        margin: 0;
+        font-size: 18px;
+        color: #1f2937;
+        font-weight: 700;
+      }
+
+      .dl-card h3 sup {
+        font-size: 11px;
+      }
+
+      .dl-card h3 sup a {
+        color: #17b470;
+      }
+
+      .dl-meta {
+        font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+        font-size: 12px;
+        color: #9aa09a;
+        margin: 3px 0 9px;
+      }
+
+      .dl-format {
+        display: inline-block;
+        background: #eefaf4;
+        color: #17b470;
+        border: 1px solid rgba(23, 180, 112, 0.3);
+        border-radius: 3px;
+        padding: 0 6px;
+        font-family: "Source Sans Pro", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        margin-right: 7px;
+      }
+
+      .dl-card p {
+        font-size: 15px;
+        line-height: 1.5;
+        color: #555;
+        margin: 0 0 14px;
+        flex-grow: 1;
+      }
+
+      .dl-btn {
+        display: inline-block;
+        align-self: flex-start;
+        padding: 7px 18px;
+        background-color: #17b470;
+        color: white;
+        border-radius: 4px;
+        font-size: 15px;
+        font-weight: 600;
+        border: 2px solid #17b470;
+        transition: all 0.25s ease;
+      }
+
+      .dl-btn:hover,
+      .dl-btn:visited:hover {
+        background-color: white;
+        color: #17b470;
+      }
+
+      .dl-btn:visited {
+        color: white;
+      }
+
+      .coverage-note {
+        font-size: 14px;
+        line-height: 1.55;
+        color: #777;
+        margin: 12px 0 0;
+        padding-left: 12px;
+        border-left: 3px solid #e6e9e6;
+      }
+
+      /* --- UniRef100 subset picker --- */
+      .subset-picker {
+        background: white;
+        border: 1px solid #e3e6e3;
+        border-radius: 8px;
+        padding: 14px 18px 16px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        margin-bottom: 16px;
+      }
+
+      .subset-picker label {
+        display: block;
+        font-size: 15px;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 8px;
+      }
+
+      .subset-picker label sup {
+        font-size: 11px;
+      }
+
+      .subset-picker label sup a {
+        color: #17b470;
+      }
+
+      .subset-controls {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .subset-controls select {
+        flex: 1 1 400px;
+        max-width: 620px;
+        font-family: inherit;
+        font-size: 15px;
+        color: #1f2937;
+        background-color: #fff;
+        border: 1px solid #cfd4cf;
+        border-radius: 4px;
+        padding: 7px 10px;
+        cursor: pointer;
+      }
+
+      .subset-controls select:focus {
+        outline: none;
+        border-color: #17b470;
+        box-shadow: 0 0 0 3px rgba(23, 180, 112, 0.18);
+      }
+
+      .subset-controls optgroup {
+        font-style: normal;
+        font-weight: 700;
+      }
+
+      .subset-meta {
+        font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+        font-size: 12px;
+        color: #9aa09a;
+        margin: 10px 0 0;
+      }
+
+      /* --- Compact rows: subsets, trees, releases --- */
+      .row-list {
+        border-top: 1px solid #eceeec;
+      }
+
+      .row-list > div {
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        padding: 9px 2px;
+        border-bottom: 1px solid #eceeec;
+        font-size: 15px;
+        color: #555;
+        flex-wrap: wrap;
+      }
+
+      .row-label {
+        flex: 0 0 148px;
+        font-weight: 700;
+        color: #1f2937;
+      }
+
+      .row-list p {
+        flex: 1 1 320px;
+        margin: 0;
+      }
+
+      .row-list a.row-link {
+        white-space: nowrap;
+      }
+
+      .tree-swatch {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 2px;
+        margin-right: 7px;
+        vertical-align: 1px;
+      }
+
+      .row-current {
+        display: inline-block;
+        background: #eefaf4;
+        color: #17b470;
+        border: 1px solid rgba(23, 180, 112, 0.3);
+        border-radius: 3px;
+        padding: 0 6px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        margin-left: 7px;
+        vertical-align: 1px;
+      }
+
+      /* --- Source repository strip --- */
+      .repo-strip {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: white;
+        border: 1px solid #e3e6e3;
+        border-radius: 8px;
+        padding: 14px 18px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        flex-wrap: wrap;
+      }
+
+      .repo-strip svg {
+        flex-shrink: 0;
+      }
+
+      .repo-strip div {
+        flex: 1 1 300px;
+      }
+
+      .repo-strip h3 {
+        margin: 0;
+        font-size: 17px;
+        font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+      }
+
+      .repo-strip p {
+        margin: 1px 0 0;
+        font-size: 15px;
+        color: #666;
+      }
+
+      .repo-strip .dl-btn {
+        padding: 6px 16px;
+      }
+
+      /* --- Footnotes --- */
+      .footnotes {
+        margin-top: 26px;
+        padding-top: 12px;
+        border-top: 1px solid #e6e9e6;
+        font-size: 14px;
+        color: #777;
+        line-height: 1.55;
+      }
+
+      .footnotes p {
+        margin: 0 0 6px;
+      }
+
+      .footnotes sup {
+        font-weight: 700;
+        margin-right: 3px;
+      }
+
+      :target {
+        scroll-margin-top: 20px;
+      }
+
+      .small-caps {
+        font-variant-caps: small-caps;
+      }
+
+      /* --- Bottom banner --- */
+      .bottom-banner {
+        background-color: #626262;
+        color: white;
+        padding: 12px 16px;
+        font-size: 17px;
+        line-height: 1.35;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 12px;
+        row-gap: 6px;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+
+      .footer-license,
+      .footer-contact {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+        flex-wrap: wrap;
+      }
+
+      .footer-separator {
+        opacity: 0.6;
+      }
+
+      .footer-group-separator {
+        margin: 0 -0.35rem;
+      }
+
+      .footer-license-icons {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.2em;
+      }
+
+      .footer-license-icon {
+        width: 1em;
+        height: 1em;
+      }
+
+      .elixir-image {
+        display: block;
+        max-width: 86px;
+        height: auto;
+      }
+
+      .bottom-banner a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .bottom-banner a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      .footer-logo-link {
+        margin-left: 0.25rem;
+      }
+
+      .footer-logo-link:hover {
+        text-decoration: none;
+      }
+
+      @media (max-width: 600px) {
+        .bottom-banner {
+          padding: 12px;
+          font-size: 16px;
+          row-gap: 8px;
+        }
+
+        .footer-license,
+        .footer-contact {
+          width: 100%;
+        }
+
+        .footer-group-separator {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem;
+        }
+      }
+
+      /* --- Publication / citation box --- */
+      .citation-section {
+        max-width: 1300px;
+        margin: 20px auto;
+        padding: 0 20px;
+        text-align: left;
+      }
+
+      .citation-section h2 {
+        color: #01ad62;
+        font-size: 22px;
+        text-align: left;
+        margin-top: 20px;
+      }
+
+      .citation-box {
+        position: relative;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px 24px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        transition:
+          border-color 0.3s ease,
+          box-shadow 0.3s ease,
+          background-color 0.3s ease;
+      }
+
+      .citation-box .citation-intro {
+        font-size: 16px;
+        color: #666;
+        margin: 0 0 12px 0;
+        padding-right: 120px;
+        text-align: left;
+      }
+
+      .citation-box .citation-text {
+        font-size: 17px;
+        line-height: 1.6;
+        margin: 0;
+        padding-right: 120px;
+        text-align: left;
+        color: #333;
+      }
+
+      .citation-copy-btn {
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        transform: translateY(-50%);
+        background-color: transparent;
+        color: #17b470;
+        border: 2px solid #17b470;
+        padding: 6px 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 600;
+        white-space: nowrap;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
+      }
+
+      .citation-copy-btn:hover {
+        background-color: #17b470;
+        color: white;
+      }
+
+      .citation-copy-btn.copied {
+        background-color: #17b470;
+        border-color: #17b470;
+        color: white;
+      }
+
+      .citation-flash {
+        border-color: #17b470;
+        background-color: #eefaf4;
+        box-shadow:
+          0 0 0 5px rgba(23, 180, 112, 0.45),
+          0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      @media (max-width: 768px) {
+        .citation-copy-btn {
+          position: static;
+          transform: none;
+          display: block;
+          width: 100%;
+          margin-top: 14px;
+        }
+
+        .citation-box .citation-intro,
+        .citation-box .citation-text {
+          padding-right: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Home Button with Image -->
+      <a href="/" class="home-button">
+        <img src="/images/logo1.png" alt="Home" class="home-icon" />
+      </a>
+      <h1>The Asparaginase Database Data</h1>
+    </header>
+
+    <div class="data-content">
+      <p class="lede">
+        All data behind The Asparaginase Database is openly available under
+        <a
+          href="https://creativecommons.org/licenses/by/4.0/"
+          target="_blank"
+          rel="license noopener"
+          >CC&nbsp;BY&nbsp;4.0</a
+        >.
+      </p>
+
+      <h2>Downloads</h2>
+      <div class="download-grid">
+        <div class="dl-card">
+          <h3>
+            UniRef100 Sequences<sup><a href="#ref1">1</a></sup>
+          </h3>
+          <div class="dl-meta">
+            <span class="dl-format">FASTA</span> asparaginasedb.fasta &middot;
+            126,085 sequences &middot; 46&nbsp;MB
+          </div>
+          <p>
+            All UniRef100 asparaginase sequences, each header carrying its
+            class&#8209;clan&#8209;family classification code.
+          </p>
+          <a class="dl-btn" href="/downloads/asparaginasedb.fasta" download
+            >Download FASTA</a
+          >
+        </div>
+
+        <div class="dl-card">
+          <h3>Annotated Protein Entries</h3>
+          <div class="dl-meta">
+            <span class="dl-format">TSV</span> asparaginasedb_entries.tsv
+            &middot; 228 entries &middot; 57 columns
+          </div>
+          <p>
+            The full annotation table behind every entry table on this site: 101
+            experimentally studied proteins and 127 Swiss&#8209;Prot entries,
+            with organism, localisation, structures, PDB IDs and kinetic
+            parameters with their references.
+          </p>
+          <a
+            class="dl-btn"
+            href="/downloads/asparaginasedb_entries.tsv"
+            download
+            >Download TSV</a
+          >
+        </div>
+
+        <div class="dl-card">
+          <h3>
+            Experimentally Studied Proteins<sup><a href="#ref2">2</a></sup>
+          </h3>
+          <div class="dl-meta">
+            <span class="dl-format">FASTA</span> asparaginasedb_esp.fasta
+            &middot; 99 sequences &middot; 35&nbsp;kB
+          </div>
+          <p>
+            Sequences of the experimentally studied proteins, headed by UniProt
+            accession and classification code. Also available as a BLAST target
+            database.
+          </p>
+          <a class="dl-btn" href="/downloads/asparaginasedb_esp.fasta" download
+            >Download FASTA</a
+          >
+        </div>
+
+        <div class="dl-card">
+          <h3>
+            Swiss-Prot Sequences<sup><a href="#ref2">2</a></sup>
+          </h3>
+          <div class="dl-meta">
+            <span class="dl-format">FASTA</span> asparaginasedb_sp.fasta
+            &middot; 127 sequences &middot; 50&nbsp;kB
+          </div>
+          <p>
+            Sequences of every Swiss&#8209;Prot entry in the database, headed by
+            UniProt accession and classification code. Also available as a BLAST
+            target database.
+          </p>
+          <a class="dl-btn" href="/downloads/asparaginasedb_sp.fasta" download
+            >Download FASTA</a
+          >
+        </div>
+      </div>
+
+      <p class="coverage-note">
+        Some of the experimentally studied proteins are not present in
+        asparaginasedb_esp.fasta: their sequences are reported only in the
+        source publication and have no UniProt entry. Every other entry is
+        included, and each sequence header gives the UniProt accession &mdash;
+        use it to retrieve the full record from
+        <a href="https://www.uniprot.org/" target="_blank" rel="noopener"
+          >UniProt</a
+        >.
+      </p>
+
+      <h2>Subsets</h2>
+
+      <!-- UniRef100 subset picker.
+           Option counts are generated from the files in downloads/ - do not
+           edit them by hand. -->
+      <div class="subset-picker">
+        <label for="subsetSelect"
+          >UniRef100 sequences<sup><a href="#ref1">1</a></sup> for a single
+          class or family</label
+        >
+        <div class="subset-controls">
+          <select id="subsetSelect" aria-describedby="subsetMeta">
+            <optgroup label="Whole classes">
+              <option value="class1" data-count="64284" selected>
+                Class 1 &mdash; all 18 families
+              </option>
+              <option value="class2" data-count="43103">
+                Class 2 &mdash; all 18 families
+              </option>
+              <option value="class3" data-count="18698">
+                Class 3 &mdash; all 4 families
+              </option>
+            </optgroup>
+            <optgroup label="Class 1 families">
+              <option value="1-1-1" data-count="1267">Family 1 (1-1-1)</option>
+              <option value="1-1-2" data-count="1694">Family 2 (1-1-2)</option>
+              <option value="1-1-3" data-count="11814">Family 3 (1-1-3)</option>
+              <option value="1-1-4" data-count="3820">Family 4 (1-1-4)</option>
+              <option value="1-2-5" data-count="7894">Family 5 (1-2-5)</option>
+              <option value="1-2-6" data-count="4079">Family 6 (1-2-6)</option>
+              <option value="1-2-7" data-count="2800">Family 7 (1-2-7)</option>
+              <option value="1-3-8" data-count="308">Family 8 (1-3-8)</option>
+              <option value="1-3-9" data-count="1649">Family 9 (1-3-9)</option>
+              <option value="1-4-10" data-count="989">Family 10 (1-4-10)</option>
+              <option value="1-4-11" data-count="3153">
+                Family 11 (1-4-11)
+              </option>
+              <option value="1-4-12" data-count="3837">
+                Family 12 (1-4-12)
+              </option>
+              <option value="1-4-13" data-count="449">Family 13 (1-4-13)</option>
+              <option value="1-5-14" data-count="3612">
+                Family 14 (1-5-14)
+              </option>
+              <option value="1-5-15" data-count="1153">
+                Family 15 (1-5-15)
+              </option>
+              <option value="1-5-16" data-count="9651">
+                Family 16 (1-5-16)
+              </option>
+              <option value="1-5-17" data-count="1012">
+                Family 17 (1-5-17)
+              </option>
+              <option value="1-5-18" data-count="5103">
+                Family 18 (1-5-18)
+              </option>
+            </optgroup>
+            <optgroup label="Class 2 families">
+              <option value="2-1-1" data-count="856">Family 1 (2-1-1)</option>
+              <option value="2-1-2" data-count="3107">Family 2 (2-1-2)</option>
+              <option value="2-1-3" data-count="2563">Family 3 (2-1-3)</option>
+              <option value="2-1-4" data-count="1150">Family 4 (2-1-4)</option>
+              <option value="2-1-5" data-count="4578">Family 5 (2-1-5)</option>
+              <option value="2-2-6" data-count="1905">Family 6 (2-2-6)</option>
+              <option value="2-3-7" data-count="974">Family 7 (2-3-7)</option>
+              <option value="2-3-8" data-count="993">Family 8 (2-3-8)</option>
+              <option value="2-3-9" data-count="2702">Family 9 (2-3-9)</option>
+              <option value="2-4-10" data-count="1570">
+                Family 10 (2-4-10)
+              </option>
+              <option value="2-4-11" data-count="1168">
+                Family 11 (2-4-11)
+              </option>
+              <option value="2-4-12" data-count="2384">
+                Family 12 (2-4-12)
+              </option>
+              <option value="2-5-13" data-count="1224">
+                Family 13 (2-5-13)
+              </option>
+              <option value="2-5-14" data-count="8892">
+                Family 14 (2-5-14)
+              </option>
+              <option value="2-5-15" data-count="2764">
+                Family 15 (2-5-15)
+              </option>
+              <option value="2-5-16" data-count="1983">
+                Family 16 (2-5-16)
+              </option>
+              <option value="2-5-17" data-count="1834">
+                Family 17 (2-5-17)
+              </option>
+              <option value="2-5-18" data-count="2456">
+                Family 18 (2-5-18)
+              </option>
+            </optgroup>
+            <optgroup label="Class 3 families">
+              <option value="3-1-1" data-count="3284">Family 1 (3-1-1)</option>
+              <option value="3-2-2" data-count="7794">Family 2 (3-2-2)</option>
+              <option value="3-3-3" data-count="2941">Family 3 (3-3-3)</option>
+              <option value="3-4-4" data-count="4679">Family 4 (3-4-4)</option>
+            </optgroup>
+          </select>
+          <a
+            class="dl-btn"
+            id="subsetDownload"
+            href="/downloads/asparaginasedb_class1.fasta"
+            download="asparaginasedb_class1.fasta"
+            >Download FASTA</a
+          >
+        </div>
+        <p class="subset-meta" id="subsetMeta">
+          asparaginasedb_class1.fasta &middot; 64,284 sequences
+        </p>
+      </div>
+      <script>
+        // Point the download button at the file for the selected subset.
+        (function () {
+          const select = document.getElementById("subsetSelect");
+          const link = document.getElementById("subsetDownload");
+          const meta = document.getElementById("subsetMeta");
+
+          function updateSubset() {
+            const option = select.options[select.selectedIndex];
+            const file = "asparaginasedb_" + option.value + ".fasta";
+            const count = Number(option.dataset.count);
+
+            link.href = "/downloads/" + file;
+            link.setAttribute("download", file);
+            meta.textContent =
+              file + " · " + count.toLocaleString("en-US") + " sequences";
+          }
+
+          select.addEventListener("change", updateSubset);
+          updateSubset();
+        })();
+      </script>
+
+      <div class="row-list">
+        <div>
+          <span class="row-label">Selected entries</span>
+          <p>
+            Tick rows in any entry table and export them as a
+            tab&#8209;separated table, a list of UniProt accessions, or send
+            them to the UniProt ID&nbsp;mapping tool.
+          </p>
+        </div>
+        <div>
+          <span class="row-label">Class or family</span>
+          <p>
+            The same files are also reachable from the <em>Download FASTA</em>
+            button on each class and family page.
+          </p>
+        </div>
+      </div>
+
+      <h2>Phylogenetic trees</h2>
+      <div class="row-list">
+        <div>
+          <span class="row-label"
+            ><span class="tree-swatch" style="background: #615ab3"></span>Class
+            1</span
+          >
+          <p>5 clans, 18 families.</p>
+          <a
+            class="row-link"
+            href="https://itol.embl.de/tree/10981161183470591710269587"
+            target="_blank"
+            rel="noopener"
+            >iTOL &rarr;</a
+          >
+        </div>
+        <div>
+          <span class="row-label"
+            ><span class="tree-swatch" style="background: #629b16"></span>Class
+            2</span
+          >
+          <p>5 clans, 18 families.</p>
+          <a
+            class="row-link"
+            href="https://itol.embl.de/tree/10981161192441331711292055"
+            target="_blank"
+            rel="noopener"
+            >iTOL &rarr;</a
+          >
+        </div>
+        <div>
+          <span class="row-label"
+            ><span class="tree-swatch" style="background: #9c42ac"></span>Class
+            3</span
+          >
+          <p>4 clans, 4 families.</p>
+          <a
+            class="row-link"
+            href="https://itol.embl.de/tree/109811612224761710854630"
+            target="_blank"
+            rel="noopener"
+            >iTOL &rarr;</a
+          >
+        </div>
+      </div>
+
+      <h2>Release history</h2>
+      <div class="row-list">
+        <div>
+          <span class="row-label"
+            >2026-08<span class="row-current">CURRENT</span></span
+          >
+          <p>
+            First full release, accompanying the paper; see the
+            <a href="#publication">Publication</a> section.
+          </p>
+        </div>
+        <div>
+          <span class="row-label">Early Access 2025</span>
+          <p>
+            First public release of the database and the classification, before
+            publication.
+          </p>
+        </div>
+      </div>
+
+      <h2>Source code</h2>
+      <div class="repo-strip">
+        <svg
+          height="34"
+          width="34"
+          viewBox="0 0 16 16"
+          fill="#1f2937"
+          aria-hidden="true"
+        >
+          <path
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8Z"
+          />
+        </svg>
+        <div>
+          <h3>stetinam/ASNasedb</h3>
+          <p>
+            The site, the master data file and the scripts that build the entry
+            tables and statistics. Corrections welcome.
+          </p>
+        </div>
+        <a
+          class="dl-btn"
+          href="https://github.com/stetinam/ASNasedb"
+          target="_blank"
+          rel="noopener"
+          >View on GitHub</a
+        >
+      </div>
+
+      <div class="footnotes">
+        <p id="ref1">
+          <sup>1</sup>
+          <a
+            href="https://doi.org/10.1093/bioinformatics/btm098"
+            target="_blank"
+            rel="noopener"
+            >Suzek, B.E. et al. UniRef: comprehensive and non-redundant UniProt
+            reference clusters. Bioinformatics (2007).</a
+          >
+          Licensed under
+          <a
+            href="https://creativecommons.org/licenses/by/4.0/"
+            target="_blank"
+            rel="license noopener"
+            >CC&nbsp;BY&nbsp;4.0</a
+          >. Added classification code to sequence headers.
+        </p>
+        <p id="ref2">
+          <sup>2</sup>
+          <a
+            href="https://doi.org/10.1093/nar/gkae1010"
+            target="_blank"
+            rel="noopener"
+            >The UniProt Consortium, UniProt: the Universal Protein Knowledgebase
+            in 2025. Nucleic Acids Research, Volume 53, Issue D1, 2025, Pages
+            D609&ndash;D617.</a
+          >
+          Licensed under
+          <a
+            href="https://creativecommons.org/licenses/by/4.0/"
+            target="_blank"
+            rel="license noopener"
+            >CC&nbsp;BY&nbsp;4.0</a
+          >. Added classification code to sequence headers.
+        </p>
+      </div>
+    </div>
+
+    <div class="citation-section" id="publication">
+      <h2>Publication</h2>
+      <div class="citation-box">
+        <button
+          type="button"
+          class="citation-copy-btn"
+          id="copyCitationBtn"
+          aria-label="Copy the citation to the clipboard"
+        >
+          Copy
+        </button>
+        <p class="citation-intro">
+          If you use The Asparaginase Database or the classification in your
+          research, please cite:
+        </p>
+        <p class="citation-text">
+          Max Štětina, Aleš Křenek, Guglielmo Tedeschi, Filip Krása, Vojtěch
+          Spiwok, Eva Benešová, The Asparaginase Database: a comprehensive
+          resource and&nbsp;classification of
+          <span class="small-caps">l</span>&#8209;asparaginases,
+          <em>Database</em>, Volume 2026, 2026, baag045,
+          <a
+            href="https://doi.org/10.1093/database/baag045"
+            target="_blank"
+            rel="noopener"
+            >https://doi.org/10.1093/database/baag045</a
+          >.
+        </p>
+      </div>
+    </div>
+    <script>
+      // Publication section: smooth scroll from in-page links + copy citation
+      function initPublicationSection() {
+        const CITATION =
+          "Max Štětina, Aleš Křenek, Guglielmo Tedeschi, " +
+          "Filip Krása, Vojtěch Spiwok, Eva Benešová, " +
+          "The Asparaginase Database: a comprehensive resource and classification " +
+          "of l-asparaginases, Database, Volume 2026, 2026, baag045, " +
+          "https://doi.org/10.1093/database/baag045";
+
+        // Smooth scroll + brief highlight, mirroring the Contact link behaviour
+        const pubLinks = document.querySelectorAll(
+          '.bottom-banner a[href="#publication"], ' +
+            '.row-list a[href="#publication"]',
+        );
+        const pubSection = document.querySelector("#publication");
+
+        function highlightPublication() {
+          const box = pubSection.querySelector(".citation-box") || pubSection;
+          box.classList.add("citation-flash");
+          setTimeout(() => box.classList.remove("citation-flash"), 1900);
+        }
+
+        if (pubSection) {
+          pubLinks.forEach((link) => {
+            link.addEventListener("click", (e) => {
+              e.preventDefault();
+              pubSection.scrollIntoView({ behavior: "smooth" });
+              setTimeout(highlightPublication, 800);
+            });
+          });
+
+          // Same treatment when arriving from another page's footer link,
+          // i.e. /data.html#publication
+          if (window.location.hash === "#publication") {
+            window.addEventListener("load", () => {
+              pubSection.scrollIntoView({ behavior: "smooth" });
+              setTimeout(highlightPublication, 800);
+            });
+          }
+        }
+
+        // Clipboard helpers (with a fallback for older / non-secure contexts)
+        function legacyCopy(text) {
+          const area = document.createElement("textarea");
+          area.value = text;
+          area.setAttribute("readonly", "");
+          area.style.position = "fixed";
+          area.style.top = "-1000px";
+          document.body.appendChild(area);
+          area.select();
+          let ok = false;
+          try {
+            ok = document.execCommand("copy");
+          } catch (err) {
+            ok = false;
+          }
+          document.body.removeChild(area);
+          return ok;
+        }
+
+        const copyBtn = document.getElementById("copyCitationBtn");
+
+        if (copyBtn) {
+          copyBtn.addEventListener("click", () => {
+            const original = copyBtn.innerHTML;
+
+            const finish = (ok) => {
+              copyBtn.innerHTML = ok ? "&#10003; Copied" : "Copy failed";
+              copyBtn.classList.toggle("copied", ok);
+              setTimeout(() => {
+                copyBtn.innerHTML = original;
+                copyBtn.classList.remove("copied");
+              }, 2000);
+            };
+
+            if (navigator.clipboard && window.isSecureContext) {
+              navigator.clipboard.writeText(CITATION).then(
+                () => finish(true),
+                () => finish(legacyCopy(CITATION)),
+              );
+            } else {
+              finish(legacyCopy(CITATION));
+            }
+          });
+        }
+      }
+
+      // The footer link is parsed after this script, so bind once
+      // the whole document is available.
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initPublicationSection);
+      } else {
+        initPublicationSection();
+      }
+    </script>
+    <br />
+
+    <footer id="contact" class="bottom-banner">
+      <div class="footer-license">
+        <a href="/">The Asparaginase Database</a>
+        <span>© 2025 is licensed under</span>
+        <a
+          href="https://creativecommons.org/licenses/by/4.0/"
+          target="_blank"
+          rel="license noopener"
+        >
+          CC BY 4.0
+        </a>
+        <span class="footer-license-icons" aria-hidden="true">
+          <img src="/images/cc.svg" alt="" class="footer-license-icon" />
+          <img src="/images/by.svg" alt="" class="footer-license-icon" />
+        </span>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <span>Release 2026-08</span>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="#publication">How to cite</a>
+      </div>
+      <span class="footer-group-separator footer-separator" aria-hidden="true">|</span>
+      <div class="footer-contact">
+        <a href="mailto:info@asparaginasedb.com">info@asparaginasedb.com</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="/privacy.html">Privacy</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <span>Supported by:</span>
+        <a
+          href="https://www.elixir-czech.cz/"
+          target="_blank"
+          rel="noopener"
+          class="footer-logo-link"
+        >
+          <img
+            src="/images/elixir_logo.png"
+            alt="ELIXIR Czech Republic"
+            class="elixir-image"
+          />
+        </a>
+      </div>
+    </footer>
+    <script
+      async
+      src="https://scripts.simpleanalyticscdn.com/latest.js"
+    ></script>
+  </body>
+</html>

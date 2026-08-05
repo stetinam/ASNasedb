@@ -28,4 +28,4 @@ COPY . /app/
 # Expose the Django port
 EXPOSE 8080
 #CMD ["ls", "app"]
-CMD ["fastapi", "run", "app/main.py", "--port", "8080"]
+CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080", "--no-access-log"]

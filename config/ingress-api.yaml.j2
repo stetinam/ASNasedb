@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: blast-api
+  namespace: {{ namespace }}
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    kubernetes.io/tls-acme: "true"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/enable-access-log: "false"
+    nginx.ingress.kubernetes.io/proxy-body-size: 2m
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts: {% for host in hosts %}
+        - "{{ host }}" {% endfor %}
+      secretName: {{ hosts.0 | replace('.', '-') }}-tls
+  rules: {% for host in hosts %}
+    - host: "{{ host }}"
+      http:
+        paths:
+          - backend:
+              service:
+                name: aspdb-api
+                port:
+                  number: 8080
+            pathType: Prefix
+            path: "/api/blast" {% endfor %}

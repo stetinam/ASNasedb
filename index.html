@@ -1,14 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Asparaginase Database</title>
+    <title>The Asparaginase Database (ASNasedb) | Asparaginase Classification</title>
+    <!-- SEO_BEGIN -->
+    <meta name="description" content="The Asparaginase Database (ASNasedb) organizes l-asparaginase sequences, structures and biochemical annotations into phylogenetic classes and families, replacing the ambiguous bacterial-type, plant-type and R. etli-type nomenclature." />
+    <meta name="keywords" content="asparaginase, l-asparaginase, asparaginase database, asparaginase classification, asparaginase families, asparaginase sequences, asparaginase structures, EC 3.5.1.1, asparagine hydrolase, asparaginase nomenclature, asparaginase db, asparaginase resource, acute lymphoblastic leukemia, acrylamide mitigation, bacterial-type, plant-type, Rhizobium etli-type, ASNasedb, ASNaseDB, asnasedb, dbASNase, ASNase DB, ASNase database" />
+    <link rel="canonical" href="https://asparaginasedb.com/" />
+    <meta property="og:description" content="The Asparaginase Database (ASNasedb) organizes l-asparaginase sequences, structures and biochemical annotations into phylogenetic classes and families, replacing the ambiguous bacterial-type, plant-type and R. etli-type nomenclature." />
+    <!-- SEO_END -->
     <link rel="icon" type="image/png" href="/images/logo5.png" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
-      rel="stylesheet"
+
+    <!-- Preview image for search engines and social cards.
+         Must be a flattened image (no alpha): consumers composite transparent
+         pixels onto black, which turned the white logo into white-on-black. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="The Asparaginase Database" />
+    <meta property="og:title" content="The Asparaginase Database (ASNasedb) | Asparaginase Classification" />
+    <meta property="og:url" content="https://asparaginasedb.com/" />
+    <meta
+      property="og:image"
+      content="https://asparaginasedb.com/images/logo-social.png"
     />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    <meta
+      property="og:image:alt"
+      content="The Asparaginase Database logo: white db ASNase on a green background"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:image"
+      content="https://asparaginasedb.com/images/logo-social.png"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "The Asparaginase Database",
+        "alternateName": [
+          "ASNasedb",
+          "ASNaseDB",
+          "asnasedb",
+          "dbASNase",
+          "ASNase DB",
+          "ASNase database",
+          "Asparaginase DB"
+        ],
+        "url": "https://asparaginasedb.com/",
+        "image": "https://asparaginasedb.com/images/logo-social.png",
+        "publisher": {
+          "@type": "Organization",
+          "name": "The Asparaginase Database",
+          "url": "https://asparaginasedb.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://asparaginasedb.com/images/logo-social.png",
+            "width": 1200,
+            "height": 1200
+          }
+        }
+      }
+    </script>
+
+    <!-- Dataset metadata: makes the database eligible for Google Dataset Search. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Dataset",
+        "name": "The Asparaginase Database (ASNasedb)",
+        "alternateName": ["ASNasedb", "ASNaseDB", "dbASNase"],
+        "description": "A curated resource of l-asparaginase (EC 3.5.1.1) sequences, structures and biochemical annotations, organized by a phylogenetically driven classification into three classes, clans and families. Class 1 corresponds to the previously named bacterial-type enzymes (types I and II), Class 2 to the plant-type enzymes (type III), and Class 3 to the Rhizobium etli-type enzymes (types IV and V). Covers experimentally studied proteins, Swiss-Prot entries and UniRef100 sequences.",
+        "url": "https://asparaginasedb.com/",
+        "sameAs": "https://doi.org/10.1093/database/baag045",
+        "identifier": "https://doi.org/10.1093/database/baag045",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "isAccessibleForFree": true,
+        "keywords": [
+          "asparaginase",
+          "l-asparaginase",
+          "EC 3.5.1.1",
+          "asparaginase classification",
+          "protein families",
+          "enzyme nomenclature",
+          "acute lymphoblastic leukemia",
+          "acrylamide mitigation",
+          "Ntn-hydrolase",
+          "isoaspartyl peptidase"
+        ],
+        "creator": {
+          "@type": "Organization",
+          "name": "Laboratory of Proteins with Biotechnological Potential, UCT Prague",
+          "url": "https://biomikro.vscht.cz/research/research-groups/protbiotech"
+        },
+        "distribution": [
+          {
+            "@type": "DataDownload",
+            "name": "All asparaginase sequences (FASTA)",
+            "encodingFormat": "text/x-fasta",
+            "contentUrl": "https://asparaginasedb.com/downloads/asparaginasedb.fasta"
+          },
+          {
+            "@type": "DataDownload",
+            "name": "Entry annotations (TSV)",
+            "encodingFormat": "text/tab-separated-values",
+            "contentUrl": "https://asparaginasedb.com/downloads/asparaginasedb_entries.tsv"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Citation metadata for Google Scholar / Zotero / Mendeley -->
+    <meta
+      name="citation_title"
+      content="The Asparaginase Database: a comprehensive resource and classification of l-asparaginases"
+    />
+    <meta name="citation_author" content="Štětina, Max" />
+    <meta name="citation_author" content="Křenek, Aleš" />
+    <meta name="citation_author" content="Tedeschi, Guglielmo" />
+    <meta name="citation_author" content="Krása, Filip" />
+    <meta name="citation_author" content="Spiwok, Vojtěch" />
+    <meta name="citation_author" content="Benešová, Eva" />
+    <meta name="citation_journal_title" content="Database" />
+    <meta name="citation_publisher" content="Oxford University Press" />
+    <meta name="citation_issn" content="1758-0463" />
+    <meta name="citation_volume" content="2026" />
+    <meta name="citation_firstpage" content="baag045" />
+    <meta name="citation_publication_date" content="2026/07/31" />
+    <meta name="citation_online_date" content="2026/07/31" />
+    <meta name="citation_doi" content="10.1093/database/baag045" />
+    <meta
+      name="citation_abstract_html_url"
+      content="https://doi.org/10.1093/database/baag045"
+    />
+    <link rel="stylesheet" href="/fonts/fonts.css" />
 
     <style>
       body {
@@ -62,8 +190,9 @@
       /* NEW: Navigation links container */
       .top-banner-nav {
         display: flex;
+        flex-wrap: nowrap;
         align-items: center;
-        gap: 10px;
+        gap: 9px;
         margin-left: auto; /* Push to the right */
         margin-right: 80px; /* Add some space before menu button */
       }
@@ -72,9 +201,10 @@
       .top-banner-nav a {
         color: white;
         text-decoration: none;
-        font-size: 18px;
+        font-size: 17.5px;
         font-weight: 600;
-        padding: 5px 10px;
+        white-space: nowrap; /* Keep each link on a single line */
+        padding: 5px 9px;
         border-radius: 3px;
         transition: background-color 0.3s ease;
       }
@@ -88,7 +218,7 @@
         display: none;
       }
 
-      @media screen and (max-width: 1100px) {
+      @media screen and (max-width: 1250px) {
         .top-banner-nav {
           display: none;
         }
@@ -113,7 +243,9 @@
       }
 
       a {
-        transition: color 0.3s ease, text-decoration 0.3s ease;
+        transition:
+          color 0.3s ease,
+          text-decoration 0.3s ease;
       }
 
       /* Home Button Styles */
@@ -337,31 +469,85 @@
       .bottom-banner {
         background-color: #626262;
         color: white;
-        padding: 15px;
-        font-size: 18px;
-        display: flex; /* Enable flexbox */
-        align-items: center; /* Vertically align items */
-        justify-content: center; /* Center horizontally (optional) */
-        gap: 10px; /* Space between items */
-        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        padding: 12px 16px;
+        font-size: 17px;
+        line-height: 1.35;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 12px;
+        row-gap: 6px;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+
+      .footer-license,
+      .footer-contact {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+        flex-wrap: wrap;
+      }
+
+      .footer-separator {
+        opacity: 0.6;
+      }
+
+      .footer-group-separator {
+        margin: 0 -0.35rem;
+      }
+
+      .footer-license-icons {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.2em;
+      }
+
+      .footer-license-icon {
+        width: 1em;
+        height: 1em;
       }
 
       .elixir-image {
-        max-width: 100px; /* Or whatever size you prefer */
+        display: block;
+        max-width: 86px;
         height: auto;
-        vertical-align: middle; /* Align image with text baseline (alternative to flexbox alignment) */
       }
 
       .bottom-banner a {
         color: white;
         text-decoration: none;
-        display: inline-flex; /* To ensure correct vertical alignment of the image */
-        align-items: center; /* Aligns the image and text within the link */
-        gap: 5px; /* Adds spacing between the image and text within the link */
       }
 
       .bottom-banner a:hover {
+        color: white;
         text-decoration: underline;
+      }
+
+      .footer-logo-link {
+        margin-left: 0.25rem;
+      }
+
+      .footer-logo-link:hover {
+        text-decoration: none;
+      }
+
+      @media (max-width: 600px) {
+        .bottom-banner {
+          padding: 12px;
+          font-size: 16px;
+          row-gap: 8px;
+        }
+
+        .footer-license,
+        .footer-contact {
+          width: 100%;
+        }
+
+        .footer-group-separator {
+          display: none;
+        }
       }
 
       header {
@@ -396,17 +582,115 @@
         max-width: 600px; /* Reduced width to prevent overflow */
       }
 
+      /* Search field + BLAST call to action, side by side on one row */
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: nowrap;
+      }
+
       .search-bar {
-        width: 100%;
-        max-width: 570px; /* Reduced width of the search bar */
+        flex: 1 1 auto;
+        min-width: 0; /* let the field shrink instead of pushing the row wider */
       }
 
       .search-bar input {
         width: 100%;
+        box-sizing: border-box;
         padding: 10px;
         font-size: 15px;
         border: 1px solid #ccc;
         border-radius: 5px;
+        font-family: inherit;
+      }
+
+      .header-or {
+        font-size: 15px;
+        font-style: italic;
+        opacity: 0.9;
+        white-space: nowrap;
+      }
+
+      .blast-prompt {
+        font-size: 16px;
+        white-space: nowrap;
+      }
+
+      .blast-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: transparent;
+        color: #ffffff;
+        border: 2px solid rgba(255, 255, 255, 0.9);
+        border-radius: 5px;
+        padding: 7px 18px;
+        font-size: 16px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-decoration: none;
+        white-space: nowrap;
+        transition:
+          background-color 0.25s ease,
+          color 0.25s ease;
+      }
+
+      .blast-btn:hover,
+      .blast-btn:active,
+      .blast-btn:visited:hover {
+        background: #ffffff;
+        color: #17b470;
+      }
+
+      .blast-btn:visited {
+        color: #ffffff;
+      }
+
+      .blast-btn:focus-visible {
+        outline: 2px solid #ffffff;
+        outline-offset: 3px;
+      }
+
+      .blast-btn .arrow {
+        display: block;
+        flex-shrink: 0;
+        transition: transform 0.25s ease;
+      }
+
+      .blast-btn:hover .arrow {
+        transform: translateX(3px);
+      }
+
+      /* Not enough room for one row: stack the field above the BLAST line */
+      @media (max-width: 1000px) {
+        .header-actions {
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+
+        .search-bar {
+          flex: 1 1 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .blast-prompt {
+          font-size: 14px;
+          white-space: normal;
+        }
+
+        .blast-btn {
+          font-size: 14px;
+          padding: 6px 14px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .blast-btn,
+        .blast-btn .arrow {
+          transition: none;
+        }
       }
 
       header h1 {
@@ -590,7 +874,8 @@
         width: 1300px; /* Adjust the width as needed */
         margin: auto; /* Center the table */
         overflow-x: auto; /* Horizontal scrollbar if needed */
-        max-height: 550px; /* Set a maximum height */
+        max-height: 550px; /* Fallback: browsers without CSS min() */
+        max-height: min(70vh, 550px); /* Shrink on short viewports; never exceed 550px on big screens */
         overflow-y: auto; /* Vertical scrollbar */
         position: relative;
         will-change: transform;
@@ -748,6 +1033,191 @@
         margin: 4px 0 0 0;
         font-style: italic;
       }
+
+      /* --- Publication / citation box --- */
+      .citation-section {
+        max-width: 1300px;
+        margin: 20px auto;
+        padding: 0 20px;
+        text-align: left;
+      }
+
+      .citation-section h2 {
+        color: #01ad62;
+        font-size: 22px;
+        text-align: left;
+        margin-top: 20px;
+      }
+
+      .citation-box {
+        position: relative;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px 24px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        transition:
+          border-color 0.3s ease,
+          box-shadow 0.3s ease,
+          background-color 0.3s ease;
+      }
+
+      .citation-box .citation-intro {
+        font-size: 16px;
+        color: #666;
+        margin: 0 0 12px 0;
+        padding-right: 120px;
+        text-align: left;
+      }
+
+      .citation-box .citation-text {
+        font-size: 17px;
+        line-height: 1.6;
+        margin: 0;
+        padding-right: 120px;
+        text-align: left;
+        color: #333;
+      }
+
+      .citation-copy-btn {
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        transform: translateY(-50%);
+        background-color: transparent;
+        color: #17b470;
+        border: 2px solid #17b470;
+        padding: 6px 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 600;
+        white-space: nowrap;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
+      }
+
+      .citation-copy-btn:hover {
+        background-color: #17b470;
+        color: white;
+      }
+
+      .citation-copy-btn.copied {
+        background-color: #17b470;
+        border-color: #17b470;
+        color: white;
+      }
+
+      .citation-flash {
+        border-color: #17b470;
+        background-color: #eefaf4;
+        box-shadow:
+          0 0 0 5px rgba(23, 180, 112, 0.45),
+          0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      @media (max-width: 768px) {
+        .citation-copy-btn {
+          position: static;
+          transform: none;
+          display: block;
+          width: 100%;
+          margin-top: 14px;
+        }
+
+        .citation-box .citation-intro,
+        .citation-box .citation-text {
+          padding-right: 0;
+        }
+      }
+
+      /* --- Prior work this classification builds on (collapsible) --- */
+      .prior-work-details {
+        margin: 24px 0 0 0;
+        border-top: 1px dashed #ddd;
+        padding-top: 12px;
+      }
+
+      .prior-work-details > summary {
+        cursor: pointer;
+        list-style: none;
+        font-size: 14px;
+        color: #777;
+        font-weight: 600;
+        padding: 4px 0;
+        user-select: none;
+      }
+
+      .prior-work-details > summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .prior-work-details > summary::before {
+        content: "\25B8";
+        display: inline-block;
+        margin-right: 8px;
+        color: #aaa;
+        transition: transform 0.2s ease;
+      }
+
+      .prior-work-details[open] > summary::before {
+        transform: rotate(90deg);
+      }
+
+      .prior-work-details > summary:hover {
+        color: #17b470;
+      }
+
+      .prior-work-body {
+        padding: 10px 0 4px 22px;
+      }
+
+      .prior-work-body p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #666;
+        margin: 0 0 12px 0;
+        text-align: left;
+      }
+
+      .prior-work-body ul {
+        margin: 0;
+        padding-left: 18px;
+        list-style: none;
+        font-size: 13px;
+        line-height: 1.55;
+        color: #6b6b6b;
+      }
+
+      .prior-work-body ul li {
+        margin-bottom: 10px;
+        padding-left: 0;
+      }
+
+      .prior-work-body a {
+        color: #17b470;
+        text-decoration: none;
+      }
+
+      .prior-work-body a:hover {
+        text-decoration: underline;
+      }
+
+      .prior-work-body .prior-work-cite-note {
+        font-size: 12.5px;
+        color: #999;
+        font-style: italic;
+        margin: 14px 0 0 0;
+      }
+
+      .dropdown-menu hr {
+        border: none;
+        border-top: 1px solid #ddd;
+        margin: 6px 8px;
+      }
     </style>
   </head>
   <body>
@@ -773,6 +1243,7 @@
           <a href="/search.html">Search</a>
           <a href="/blast.html">BLAST</a>
           <a href="/statistics.html">Statistics</a>
+          <a href="/data.html">Data</a>
           <a href="/help.html">Help</a>
           <hr />
         </div>
@@ -781,8 +1252,11 @@
         <a href="#home" style="font-weight: bold">ASNase db</a>
         <a href="#proteins">Studied Proteins</a>
         <a href="#sprot">Swiss-Prot Sequences</a>
+        <a href="#classification">Classification</a>
         <a href="#asparaginases">What Are Asparaginases?</a>
         <a href="#about">About the Database</a>
+        <a href="#publication">How to cite</a>
+        <hr />
         <a href="/disclaimer.html">Disclaimer</a>
       </div>
 
@@ -794,8 +1268,10 @@
         <a href="/search.html">Search</a>
         <a href="/blast.html">BLAST</a>
         <a href="/statistics.html">Statistics</a>
+        <a href="/data.html">Data</a>
         <a href="/help.html">Help</a>
         <a href="#contact">Contact</a>
+        <a href="#publication">Publication</a>
       </div>
     </div>
 
@@ -863,7 +1339,7 @@
 
       // NEW: Add smooth scrolling for Contact link in top banner nav with email highlighting
       const contactLink = document.querySelector(
-        '.top-banner-nav a[href="#contact"]'
+        '.top-banner-nav a[href="#contact"]',
       );
       if (contactLink) {
         contactLink.addEventListener("click", (e) => {
@@ -893,7 +1369,9 @@
     <header>
       <div class="header-content">
         <div class="header-logo">
-          <img src="/images/logo2.png" alt="Logo" class="logo-icon" />
+          <!-- Green-backed copy of logo2.png: renders identically on the green
+               header, but stays green when a crawler flattens it. -->
+          <img src="/images/logo2-green.png" alt="Logo" class="logo-icon" />
         </div>
         <div class="header-right">
           <h1 id="home">
@@ -901,20 +1379,42 @@
             resource for asparaginase sequences, structures, and biochemical
             annotations organized by a phylogenetically driven classification.
           </h1>
-          <div class="search-bar">
-            <input
-              type="text"
-              placeholder="Search for asparaginases... "
-              id="homeSearch"
-              onkeydown="if(event.key === 'Enter') goToSearchPage()"
-            />
+          <div class="header-actions">
+            <div class="search-bar">
+              <input
+                type="text"
+                placeholder="Search asparaginases... "
+                id="homeSearch"
+                onkeydown="if (event.key === 'Enter') goToSearchPage();"
+              />
+            </div>
+            <span class="header-or">or</span>
+            <span class="blast-prompt">classify an asparaginase</span>
+            <a class="blast-btn" href="/blast.html">
+              BLAST
+              <svg
+                class="arrow"
+                width="15"
+                height="15"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M2.5 8h10" />
+                <path d="M8.5 4l4 4-4 4" />
+              </svg>
+            </a>
           </div>
           <script>
             function goToSearchPage() {
               const input = document.getElementById("homeSearch").value.trim();
               if (input) {
                 window.location.href = `/search.html?q=${encodeURIComponent(
-                  input
+                  input,
                 )}`;
               }
             }
@@ -1186,6 +1686,127 @@
         Preparing download link...
       </div>
     </div>
+
+    <h2
+      id="classification"
+      style="
+        color: #01ad62;
+        font-size: 30px;
+        text-align: left;
+        max-width: 1300px;
+        margin: 40px auto 0;
+        padding: 0 20px;
+      "
+    >
+      The Asparaginase Database asparaginase classification
+    </h2>
+    <!-- Shared classification box (see /scripts/classification-box.js) -->
+    <div
+      data-classification-box
+      style="max-width: 1300px; margin: 0 auto; padding: 0 20px"
+    ></div>
+    <script src="/scripts/classification-box.js"></script>
+
+    <div class="content">
+      <h2 id="vision" style="color: #01ad62; font-size: 23px; text-align: left">
+        The Classification
+      </h2>
+      <p>
+        The <span class="small-caps">l</span>&#8209;asparaginase classification
+        that underpins the database is based on extensive sequence (and
+        structure) analyses of known and predicted
+        <span class="small-caps">l</span>&#8209;asparaginases. As these enzymes
+        form a complex and intertwined group, sequence similarity analysis was
+        selected as the best primary driver of the classification, rather than
+        other factors like taxonomy, cellular location or enzyme kinetics,
+        enabling a more objective and natural classification less biased by the
+        order of scientific discovery. This bioinformatics-centred approach also
+        makes the classification more robust to future discoveries.
+      </p>
+
+      <h2
+        id="classes"
+        style="color: #01ad62; font-size: 23px; text-align: left"
+      >
+        Asparaginase Classes
+      </h2>
+      <p>
+        There are three fundamental classes of
+        <span class="small-caps">l</span>&#8209;asparaginases, each with unique
+        conserved motifs and structures. No homology could be inferred between
+        these classes of <span class="small-caps">l</span>&#8209;asparaginases,
+        as they show very low mutual sequence identity. Sequences are
+        categorized into Class 1 (historically bacterial-type), Class 2 (plant
+        type) and Class 3 (R. etli-type)
+        <span class="small-caps">l</span>&#8209;asparaginases. Sequences in
+        these classes were clustered and aligned independently. This allowed
+        further division into new phylogenetic clans and families inferred from
+        a comprehensive phylogenetic analysis.
+      </p>
+
+      <details class="prior-work-details">
+        <summary>Prior work this classification builds on</summary>
+        <div class="prior-work-body">
+          <p>
+            The earlier work that the classification presented here builds upon,
+            listed as acknowledgment and further reading.
+          </p>
+          <ul>
+            <li>
+              da Silva LS, Doonan LB, Pessoa A Jr, <em>et al.</em> Structural and
+              functional diversity of asparaginases: overview and
+              recommendations for a revised nomenclature.
+              <em>Biotechnol Appl Biochem</em>. 2022;69:503&#8211;13.
+              <a
+                href="https://doi.org/10.1002/bab.2127"
+                target="_blank"
+                rel="noopener"
+                >10.1002/bab.2127</a
+              >
+            </li>
+            <li>
+              Loch JI, Jaskolski M. Structural and biophysical aspects of
+              <span class="small-caps">l</span>&#8209;asparaginases: a growing
+              family with amazing diversity. <em>IUCrJ</em>.
+              2021;8:514&#8211;31.
+              <a
+                href="https://doi.org/10.1107/S2052252521006011"
+                target="_blank"
+                rel="noopener"
+                >10.1107/S2052252521006011</a
+              >
+            </li>
+            <li>
+              Borek D, Jaskolski M. Sequence analysis of enzymes with
+              asparaginase activity. <em>Acta Biochim Pol</em>.
+              2001;48:893&#8211;902.
+              <a
+                href="https://doi.org/10.18388/abp.2001_3855"
+                target="_blank"
+                rel="noopener"
+                >10.18388/abp.2001_3855</a
+              >
+            </li>
+            <li>
+              Lubkowski J, Wlodawer A. Structural and biochemical properties of
+              <span class="small-caps">l</span>&#8209;asparaginase.
+              <em>FEBS J</em>. 2021;288:4183&#8211;209.
+              <a
+                href="https://doi.org/10.1111/febs.16042"
+                target="_blank"
+                rel="noopener"
+                >10.1111/febs.16042</a
+              >
+            </li>
+          </ul>
+          <p class="prior-work-cite-note">
+            To cite The Asparaginase Database itself, or to see how the classification here is different to previous ones; see the
+            <a href="#publication">Publication</a> section.
+          </p>
+        </div>
+      </details>
+    </div>
+
     <!-- Dynamic table data and renderer -->
     <script src="/scripts/general-data.js"></script>
     <script src="/scripts/sequence-data.js"></script>
@@ -1207,17 +1828,17 @@
           console.log(`Setting up table ${tableIndex}`);
 
           const selectAllCheckbox = tableContainer.querySelector(
-            ".select-all-checkbox"
+            ".select-all-checkbox",
           );
           const selectionControls = tableContainer.querySelector(
-            ".selection-controls"
+            ".selection-controls",
           );
           const selectedCount = tableContainer.querySelector(".count");
           const clearSelectionBtn = tableContainer.querySelector(
-            ".selection-btn[id*='clearSelectionBtn']"
+            ".selection-btn[id*='clearSelectionBtn']",
           );
           const downloadBtn = tableContainer.querySelector(
-            ".selection-btn[id*='downloadBtn']"
+            ".selection-btn[id*='downloadBtn']",
           );
           const downloadMenu = tableContainer.querySelector(".selection-menu");
 
@@ -1242,7 +1863,7 @@
           function updateSelectionUI() {
             const entryCheckboxes = getEntryCheckboxes();
             const checkedCount = tableContainer.querySelectorAll(
-              ".entry-checkbox:checked"
+              ".entry-checkbox:checked",
             ).length;
             selectedCount.textContent = `${checkedCount} ${
               checkedCount === 1 ? "entry" : "entries"
@@ -1332,7 +1953,7 @@
 
                 const an = row.getAttribute("data-an") || "";
                 let organism = cleanText(
-                  row.getAttribute("data-organism") || ""
+                  row.getAttribute("data-organism") || "",
                 )
                   .split(/\s+/)
                   .slice(0, 2)
@@ -1394,10 +2015,10 @@
                   .forEach((checkbox) => {
                     const row = checkbox.closest("tr");
                     const cells = row.querySelectorAll(
-                      "td:not(.checkbox-column)"
+                      "td:not(.checkbox-column)",
                     );
                     const rowData = Array.from(cells).map((cell) =>
-                      cleanText(cell.innerHTML)
+                      cleanText(cell.innerHTML),
                     );
                     rows.push(rowData.join("\t"));
                   });
@@ -1419,7 +2040,7 @@
                   .writeText(ids)
                   .then(() => {
                     alert(
-                      "Accession numbers copied to clipboard! Opening UniProt ID Mapping tool..."
+                      "Accession numbers copied to clipboard! Opening UniProt ID Mapping tool...",
                     );
                     window.open("https://www.uniprot.org/id-mapping", "_blank");
                   })
@@ -1536,7 +2157,8 @@
         About the Database
       </h2>
       <p>
-        The Asparaginase Database is a resource that provides organized
+        The Asparaginase Database (ASNasedb) is a resource that provides
+        organized
         <span class="small-caps">l</span>&#8209;asparaginase sequences and
         structures within their phylogenetic families along with biochemical
         annotations for characterized enzymes. The database is built on a
@@ -1551,45 +2173,138 @@
       <p>
         The current release covers a manually curated set of 101 experimentally
         studied proteins from the literature, a manually curated set of 127
-        sequences from SwissProt and 126,085 automatically classified sequences.
-      </p>
-
-      <h2 id="vision" style="color: #01ad62; font-size: 23px; text-align: left">
-        The Classification
-      </h2>
-      <p>
-        The <span class="small-caps">l</span>&#8209;asparaginase classification
-        that underpins the database is based on extensive sequence (and
-        structure) analyses of known and predicted
-        <span class="small-caps">l</span>&#8209;asparaginases. As these enzymes
-        form a complex and intertwined group, sequence similarity analysis was
-        selected as the best primary driver of the classification, rather than
-        other factors like taxonomy, cellular location or enzyme kinetics,
-        enabling a more objective and natural classification less biased by the
-        order of scientific discovery. This bioinformatics-centred approach also
-        makes the classification more robust to future discoveries.
-      </p>
-
-      <h2
-        id="classes"
-        style="color: #01ad62; font-size: 23px; text-align: left"
-      >
-        Asparaginase Classes
-      </h2>
-      <p>
-        There are three fundamental classes of
-        <span class="small-caps">l</span>&#8209;asparaginases, each with unique
-        conserved motifs and structures. No homology could be inferred between
-        these classes of <span class="small-caps">l</span>&#8209;asparaginases,
-        as they show very low mutual sequence identity. Sequences are
-        categorized into Class 1 (historically bacterial-type), Class 2 (plant
-        type) and Class 3 (R. etli-type)
-        <span class="small-caps">l</span>&#8209;asparaginases. Sequences in
-        these classes were clustered and aligned independently. This allowed
-        further division into new phylogenetic clans and families inferred from
-        a comprehensive phylogenetic analysis.
+        sequences from Swiss-Prot and 126,085 automatically classified sequences.
       </p>
     </div>
+    <br />
+    <div class="citation-section" id="publication">
+      <h2>Publication</h2>
+      <div class="citation-box">
+        <button
+          type="button"
+          class="citation-copy-btn"
+          id="copyCitationBtn"
+          aria-label="Copy the citation to the clipboard"
+        >
+          Copy
+        </button>
+        <p class="citation-intro">
+          If you use The Asparaginase Database or the classification in your
+          research, please cite:
+        </p>
+        <p class="citation-text">
+          Max Štětina, Aleš Křenek, Guglielmo Tedeschi, Filip Krása, Vojtěch
+          Spiwok, Eva Benešová, The Asparaginase Database: a comprehensive
+          resource and&nbsp;classification of
+          <span class="small-caps">l</span>&#8209;asparaginases,
+          <em>Database</em>, Volume 2026, 2026, baag045,
+          <a
+            href="https://doi.org/10.1093/database/baag045"
+            target="_blank"
+            rel="noopener"
+            >https://doi.org/10.1093/database/baag045</a
+          >.
+        </p>
+      </div>
+    </div>
+    <script>
+      // Publication section: smooth scroll from the top banner + copy citation
+      function initPublicationSection() {
+        const CITATION =
+          "Max \u0160t\u011btina, Ale\u0161 K\u0159enek, Guglielmo Tedeschi, " +
+          "Filip Kr\u00e1sa, Vojt\u011bch Spiwok, Eva Bene\u0161ov\u00e1, " +
+          "The Asparaginase Database: a comprehensive resource and classification " +
+          "of l-asparaginases, Database, Volume 2026, 2026, baag045, " +
+          "https://doi.org/10.1093/database/baag045";
+
+        // Smooth scroll + brief highlight, mirroring the Contact link behaviour
+        const pubLinks = document.querySelectorAll(
+          '.top-banner-nav a[href="#publication"], ' +
+            '.dropdown-menu a[href="#publication"], ' +
+            '.bottom-banner a[href="#publication"], ' +
+            '.prior-work-body a[href="#publication"]',
+        );
+        const pubSection = document.querySelector("#publication");
+
+        function highlightPublication() {
+          const box = pubSection.querySelector(".citation-box") || pubSection;
+          box.classList.add("citation-flash");
+          setTimeout(() => box.classList.remove("citation-flash"), 1900);
+        }
+
+        if (pubSection) {
+          pubLinks.forEach((link) => {
+            link.addEventListener("click", (e) => {
+              e.preventDefault();
+              pubSection.scrollIntoView({ behavior: "smooth" });
+              setTimeout(highlightPublication, 800);
+            });
+          });
+
+          // Same treatment when arriving from another page's footer link,
+          // i.e. /index.html#publication
+          if (window.location.hash === "#publication") {
+            window.addEventListener("load", () => {
+              pubSection.scrollIntoView({ behavior: "smooth" });
+              setTimeout(highlightPublication, 800);
+            });
+          }
+        }
+
+        // Clipboard helpers (with a fallback for older / non-secure contexts)
+        function legacyCopy(text) {
+          const area = document.createElement("textarea");
+          area.value = text;
+          area.setAttribute("readonly", "");
+          area.style.position = "fixed";
+          area.style.top = "-1000px";
+          document.body.appendChild(area);
+          area.select();
+          let ok = false;
+          try {
+            ok = document.execCommand("copy");
+          } catch (err) {
+            ok = false;
+          }
+          document.body.removeChild(area);
+          return ok;
+        }
+
+        const copyBtn = document.getElementById("copyCitationBtn");
+
+        if (copyBtn) {
+          copyBtn.addEventListener("click", () => {
+            const original = copyBtn.innerHTML;
+
+            const finish = (ok) => {
+              copyBtn.innerHTML = ok ? "&#10003; Copied" : "Copy failed";
+              copyBtn.classList.toggle("copied", ok);
+              setTimeout(() => {
+                copyBtn.innerHTML = original;
+                copyBtn.classList.remove("copied");
+              }, 2000);
+            };
+
+            if (navigator.clipboard && window.isSecureContext) {
+              navigator.clipboard.writeText(CITATION).then(
+                () => finish(true),
+                () => finish(legacyCopy(CITATION)),
+              );
+            } else {
+              finish(legacyCopy(CITATION));
+            }
+          });
+        }
+      }
+
+      // The footer link is parsed after this script, so bind once
+      // the whole document is available.
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initPublicationSection);
+      } else {
+        initPublicationSection();
+      }
+    </script>
     <br />
     <div class="content">
       <p style="font-size: 15px">
@@ -1609,31 +2324,47 @@
       </p>
     </div>
     <br />
-    <div id="contact" class="bottom-banner">
-      <div>
-        <a href="https://www.asparaginasedb.com">The Asparaginase Database</a> ©
-        2025 is licensed under
-        <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a
-        ><img
-          src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
-          alt="CC"
-          style="max-width: 1em; max-height: 1em; margin-left: 0.2em"
-        /><img
-          src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
-          alt="BY"
-          style="max-width: 1em; max-height: 1em; margin-left: 0.2em"
-        />
-        | Early Access | Contact:
+    <footer id="contact" class="bottom-banner">
+      <div class="footer-license">
+        <a href="/">The Asparaginase Database</a>
+        <span>© 2025 is licensed under</span>
+        <a
+          href="https://creativecommons.org/licenses/by/4.0/"
+          target="_blank"
+          rel="license noopener"
+        >
+          CC BY 4.0
+        </a>
+        <span class="footer-license-icons" aria-hidden="true">
+          <img src="/images/cc.svg" alt="" class="footer-license-icon" />
+          <img src="/images/by.svg" alt="" class="footer-license-icon" />
+        </span>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <span>Release 2026-08</span>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="#publication">How to cite</a>
       </div>
-      <a href="mailto:info@asparaginasedb.com">info@asparaginasedb.com</a>| Supported by:
-      <a href="https://www.elixir-czech.cz/" target="_blank">
-        <img
-          src="/images/elixir_logo.png"
-          alt="elixir_logo.png"
-          class="elixir-image"
-        />
-      </a>
-    </div>
+      <span class="footer-group-separator footer-separator" aria-hidden="true">|</span>
+      <div class="footer-contact">
+        <a href="mailto:info@asparaginasedb.com">info@asparaginasedb.com</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="/privacy.html">Privacy</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <span>Supported by:</span>
+        <a
+          href="https://www.elixir-czech.cz/"
+          target="_blank"
+          rel="noopener"
+          class="footer-logo-link"
+        >
+          <img
+            src="/images/elixir_logo.png"
+            alt="ELIXIR Czech Republic"
+            class="elixir-image"
+          />
+        </a>
+      </div>
+    </footer>
     <script>
       // Auto-detect file type and set download link
       const currentFile = window.location.pathname.split("/").pop();
@@ -1775,7 +2506,7 @@
           downloadInfo.textContent = `File: ${fileName}`;
 
           console.log(
-            `Family: Class ${classNum}, Clan ${clanNum}, Family ${familyNum}`
+            `Family: Class ${classNum}, Clan ${clanNum}, Family ${familyNum}`,
           );
           console.log(`Download file: ${fileName}`);
         } else {
@@ -1783,7 +2514,7 @@
           downloadInfo.textContent = `No file available for Class ${classNum}, Family ${familyNum}`;
           downloadInfo.style.color = "#dc3545";
           console.error(
-            `No clan mapping found for Class ${classNum}, Family ${familyNum}`
+            `No clan mapping found for Class ${classNum}, Family ${familyNum}`,
           );
         }
       }
@@ -1845,7 +2576,6 @@
     </script>
     <!-- 100% privacy-first analytics -->
     <script
-      data-collect-dnt="true"
       async
       src="https://scripts.simpleanalyticscdn.com/latest.js"
     ></script>

@@ -23,6 +23,14 @@ spec:
         - name: api
           image: {{ apiImage }}
           imagePullPolicy: Always
+          command: ["python", "-m", "uvicorn"]
+          args:
+            - "app.main:app"
+            - "--host"
+            - "0.0.0.0"
+            - "--port"
+            - "8080"
+            - "--no-access-log"
           securityContext:
             runAsUser: 101
             runAsGroup: 101
@@ -40,7 +48,14 @@ spec:
           volumeMounts:
             - name: blast-volume
               mountPath: /blast
+            - name: api-code
+              mountPath: /app/app/main.py
+              subPath: main.py
+              readOnly: true
       volumes:
         - name: blast-volume
           persistentVolumeClaim:
             claimName: asparaginase-blast-database
+        - name: api-code
+          configMap:
+            name: aspdb-api-code

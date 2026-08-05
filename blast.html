@@ -3,11 +3,28 @@
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Asparaginase BLAST</title>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
-        rel="stylesheet"
-      />
+      <title>BLAST an Asparaginase Sequence | ASNasedb</title>
+    <!-- SEO_BEGIN -->
+    <meta name="description" content="BLAST a protein sequence against the Asparaginase Database to classify it into an l-asparaginase class, clan and phylogenetic family." />
+    <meta name="keywords" content="asparaginase, l-asparaginase, asparaginase database, asparaginase classification, asparaginase families, asparaginase sequences, asparaginase structures, EC 3.5.1.1, asparagine hydrolase, asparaginase nomenclature, asparaginase BLAST, classify asparaginase sequence, asparaginase homology search, ASNasedb, ASNaseDB, asnasedb, dbASNase, ASNase DB, ASNase database" />
+    <link rel="canonical" href="https://asparaginasedb.com/blast.html" />
+    <meta property="og:description" content="BLAST a protein sequence against the Asparaginase Database to classify it into an l-asparaginase class, clan and phylogenetic family." />
+    <!-- SEO_END -->
+      <link rel="icon" type="image/png" href="/images/logo5.png" />
+
+      <!-- Preview image for search engines and social cards (flattened, no alpha) -->
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="The Asparaginase Database" />
+      <meta property="og:title" content="BLAST an Asparaginase Sequence | ASNasedb" />
+      <meta property="og:url" content="https://asparaginasedb.com/blast.html" />
+      <meta property="og:image" content="https://asparaginasedb.com/images/logo-social.png" />
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="1200" />
+      <meta property="og:image:alt" content="The Asparaginase Database logo" />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="https://asparaginasedb.com/images/logo-social.png" />
+      <link rel="stylesheet" href="/fonts/fonts.css" />
       <style>
         body {
           font-family: "Source Sans Pro", sans-serif;
@@ -169,6 +186,37 @@
         }
 
         /* Search Container Styles */
+        /* Intro line between the header and the search box */
+        .blast-intro {
+          max-width: 1460px;
+          width: calc(100% - 40px);
+          margin: 22px auto 0;
+          padding: 8px 2px 10px;
+          box-sizing: border-box;
+          text-align: center;
+          color: #01ad62;
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 1.5;
+        }
+
+        /* The intro text is already green, so underline the link to set it apart */
+        .blast-intro a {
+          text-decoration: underline;
+        }
+
+        @media (min-width: 1200px) {
+          .blast-intro {
+            white-space: nowrap;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .blast-intro {
+            font-size: 16px;
+          }
+        }
+
         .search-container {
           max-width: 1460px;
           width: calc(100% - 40px);
@@ -241,6 +289,16 @@
           font-weight: bold;
           color: #555;
           margin-left: 10px;
+        }
+
+        .sequence-privacy-toggle {
+          margin-left: auto;
+        }
+
+        @media (max-width: 768px) {
+          .sequence-privacy-toggle {
+            margin-left: 0;
+          }
         }
 
         .textarea-wrapper {
@@ -377,7 +435,8 @@
           min-height: 175px;
           margin: auto;
           overflow-x: auto;
-          max-height: 550px;
+          max-height: 550px; /* Fallback: browsers without CSS min() */
+          max-height: min(70vh, 550px); /* Shrink on short viewports; never exceed 550px on big screens */
           overflow-y: auto;
           position: relative;
           will-change: transform;
@@ -633,6 +692,7 @@
         .classification-summary {
           display: flex;
           flex-wrap: wrap;
+          align-items: center;
           gap: 15px;
           margin-top: 10px;
         }
@@ -646,45 +706,287 @@
           font-size: 14px;
         }
 
+      .bottom-banner {
+        background-color: #626262;
+        color: white;
+        padding: 12px 16px;
+        font-size: 17px;
+        line-height: 1.35;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 12px;
+        row-gap: 6px;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+
+      .footer-license,
+      .footer-contact {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+        flex-wrap: wrap;
+      }
+
+      .footer-separator {
+        opacity: 0.6;
+      }
+
+      .footer-group-separator {
+        margin: 0 -0.35rem;
+      }
+
+      .footer-license-icons {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.2em;
+      }
+
+      .footer-license-icon {
+        width: 1em;
+        height: 1em;
+      }
+
+      .elixir-image {
+        display: block;
+        max-width: 86px;
+        height: auto;
+      }
+
+      .bottom-banner a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .bottom-banner a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      .footer-logo-link {
+        margin-left: 0.25rem;
+      }
+
+      .footer-logo-link:hover {
+        text-decoration: none;
+      }
+
+      @media (max-width: 600px) {
         .bottom-banner {
-          background-color: #626262;
-          color: white;
-          padding: 15px;
-          font-size: 18px;
-          display: flex; /* Enable flexbox */
-          align-items: center; /* Vertically align items */
-          justify-content: center; /* Center horizontally (optional) */
-          gap: 10px; /* Space between items */
-          flex-wrap: wrap; /* Allow wrapping on smaller screens */
+          padding: 12px;
+          font-size: 16px;
+          row-gap: 8px;
         }
 
-        .elixir-image {
-          max-width: 100px; /* Or whatever size you prefer */
-          height: auto;
-          vertical-align: middle; /* Align image with text baseline (alternative to flexbox alignment) */
+        .footer-license,
+        .footer-contact {
+          width: 100%;
         }
 
-        .bottom-banner a {
-          color: white;
-          text-decoration: none;
-          display: inline-flex; /* To ensure correct vertical alignment of the image */
-          align-items: center; /* Aligns the image and text within the link */
-          gap: 5px; /* Adds spacing between the image and text within the link */
+        .footer-group-separator {
+          display: none;
+        }
+      }
+        .small-caps {
+        font-variant-caps: small-caps;
+      }
+
+      /* --- Publication / citation box --- */
+      .citation-section {
+        /* matches .search-container / .blast-overview on this page */
+        width: calc(100% - 40px);
+        max-width: 1460px;
+        margin: 20px auto;
+        padding: 0;
+        text-align: left;
+      }
+
+      .citation-section h2 {
+        color: #01ad62;
+        font-size: 22px;
+        text-align: left;
+        margin-top: 20px;
+      }
+
+      .citation-box {
+        position: relative;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px 24px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease,
+          background-color 0.3s ease;
+      }
+
+      .citation-box .citation-intro {
+        font-size: 16px;
+        color: #666;
+        margin: 0 0 12px 0;
+        padding-right: 120px;
+        text-align: left;
+      }
+
+      .citation-box .citation-text {
+        font-size: 17px;
+        line-height: 1.6;
+        margin: 0;
+        padding-right: 120px;
+        text-align: left;
+        color: #333;
+      }
+
+      .citation-copy-btn {
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        transform: translateY(-50%);
+        background-color: transparent;
+        color: #17b470;
+        border: 2px solid #17b470;
+        padding: 6px 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 600;
+        white-space: nowrap;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .citation-copy-btn:hover {
+        background-color: #17b470;
+        color: white;
+      }
+
+      .citation-copy-btn.copied {
+        background-color: #17b470;
+        border-color: #17b470;
+        color: white;
+      }
+
+      .citation-flash {
+        border-color: #17b470;
+        background-color: #eefaf4;
+        box-shadow: 0 0 0 5px rgba(23, 180, 112, 0.45),
+          0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      @media (max-width: 768px) {
+        .citation-copy-btn {
+          position: static;
+          transform: none;
+          display: block;
+          width: 100%;
+          margin-top: 14px;
         }
 
-        .bottom-banner a:hover {
-          text-decoration: underline;
+        .citation-box .citation-intro,
+        .citation-box .citation-text {
+          padding-right: 0;
         }
-      </style>
+      }
+
+      /* --- "Cite it" prompt in the BLAST classification summary --- */
+      .cite-inline {
+        /* fills the empty space to the right of the classification badges */
+        margin-left: auto;
+        font-size: 15px;
+        color: #666;
+      }
+
+      .cite-toggle {
+        background: none;
+        border: none;
+        padding: 0;
+        font-family: inherit;
+        font-size: 15px;
+        font-weight: 600;
+        color: #17b470;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .cite-toggle:focus-visible {
+        outline: 3px solid #17b470;
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+
+      .cite-toggle .chev {
+        display: inline-block;
+        transition: transform 0.28s ease;
+      }
+
+      .cite-toggle[aria-expanded="true"] .chev {
+        transform: rotate(180deg);
+      }
+
+      /* 0fr -> 1fr keeps the reveal animatable without a fixed height */
+      .cite-panel {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.28s ease;
+      }
+
+      .cite-panel > div {
+        overflow: hidden;
+      }
+
+      .cite-panel.open {
+        grid-template-rows: 1fr;
+      }
+
+      .cite-panel-inner {
+        padding-top: 14px;
+      }
+
+      .cite-panel .citation-box {
+        box-shadow: none;
+        padding: 16px 20px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .cite-panel,
+        .cite-toggle .chev {
+          transition: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .cite-inline {
+          margin-left: 0;
+        }
+      }
+
+      .sequence-privacy-panel .citation-box {
+        color: #333;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .sequence-privacy-panel p {
+        margin: 0;
+      }
+    </style>
     </head>
     <body>
       <header>
         <!-- Home Button with Image -->
-        <a href="/index.html" class="home-button">
+        <a href="/" class="home-button">
           <img src="/images/logo1.png" alt="Home" class="home-icon" />
         </a>
         <h1>The Asparaginase Database BLAST</h1>
       </header>
+      <p class="blast-intro">
+        Use BLAST to classify asparaginase sequences, find related
+        experimentally studied proteins, and explore their closest relatives in
+        the database (see
+        <a href="/help.html#blast-search">How to Use BLAST Search</a>):
+      </p>
       <div class="search-container">
         <div
           class="search-fields"
@@ -762,6 +1064,33 @@ LPNITILATGGTIAG..."
             >Default settings recommended. Use <strong></strong>Output: 0</strong> for all
             functions.</label
           >
+          <button
+            type="button"
+            class="cite-toggle sequence-privacy-toggle"
+            id="sequencePrivacyToggle"
+            aria-expanded="false"
+            aria-controls="sequencePrivacyPanel"
+          >
+            Sequence privacy
+            <span class="chev" aria-hidden="true">&#9662;</span>
+          </button>
+        </div>
+        <div
+          class="cite-panel sequence-privacy-panel"
+          id="sequencePrivacyPanel"
+        >
+          <div>
+            <div class="cite-panel-inner">
+              <div class="citation-box">
+                <p>
+                  <strong>Sequence privacy:</strong> BLAST queries are processed
+                  on our infrastructure and are not sent to external analysis
+                  services. We do not intentionally log query sequences, and
+                  temporary BLAST files are deleted after processing.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -773,6 +1102,41 @@ LPNITILATGGTIAG..."
           <h3>Classification Summary</h3>
           <div id="classificationSummary" class="classification-summary">
             <!-- Will be populated by JavaScript -->
+          </div>
+
+          <!-- Expands from the "Cite it" link added to the badge row above,
+               which only appears when a prediction could be made. -->
+          <div class="cite-panel" id="citePanel">
+            <div>
+              <div class="cite-panel-inner">
+                <div class="citation-box">
+                  <button
+                    type="button"
+                    class="citation-copy-btn"
+                    aria-label="Copy the citation to the clipboard"
+                  >
+                    Copy
+                  </button>
+                  <p class="citation-intro">
+                    If you use the classification or this tool in your
+                    research, please cite:
+                  </p>
+                  <p class="citation-text">
+                    Max Štětina, Aleš Křenek, Guglielmo Tedeschi, Filip Krása,
+                    Vojtěch Spiwok, Eva Benešová, The Asparaginase Database: a
+                    comprehensive resource and&nbsp;classification of
+                    <span class="small-caps">l</span>&#8209;asparaginases,
+                    <em>Database</em>, Volume 2026, 2026, baag045,
+                    <a
+                      href="https://doi.org/10.1093/database/baag045"
+                      target="_blank"
+                      rel="noopener"
+                      >https://doi.org/10.1093/database/baag045</a
+                    >.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -792,7 +1156,7 @@ LPNITILATGGTIAG..."
           </div>
 
           <div class="overview-section">
-            <h3>Top 3 SwissProt Sequences</h3>
+            <h3>Top 3 Swiss-Prot Sequences</h3>
             <ul id="top3SP" class="hit-list">
               <!-- Will be populated by JavaScript -->
             </ul>
@@ -1387,17 +1751,207 @@ BLAST output will appear here</textarea
         });
       </script>
 
-      <div class="bottom-banner">
-        <div>The Asparaginase Database | Release 2025-01 | Contact:</div>
-        <a href="mailto:info@asparaginasedb.com">info@asparaginasedb.com</a>| Supported by:
-        <a href="https://www.elixir-czech.cz/" target="_blank">
+      <div class="citation-section" id="publication">
+        <h2>Publication</h2>
+        <div class="citation-box">
+          <button
+            type="button"
+            class="citation-copy-btn"
+            id="copyCitationBtn"
+            aria-label="Copy the citation to the clipboard"
+          >
+            Copy
+          </button>
+          <p class="citation-intro">
+            If you use The Asparaginase Database or the classification in your research, please cite:
+          </p>
+          <p class="citation-text">
+            Max Štětina, Aleš Křenek, Guglielmo Tedeschi, Filip Krása, Vojtěch
+            Spiwok, Eva Benešová, The Asparaginase Database: a comprehensive
+            resource and&nbsp;classification of
+            <span class="small-caps">l</span>&#8209;asparaginases,
+            <em>Database</em>, Volume 2026, 2026, baag045,
+            <a
+              href="https://doi.org/10.1093/database/baag045"
+              target="_blank"
+              rel="noopener"
+              >https://doi.org/10.1093/database/baag045</a
+            >.
+          </p>
+        </div>
+      </div>
+      <script>
+        // Publication section: smooth scroll from the top banner + copy citation
+        function initPublicationSection() {
+          const CITATION =
+            "Max \u0160t\u011btina, Ale\u0161 K\u0159enek, Guglielmo Tedeschi, " +
+            "Filip Kr\u00e1sa, Vojt\u011bch Spiwok, Eva Bene\u0161ov\u00e1, " +
+            "The Asparaginase Database: a comprehensive resource and classification " +
+            "of l-asparaginases, Database, Volume 2026, 2026, baag045, " +
+            "https://doi.org/10.1093/database/baag045";
+
+          // Smooth scroll + brief highlight, mirroring the Contact link behaviour
+          const pubLinks = document.querySelectorAll(
+            '.top-banner-nav a[href="#publication"], ' +
+              '.dropdown-menu a[href="#publication"], ' +
+              '.bottom-banner a[href="#publication"]'
+          );
+          const pubSection = document.querySelector("#publication");
+
+          function highlightPublication() {
+            const box = pubSection.querySelector(".citation-box") || pubSection;
+            box.classList.add("citation-flash");
+            setTimeout(() => box.classList.remove("citation-flash"), 1900);
+          }
+
+          if (pubSection) {
+            pubLinks.forEach((link) => {
+              link.addEventListener("click", (e) => {
+                e.preventDefault();
+                pubSection.scrollIntoView({ behavior: "smooth" });
+                setTimeout(highlightPublication, 800);
+              });
+            });
+
+            // Same treatment when arriving from another page's footer link,
+            // i.e. /index.html#publication
+            if (window.location.hash === "#publication") {
+              window.addEventListener("load", () => {
+                pubSection.scrollIntoView({ behavior: "smooth" });
+                setTimeout(highlightPublication, 800);
+              });
+            }
+          }
+
+          // Clipboard helpers (with a fallback for older / non-secure contexts)
+          function legacyCopy(text) {
+            const area = document.createElement("textarea");
+            area.value = text;
+            area.setAttribute("readonly", "");
+            area.style.position = "fixed";
+            area.style.top = "-1000px";
+            document.body.appendChild(area);
+            area.select();
+            let ok = false;
+            try {
+              ok = document.execCommand("copy");
+            } catch (err) {
+              ok = false;
+            }
+            document.body.removeChild(area);
+            return ok;
+          }
+
+          // Both the Publication box and the BLAST "Cite it" panel copy the
+          // same citation.
+          document.querySelectorAll(".citation-copy-btn").forEach((copyBtn) => {
+            copyBtn.addEventListener("click", () => {
+              const original = copyBtn.innerHTML;
+
+              const finish = (ok) => {
+                copyBtn.innerHTML = ok ? "&#10003; Copied" : "Copy failed";
+                copyBtn.classList.toggle("copied", ok);
+                setTimeout(() => {
+                  copyBtn.innerHTML = original;
+                  copyBtn.classList.remove("copied");
+                }, 2000);
+              };
+
+              if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(CITATION).then(
+                  () => finish(true),
+                  () => finish(legacyCopy(CITATION))
+                );
+              } else {
+                finish(legacyCopy(CITATION));
+              }
+            });
+          });
+
+          // "Cite it" link: delegated, since the badge row is re-rendered on
+          // every search.
+          const summaryEl = document.getElementById("classificationSummary");
+          const citePanel = document.getElementById("citePanel");
+
+          if (summaryEl && citePanel) {
+            summaryEl.addEventListener("click", (e) => {
+              const toggle = e.target.closest(".cite-toggle");
+              if (!toggle) return;
+              const open = toggle.getAttribute("aria-expanded") === "true";
+              toggle.setAttribute("aria-expanded", String(!open));
+              citePanel.classList.toggle("open", !open);
+            });
+          }
+
+          const privacyToggle = document.getElementById(
+            "sequencePrivacyToggle"
+          );
+          const privacyPanel = document.getElementById(
+            "sequencePrivacyPanel"
+          );
+
+          if (privacyToggle && privacyPanel) {
+            privacyToggle.addEventListener("click", () => {
+              const open =
+                privacyToggle.getAttribute("aria-expanded") === "true";
+              privacyToggle.setAttribute("aria-expanded", String(!open));
+              privacyPanel.classList.toggle("open", !open);
+            });
+          }
+        }
+
+        // The footer link is parsed after this script, so bind once
+        // the whole document is available.
+        if (document.readyState === "loading") {
+          document.addEventListener(
+            "DOMContentLoaded",
+            initPublicationSection
+          );
+        } else {
+          initPublicationSection();
+        }
+      </script>
+    <footer id="contact" class="bottom-banner">
+      <div class="footer-license">
+        <a href="/">The Asparaginase Database</a>
+        <span>© 2025 is licensed under</span>
+        <a
+          href="https://creativecommons.org/licenses/by/4.0/"
+          target="_blank"
+          rel="license noopener"
+        >
+          CC BY 4.0
+        </a>
+        <span class="footer-license-icons" aria-hidden="true">
+          <img src="/images/cc.svg" alt="" class="footer-license-icon" />
+          <img src="/images/by.svg" alt="" class="footer-license-icon" />
+        </span>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <span>Release 2026-08</span>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="#publication">How to cite</a>
+      </div>
+      <span class="footer-group-separator footer-separator" aria-hidden="true">|</span>
+      <div class="footer-contact">
+        <a href="mailto:info@asparaginasedb.com">info@asparaginasedb.com</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="/privacy.html">Privacy</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <span>Supported by:</span>
+        <a
+          href="https://www.elixir-czech.cz/"
+          target="_blank"
+          rel="noopener"
+          class="footer-logo-link"
+        >
           <img
             src="/images/elixir_logo.png"
-            alt="elixir_logo.png"
+            alt="ELIXIR Czech Republic"
             class="elixir-image"
           />
         </a>
       </div>
+    </footer>
 
       <!-- Dynamic table data and renderer - must load before BLAST scripts -->
       <script src="/scripts/general-data.js"></script>
@@ -1444,20 +1998,31 @@ BLAST output will appear here</textarea
           document.getElementById("blastResultEsp").value =
             "Running BLAST search against ESP database...";
           document.getElementById("blastResultSp").value =
-            "Running BLAST search against SwissProt database...";
-
-          const encodedBlast = encodeURIComponent(searchBlast);
-          const params = `&eThreshold=${eThreshold}&hits=${hits}&matrix=${matrix}&outfmt=${outfmt}`;
+            "Running BLAST search against Swiss-Prot database...";
 
           // Store results for overview
           let unirefResults = null;
           let espResults = null;
           let spResults = null;
 
+          function blastRequest(targetDB) {
+            return fetch("/api/blast", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              cache: "no-store",
+              body: JSON.stringify({
+                query: searchBlast,
+                targetDB: targetDB,
+                eThreshold: eThreshold,
+                hits: hits,
+                matrix: matrix,
+                outfmt: outfmt,
+              }),
+            });
+          }
+
           // Query all 3 databases in parallel
-          fetch(
-            `/api/blast?query=${encodedBlast}&targetDB=asparaginasedb${params}`
-          )
+          blastRequest("asparaginasedb")
             .then((response) =>
               response.ok
                 ? response.json()
@@ -1467,15 +2032,12 @@ BLAST output will appear here</textarea
               document.getElementById("blastResult").value = data.output;
               unirefResults = extractDetailedBlastData(data.output, dataRows);
               checkAndUpdateOverview();
-              saveSearchState();
             })
             .catch((error) => {
               document.getElementById("blastResult").value = "Error: " + error;
             });
 
-          fetch(
-            `/api/blast?query=${encodedBlast}&targetDB=asparaginasedb_esp${params}`
-          )
+          blastRequest("asparaginasedb_esp")
             .then((response) =>
               response.ok
                 ? response.json()
@@ -1489,16 +2051,13 @@ BLAST output will appear here</textarea
               filterTableByIds(blastData, espRows, espTable);
               espResults = extractDetailedBlastData(data.output, espRows);
               checkAndUpdateOverview();
-              saveSearchState();
             })
             .catch((error) => {
               document.getElementById("blastResultEsp").value =
                 "Error: " + error;
             });
 
-          fetch(
-            `/api/blast?query=${encodedBlast}&targetDB=asparaginasedb_sp${params}`
-          )
+          blastRequest("asparaginasedb_sp")
             .then((response) =>
               response.ok
                 ? response.json()
@@ -1512,28 +2071,11 @@ BLAST output will appear here</textarea
               filterTableByIds(blastData, spRows, spTable);
               spResults = extractDetailedBlastData(data.output, spRows);
               checkAndUpdateOverview();
-              saveSearchState();
             })
             .catch((error) => {
               document.getElementById("blastResultSp").value =
                 "Error: " + error;
             });
-
-          // Save search state to sessionStorage
-          function saveSearchState() {
-            const state = {
-              searchBlast: searchBlast,
-              eThreshold: eThreshold,
-              hits: hits,
-              matrix: matrix,
-              outfmt: outfmt,
-              blastResult: document.getElementById("blastResult").value,
-              blastResultEsp: document.getElementById("blastResultEsp").value,
-              blastResultSp: document.getElementById("blastResultSp").value,
-              timestamp: Date.now(),
-            };
-            sessionStorage.setItem("blastSearchState", JSON.stringify(state));
-          }
 
           // Check if all results are ready and update overview
           function checkAndUpdateOverview() {
@@ -1707,9 +2249,6 @@ BLAST output will appear here</textarea
           // Hide overview section
           document.getElementById("blastOverview").style.display = "none";
 
-          // Clear session storage
-          sessionStorage.removeItem("blastSearchState");
-
           // Show all rows again and reset score/e-value cells
           dataRows.forEach((row) => {
             row.classList.remove("hidden");
@@ -1718,90 +2257,6 @@ BLAST output will appear here</textarea
             if (scoreCell) scoreCell.textContent = "-";
             if (evalueCell) evalueCell.textContent = "-";
           });
-        }
-
-        // Restore search state from sessionStorage on page load
-        function restoreSearchState() {
-          const savedState = sessionStorage.getItem("blastSearchState");
-          if (!savedState) return;
-
-          try {
-            const state = JSON.parse(savedState);
-
-            // Check if state is not too old (e.g., within 24 hours)
-            const maxAge = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
-            if (Date.now() - state.timestamp > maxAge) {
-              sessionStorage.removeItem("blastSearchState");
-              return;
-            }
-
-            // Restore form values
-            document.getElementById("searchBlast").value =
-              state.searchBlast || "";
-            document.getElementById("evalSelect").value =
-              state.eThreshold || "0.001";
-            document.getElementById("hitsSelect").value = state.hits || "250";
-            document.getElementById("matrixSelect").value =
-              state.matrix || "BLOSUM62";
-            document.getElementById("outfmtSelect").value = state.outfmt || "0";
-
-            // Restore results
-            document.getElementById("blastResult").value =
-              state.blastResult || "BLAST output will appear here";
-            document.getElementById("blastResultEsp").value =
-              state.blastResultEsp || "BLAST output will appear here";
-            document.getElementById("blastResultSp").value =
-              state.blastResultSp || "BLAST output will appear here";
-
-            // Re-process results to update tables and overview
-            if (
-              state.blastResult &&
-              state.blastResult !== "BLAST output will appear here"
-            ) {
-              const unirefResults = extractDetailedBlastData(
-                state.blastResult,
-                dataRows
-              );
-              const espResults = extractDetailedBlastData(
-                state.blastResultEsp,
-                espRows
-              );
-              const spResults = extractDetailedBlastData(
-                state.blastResultSp,
-                spRows
-              );
-
-              // Update tables
-              if (state.blastResultEsp) {
-                const espBlastData = extractBlastData(state.blastResultEsp);
-                filterTableByIds(espBlastData, espRows, espTable);
-                scrollToAlignments("blastResultEsp");
-              }
-
-              if (state.blastResultSp) {
-                const spBlastData = extractBlastData(state.blastResultSp);
-                filterTableByIds(spBlastData, spRows, spTable);
-                scrollToAlignments("blastResultSp");
-              }
-
-              // Update overview
-              if (
-                unirefResults.length > 0 &&
-                espResults.length > 0 &&
-                spResults.length > 0
-              ) {
-                updateBlastOverview(
-                  unirefResults,
-                  espResults,
-                  spResults,
-                  state.eThreshold || "0.001"
-                );
-              }
-            }
-          } catch (e) {
-            console.error("Error restoring search state:", e);
-            sessionStorage.removeItem("blastSearchState");
-          }
         }
 
         // Extract detailed BLAST data including percent identity and classification
@@ -1977,6 +2432,19 @@ BLAST output will appear here</textarea
             }
           }
 
+          // Offer the citation only once the sequence has actually been
+          // classified; it sits in the empty space right of the badges.
+          const citePrompt = canMakePrediction
+            ? `
+                <div class="cite-inline">
+                  Find the classification or this tool useful?
+                  <button type="button" class="cite-toggle" aria-expanded="false" aria-controls="citePanel">
+                    Cite it <span class="chev" aria-hidden="true">&#9662;</span>
+                  </button>
+                </div>
+              `
+            : "";
+
           const summaryHTML =
             classificationMessage +
             Object.entries(classificationSummary)
@@ -1987,9 +2455,14 @@ BLAST output will appear here</textarea
                     cls
                   )}" target="_blank" style="color: white; text-decoration: underline;">${cls}</a></div>`
               )
-              .join("");
+              .join("") +
+            citePrompt;
           document.getElementById("classificationSummary").innerHTML =
             summaryHTML || "<p>No results</p>";
+
+          // The link is rebuilt on every search, so collapse the panel with it
+          const citePanelEl = document.getElementById("citePanel");
+          if (citePanelEl) citePanelEl.classList.remove("open");
 
           // 2. Top 3 UniRef100 hits
           const top10UniRefHTML =
@@ -2224,17 +2697,6 @@ BLAST output will appear here</textarea
       </script>
 
       <script>
-        window.addEventListener("DOMContentLoaded", () => {
-          const params = new URLSearchParams(window.location.search);
-          const query = params.get("q");
-          if (query) {
-            const input = document.getElementById("searchBlast");
-            input.value = query;
-            input.focus();
-            performSearch();
-          }
-        });
-
         // Add enter key support for search fields
         document.querySelectorAll(".search-field input").forEach((input) => {
           input.addEventListener("keypress", function (e) {
@@ -2243,9 +2705,12 @@ BLAST output will appear here</textarea
             }
           });
         });
-
-        // Restore search state on page load
-        restoreSearchState();
       </script>
+      <!-- Privacy-minimized pageview only; never collect BLAST input or events. -->
+      <script
+        async
+        data-ignore-metrics="referrer,utm,country,session,timeonpage,scrolled,useragent,screensize,viewportsize,language"
+        src="https://scripts.simpleanalyticscdn.com/latest.js"
+      ></script>
     </body>
 </html>
