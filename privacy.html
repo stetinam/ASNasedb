@@ -27,7 +27,8 @@
       name="twitter:image"
       content="https://asparaginasedb.com/images/logo-social.png"
     />
-    <link rel="icon" type="image/png" href="/images/logo5.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png" />
     <link rel="stylesheet" href="/fonts/fonts.css" />
 
     <style>
@@ -114,8 +115,20 @@
       }
 
       @media (max-width: 700px) {
+        /* Keep the home link on mobile: a small logo tucked into the top-left
+           corner, with extra header padding so it clears the centred title. */
+        header {
+          padding-top: 84px;
+        }
+
         .home-button {
-          display: none;
+          left: 18px;
+          top: 16px;
+          transform: none; /* Anchor to the corner instead of centring */
+        }
+
+        .home-button img.home-icon {
+          height: 56px;
         }
 
         h1 {
@@ -259,16 +272,30 @@
         personal data, including identifiable human genetic or health data.
       </p>
 
+      <h3>Submitting an entry</h3>
+      <p>
+        If you submit an entry, we process the name, email address, affiliation
+        and ORCID iD you provide in order to verify the submission and record
+        the provenance of curated data, under Article 6(1)(e) GDPR. The form is
+        hosted for us by Tally BV (Ghent, Belgium) as our processor, with
+        responses stored in the European Union; Tally is a separate website
+        with its own privacy policy and cookies. Records are kept for as long
+        as the entry remains in the database.
+      </p>
+
       <h3>Anonymous usage statistics</h3>
       <p>
         Simple Analytics provides privacy-focused usage statistics without
         cookies, browser storage or fingerprinting. It records page views and
         general non-identifying usage metrics. It states that IP addresses are
         immediately discarded and not stored. ASNasedb does not use cookies or
-        browser storage. On the BLAST page, our privacy-minimised Simple
-        Analytics configuration records a page view but does not send the
-        submitted sequence, selected BLAST parameters, results or user
-        interactions to Simple Analytics.
+        browser storage. On every page, including search and BLAST, Simple
+        Analytics receives only the page address and general non-identifying
+        page metadata. It never receives anything you type: search terms,
+        submitted sequences, selected BLAST parameters, results and other user
+        interactions are not sent to Simple Analytics. Any search term carried
+        in a page address is discarded in your browser before the page view is
+        sent.
       </p>
 
       <h3>Correspondence</h3>
@@ -306,11 +333,17 @@
         <span class="footer-separator" aria-hidden="true">|</span>
         <span>Release 2026-08</span>
         <span class="footer-separator" aria-hidden="true">|</span>
-        <a href="/#publication">How to cite</a>
+        <a href="/#publication">How To Cite</a>
       </div>
       <span class="footer-group-separator footer-separator" aria-hidden="true">|</span>
       <div class="footer-contact">
         <a href="mailto:info@asparaginasedb.com">info@asparaginasedb.com</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="https://tally.so/r/WO67bk" target="_blank" rel="noopener"
+          >Submit an Entry</a
+        >
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="/references.html">References</a>
         <span class="footer-separator" aria-hidden="true">|</span>
         <a href="/privacy.html" aria-current="page">Privacy</a>
         <span class="footer-separator" aria-hidden="true">|</span>

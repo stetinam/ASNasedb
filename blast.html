@@ -10,7 +10,8 @@
     <link rel="canonical" href="https://asparaginasedb.com/blast.html" />
     <meta property="og:description" content="BLAST a protein sequence against the Asparaginase Database to classify it into an l-asparaginase class, clan and phylogenetic family." />
     <!-- SEO_END -->
-      <link rel="icon" type="image/png" href="/images/logo5.png" />
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+      <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png" />
 
       <!-- Preview image for search engines and social cards (flattened, no alpha) -->
       <meta property="og:type" content="website" />
@@ -129,8 +130,20 @@
         }
 
         @media (max-width: 700px) {
+          /* Keep the home link on mobile: a small logo tucked into the top-left
+             corner, with extra header padding so it clears the centred title. */
+          header {
+            padding-top: 84px;
+          }
+
           .home-button {
-            display: none; /* Hide the home button on smaller screens */
+            left: 18px;
+            top: 16px;
+            transform: none; /* Anchor to the corner instead of centring */
+          }
+
+          .home-button img.home-icon {
+            height: 56px;
           }
         }
 
@@ -1690,18 +1703,51 @@ BLAST output will appear here</textarea
                     "Vmax",
                     "Kcat",
                   ];
-                  let rows = [headers.join("\t")];
+                  // a DOI column travels with each cited value; the markers carry them,
+                  // so there is no second source to keep in step
+                  const doiAfter = ["Structure", "PDB", "Km", "Vmax", "Kcat"];
+                  const doisIn = (cell) => {
+                    const seen = [];
+                    cell.querySelectorAll(".cite").forEach((mark) => {
+                      const doi = "https://doi.org/" + mark.getAttribute("data-doi");
+                      if (seen.indexOf(doi) === -1) seen.push(doi);
+                    });
+                    return seen.join("; ");
+                  };
+
+                  // Column names come from the table itself so they always line up with the
+                  // cells, whatever columns a page shows (blast adds Score and E-val).
+                  const labelCells = tableContainer.querySelectorAll(
+                    "tbody[data-table-type] tr:first-child th:not(.checkbox-column)"
+                  );
+                  const columnNames = labelCells.length
+                    ? Array.from(labelCells).map((th) => {
+                        // only the tooltip bubbles come out: some labels sit inside a
+                        // nowrap <span> and stripping every span would leave them blank
+                        const clone = th.cloneNode(true);
+                        clone.querySelectorAll(".tooltip").forEach((tip) => tip.remove());
+                        const label = clone.textContent.replace(/\s+/g, "");
+                        return label === "Fam" ? "Family" : label;
+                      })
+                    : headers;
+
+                  const outHeaders = [];
+                  columnNames.forEach((name) => {
+                    outHeaders.push(name);
+                    if (doiAfter.indexOf(name) > -1) outHeaders.push(name + "_DOI");
+                  });
+                  let rows = [outHeaders.join("\t")];
 
                   tableContainer
                     .querySelectorAll(".entry-checkbox:checked")
                     .forEach((checkbox) => {
                       const row = checkbox.closest("tr");
-                      const cells = row.querySelectorAll(
-                        "td:not(.checkbox-column)"
-                      );
-                      const rowData = Array.from(cells).map((cell) =>
-                        cleanText(cell.innerHTML)
-                      );
+                      const cells = row.querySelectorAll("td:not(.checkbox-column)");
+                      const rowData = [];
+                      Array.from(cells).forEach((cell, i) => {
+                        rowData.push(cleanText(cell.innerHTML));
+                        if (doiAfter.indexOf(columnNames[i]) > -1) rowData.push(doisIn(cell));
+                      });
                       rows.push(rowData.join("\t"));
                     });
 
@@ -1911,6 +1957,9 @@ BLAST output will appear here</textarea
           initPublicationSection();
         }
       </script>
+    <!-- reference list, built by scripts/references.js -->
+    <div id="reflist" data-page-refs="" data-accent="#17b470"></div>
+
     <footer id="contact" class="bottom-banner">
       <div class="footer-license">
         <a href="/">The Asparaginase Database</a>
@@ -1929,11 +1978,17 @@ BLAST output will appear here</textarea
         <span class="footer-separator" aria-hidden="true">|</span>
         <span>Release 2026-08</span>
         <span class="footer-separator" aria-hidden="true">|</span>
-        <a href="#publication">How to cite</a>
+        <a href="#publication">How To Cite</a>
       </div>
       <span class="footer-group-separator footer-separator" aria-hidden="true">|</span>
       <div class="footer-contact">
         <a href="mailto:info@asparaginasedb.com">info@asparaginasedb.com</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="https://tally.so/r/WO67bk" target="_blank" rel="noopener"
+          >Submit an Entry</a
+        >
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="/references.html">References</a>
         <span class="footer-separator" aria-hidden="true">|</span>
         <a href="/privacy.html">Privacy</a>
         <span class="footer-separator" aria-hidden="true">|</span>
@@ -1956,6 +2011,8 @@ BLAST output will appear here</textarea
       <!-- Dynamic table data and renderer - must load before BLAST scripts -->
       <script src="/scripts/general-data.js"></script>
       <script src="/scripts/table-renderer.js"></script>
+    <script src="/scripts/references-data.js"></script>
+    <script src="/scripts/references.js"></script>
 
       <script>
         // Initialize tables immediately (don't wait for DOMContentLoaded)
@@ -2706,10 +2763,9 @@ BLAST output will appear here</textarea
           });
         });
       </script>
-      <!-- Privacy-minimized pageview only; never collect BLAST input or events. -->
+      <!-- 100% privacy-first analytics -->
       <script
         async
-        data-ignore-metrics="referrer,utm,country,session,timeonpage,scrolled,useragent,screensize,viewportsize,language"
         src="https://scripts.simpleanalyticscdn.com/latest.js"
       ></script>
     </body>

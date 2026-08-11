@@ -42,6 +42,12 @@ spec:
               mountPath: /usr/share/nginx/html
             - name: image-volume
               mountPath: /usr/share/nginx/html/images
+            # subPath adds a single file to conf.d instead of shadowing the
+            # directory, so the image's default.conf keeps serving the site.
+            - name: vhost-redirect
+              mountPath: /etc/nginx/conf.d/redirect-cz.conf
+              subPath: redirect-cz.conf
+              readOnly: true
       volumes:
         - name: html-volume
           persistentVolumeClaim:
@@ -49,3 +55,6 @@ spec:
         - name: image-volume
           persistentVolumeClaim:
             claimName: asparaginase-seq-database
+        - name: vhost-redirect
+          configMap:
+            name: nginx-vhost-redirect

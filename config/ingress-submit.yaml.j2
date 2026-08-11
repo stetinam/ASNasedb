@@ -1,0 +1,49 @@
+# Short link: https://<host>/submit -> the Tally submission form.
+#
+# This is a separate Ingress object on purpose. The redirect annotation applies
+# to every path in the Ingress it sits on, so putting it on the main `nginx`
+# Ingress would redirect the whole site to the form.
+#
+# `temporal-redirect` (302) rather than `permanent-redirect` (301): a 301 is
+# cached hard by browsers, so if the form URL ever changes, everyone who has
+# used the old link keeps landing on the old form.
+#
+# The annotation drops the request path, which is the behaviour we want here —
+# the target is fixed. (That path-dropping is why it was unusable for the
+# .cz -> .com canonical redirect; see redirect-cz.yaml.)
+#
+# No tls: block and no cert-manager annotations — the certificate is issued by
+# the main `nginx` Ingress, and ingress-nginx merges rules for the same host.
+# The `service` backend is required by the API but never reached: the redirect
+# is returned before the request is proxied.
+#
+# www.<host> is not listed: from-to-www-redirect on the main Ingress sends
+# www.asparaginasedb.com/submit to the apex first, which then matches here.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: submit-redirect
+  namespace: {{ namespace }}
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/temporal-redirect: "https://tally.so/r/WO67bk"
+spec:
+  ingressClassName: nginx
+  rules: {% for host in hosts %}
+    - host: "{{ host }}"
+      http:
+        paths:
+          - backend:
+              service:
+                name: nginx
+                port:
+                  number: 8080
+            pathType: Exact
+            path: "/submit"
+          - backend:
+              service:
+                name: nginx
+                port:
+                  number: 8080
+            pathType: Exact
+            path: "/submit/" {% endfor %}

@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>References | ASNasedb</title>
+    <!-- SEO_BEGIN -->
+    <meta name="description" content="Every publication cited by the Asparaginase Database: kinetic measurements, protein structures and the PDB entries behind them." />
+    <link rel="canonical" href="https://asparaginasedb.com/references.html" />
+    <!-- SEO_END -->
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="The Asparaginase Database" />
+    <meta property="og:title" content="References | ASNasedb" />
+    <meta property="og:url" content="https://asparaginasedb.com/references.html" />
+    <meta
+      property="og:image"
+      content="https://asparaginasedb.com/images/logo-social.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    <meta property="og:image:alt" content="The Asparaginase Database logo" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:image"
+      content="https://asparaginasedb.com/images/logo-social.png"
+    />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png" />
+    <link rel="stylesheet" href="/fonts/fonts.css" />
+
+    <style>
+      body {
+        font-family: "Source Sans Pro", sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+
+      .content {
+        max-width: 1300px;
+        margin: 20px auto 50px;
+        padding: 0 20px;
+        text-align: left;
+      }
+
+      .content h2 {
+        color: #01ad62;
+        font-size: 23px;
+        text-align: left;
+      }
+
+      .content p {
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: justify;
+      }
+
+      .content h3 {
+        margin: 1.4em 0 0.45em;
+        color: #333;
+        font-size: 20px;
+        line-height: 1.3;
+      }
+
+      a {
+        color: #17b470;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s ease, text-decoration 0.3s ease;
+      }
+
+      a:hover {
+        color: #1b915e;
+      }
+
+      header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+        background-color: #17b470;
+        color: white;
+        text-align: center;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .home-button {
+        position: absolute;
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        text-decoration: none;
+      }
+
+      .home-button img.home-icon {
+        width: auto;
+        height: 80px;
+        border-radius: 5px;
+      }
+
+      .home-button:hover img.home-icon {
+        opacity: 0.8;
+      }
+
+      @media (max-width: 700px) {
+        /* Keep the home link on mobile: a small logo tucked into the top-left
+           corner, with extra header padding so it clears the centred title. */
+        header {
+          padding-top: 84px;
+        }
+
+        .home-button {
+          left: 18px;
+          top: 16px;
+          transform: none; /* Anchor to the corner instead of centring */
+        }
+
+        .home-button img.home-icon {
+          height: 56px;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+      }
+
+      .bottom-banner {
+        background-color: #626262;
+        color: white;
+        padding: 12px 16px;
+        font-size: 17px;
+        line-height: 1.35;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 12px;
+        row-gap: 6px;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+
+      .footer-license,
+      .footer-contact {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+        flex-wrap: wrap;
+      }
+
+      .footer-separator {
+        opacity: 0.6;
+      }
+
+      .footer-group-separator {
+        margin: 0 -0.35rem;
+      }
+
+      .footer-license-icons {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.2em;
+      }
+
+      .footer-license-icon {
+        width: 1em;
+        height: 1em;
+      }
+
+      .elixir-image {
+        display: block;
+        max-width: 86px;
+        height: auto;
+      }
+
+      .bottom-banner a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .bottom-banner a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      .footer-logo-link {
+        margin-left: 0.25rem;
+      }
+
+      .footer-logo-link:hover {
+        text-decoration: none;
+      }
+
+      @media (max-width: 600px) {
+        .bottom-banner {
+          padding: 12px;
+          font-size: 16px;
+          row-gap: 8px;
+        }
+
+        .footer-license,
+        .footer-contact {
+          width: 100%;
+        }
+
+        .footer-group-separator {
+          display: none;
+        }
+      }
+    
+      /* references list */
+      .refs-cite .refs-subhead {
+        margin-top: 6px;
+      }
+      /* the element selector keeps .content p from setting the size and
+         justifying it */
+      .content p.refs-intro {
+        max-width: 1000px;
+        margin: 0 auto 16px;
+        padding: 0 20px;
+        font-size: 14px;
+        line-height: 1.55;
+        color: #6b6b6b;
+        text-align: left;
+      }
+      /* the Publication box's own styles are appended here, verbatim from
+         index.html, by main() */
+      /* the enzyme's name never breaks across a line, and its initial is a
+         small capital as the literature sets it */
+      .asn {
+        white-space: nowrap;
+      }
+      .asn-l {
+        font-variant: small-caps;
+        text-transform: lowercase;
+      }
+      .refs-subhead {
+        max-width: 1000px;
+        margin: 30px auto 10px;
+        padding: 0 20px;
+        font-size: 15px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #17b470;
+        text-align: left;
+      }
+      /* the section heads below the filter: a shade lighter than the page's
+         other headings */
+      .content h3.refs-sub-group {
+        color: #5a5a5a;
+      }
+      .refs-source-list {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+        list-style: none;
+        text-align: left;
+      }
+      .refs-source-list .ref-item {
+        margin-bottom: 12px;
+      }
+      .ref-label {
+        display: block;
+        margin-bottom: 2px;
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #12854f;
+      }
+      .refs-controls {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 4px 20px 6px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .refs-search {
+        flex: 1 1 320px;
+        padding: 9px 12px;
+        font-family: inherit;
+        font-size: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .refs-search:focus {
+        outline: 2px solid #17b470;
+        outline-offset: 1px;
+      }
+      .refs-count {
+        font-size: 14px;
+        color: #6f6f6f;
+        white-space: nowrap;
+      }
+      .refs-list {
+        max-width: 1000px;
+        margin: 0 auto 60px;
+        padding: 0 20px 0 46px;
+        text-align: left;
+      }
+      .ref-item {
+        margin-bottom: 14px;
+        font-size: 15px;
+        line-height: 1.5;
+        color: #444;
+      }
+      .ref-item::marker {
+        color: #17b470;
+        font-weight: 700;
+      }
+      .refs-empty {
+        max-width: 1000px;
+        margin: 0 auto 60px;
+        color: #6f6f6f;
+        text-align: center;
+      }
+      .ct {
+        font-family: Georgia, "Times New Roman", serif;
+      }
+      .ct .ct-title {
+        color: #1f1f1f;
+      }
+      .ct-doi {
+        font-family: ui-monospace, Menlo, Consolas, monospace;
+        font-size: 13px;
+      }
+      .src-tag {
+        display: inline-block;
+        font-family: ui-monospace, Menlo, Consolas, monospace;
+        font-size: 10.5px;
+        padding: 1px 6px;
+        border-radius: 999px;
+        vertical-align: 1px;
+        white-space: nowrap;
+      }
+      .src-tag.tsv {
+        background: #e4f5ec;
+        color: #12854f;
+      }
+      .src-tag.pdb {
+        background: #e2eff1;
+        color: #1d6b78;
+      }
+      .ref-meta {
+        display: block;
+        margin-top: 3px;
+        font-size: 13.5px;
+        font-weight: 600;
+        color: #4a4a4a;
+      }
+
+      /* --- Publication / citation box --- */
+      .citation-section {
+        max-width: 1300px;
+        margin: 20px auto;
+        padding: 0 20px;
+        text-align: left;
+      }
+
+      .citation-section h2 {
+        color: #01ad62;
+        font-size: 22px;
+        text-align: left;
+        margin-top: 20px;
+      }
+
+      .citation-box {
+        position: relative;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px 24px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        transition:
+          border-color 0.3s ease,
+          box-shadow 0.3s ease,
+          background-color 0.3s ease;
+      }
+
+      .citation-box .citation-intro {
+        font-size: 16px;
+        color: #666;
+        margin: 0 0 12px 0;
+        padding-right: 120px;
+        text-align: left;
+      }
+
+      .citation-box .citation-text {
+        font-size: 17px;
+        line-height: 1.6;
+        margin: 0;
+        padding-right: 120px;
+        text-align: left;
+        color: #333;
+      }
+
+      .citation-copy-btn {
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        transform: translateY(-50%);
+        background-color: transparent;
+        color: #17b470;
+        border: 2px solid #17b470;
+        padding: 6px 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 600;
+        white-space: nowrap;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
+      }
+
+      .citation-copy-btn:hover {
+        background-color: #17b470;
+        color: white;
+      }
+
+      .citation-copy-btn.copied {
+        background-color: #17b470;
+        border-color: #17b470;
+        color: white;
+      }
+
+      .citation-flash {
+        border-color: #17b470;
+        background-color: #eefaf4;
+        box-shadow:
+          0 0 0 5px rgba(23, 180, 112, 0.45),
+          0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      @media (max-width: 768px) {
+        .citation-copy-btn {
+          position: static;
+          transform: none;
+          display: block;
+          width: 100%;
+          margin-top: 14px;
+        }
+
+        .citation-box .citation-intro,
+        .citation-box .citation-text {
+          padding-right: 0;
+        }
+      }
+      .small-caps {
+        font-variant-caps: small-caps;
+      }
+</style>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="home-button">
+        <img src="/images/logo1.png" alt="Home" class="home-icon" />
+      </a>
+      <h1>The Asparaginase Database References</h1>
+    </header>
+
+    
+    <div class="content">
+      <!-- the database's own paper: pinned, never filtered away. The box, its
+           styles and the text the button copies are taken from index.html -->
+      <div class="refs-cite">
+        <h3 class="refs-subhead">Cite the database</h3>
+        <div class="citation-box">
+        <button
+          type="button"
+          class="citation-copy-btn"
+          id="copyCitationBtn"
+          aria-label="Copy the citation to the clipboard"
+        >
+          Copy
+        </button>
+        <p class="citation-intro">
+          If you use The Asparaginase Database or the classification in your
+          research, please cite:
+        </p>
+        <p class="citation-text">
+          Max Štětina, Aleš Křenek, Guglielmo Tedeschi, Filip Krása, Vojtěch
+          Spiwok, Eva Benešová, The Asparaginase Database: a comprehensive
+          resource and&nbsp;classification of
+          <span class="small-caps">l</span>&#8209;asparaginases,
+          <em>Database</em>, Volume 2026, 2026, baag045,
+          <a
+            href="https://doi.org/10.1093/database/baag045"
+            target="_blank"
+            rel="noopener"
+            >https://doi.org/10.1093/database/baag045</a
+          >.
+        </p>
+      </div>
+      </div>
+
+      <h3 class="refs-subhead">Search references</h3>
+
+      <div class="refs-controls">
+        <input
+          type="search"
+          id="refSearch"
+          class="refs-search"
+          placeholder="Filter by author, title, journal, year, accession or PDB ID..."
+          aria-label="Filter references"
+        />
+        <span class="refs-count" id="refCount"></span>
+      </div>
+
+      <div class="refs-sources" id="refsSources"></div>
+
+      <section class="refs-group" id="refsCited">
+        <h3 class="refs-subhead refs-sub-group">Cited by the entry tables</h3>
+        <p class="refs-intro">
+          Every publication behind a value in the database, in one list. K<sub>m</sub>, V<sub>max</sub>
+          and k<sub>cat</sub> cite the DOI recorded with the value; Structure and PDB cite the primary
+          publication of the PDB entry, looked up at RCSB. Citation text is generated with Crossref.
+        </p>
+        <ol class="refs-list" id="refsList"></ol>
+      </section>
+
+      <p class="refs-empty" id="refsEmpty" hidden>No reference matches that filter.</p>
+    </div>
+
+    <script src="/scripts/general-data.js"></script>
+    <script src="/scripts/references-data.js"></script>
+    <script>
+      (function () {
+        "use strict";
+
+        var PDB_MAP = typeof PDB_DOI !== "undefined" ? PDB_DOI : {};
+
+        function bare(doi) {
+          return String(doi || "").replace(/^https?:\/\/(dx\.)?doi\.org\//, "").trim();
+        }
+
+        /* which entries cite each paper, so a reader can get back to the data */
+        var citedBy = {};
+        function note(doi, label) {
+          if (!doi || !REFERENCE_DATA[doi]) return;
+          if (!citedBy[doi]) citedBy[doi] = { entries: [], pdbs: [] };
+          var list = citedBy[doi].entries;
+          if (label && list.indexOf(label) === -1) list.push(label);
+        }
+
+        PROTEIN_DATA.forEach(function (entry) {
+          var label = entry.AN || entry.Organism;
+          ["Km_DOIs", "Vmax_DOIs", "Kcat_DOIs", "Structure_DOIs"].forEach(function (column) {
+            String(entry[column] || "").split(";").forEach(function (value) {
+              note(bare(value), label);
+            });
+          });
+          String(entry.PDB_IDs || "").split(";").forEach(function (raw) {
+            var id = raw.trim().toUpperCase();
+            if (!/^[0-9][A-Z0-9]{3}$/.test(id)) return;
+            var doi = bare(PDB_MAP[id]);
+            note(doi, label);
+            if (doi && citedBy[doi] && citedBy[doi].pdbs.indexOf(id) === -1) {
+              citedBy[doi].pdbs.push(id);
+            }
+          });
+        });
+
+        var fromPdb = {};
+        Object.keys(PDB_MAP).forEach(function (id) { fromPdb[bare(PDB_MAP[id])] = true; });
+
+        /* alphabetical by first author, then year */
+        var siteDois = {};
+        if (typeof SITE_REFERENCES !== "undefined") {
+          SITE_REFERENCES.forEach(function (r) { siteDois[r.doi] = true; });
+        }
+        var dois = Object.keys(REFERENCE_DATA).filter(function (doi) {
+          return !siteDois[doi];
+        }).sort(function (a, b) {
+          var A = REFERENCE_DATA[a], B = REFERENCE_DATA[b];
+          var byAuthor = (A.authors[0] || "").localeCompare(B.authors[0] || "");
+          return byAuthor !== 0 ? byAuthor : (A.year || 0) - (B.year || 0);
+        });
+
+        /* Crossref renders the italic l of "l-asparaginase" as a separate run, so
+           the plain text arrives as "l -asparaginase". Repair it, keep the name
+           from breaking across lines, and set the initial as a small capital. */
+        var ASN = /\bl\s*-\s*(asparagin[a-z]*)/gi;
+        function asnHtml(text) {
+          return String(text || "").replace(
+            ASN,
+            "<span class='asn'><span class='asn-l'>l</span>-$1</span>"
+          );
+        }
+
+        function parts(doi) {
+          var m = REFERENCE_DATA[doi];
+          return {
+            who: m.authors.slice(0, 5).join(", ") + (m.authors.length > 5 ? " et al." : ""),
+            year: m.year,
+            title: m.title,
+            journal: m.journal,
+            volume: m.volume || "",
+            page: m.page || ""
+          };
+        }
+
+        function citation(doi) {
+          var p = parts(doi);
+          return (
+            p.who + " (" + p.year + "). <span class='ct-title'>" + asnHtml(p.title) +
+            ".</span> <em>" + asnHtml(p.journal) + "</em>" +
+            (p.volume ? " <strong>" + p.volume + "</strong>" : "") +
+            (p.page ? ", " + p.page : "") + "."
+          );
+        }
+
+        /* the database's own paper, the prior work behind the classification,
+           and the data sources - all from data/site-references.tsv */
+        var SITE = typeof SITE_REFERENCES !== "undefined" ? SITE_REFERENCES : [];
+
+        function sourceItem(row, filterable) {
+          if (!REFERENCE_DATA[row.doi]) return "";
+          return (
+            "<li class='ref-item" + (filterable ? " filterable" : "") + "'>" +
+            (row.label ? "<span class='ref-label'>" + row.label + "</span>" : "") +
+            "<span class='ct'>" + citation(row.doi) + "</span> " +
+            "<a class='ct-doi' href='https://doi.org/" + row.doi + "' target='_blank' " +
+            "rel='noopener'>doi:" + row.doi + "</a>" +
+            (row.note ? "<span class='ref-meta'>" + row.note + "</span>" : "") +
+            "</li>"
+          );
+        }
+
+        /* the pinned box is static markup taken from index.html, and its
+           button puts the same text on the clipboard the home page does */
+        var CITATION = "Max \u0160t\u011btina, Ale\u0161 K\u0159enek, Guglielmo Tedeschi, " +
+          "Filip Kr\u00e1sa, Vojt\u011bch Spiwok, Eva Bene\u0161ov\u00e1, " +
+          "The Asparaginase Database: a comprehensive resource and classification " +
+          "of l-asparaginases, Database, Volume 2026, 2026, baag045, " +
+          "https://doi.org/10.1093/database/baag045";
+
+        var copyBtn = document.getElementById("copyCitationBtn");
+        if (copyBtn) {
+          var original = copyBtn.innerHTML;
+          var reset = null;
+          copyBtn.addEventListener("click", function () {
+            var finish = function (ok) {
+              copyBtn.innerHTML = ok ? "&#10003; Copied" : "Copy failed";
+              copyBtn.classList.toggle("copied", ok);
+              clearTimeout(reset);
+              reset = setTimeout(function () {
+                copyBtn.innerHTML = original;
+                copyBtn.classList.remove("copied");
+              }, 2000);
+            };
+            if (navigator.clipboard && window.isSecureContext) {
+              navigator.clipboard.writeText(CITATION).then(function () { finish(true); },
+                                                           function () { finish(fallback(CITATION)); });
+            } else {
+              finish(fallback(CITATION));
+            }
+          });
+
+          /* http and older browsers have no async clipboard */
+          function fallback(text) {
+            var field = document.createElement("textarea");
+            field.value = text;
+            field.setAttribute("readonly", "");
+            field.style.position = "fixed";
+            field.style.opacity = "0";
+            document.body.appendChild(field);
+            field.select();
+            var ok = false;
+            try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+            document.body.removeChild(field);
+            return ok;
+          }
+        }
+
+        var GROUPS = [
+          ["prior", "Prior work this classification builds on"],
+          ["source", "Data sources"]
+        ];
+        var sourceBox = document.getElementById("refsSources");
+        if (sourceBox) {
+          sourceBox.innerHTML = GROUPS.map(function (group) {
+            var rows = SITE.filter(function (r) { return r.group === group[0]; });
+            if (!rows.length) return "";
+            return (
+              "<section class='refs-group'>" +
+              "<h3 class='refs-subhead refs-sub-group'>" + group[1] + "</h3>" +
+              "<ul class='refs-source-list'>" +
+              rows.map(function (r) { return sourceItem(r, true); }).join("") +
+              "</ul></section>"
+            );
+          }).join("");
+        }
+
+        var list = document.getElementById("refsList");
+        var html = dois.map(function (doi) {
+          var cites = citedBy[doi] || { entries: [], pdbs: [] };
+          var meta = [];
+          if (cites.pdbs.length) {
+            meta.push("PDB " + cites.pdbs.join(", "));
+          }
+          if (cites.entries.length) {
+            meta.push(
+              cites.entries.length + (cites.entries.length === 1 ? " entry: " : " entries: ") +
+              cites.entries.slice(0, 8).join(", ") +
+              (cites.entries.length > 8 ? ", and " + (cites.entries.length - 8) + " more" : "")
+            );
+          }
+          return (
+            "<li class='ref-item filterable'>" +
+            "<span class='ct'>" + citation(doi) + "</span> " +
+            "<a class='ct-doi' href='https://doi.org/" + doi + "' target='_blank' rel='noopener'>doi:" +
+            doi + "</a>" +
+            (fromPdb[doi] ? " <span class='src-tag pdb'>from PDB</span>"
+                          : " <span class='src-tag tsv'>from DOI</span>") +
+            (meta.length ? "<span class='ref-meta'>" + meta.join(" &middot; ") + "</span>" : "") +
+            "</li>"
+          );
+        }).join("");
+        list.innerHTML = html;
+
+        /* the filter reaches every section below it - the prior work and the
+           data sources as well as the numbered list - and a section whose items
+           have all gone hides its own heading */
+        var items = Array.prototype.slice.call(document.querySelectorAll(".ref-item.filterable"));
+        var groups = Array.prototype.slice.call(document.querySelectorAll(".refs-group"));
+        var counter = document.getElementById("refCount");
+        var empty = document.getElementById("refsEmpty");
+
+        function report(shown) {
+          counter.textContent = shown === items.length
+            ? items.length + " references"
+            : shown + " of " + items.length + " references";
+          empty.hidden = shown !== 0;
+          groups.forEach(function (group) {
+            var live = group.querySelectorAll(".ref-item.filterable:not([hidden])").length;
+            group.hidden = !live;
+          });
+        }
+        report(items.length);
+
+        document.getElementById("refSearch").addEventListener("input", function () {
+          var query = this.value.trim().toLowerCase();
+          var shown = 0;
+          items.forEach(function (item) {
+            var match = !query || item.textContent.toLowerCase().indexOf(query) > -1;
+            item.hidden = !match;
+            if (match) shown++;
+          });
+          report(shown);
+        });
+      })();
+    </script>
+
+<footer id="contact" class="bottom-banner">
+      <div class="footer-license">
+        <a href="/">The Asparaginase Database</a>
+        <span>© 2025 is licensed under</span>
+        <a
+          href="https://creativecommons.org/licenses/by/4.0/"
+          target="_blank"
+          rel="license noopener"
+        >
+          CC BY 4.0
+        </a>
+        <span class="footer-license-icons" aria-hidden="true">
+          <img src="/images/cc.svg" alt="" class="footer-license-icon" />
+          <img src="/images/by.svg" alt="" class="footer-license-icon" />
+        </span>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <span>Release 2026-08</span>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="/#publication">How To Cite</a>
+      </div>
+      <span class="footer-group-separator footer-separator" aria-hidden="true">|</span>
+      <div class="footer-contact">
+        <a href="mailto:info@asparaginasedb.com">info@asparaginasedb.com</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="https://tally.so/r/WO67bk" target="_blank" rel="noopener"
+          >Submit an Entry</a
+        >
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="/references.html" aria-current="page">References</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="/privacy.html">Privacy</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <span>Supported by:</span>
+        <a
+          href="https://www.elixir-czech.cz/"
+          target="_blank"
+          rel="noopener"
+          class="footer-logo-link"
+        >
+          <img
+            src="/images/elixir_logo.png"
+            alt="ELIXIR Czech Republic"
+            class="elixir-image"
+          />
+        </a>
+      </div>
+    </footer>
+
+    <script
+      async
+      src="https://scripts.simpleanalyticscdn.com/latest.js"
+    ></script>
+  </body>
+</html>

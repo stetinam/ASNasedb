@@ -59,7 +59,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -118,7 +119,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -177,7 +179,8 @@ const PROTEIN_DATA = [
     "Kcat": "312.45",
     "Kcat_DOIs": "https://doi.org/10.1016/j.bej.2023.108806",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -236,7 +239,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -295,7 +299,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -354,7 +359,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -413,7 +419,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -472,7 +479,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -531,7 +539,8 @@ const PROTEIN_DATA = [
     "Kcat": "74.6",
     "Kcat_DOIs": "https://doi.org/10.1016/j.ijbiomac.2022.06.110",
     "Kcat_Note": "Sequence may not be exact match",
-    "Kcat_Indicator": "i"
+    "Kcat_Indicator": "i",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -590,7 +599,8 @@ const PROTEIN_DATA = [
     "Kcat": "13.94",
     "Kcat_DOIs": "https://doi.org/10.1016/j.bej.2023.108806",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -649,7 +659,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -708,7 +719,8 @@ const PROTEIN_DATA = [
     "Kcat": "565",
     "Kcat_DOIs": "https://doi.org/10.1007/s12033-014-9766-9",
     "Kcat_Note": "Sequence may not be exact match. K_cat may not correspond to K_m.",
-    "Kcat_Indicator": "i"
+    "Kcat_Indicator": "i",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -767,7 +779,8 @@ const PROTEIN_DATA = [
     "Kcat": "24",
     "Kcat_DOIs": "https://doi.org/10.1110/ps.9.10.2009",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -826,7 +839,8 @@ const PROTEIN_DATA = [
     "Kcat": "16.55",
     "Kcat_DOIs": "https://doi.org/10.1016/j.bej.2023.108806",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -885,7 +899,8 @@ const PROTEIN_DATA = [
     "Kcat": "19.26",
     "Kcat_DOIs": "https://doi.org/10.1371/journal.pone.0117025",
     "Kcat_Note": "Sequence may not be exact match",
-    "Kcat_Indicator": "i"
+    "Kcat_Indicator": "i",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -944,7 +959,8 @@ const PROTEIN_DATA = [
     "Kcat": "82",
     "Kcat_DOIs": "https://doi.org/10.1007/s11756-024-01624-6",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -1003,7 +1019,8 @@ const PROTEIN_DATA = [
     "Kcat": "69.12",
     "Kcat_DOIs": "https://doi.org/10.1016/j.bej.2023.108806",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -1062,7 +1079,8 @@ const PROTEIN_DATA = [
     "Kcat": "1600",
     "Kcat_DOIs": "https://doi.org/10.1042/BA20030138",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -1121,7 +1139,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -1180,7 +1199,8 @@ const PROTEIN_DATA = [
     "Kcat": "18.06",
     "Kcat_DOIs": "https://doi.org/10.1007/s13205-022-03224-0",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -1239,7 +1259,8 @@ const PROTEIN_DATA = [
     "Kcat": "8.87",
     "Kcat_DOIs": "https://doi.org/10.1016/j.bej.2023.108806",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -1298,7 +1319,8 @@ const PROTEIN_DATA = [
     "Kcat": "39.6",
     "Kcat_DOIs": "https://doi.org/10.1016/j.ijbiomac.2024.135458",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -1357,7 +1379,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -1416,7 +1439,8 @@ const PROTEIN_DATA = [
     "Kcat": "15.5",
     "Kcat_DOIs": "https://doi.org/10.1007/s10529-017-2470-7",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -1475,7 +1499,8 @@ const PROTEIN_DATA = [
     "Kcat": "10.14",
     "Kcat_DOIs": "https://doi.org/10.1016/j.bej.2023.108806",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -1534,7 +1559,8 @@ const PROTEIN_DATA = [
     "Kcat": "20.16",
     "Kcat_DOIs": "https://doi.org/10.1016/j.bej.2023.108806",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -1593,7 +1619,8 @@ const PROTEIN_DATA = [
     "Kcat": "97.8",
     "Kcat_DOIs": "https://doi.org/10.1038/srep41643",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -1652,7 +1679,8 @@ const PROTEIN_DATA = [
     "Kcat": "6.43",
     "Kcat_DOIs": "https://doi.org/10.1016/j.bej.2023.108806",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -1711,7 +1739,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -1770,7 +1799,8 @@ const PROTEIN_DATA = [
     "Kcat": "63.6",
     "Kcat_DOIs": "https://doi.org/10.1016/j.jbiosc.2018.09.007",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -1829,7 +1859,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -1888,7 +1919,8 @@ const PROTEIN_DATA = [
     "Kcat": "23.96",
     "Kcat_DOIs": "https://doi.org/10.15171/bi.2019.03",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -1947,7 +1979,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -2006,7 +2039,8 @@ const PROTEIN_DATA = [
     "Kcat": "1595",
     "Kcat_DOIs": "https://doi.org/10.1016/j.ijbiomac.2024.130438",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -2065,7 +2099,8 @@ const PROTEIN_DATA = [
     "Kcat": "0.51",
     "Kcat_DOIs": "https://doi.org/10.26502/jbb.2642-91280015",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -2124,7 +2159,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -2183,7 +2219,8 @@ const PROTEIN_DATA = [
     "Kcat": "2.33",
     "Kcat_DOIs": "https://doi.org/10.26502/jbb.2642-91280015",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -2242,7 +2279,8 @@ const PROTEIN_DATA = [
     "Kcat": "4.09",
     "Kcat_DOIs": "https://doi.org/10.26502/jbb.2642-91280015",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -2301,7 +2339,8 @@ const PROTEIN_DATA = [
     "Kcat": "96",
     "Kcat_DOIs": "https://doi.org/10.3390/catal13050832",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -2360,7 +2399,8 @@ const PROTEIN_DATA = [
     "Kcat": "4.65",
     "Kcat_DOIs": "https://doi.org/10.4014/jmb.1405.05021",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -2419,7 +2459,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -2478,7 +2519,8 @@ const PROTEIN_DATA = [
     "Kcat": "101",
     "Kcat_DOIs": "https://doi.org/10.26502/jbb.2642-91280015",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -2537,7 +2579,8 @@ const PROTEIN_DATA = [
     "Kcat": "194.8",
     "Kcat_DOIs": "https://doi.org/10.3390/foods10112819",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -2596,7 +2639,8 @@ const PROTEIN_DATA = [
     "Kcat": "708.1",
     "Kcat_DOIs": "https://doi.org/10.1021/acsomega.4c06459",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -2655,7 +2699,8 @@ const PROTEIN_DATA = [
     "Kcat": "80.7 869.4 1732.5",
     "Kcat_DOIs": "https://doi.org/10.1016/j.biochi.2020.12.023",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -2714,7 +2759,8 @@ const PROTEIN_DATA = [
     "Kcat": "57.1;58.2",
     "Kcat_DOIs": "https://doi.org/10.1002/pro.4920;https://doi.org/10.1002/pro.4920",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -2773,7 +2819,8 @@ const PROTEIN_DATA = [
     "Kcat": "36.8",
     "Kcat_DOIs": "https://doi.org/10.1007/s12010-014-1200-z",
     "Kcat_Note": "As presented, the protein lacks the critical conserved Motif 1",
-    "Kcat_Indicator": "!"
+    "Kcat_Indicator": "!",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -2832,7 +2879,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -2891,7 +2939,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -2950,7 +2999,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -3009,7 +3059,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -3068,7 +3119,8 @@ const PROTEIN_DATA = [
     "Kcat": "887",
     "Kcat_DOIs": "https://doi.org/10.1007/s12010-023-04715-3",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -3127,7 +3179,8 @@ const PROTEIN_DATA = [
     "Kcat": "870",
     "Kcat_DOIs": "https://doi.org/10.1134/s0006297910030144",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -3186,7 +3239,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -3245,7 +3299,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -3304,7 +3359,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -3363,7 +3419,8 @@ const PROTEIN_DATA = [
     "Kcat": "694",
     "Kcat_DOIs": "https://doi.org/10.1002/jobm.201300741",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -3422,7 +3479,8 @@ const PROTEIN_DATA = [
     "Kcat": "400",
     "Kcat_DOIs": "https://doi.org/10.3390/catal13050832",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -3481,7 +3539,8 @@ const PROTEIN_DATA = [
     "Kcat": "3267",
     "Kcat_DOIs": "https://doi.org/10.1007/s00792-015-0763-0",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -3540,7 +3599,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -3599,7 +3659,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -3658,7 +3719,8 @@ const PROTEIN_DATA = [
     "Kcat": "38.6",
     "Kcat_DOIs": "https://doi.org/10.1074/jbc.M114.609552",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -3707,7 +3769,7 @@ const PROTEIN_DATA = [
     "PDB_Note": "",
     "PDB_Indicator": "",
     "Km": "11.5",
-    "Km_DOIs": "https://www.jbc.org/article/S0021-9258(20)38784-6/fulltext",
+    "Km_DOIs": "https://doi.org/10.1074/jbc.M113.545038",
     "Km_Note": "S_0.5, allosteric enzyme",
     "Km_Indicator": "i",
     "Vmax": "",
@@ -3715,9 +3777,10 @@ const PROTEIN_DATA = [
     "Vmax_Note": "",
     "Vmax_Indicator": "",
     "Kcat": "6.7",
-    "Kcat_DOIs": "https://www.jbc.org/article/S0021-9258(20)38784-6/fulltext",
+    "Kcat_DOIs": "https://doi.org/10.1074/jbc.M113.545038",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -3776,7 +3839,8 @@ const PROTEIN_DATA = [
     "Kcat": "676",
     "Kcat_DOIs": "https://doi.org/10.1128/aem.03523-13",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -3835,7 +3899,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -3894,7 +3959,8 @@ const PROTEIN_DATA = [
     "Kcat": "1960",
     "Kcat_DOIs": "https://doi.org/10.1007/s00253-017-8456-5",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -3953,7 +4019,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -4012,7 +4079,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -4071,7 +4139,8 @@ const PROTEIN_DATA = [
     "Kcat": "16.17",
     "Kcat_DOIs": "https://doi.org/10.1016/j.bej.2023.108806",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -4130,7 +4199,8 @@ const PROTEIN_DATA = [
     "Kcat": "4424",
     "Kcat_DOIs": "https://doi.org/10.1016/j.ijbiomac.2017.12.165",
     "Kcat_Note": "Sequence may not be exact match",
-    "Kcat_Indicator": "i"
+    "Kcat_Indicator": "i",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -4189,7 +4259,8 @@ const PROTEIN_DATA = [
     "Kcat": "2.88",
     "Kcat_DOIs": "https://doi.org/10.1016/j.biochi.2025.03.003",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -4248,7 +4319,8 @@ const PROTEIN_DATA = [
     "Kcat": "42.0",
     "Kcat_DOIs": "https://doi.org/10.1111/febs.16635",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -4307,7 +4379,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -4366,7 +4439,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -4425,7 +4499,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -4484,7 +4559,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -4543,7 +4619,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -4602,7 +4679,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -4661,7 +4739,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -4720,7 +4799,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -4779,7 +4859,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -4838,7 +4919,8 @@ const PROTEIN_DATA = [
     "Kcat": "0.0087",
     "Kcat_DOIs": "https://doi.org/10.1007/s10482-015-0614-0",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -4897,7 +4979,8 @@ const PROTEIN_DATA = [
     "Kcat": "0.056",
     "Kcat_DOIs": "https://doi.org/10.1021/acsomega.2c01127",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -4956,7 +5039,8 @@ const PROTEIN_DATA = [
     "Kcat": "374.0",
     "Kcat_DOIs": "https://doi.org/10.1007/s12223-018-0656-6",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -5015,7 +5099,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -5074,7 +5159,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -5133,7 +5219,8 @@ const PROTEIN_DATA = [
     "Kcat": "3.95",
     "Kcat_DOIs": "https://doi.org/10.1021/bi401692v",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -5182,7 +5269,7 @@ const PROTEIN_DATA = [
     "PDB_Note": "",
     "PDB_Indicator": "",
     "Km": "3.4",
-    "Km_DOIs": "https://doi.org/10.1002/mrd.10092",
+    "Km_DOIs": "https://doi.org/10.1021/bi901397h",
     "Km_Note": "",
     "Km_Indicator": "",
     "Vmax": "",
@@ -5190,9 +5277,10 @@ const PROTEIN_DATA = [
     "Vmax_Note": "",
     "Vmax_Indicator": "",
     "Kcat": "6.9",
-    "Kcat_DOIs": "https://doi.org/10.1002/mrd.10092",
+    "Kcat_DOIs": "https://doi.org/10.1021/bi901397h",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -5251,7 +5339,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -5310,7 +5399,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -5369,7 +5459,8 @@ const PROTEIN_DATA = [
     "Kcat": "0.28",
     "Kcat_DOIs": "https://doi.org/10.1111/j.1432-1033.2004.04254.x",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -5428,7 +5519,8 @@ const PROTEIN_DATA = [
     "Kcat": "0.32",
     "Kcat_DOIs": "https://doi.org/10.1111/j.1432-1033.2004.04254.x",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -5487,7 +5579,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -5546,7 +5639,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -5605,7 +5699,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -5664,7 +5759,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -5692,9 +5788,9 @@ const PROTEIN_DATA = [
     "EC_Note_Link": "",
     "EC_Indicator": "",
     "Organism": "Synechocystis sp.",
-    "Organism_Note": "",
+    "Organism_Note": "Possible organism attribution discrepancy.",
     "Organism_Note_Link": "",
-    "Organism_Indicator": "",
+    "Organism_Indicator": "!",
     "Cell_Loc": "-",
     "Cell_Loc_Note": "",
     "Cell_Loc_Note_Link": "",
@@ -5723,7 +5819,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -5782,7 +5879,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -5841,7 +5939,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -5900,7 +5999,8 @@ const PROTEIN_DATA = [
     "Kcat": "438",
     "Kcat_DOIs": "https://doi.org/10.1038/s41467-021-27105-x",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "ESP",
@@ -5959,7 +6059,8 @@ const PROTEIN_DATA = [
     "Kcat": "411",
     "Kcat_DOIs": "https://doi.org/10.1107/S2059798323005648",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -6018,7 +6119,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -6077,7 +6179,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -6136,7 +6239,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -6195,7 +6299,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -6254,7 +6359,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -6313,7 +6419,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -6372,7 +6479,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -6431,7 +6539,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -6490,7 +6599,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -6549,7 +6659,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -6608,7 +6719,8 @@ const PROTEIN_DATA = [
     "Kcat": "24",
     "Kcat_DOIs": "https://doi.org/10.1110/ps.9.10.2009",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -6667,7 +6779,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -6726,7 +6839,8 @@ const PROTEIN_DATA = [
     "Kcat": "565",
     "Kcat_DOIs": "https://doi.org/10.1007/s12033-014-9766-9",
     "Kcat_Note": "Sequence may not be exact match. K_cat may not correspond to K_m.",
-    "Kcat_Indicator": "i"
+    "Kcat_Indicator": "i",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -6785,7 +6899,8 @@ const PROTEIN_DATA = [
     "Kcat": "19.26",
     "Kcat_DOIs": "https://doi.org/10.1371/journal.pone.0117025",
     "Kcat_Note": "Sequence may not be exact match",
-    "Kcat_Indicator": "i"
+    "Kcat_Indicator": "i",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -6844,7 +6959,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -6903,7 +7019,8 @@ const PROTEIN_DATA = [
     "Kcat": "97.8",
     "Kcat_DOIs": "https://doi.org/10.1038/srep41643",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -6962,7 +7079,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -7021,7 +7139,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -7080,7 +7199,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -7139,7 +7259,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -7198,7 +7319,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -7257,7 +7379,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -7316,7 +7439,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -7375,7 +7499,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -7434,7 +7559,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -7493,7 +7619,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -7552,7 +7679,8 @@ const PROTEIN_DATA = [
     "Kcat": "80.7 869.4 1732.5",
     "Kcat_DOIs": "https://doi.org/10.1016/j.biochi.2020.12.023",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -7611,7 +7739,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -7670,7 +7799,8 @@ const PROTEIN_DATA = [
     "Kcat": "870",
     "Kcat_DOIs": "https://doi.org/10.1134/s0006297910030144",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -7729,7 +7859,8 @@ const PROTEIN_DATA = [
     "Kcat": "694",
     "Kcat_DOIs": "https://doi.org/10.1002/jobm.201300741",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -7788,7 +7919,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -7847,7 +7979,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -7906,7 +8039,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -7965,7 +8099,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -8024,7 +8159,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -8083,7 +8219,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -8142,7 +8279,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -8201,7 +8339,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -8260,7 +8399,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -8319,7 +8459,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -8378,7 +8519,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -8437,7 +8579,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -8496,7 +8639,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -8555,7 +8699,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -8614,7 +8759,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -8673,7 +8819,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -8732,7 +8879,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -8791,7 +8939,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -8850,7 +8999,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -8909,7 +9059,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -8968,7 +9119,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -9027,7 +9179,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -9086,7 +9239,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -9145,7 +9299,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -9204,7 +9359,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -9263,7 +9419,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -9322,7 +9479,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -9381,7 +9539,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -9440,7 +9599,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -9499,7 +9659,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -9558,7 +9719,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -9617,7 +9779,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -9676,7 +9839,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -9735,7 +9899,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -9794,7 +9959,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -9853,7 +10019,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -9912,7 +10079,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -9971,7 +10139,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -10030,7 +10199,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -10079,7 +10249,7 @@ const PROTEIN_DATA = [
     "PDB_Note": "",
     "PDB_Indicator": "",
     "Km": "11.5",
-    "Km_DOIs": "https://www.jbc.org/article/S0021-9258(20)38784-6/fulltext",
+    "Km_DOIs": "https://doi.org/10.1074/jbc.M113.545038",
     "Km_Note": "S_0.5, allosteric enzyme",
     "Km_Indicator": "i",
     "Vmax": "",
@@ -10087,9 +10257,10 @@ const PROTEIN_DATA = [
     "Vmax_Note": "",
     "Vmax_Indicator": "",
     "Kcat": "6.7",
-    "Kcat_DOIs": "https://www.jbc.org/article/S0021-9258(20)38784-6/fulltext",
+    "Kcat_DOIs": "https://doi.org/10.1074/jbc.M113.545038",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -10148,7 +10319,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -10207,7 +10379,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -10266,7 +10439,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -10325,7 +10499,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -10384,7 +10559,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -10443,7 +10619,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -10502,7 +10679,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -10561,7 +10739,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -10620,7 +10799,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -10679,7 +10859,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -10738,7 +10919,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -10797,7 +10979,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -10856,7 +11039,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -10915,7 +11099,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -10974,7 +11159,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -11033,7 +11219,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -11092,7 +11279,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -11151,7 +11339,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -11210,7 +11399,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -11269,7 +11459,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -11328,7 +11519,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -11387,7 +11579,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -11446,7 +11639,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -11505,7 +11699,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -11564,7 +11759,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -11623,7 +11819,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -11682,7 +11879,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -11741,7 +11939,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -11800,7 +11999,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -11859,7 +12059,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -11918,7 +12119,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -11977,7 +12179,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -12036,7 +12239,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -12095,7 +12299,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -12154,7 +12359,8 @@ const PROTEIN_DATA = [
     "Kcat": "374.0",
     "Kcat_DOIs": "https://doi.org/10.1007/s12223-018-0656-6",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -12213,7 +12419,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -12272,7 +12479,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -12331,7 +12539,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -12390,7 +12599,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -12449,7 +12659,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -12508,7 +12719,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -12567,7 +12779,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -12626,7 +12839,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -12675,7 +12889,7 @@ const PROTEIN_DATA = [
     "PDB_Note": "",
     "PDB_Indicator": "",
     "Km": "3.4",
-    "Km_DOIs": "https://doi.org/10.1002/mrd.10092",
+    "Km_DOIs": "https://doi.org/10.1021/bi901397h",
     "Km_Note": "",
     "Km_Indicator": "",
     "Vmax": "",
@@ -12683,9 +12897,10 @@ const PROTEIN_DATA = [
     "Vmax_Note": "",
     "Vmax_Indicator": "",
     "Kcat": "6.9",
-    "Kcat_DOIs": "https://doi.org/10.1002/mrd.10092",
+    "Kcat_DOIs": "https://doi.org/10.1021/bi901397h",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -12744,7 +12959,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -12803,7 +13019,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -12862,7 +13079,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -12921,7 +13139,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -12980,7 +13199,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -13039,7 +13259,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -13098,7 +13319,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -13157,7 +13379,8 @@ const PROTEIN_DATA = [
     "Kcat": "0.28",
     "Kcat_DOIs": "https://doi.org/10.1111/j.1432-1033.2004.04254.x",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -13216,7 +13439,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -13275,7 +13499,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -13334,7 +13559,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -13393,7 +13619,8 @@ const PROTEIN_DATA = [
     "Kcat": "0.32",
     "Kcat_DOIs": "https://doi.org/10.1111/j.1432-1033.2004.04254.x",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   },
   {
     "Table_Type": "Swiss-Prot",
@@ -13452,7 +13679,8 @@ const PROTEIN_DATA = [
     "Kcat": "",
     "Kcat_DOIs": "",
     "Kcat_Note": "",
-    "Kcat_Indicator": ""
+    "Kcat_Indicator": "",
+    "Structure_DOIs": ""
   }
 ];
 

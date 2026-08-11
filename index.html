@@ -10,14 +10,18 @@
     <link rel="canonical" href="https://asparaginasedb.com/" />
     <meta property="og:description" content="The Asparaginase Database (ASNasedb) organizes l-asparaginase sequences, structures and biochemical annotations into phylogenetic classes and families, replacing the ambiguous bacterial-type, plant-type and R. etli-type nomenclature." />
     <!-- SEO_END -->
-    <link rel="icon" type="image/png" href="/images/logo5.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png" />
 
     <!-- Preview image for search engines and social cards.
          Must be a flattened image (no alpha): consumers composite transparent
          pixels onto black, which turned the white logo into white-on-black. -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="The Asparaginase Database" />
-    <meta property="og:title" content="The Asparaginase Database (ASNasedb) | Asparaginase Classification" />
+    <meta
+      property="og:title"
+      content="The Asparaginase Database (ASNasedb) | Asparaginase Classification"
+    />
     <meta property="og:url" content="https://asparaginasedb.com/" />
     <meta
       property="og:image"
@@ -875,7 +879,10 @@
         margin: auto; /* Center the table */
         overflow-x: auto; /* Horizontal scrollbar if needed */
         max-height: 550px; /* Fallback: browsers without CSS min() */
-        max-height: min(70vh, 550px); /* Shrink on short viewports; never exceed 550px on big screens */
+        max-height: min(
+          70vh,
+          550px
+        ); /* Shrink on short viewports; never exceed 550px on big screens */
         overflow-y: auto; /* Vertical scrollbar */
         position: relative;
         will-change: transform;
@@ -1134,6 +1141,115 @@
         }
       }
 
+      /* --- Submission invitation, sits between About and Publication --- */
+      .submit-band {
+        max-width: 1300px;
+        margin: 20px auto;
+        padding: 0 20px;
+      }
+
+      .submit-band-inner {
+        background-color: #17b470;
+        color: #ffffff;
+        border-radius: 10px;
+        padding: 26px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .submit-band h2 {
+        color: #ffffff;
+        font-size: 24px;
+        text-align: left;
+        margin: 0 0 6px 0;
+      }
+
+      .submit-band p {
+        font-size: 17px;
+        line-height: 1.5;
+        text-align: left;
+        margin: 0;
+      }
+
+      /* White-on-green counterpart of the header's BLAST button: the border is
+         always present so the hover swap does not shift the layout. */
+      .submit-band-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+        background-color: #ffffff;
+        color: #17b470;
+        border: 2px solid #ffffff;
+        border-radius: 5px;
+        padding: 9px 20px;
+        font-size: 16px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-decoration: none;
+        white-space: nowrap;
+        transition:
+          background-color 0.25s ease,
+          color 0.25s ease;
+      }
+
+      .submit-band-btn:visited {
+        color: #17b470;
+      }
+
+      .submit-band-btn:hover,
+      .submit-band-btn:active,
+      .submit-band-btn:visited:hover {
+        background-color: transparent;
+        color: #ffffff;
+      }
+
+      .submit-band-btn:focus-visible {
+        outline: 2px solid #ffffff;
+        outline-offset: 3px;
+      }
+
+      .submit-band-btn .arrow {
+        display: block;
+        flex-shrink: 0;
+        transition: transform 0.25s ease;
+      }
+
+      .submit-band-btn:hover .arrow {
+        transform: translateX(3px);
+      }
+
+      @media (max-width: 768px) {
+        .submit-band-inner {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 22px;
+        }
+
+        .submit-band h2 {
+          font-size: 21px;
+        }
+
+        .submit-band p {
+          font-size: 16px;
+        }
+
+        .submit-band-btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .submit-band-btn,
+        .submit-band-btn .arrow {
+          transition: none;
+        }
+      }
+
       /* --- Prior work this classification builds on (collapsible) --- */
       .prior-work-details {
         margin: 24px 0 0 0;
@@ -1255,7 +1371,11 @@
         <a href="#classification">Classification</a>
         <a href="#asparaginases">What Are Asparaginases?</a>
         <a href="#about">About the Database</a>
-        <a href="#publication">How to cite</a>
+        <a href="#publication">How To Cite</a>
+        <hr />
+        <a href="https://tally.so/r/WO67bk" target="_blank" rel="noopener"
+          >Submit an Entry</a
+        >
         <hr />
         <a href="/disclaimer.html">Disclaimer</a>
       </div>
@@ -1675,7 +1795,7 @@
     </div>
 
     <h2 id="uniref" style="color: #17b470; font-size: 2em; text-align: center">
-      UniRef100 Sequences<sup style="font-size: 15px">1</sup>
+      UniRef100 Sequences<sup class="pref-mark" id="pref-a" role="link" data-ref-jump="A" title="Go to reference A">A</sup>
     </h2>
 
     <div class="download-section">
@@ -1753,8 +1873,8 @@
           </p>
           <ul>
             <li>
-              da Silva LS, Doonan LB, Pessoa A Jr, <em>et al.</em> Structural and
-              functional diversity of asparaginases: overview and
+              da Silva LS, Doonan LB, Pessoa A Jr, <em>et al.</em> Structural
+              and functional diversity of asparaginases: overview and
               recommendations for a revised nomenclature.
               <em>Biotechnol Appl Biochem</em>. 2022;69:503&#8211;13.
               <a
@@ -1800,8 +1920,11 @@
             </li>
           </ul>
           <p class="prior-work-cite-note">
-            To cite The Asparaginase Database itself, or to see how the classification here is different to previous ones; see the
-            <a href="#publication">Publication</a> section.
+            To cite The Asparaginase Database itself, or to see how the
+            classification here is different to previous ones; see the
+            <a href="#publication">Publication</a> section. Every paper cited
+            anywhere in the database is listed on the
+            <a href="/references.html">References</a> page.
           </p>
         </div>
       </details>
@@ -1811,6 +1934,8 @@
     <script src="/scripts/general-data.js"></script>
     <script src="/scripts/sequence-data.js"></script>
     <script src="/scripts/table-renderer.js"></script>
+    <script src="/scripts/references-data.js"></script>
+    <script src="/scripts/references.js"></script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -2008,18 +2133,51 @@
                   "Vmax",
                   "Kcat",
                 ];
-                let rows = [headers.join("\t")];
+                // a DOI column travels with each cited value; the markers carry them,
+                // so there is no second source to keep in step
+                const doiAfter = ["Structure", "PDB", "Km", "Vmax", "Kcat"];
+                const doisIn = (cell) => {
+                  const seen = [];
+                  cell.querySelectorAll(".cite").forEach((mark) => {
+                    const doi = "https://doi.org/" + mark.getAttribute("data-doi");
+                    if (seen.indexOf(doi) === -1) seen.push(doi);
+                  });
+                  return seen.join("; ");
+                };
+
+                // Column names come from the table itself so they always line up with the
+                // cells, whatever columns a page shows (blast adds Score and E-val).
+                const labelCells = tableContainer.querySelectorAll(
+                  "tbody[data-table-type] tr:first-child th:not(.checkbox-column)"
+                );
+                const columnNames = labelCells.length
+                  ? Array.from(labelCells).map((th) => {
+                      // only the tooltip bubbles come out: some labels sit inside a
+                      // nowrap <span> and stripping every span would leave them blank
+                      const clone = th.cloneNode(true);
+                      clone.querySelectorAll(".tooltip").forEach((tip) => tip.remove());
+                      const label = clone.textContent.replace(/\s+/g, "");
+                      return label === "Fam" ? "Family" : label;
+                    })
+                  : headers;
+
+                const outHeaders = [];
+                columnNames.forEach((name) => {
+                  outHeaders.push(name);
+                  if (doiAfter.indexOf(name) > -1) outHeaders.push(name + "_DOI");
+                });
+                let rows = [outHeaders.join("\t")];
 
                 tableContainer
                   .querySelectorAll(".entry-checkbox:checked")
                   .forEach((checkbox) => {
                     const row = checkbox.closest("tr");
-                    const cells = row.querySelectorAll(
-                      "td:not(.checkbox-column)",
-                    );
-                    const rowData = Array.from(cells).map((cell) =>
-                      cleanText(cell.innerHTML),
-                    );
+                    const cells = row.querySelectorAll("td:not(.checkbox-column)");
+                    const rowData = [];
+                    Array.from(cells).forEach((cell, i) => {
+                      rowData.push(cleanText(cell.innerHTML));
+                      if (doiAfter.indexOf(columnNames[i]) > -1) rowData.push(doisIn(cell));
+                    });
                     rows.push(rowData.join("\t"));
                   });
 
@@ -2173,8 +2331,45 @@
       <p>
         The current release covers a manually curated set of 101 experimentally
         studied proteins from the literature, a manually curated set of 127
-        sequences from Swiss-Prot and 126,085 automatically classified sequences.
+        sequences from Swiss-Prot and 126,085 automatically classified
+        sequences.
       </p>
+    </div>
+    <br />
+    <div class="submit-band" id="submit">
+      <div class="submit-band-inner">
+        <div class="submit-band-text">
+          <h2>Contribute an Asparaginase</h2>
+          <p>
+            Characterised or know about an
+            <span class="small-caps">l</span>&#8209;asparaginase that is missing
+            here? Send it to us and we will curate it into the next release.
+          </p>
+        </div>
+        <a
+          class="submit-band-btn"
+          href="https://tally.so/r/WO67bk"
+          target="_blank"
+          rel="noopener"
+        >
+          Submit an Entry
+          <svg
+            class="arrow"
+            width="15"
+            height="15"
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M2.5 8h10" />
+            <path d="M8.5 4l4 4-4 4" />
+          </svg>
+        </a>
+      </div>
     </div>
     <br />
     <div class="citation-section" id="publication">
@@ -2307,23 +2502,10 @@
     </script>
     <br />
     <div class="content">
-      <p style="font-size: 15px">
-        <a href="https://doi.org/10.1093/bioinformatics/btm098" target="_blank">
-          <sup style="font-size: 12px; font-weight: bold">1</sup>Suzek, B.E. et
-          al. UniRef: comprehensive and non-redundant UniProt reference
-          clusters. Bioinformatics (2007).
-        </a>
-        Licensed under
-        <a
-          href="https://creativecommons.org/licenses/by/4.0/"
-          target="_blank"
-          rel="license noopener"
-        >
-          CC BY 4.0</a
-        >. Added classification code to sequence headers.
-      </p>
-    </div>
-    <br />
+</div>
+    <!-- reference list, built by scripts/references.js -->
+    <div id="reflist" data-page-refs="uniref" data-accent="#17b470"></div>
+
     <footer id="contact" class="bottom-banner">
       <div class="footer-license">
         <a href="/">The Asparaginase Database</a>
@@ -2342,11 +2524,19 @@
         <span class="footer-separator" aria-hidden="true">|</span>
         <span>Release 2026-08</span>
         <span class="footer-separator" aria-hidden="true">|</span>
-        <a href="#publication">How to cite</a>
+        <a href="#publication">How To Cite</a>
       </div>
-      <span class="footer-group-separator footer-separator" aria-hidden="true">|</span>
+      <span class="footer-group-separator footer-separator" aria-hidden="true"
+        >|</span
+      >
       <div class="footer-contact">
         <a href="mailto:info@asparaginasedb.com">info@asparaginasedb.com</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="https://tally.so/r/WO67bk" target="_blank" rel="noopener"
+          >Submit an Entry</a
+        >
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="/references.html">References</a>
         <span class="footer-separator" aria-hidden="true">|</span>
         <a href="/privacy.html">Privacy</a>
         <span class="footer-separator" aria-hidden="true">|</span>

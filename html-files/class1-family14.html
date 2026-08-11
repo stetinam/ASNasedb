@@ -23,7 +23,8 @@
     <meta property="og:image:alt" content="The Asparaginase Database logo" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:image" content="https://asparaginasedb.com/images/logo-social.png" />
-    <link rel="icon" type="image/png" href="/images/logo5.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png" />
     <link rel="stylesheet" href="/fonts/fonts.css" />
     <style>
       body {
@@ -92,8 +93,20 @@
       }
 
       @media (max-width: 700px) {
+        /* Keep the home link on mobile: a small logo tucked into the top-left
+           corner, with extra header padding so it clears the centred title. */
+        header {
+          padding-top: 84px;
+        }
+
         .home-button {
-          display: none; /* Hide the home button on smaller screens */
+          left: 18px;
+          top: 16px;
+          transform: none; /* Anchor to the corner instead of centring */
+        }
+
+        .home-button img.home-icon {
+          height: 56px;
         }
       }
 
@@ -161,6 +174,20 @@
       }
       .show {
         display: block;
+      }
+
+      /* Must come after the base .menu-button / .dropdown-menu rules above,
+         otherwise those later declarations win on equal specificity. */
+      @media (max-width: 700px) {
+        /* Line the burger up with the top of the home logo, and bring the
+           dropdown up with it so it still hangs just below the button. */
+        .menu-button {
+          top: 16px;
+        }
+
+        .dropdown-menu {
+          top: 88px;
+        }
       }
 
       .tooltip {
@@ -667,7 +694,7 @@
         <a href="#alignment">Sequence Alignment</a>
         <a href="#info">Additional Information</a>
         <hr />
-        <a href="/#publication">How to cite</a>
+        <a href="/#publication">How To Cite</a>
       </div>
     </header>
 
@@ -755,7 +782,7 @@
           href="https://alphafold.ebi.ac.uk/entry/Q86U10"
           target="_blank"
         >
-          <h3 style="margin-bottom: 5px">Reference Monomer<sup style="font-size: 15px">1</sup></h3>
+          <h3 style="margin-bottom: 5px">Reference Monomer<sup class="pref-mark" id="pref-a" role="link" data-ref-jump="A" title="Go to reference A">A</sup></h3>
           <img
             src="/images/mono1-14.png"
             class="grid-item-image"
@@ -1284,7 +1311,7 @@
     </div>
 
     <h2 id="uniref" style="color: #615ab3; font-size: 2em; text-align: center">
-      UniRef100 Sequences<sup style="font-size: 15px">2</sup>
+      UniRef100 Sequences<sup class="pref-mark" id="pref-b" role="link" data-ref-jump="B" title="Go to reference B">B</sup>
     </h2>
 
      <div class="download-section">
@@ -1297,6 +1324,8 @@
     </div>    <!-- Dynamic table data and renderer -->
     <script src="/scripts/general-data.js"></script>
     <script src="/scripts/table-renderer.js"></script>
+    <script src="/scripts/references-data.js"></script>
+    <script src="/scripts/references.js"></script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -1465,18 +1494,51 @@
                   "Vmax",
                   "Kcat",
                 ];
-                let rows = [headers.join("\t")];
+                // a DOI column travels with each cited value; the markers carry them,
+                // so there is no second source to keep in step
+                const doiAfter = ["Structure", "PDB", "Km", "Vmax", "Kcat"];
+                const doisIn = (cell) => {
+                  const seen = [];
+                  cell.querySelectorAll(".cite").forEach((mark) => {
+                    const doi = "https://doi.org/" + mark.getAttribute("data-doi");
+                    if (seen.indexOf(doi) === -1) seen.push(doi);
+                  });
+                  return seen.join("; ");
+                };
+
+                // Column names come from the table itself so they always line up with the
+                // cells, whatever columns a page shows (blast adds Score and E-val).
+                const labelCells = tableContainer.querySelectorAll(
+                  "tbody[data-table-type] tr:first-child th:not(.checkbox-column)"
+                );
+                const columnNames = labelCells.length
+                  ? Array.from(labelCells).map((th) => {
+                      // only the tooltip bubbles come out: some labels sit inside a
+                      // nowrap <span> and stripping every span would leave them blank
+                      const clone = th.cloneNode(true);
+                      clone.querySelectorAll(".tooltip").forEach((tip) => tip.remove());
+                      const label = clone.textContent.replace(/\s+/g, "");
+                      return label === "Fam" ? "Family" : label;
+                    })
+                  : headers;
+
+                const outHeaders = [];
+                columnNames.forEach((name) => {
+                  outHeaders.push(name);
+                  if (doiAfter.indexOf(name) > -1) outHeaders.push(name + "_DOI");
+                });
+                let rows = [outHeaders.join("\t")];
 
                 tableContainer
                   .querySelectorAll(".entry-checkbox:checked")
                   .forEach((checkbox) => {
                     const row = checkbox.closest("tr");
-                    const cells = row.querySelectorAll(
-                      "td:not(.checkbox-column)"
-                    );
-                    const rowData = Array.from(cells).map((cell) =>
-                      cleanText(cell.innerHTML)
-                    );
+                    const cells = row.querySelectorAll("td:not(.checkbox-column)");
+                    const rowData = [];
+                    Array.from(cells).forEach((cell, i) => {
+                      rowData.push(cleanText(cell.innerHTML));
+                      if (doiAfter.indexOf(columnNames[i]) > -1) rowData.push(doisIn(cell));
+                    });
                     rows.push(rowData.join("\t"));
                   });
 
@@ -1587,37 +1649,8 @@
       (Q86U10), is an allosteric enzyme with low affinity to <span class="small-caps">l</span>&#8209;asparagine.
     </p>
 
-    <p style="font-size: 15px">
-      <a href="https://doi.org/10.1093/nar/gkad1011" target="_blank">
-        <sup style="font-size: 12px; font-weight: bold">1</sup>Varadi, M et al.
-        AlphaFold Protein Structure Database in 2024: providing structure
-        coverage for over 214 million protein sequences. Nucleic Acids Research
-        (2024).
-      </a>
-      Licensed under
-      <a
-        href="https://creativecommons.org/licenses/by/4.0/"
-        target="_blank"
-        rel="license noopener"
-      >
-        CC BY 4.0</a
-      >.
-    </p>
-    <p style="font-size: 15px">
-      <a href="https://doi.org/10.1093/bioinformatics/btm098" target="_blank">
-        <sup style="font-size: 12px; font-weight: bold">2</sup>Suzek, B.E. et
-        al. UniRef: comprehensive and non-redundant UniProt reference clusters.
-        Bioinformatics (2007).
-      </a>
-      Licensed under
-      <a
-        href="https://creativecommons.org/licenses/by/4.0/"
-        target="_blank"
-        rel="license noopener"
-      >
-        CC BY 4.0</a
-      >. Added classification code to sequence headers.
-    </p>        <br />
+    <!-- reference list, built by scripts/references.js -->
+    <div id="reflist" data-page-refs="alphafold,uniref" data-accent="#615ab3"></div>
 
     <footer id="contact" class="bottom-banner">
       <div class="footer-license">
@@ -1637,11 +1670,17 @@
         <span class="footer-separator" aria-hidden="true">|</span>
         <span>Release 2026-08</span>
         <span class="footer-separator" aria-hidden="true">|</span>
-        <a href="/#publication">How to cite</a>
+        <a href="/#publication">How To Cite</a>
       </div>
       <span class="footer-group-separator footer-separator" aria-hidden="true">|</span>
       <div class="footer-contact">
         <a href="mailto:info@asparaginasedb.com">info@asparaginasedb.com</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="https://tally.so/r/WO67bk" target="_blank" rel="noopener"
+          >Submit an Entry</a
+        >
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="/references.html">References</a>
         <span class="footer-separator" aria-hidden="true">|</span>
         <a href="/privacy.html">Privacy</a>
         <span class="footer-separator" aria-hidden="true">|</span>

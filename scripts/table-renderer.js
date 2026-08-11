@@ -257,74 +257,60 @@ const TableRenderer = (function () {
 
     const rowClass = includeDataRowClass ? ' class="data-row"' : "";
 
-    let html = `<tr${rowClass} ${dataAttrs.join(" ")}>
-  <td class="checkbox-column">
-    <input class="entry-checkbox" type="checkbox" />
-  </td>`;
+    /* No newlines or indentation between the cells: the browser keeps that
+       whitespace as a text node inside the row and hands it to the clipboard
+       when a cell is selected, so copying an accession would yield
+       "    Q86U10". The markup is written flat instead. */
+    const cells = [`<td class="checkbox-column"><input class="entry-checkbox" type="checkbox" /></td>`];
 
     // Add BLAST columns if needed
     if (includeBlastColumns) {
-      html += `
-  <td class="score-cell">-</td>
-  <td class="evalue-cell">-</td>`;
+      cells.push(`<td class="score-cell">-</td>`);
+      cells.push(`<td class="evalue-cell">-</td>`);
     }
 
     // Family column
-    html += `
-  <td><a href="${escapeHtml(entry.Family_Link)}">${escapeHtml(entry.Family)} </a></td>`;
+    cells.push(`<td><a href="${escapeHtml(entry.Family_Link)}">${escapeHtml(entry.Family)}</a></td>`);
 
     // Alt column
-    html += `
-  <td>${renderAltCell(entry)}</td>`;
+    cells.push(`<td>${renderAltCell(entry)}</td>`);
 
     // AN column
-    html += `
-  <td>${renderANCell(entry)}</td>`;
+    cells.push(`<td>${renderANCell(entry)}</td>`);
 
     // Name column
-    html += `
-  <td>${entry.Name ? escapeHtml(entry.Name) : ""}</td>`;
+    cells.push(`<td>${entry.Name ? escapeHtml(entry.Name) : ""}</td>`);
 
     // EC column
-    html += `
-  <td>${renderECCell(entry)}</td>`;
+    cells.push(`<td>${renderECCell(entry)}</td>`);
 
     // Organism column
-    html += `
-  <td>${renderOrganismCell(entry)}</td>`;
+    cells.push(`<td>${renderOrganismCell(entry)}</td>`);
 
     // Cell-Loc column
-    html += `
-  <td>${renderCell(entry.Cell_Loc, null, entry.Cell_Loc_Note, entry.Cell_Loc_Note_Link, entry.Cell_Loc_Indicator)}</td>`;
+    cells.push(
+      `<td>${renderCell(entry.Cell_Loc, null, entry.Cell_Loc_Note, entry.Cell_Loc_Note_Link, entry.Cell_Loc_Indicator)}</td>`
+    );
 
     // AAs column
-    html += `
-  <td>${entry.AAs ? escapeHtml(entry.AAs) : "-"}</td>`;
+    cells.push(`<td>${entry.AAs ? escapeHtml(entry.AAs) : "-"}</td>`);
 
     // Structure column
-    html += `
-  <td>${renderStructureCell(entry)}</td>`;
+    cells.push(`<td>${renderStructureCell(entry)}</td>`);
 
     // PDB column
-    html += `
-  <td>${renderPDBCell(entry)}</td>`;
+    cells.push(`<td>${renderPDBCell(entry)}</td>`);
 
     // Km column
-    html += `
-  <td>${renderKineticCell(entry.Km, entry.Km_DOIs, entry.Km_Note, entry.Km_Indicator)}</td>`;
+    cells.push(`<td>${renderKineticCell(entry.Km, entry.Km_DOIs, entry.Km_Note, entry.Km_Indicator)}</td>`);
 
     // Vmax column
-    html += `
-  <td>${renderKineticCell(entry.Vmax, entry.Vmax_DOIs, entry.Vmax_Note, entry.Vmax_Indicator)}</td>`;
+    cells.push(`<td>${renderKineticCell(entry.Vmax, entry.Vmax_DOIs, entry.Vmax_Note, entry.Vmax_Indicator)}</td>`);
 
     // Kcat column
-    html += `
-  <td>${renderKineticCell(entry.Kcat, entry.Kcat_DOIs, entry.Kcat_Note, entry.Kcat_Indicator)}</td>`;
+    cells.push(`<td>${renderKineticCell(entry.Kcat, entry.Kcat_DOIs, entry.Kcat_Note, entry.Kcat_Indicator)}</td>`);
 
-    html += `
-</tr>`;
-
-    return html;
+    return `<tr${rowClass} ${dataAttrs.join(" ")}>${cells.join("")}</tr>`;
   }
 
   /**
@@ -400,7 +386,7 @@ const TableRenderer = (function () {
       const anB = (b.AN || "").toLowerCase();
       return anA.localeCompare(anB);
     });
-    return sortedData.map((entry) => renderRow(entry, options)).join("\n");
+    return sortedData.map((entry) => renderRow(entry, options)).join("");
   }
 
   /**

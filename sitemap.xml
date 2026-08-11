@@ -14,194 +14,198 @@
   </url>
   <url>
     <loc>https://asparaginasedb.com/data.html</loc>
-    <priority>0.8</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/statistics.html</loc>
-    <priority>0.8</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/help.html</loc>
-    <priority>0.8</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/disclaimer.html</loc>
-    <priority>0.8</priority>
+    <priority>0.1</priority>
+  </url>
+  <url>
+    <loc>https://asparaginasedb.com/references.html</loc>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/privacy.html</loc>
-    <priority>0.8</priority>
+    <priority>0.1</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class1-family1.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class1-family10.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class1-family11.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class1-family12.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class1-family13.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class1-family14.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class1-family15.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class1-family16.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class1-family17.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class1-family18.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class1-family2.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class1-family3.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class1-family4.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class1-family5.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class1-family6.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class1-family7.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class1-family8.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class1-family9.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class1.html</loc>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class2-family1.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class2-family10.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class2-family11.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class2-family12.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class2-family13.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class2-family14.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class2-family15.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class2-family16.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class2-family17.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class2-family18.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class2-family2.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class2-family3.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class2-family4.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class2-family5.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class2-family6.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class2-family7.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class2-family8.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class2-family9.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class2.html</loc>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class3-family1.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class3-family2.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class3-family3.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class3-family4.html</loc>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://asparaginasedb.com/html-files/class3.html</loc>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
 </urlset>

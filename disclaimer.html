@@ -23,7 +23,8 @@
     <meta property="og:image:alt" content="The Asparaginase Database logo" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:image" content="https://asparaginasedb.com/images/logo-social.png" />
-    <link rel="icon" type="image/png" href="/images/logo5.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png" />
 
     <link rel="stylesheet" href="/fonts/fonts.css" />
     <style>
@@ -123,8 +124,20 @@
       }
 
       @media (max-width: 700px) {
+        /* Keep the home link on mobile: a small logo tucked into the top-left
+           corner, with extra header padding so it clears the centred title. */
+        header {
+          padding-top: 84px;
+        }
+
         .home-button {
-          display: none;
+          left: 18px;
+          top: 16px;
+          transform: none; /* Anchor to the corner instead of centring */
+        }
+
+        .home-button img.home-icon {
+          height: 56px;
         }
       }
 
@@ -621,11 +634,17 @@
         <span class="footer-separator" aria-hidden="true">|</span>
         <span>Release 2026-08</span>
         <span class="footer-separator" aria-hidden="true">|</span>
-        <a href="/#publication">How to cite</a>
+        <a href="/#publication">How To Cite</a>
       </div>
       <span class="footer-group-separator footer-separator" aria-hidden="true">|</span>
       <div class="footer-contact">
         <a href="mailto:info@asparaginasedb.com">info@asparaginasedb.com</a>
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="https://tally.so/r/WO67bk" target="_blank" rel="noopener"
+          >Submit an Entry</a
+        >
+        <span class="footer-separator" aria-hidden="true">|</span>
+        <a href="/references.html">References</a>
         <span class="footer-separator" aria-hidden="true">|</span>
         <a href="/privacy.html">Privacy</a>
         <span class="footer-separator" aria-hidden="true">|</span>
