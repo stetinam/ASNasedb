@@ -289,7 +289,7 @@
         </div>
       </div>
       <p class="code-explanation">
-        <strong>Example:</strong> the Escherichia coli type I
+        <strong>Example:</strong> the <i>Escherichia coli</i> type I
         (<a href="https://www.uniprot.org/uniprotkb/P0A962/entry" target="_blank"
           >P0A962</a
         >) asparaginase belongs to
